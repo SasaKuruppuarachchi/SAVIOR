@@ -8,3 +8,7 @@ doxgen_generated
 *.swo
 doc
 .vscode
+.github/agents
+.github/skills
+.agent-memory
+IEEE-JSEN-paper
