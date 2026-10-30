@@ -1,0 +1,20 @@
+# Example for: savior-eval compare --config <this file>
+# Relative paths are resolved against the directory of this file.
+results_root: ../../../../results/uhumans2   # results/<dataset>
+output: ../../../../results/uhumans2/compare
+baseline: openvins
+eval:                       # optional, same names as the CLI options
+  align: posyaw             # posyaw | sim3 | se3 | none
+  # rpe_lengths: [3, 28, 34, 60, 66]   # explicit metres, or
+  rpe_perc: [10, 20, 30, 40, 50]       # % of GT length (rpg default)
+  max_diff: 0.02
+sequences:                  # one RPE table per sequence, ATE table over all
+  - key: office_00h
+    label: Office (0 humans)
+    gt: ../../../../data/uhumans2/gt/uHumans2_office_s1_00h.txt
+    dir: office_00h         # -> results_root/office_00h/<method>/run_XX/
+methods:                    # table row order (omit to auto-discover)
+  - {key: openvins, label: OpenVINS}
+  - {key: savior_cdo_off, label: SAVIOR-cdo-off}
+  - {key: savior_pp_off, label: SAVIOR-pp-off}
+  - {key: savior_full, label: SAVIOR}

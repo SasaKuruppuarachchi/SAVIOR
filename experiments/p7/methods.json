@@ -1,0 +1,198 @@
+{
+ "p7": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_abl_noband": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_abl_nocomo": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.comotion_gate=false selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_abl_noconv": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.converge_s=0.0 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_abl_nohold": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.min_on_s=0.0 selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_abl_noint": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 gating.promote_contact=false motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_abl_nolong": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=0.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_abl_noprior": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=none stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_abl_notrk": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=false tracker.motion_model=pixel_cv",
+  "roles": "warehouse"
+ },
+ "p7_abl_optimistic": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley,forklift stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_abl_sticky": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley selective.revoke_q=1000000.0 selective.stale_s=1000000.0 stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_nb": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_nb_abl_addband": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_nb_abl_nocomo": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.comotion_gate=false selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_nb_abl_noconv": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.converge_s=0.0 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_nb_abl_nohold": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.min_on_s=0.0 selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_nb_abl_noint": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 gating.promote_contact=false motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_nb_abl_nolong": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=0.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_nb_abl_noprior": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=none stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_nb_abl_notrk": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=false tracker.motion_model=pixel_cv",
+  "roles": "warehouse"
+ },
+ "p7_nb_abl_optimistic": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley,forklift stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_nb_abl_sticky": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley selective.revoke_q=1000000.0 selective.stale_s=1000000.0 stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_ring": {
+  "pset": "compose.right_fallback=median extension.enable=true extension.grow=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "p7_v0": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet stats_compact=true tracker.enable=false tracker.motion_model=pixel_cv",
+  "roles": "warehouse"
+ },
+ "sens_fix0": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=0.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_fix1": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_fix2": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=2.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_fix3": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=3.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_fix4": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=4.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_k1": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.k_sigma=1.0 gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_k2": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.k_sigma=2.0 gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_k3": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.k_sigma=3.0 gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_k4": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.k_sigma=4.0 gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_kmed1": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.k_sigma=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_kmed2": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.k_sigma=2.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_kmed3": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.k_sigma=3.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "sens_kmed4": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.k_sigma=4.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "tim_p7_nb_fast": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "tim_p7_nb_slow": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=false selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "tim_sens_fix1_fast": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "tim_sens_fix1_slow": {
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=false selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse"
+ },
+ "tim_yolo_naive_fast": {
+  "pset": "compose.right_fallback=median extension.enable=false segmenter.fast_masks=true stats_compact=true tracker.enable=false",
+  "roles": "warehouse_naive"
+ },
+ "tim_yolo_naive_slow": {
+  "pset": "compose.right_fallback=median extension.enable=false segmenter.fast_masks=false stats_compact=true tracker.enable=false",
+  "roles": "warehouse_naive"
+ },
+ "yolo_naive": {
+  "pset": "compose.right_fallback=median extension.enable=false segmenter.fast_masks=true stats_compact=true tracker.enable=false",
+  "roles": "warehouse_naive"
+ },
+ "yolo_naive_band": {
+  "pset": "compose.right_fallback=median extension.enable=true segmenter.fast_masks=true stats_compact=true tracker.enable=false",
+  "roles": "warehouse_naive"
+ },
+ "yolo_naive_ring": {
+  "pset": "compose.right_fallback=median extension.enable=true extension.grow=false segmenter.fast_masks=true stats_compact=true tracker.enable=false",
+  "roles": "warehouse_naive"
+ },
+ "yolo_p2": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_noise_m=0.5 motion.enable=false segmenter.fast_masks=true stats_compact=true tracker.enable=false",
+  "roles": "warehouse"
+ },
+ "yolo_p4": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask segmenter.fast_masks=true stats_compact=true tracker.enable=false",
+  "roles": "warehouse"
+ },
+ "yolo_p6": {
+  "pset": "compose.right_fallback=median extension.enable=true gating.link_depth=contact gating.max_depth=2 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.window_unveto_potential=true segmenter.fast_masks=true stats_compact=true tracker.enable=false",
+  "roles": "warehouse"
+ }
+}

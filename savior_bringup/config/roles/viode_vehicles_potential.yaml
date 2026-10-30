@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# VIODE / outdoor COCO roles (YOLO26-seg), vehicles POTENTIAL: masked only through motion evidence (P4: a moving
+# potential object becomes a root) or a link to a dynamic root (person). docs/IMPLEMENTATION_PLAN.md §3.4.
+dynamic:   [person]
+potential: [car, truck, bus, motorcycle, bicycle]
+static:    []
+default: ignore
+half_extent_m: {car: 1.5, truck: 2.5, bus: 3.0, motorcycle: 0.6, bicycle: 0.6}

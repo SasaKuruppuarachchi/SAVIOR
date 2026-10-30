@@ -1,0 +1,4 @@
+parking_lot_high openvins 0.0 1
+parking_lot_high savior_none 0.0 1
+parking_lot_high oracle_dynamic 0.0 1
+parking_lot_high yolo_p4_dyn 0.0 1

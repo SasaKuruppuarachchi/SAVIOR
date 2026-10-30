@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "SAVIOR: code, frozen configurations and evaluation artefact"
+type: software
+authors:
+  - family-names: "Kuruppu Arachchige"
+    given-names: "Sasanka"
+  - family-names: "Lee"
+    given-names: "Kyuman"
+version: "1.0.0"
+date-released: "2026-10-30"
+doi: "10.5281/zenodo.23803392"
+license: GPL-3.0-or-later
+repository-code: "https://github.com/SasaKuruppuarachchi/SAVIOR"

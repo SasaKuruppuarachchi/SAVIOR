@@ -1,0 +1,8 @@
+aisles_t1_L0 | n=2176 | dt median 50.00 ms | min 50.00 max 50.00 | |dt-50ms|>1ms: 0 | f=21.0: kept 2176 (1.000), kept-dt median 50.0 ms, >=140 ms gaps 0 | f=10.5: kept 1088 (0.500), kept-dt median 100.0 ms, >=140 ms gaps 0
+aisles_t1_L1 | n=2176 | dt median 50.00 ms | min 50.00 max 50.00 | |dt-50ms|>1ms: 0 | f=21.0: kept 2176 (1.000), kept-dt median 50.0 ms, >=140 ms gaps 0 | f=10.5: kept 1088 (0.500), kept-dt median 100.0 ms, >=140 ms gaps 0
+aisles_t1_L2 | n=2176 | dt median 50.00 ms | min 50.00 max 50.00 | |dt-50ms|>1ms: 0 | f=21.0: kept 2176 (1.000), kept-dt median 50.0 ms, >=140 ms gaps 0 | f=10.5: kept 1088 (0.500), kept-dt median 100.0 ms, >=140 ms gaps 0
+aisles_t1_L3 | n=2176 | dt median 50.00 ms | min 50.00 max 50.00 | |dt-50ms|>1ms: 0 | f=21.0: kept 2176 (1.000), kept-dt median 50.0 ms, >=140 ms gaps 0 | f=10.5: kept 1088 (0.500), kept-dt median 100.0 ms, >=140 ms gaps 0
+hall_t1_L0 | n=2258 | dt median 50.00 ms | min 50.00 max 50.00 | |dt-50ms|>1ms: 0 | f=21.0: kept 2258 (1.000), kept-dt median 50.0 ms, >=140 ms gaps 0 | f=10.5: kept 1129 (0.500), kept-dt median 100.0 ms, >=140 ms gaps 0
+hall_t1_L1 | n=2258 | dt median 50.00 ms | min 50.00 max 50.00 | |dt-50ms|>1ms: 0 | f=21.0: kept 2258 (1.000), kept-dt median 50.0 ms, >=140 ms gaps 0 | f=10.5: kept 1129 (0.500), kept-dt median 100.0 ms, >=140 ms gaps 0
+hall_t1_L2 | n=2258 | dt median 50.00 ms | min 50.00 max 50.00 | |dt-50ms|>1ms: 0 | f=21.0: kept 2258 (1.000), kept-dt median 50.0 ms, >=140 ms gaps 0 | f=10.5: kept 1129 (0.500), kept-dt median 100.0 ms, >=140 ms gaps 0
+hall_t1_L3 | n=2258 | dt median 50.00 ms | min 50.00 max 50.00 | |dt-50ms|>1ms: 0 | f=21.0: kept 2258 (1.000), kept-dt median 50.0 ms, >=140 ms gaps 0 | f=10.5: kept 1129 (0.500), kept-dt median 100.0 ms, >=140 ms gaps 0

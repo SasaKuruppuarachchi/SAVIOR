@@ -1,0 +1,9 @@
+hall_t1_L3 trk10
+hall_t1_L0 trk7
+aisles_t1_L0 trk7
+hall_t1_L1 trk7
+aisles_t1_L1 trk7
+hall_t1_L0 trk10_clones15
+aisles_t1_L0 trk10_clones15
+hall_t1_L1 trk10_clones15
+aisles_t1_L1 trk10_clones15

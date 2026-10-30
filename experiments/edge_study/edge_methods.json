@@ -1,0 +1,688 @@
+{
+ "e_L100_dfr": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=100.0 dynamic_mask_deferred=true",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "main"
+ },
+ "e_L100_dfronly": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=100.0 dynamic_mask_deferred=true dynamic_mask_stale_gating=false",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "main"
+ },
+ "e_L100_stale": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=100.0",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "main"
+ },
+ "e_L250_dfr": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=250.0 dynamic_mask_deferred=true",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "main"
+ },
+ "e_L250_dfronly": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=250.0 dynamic_mask_deferred=true dynamic_mask_stale_gating=false",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "main"
+ },
+ "e_L250_stale": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=250.0",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "main"
+ },
+ "e_L500_dfr": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=500.0 dynamic_mask_deferred=true",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "main"
+ },
+ "e_L500_dfronly": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=500.0 dynamic_mask_deferred=true dynamic_mask_stale_gating=false",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "main"
+ },
+ "e_L500_stale": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=500.0",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "main"
+ },
+ "e_as10_egot": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=full asyncseg.rate_hz=10.0 asyncseg.use_velocity=false compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_egot"
+ },
+ "e_as10_full": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=full asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_full"
+ },
+ "e_as10_full_L150_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=full asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_full_L150_m1"
+ },
+ "e_as10_full_L50_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=full asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_full_L50_m1"
+ },
+ "e_as10_full_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=full asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_full_m1"
+ },
+ "e_as10_hold": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=hold asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_hold"
+ },
+ "e_as10_hold_L150_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=hold asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_hold_L150_m1"
+ },
+ "e_as10_hold_L50_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=hold asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_hold_L50_m1"
+ },
+ "e_as10_hold_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=hold asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_hold_m1"
+ },
+ "e_as10_rot": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_rot"
+ },
+ "e_as10_rot_L150_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_rot_L150_m1"
+ },
+ "e_as10_rot_L50_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_rot_L50_m1"
+ },
+ "e_as10_rot_k3": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.klt_levels=3 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_rot_k3"
+ },
+ "e_as10_rot_m05": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=0.5 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_rot_m05"
+ },
+ "e_as10_rot_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_rot_m1"
+ },
+ "e_as10_rot_m1c": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.margin_value=255 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_rot_m1c"
+ },
+ "e_as10_rot_noscale": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=rot asyncseg.rate_hz=10.0 asyncseg.scale_frame_params=false compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_rot_noscale"
+ },
+ "e_as10_vel": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=full asyncseg.rate_hz=10.0 asyncseg.use_ego_t=false compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as10_vel"
+ },
+ "e_as20": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20"
+ },
+ "e_as20_full_L150": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.mode=full asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_full_L150"
+ },
+ "e_as20_full_L150_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=full asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_full_L150_m1"
+ },
+ "e_as20_full_L50": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.mode=full asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_full_L50"
+ },
+ "e_as20_full_L50_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=full asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_full_L50_m1"
+ },
+ "e_as20_hold_L150": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.mode=hold asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_hold_L150"
+ },
+ "e_as20_hold_L150_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=hold asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_hold_L150_m1"
+ },
+ "e_as20_hold_L50": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.mode=hold asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_hold_L50"
+ },
+ "e_as20_hold_L50_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=hold asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_hold_L50_m1"
+ },
+ "e_as20_rot_L150": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.mode=rot asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_rot_L150"
+ },
+ "e_as20_rot_L150_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_rot_L150_m1"
+ },
+ "e_as20_rot_L50": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.mode=rot asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_rot_L50"
+ },
+ "e_as20_rot_L50_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=20.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as20_rot_L50_m1"
+ },
+ "e_as2_full": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=full asyncseg.rate_hz=2.5 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as2_full"
+ },
+ "e_as2_full_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=full asyncseg.rate_hz=2.5 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as2_full_m1"
+ },
+ "e_as2_hold": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=hold asyncseg.rate_hz=2.5 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as2_hold"
+ },
+ "e_as2_hold_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=hold asyncseg.rate_hz=2.5 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as2_hold_m1"
+ },
+ "e_as2_rot": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=rot asyncseg.rate_hz=2.5 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as2_rot"
+ },
+ "e_as2_rot_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=2.5 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as2_rot_m1"
+ },
+ "e_as5_egot": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=full asyncseg.rate_hz=5.0 asyncseg.use_velocity=false compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_egot"
+ },
+ "e_as5_full": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=full asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_full"
+ },
+ "e_as5_full_L150_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=full asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_full_L150_m1"
+ },
+ "e_as5_full_L50_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=full asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_full_L50_m1"
+ },
+ "e_as5_full_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=full asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_full_m1"
+ },
+ "e_as5_hold": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=hold asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_hold"
+ },
+ "e_as5_hold_L150_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=hold asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_hold_L150_m1"
+ },
+ "e_as5_hold_L50_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=hold asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_hold_L50_m1"
+ },
+ "e_as5_hold_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=hold asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_hold_m1"
+ },
+ "e_as5_rot": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=rot asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_rot"
+ },
+ "e_as5_rot_L150_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=150.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_rot_L150_m1"
+ },
+ "e_as5_rot_L50_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_rot_L50_m1"
+ },
+ "e_as5_rot_k3": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.klt_levels=3 asyncseg.mode=rot asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_rot_k3"
+ },
+ "e_as5_rot_m05": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=0.5 asyncseg.mode=rot asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_rot_m05"
+ },
+ "e_as5_rot_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_rot_m1"
+ },
+ "e_as5_rot_m1c": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.margin_value=255 asyncseg.mode=rot asyncseg.rate_hz=5.0 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_rot_m1c"
+ },
+ "e_as5_rot_noscale": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=rot asyncseg.rate_hz=5.0 asyncseg.scale_frame_params=false compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_rot_noscale"
+ },
+ "e_as5_vel": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.mode=full asyncseg.rate_hz=5.0 asyncseg.use_ego_t=false compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "as5_vel"
+ },
+ "e_c_n672_L100": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n672.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=672 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_n672_L100"
+ },
+ "e_c_n672_L100stale": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n672.engine",
+  "ov": "dynamic_mask_sim_latency_ms=100.0",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=672 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_n672_L100"
+ },
+ "e_c_n672_L250dfronly": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n672.engine",
+  "ov": "dynamic_mask_sim_latency_ms=250.0 dynamic_mask_deferred=true dynamic_mask_stale_gating=false",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=672 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_n672_L100"
+ },
+ "e_c_sp_n672": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n672.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=672 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_sp_n672"
+ },
+ "e_c_sp_r10": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_sp_r10"
+ },
+ "e_c_sp_r10_L50": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_sp_r10_L50"
+ },
+ "e_c_sp_r10_L50_dfr100": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=100.0 dynamic_mask_deferred=true",
+  "pset": "asyncseg.enable=true asyncseg.latency_ms=50.0 asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_sp_r10_L50"
+ },
+ "e_c_sp_r10_dfr100": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "dynamic_mask_sim_latency_ms=100.0 dynamic_mask_deferred=true",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_sp_r10"
+ },
+ "e_c_sp_r10_n672": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n672.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=672 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_sp_r10_n672"
+ },
+ "e_c_sp_r10_s512": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/s512.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=512 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_sp_r10_s512"
+ },
+ "e_c_sp_r5": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=5.0 compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_sp_r5"
+ },
+ "e_c_sp_r5_s512": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/s512.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=5.0 compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=512 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_sp_r5_s512"
+ },
+ "e_c_sp_s512": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/s512.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=512 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "c_sp_s512"
+ },
+ "e_main": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "main"
+ },
+ "e_nb": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "nb"
+ },
+ "e_nb_as10_rot_m1": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "nb_as10_rot_m1"
+ },
+ "e_nb_c_sp_r10": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "asyncseg.enable=true asyncseg.margin_v_mps=1.0 asyncseg.mode=rot asyncseg.rate_hz=10.0 compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "nb_c_sp_r10"
+ },
+ "e_nb_seg_n672": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n672.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=672 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "nb_seg_n672"
+ },
+ "e_nb_sp_klt": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "nb_sp_klt"
+ },
+ "e_seg_n416": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n416.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=416 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "seg_n416"
+ },
+ "e_seg_n512": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n512.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=512 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "seg_n512"
+ },
+ "e_seg_n512i8": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n512i8.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=512 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "seg_n512i8"
+ },
+ "e_seg_n672": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n672.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=672 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "seg_n672"
+ },
+ "e_seg_n672i8": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/n672i8.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=672 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "seg_n672i8"
+ },
+ "e_seg_s416": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/s416.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=416 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "seg_s416"
+ },
+ "e_seg_s512": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/s512.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=512 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "seg_s512"
+ },
+ "e_seg_s512i8": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/s512i8.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=512 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "seg_s512i8"
+ },
+ "e_seg_s672i8": {
+  "model": "/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/edge/engines/s672i8.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true segmenter.imgsz=672 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "seg_s672i8"
+ },
+ "e_sp": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median depth.mode=sparse extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "sp"
+ },
+ "e_sp5": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median depth.mode=sparse depth.sparse_min_px=5 extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "sp5"
+ },
+ "e_sp_klt": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=klt extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "sp_klt"
+ },
+ "e_sp_n20": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median depth.mode=sparse extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.stereo_inst_points=20 motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "sp_n20"
+ },
+ "e_sp_nofb": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median depth.mode=sparse depth.sparse_fallback=none extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "sp_nofb"
+ },
+ "e_sp_tmpl": {
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": "",
+  "pset": "compose.right_fallback=median depth.mode=sparse depth.sparse_source=template extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "var": "sp_tmpl"
+ }
+}

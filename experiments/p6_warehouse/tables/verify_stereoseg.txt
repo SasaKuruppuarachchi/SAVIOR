@@ -1,0 +1,8 @@
+aisles_t1_L0 OK differing: [] extra: ['/cam1/segmentation', '/cam1/segmentation_moving'] {'/cam1/segmentation': 2176, '/cam1/segmentation_moving': 2176}
+aisles_t1_L1 OK differing: [] extra: ['/cam1/segmentation', '/cam1/segmentation_moving'] {'/cam1/segmentation': 2176, '/cam1/segmentation_moving': 2176}
+aisles_t1_L2 OK differing: [] extra: ['/cam1/segmentation', '/cam1/segmentation_moving'] {'/cam1/segmentation': 2176, '/cam1/segmentation_moving': 2176}
+aisles_t1_L3 OK differing: [] extra: ['/cam1/segmentation', '/cam1/segmentation_moving'] {'/cam1/segmentation': 2176, '/cam1/segmentation_moving': 2176}
+hall_t1_L0 OK differing: [] extra: ['/cam1/segmentation', '/cam1/segmentation_moving'] {'/cam1/segmentation': 2258, '/cam1/segmentation_moving': 2258}
+hall_t1_L1 OK differing: [] extra: ['/cam1/segmentation', '/cam1/segmentation_moving'] {'/cam1/segmentation': 2258, '/cam1/segmentation_moving': 2258}
+hall_t1_L2 OK differing: [] extra: ['/cam1/segmentation', '/cam1/segmentation_moving'] {'/cam1/segmentation': 2258, '/cam1/segmentation_moving': 2258}
+hall_t1_L3 OK differing: [] extra: ['/cam1/segmentation', '/cam1/segmentation_moving'] {'/cam1/segmentation': 2258, '/cam1/segmentation_moving': 2258}

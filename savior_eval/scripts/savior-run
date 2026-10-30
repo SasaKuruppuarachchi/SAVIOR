@@ -1,0 +1,8 @@
+#!/usr/bin/env python3
+# Thin wrapper installed into <prefix>/bin so that 'savior-run' is on PATH after
+# sourcing the workspace (console_scripts go to lib/savior_eval for ros2 run).
+import sys
+
+from savior_eval.runner import main
+
+sys.exit(main())

@@ -1,0 +1,48 @@
+# uHumans2 / TESSE ground-truth semantic colours (/tesse/seg_cam/rgb/image_raw, rgb8) -> class name.
+# Format: savior_perception OracleColormapSegmenter (segmenter.backend: oracle_uhumans2 | oracle_colormap).
+#
+# Source (fetched 2026-10-14):
+#   https://raw.githubusercontent.com/MIT-SPARK/Hydra-ROS/HEAD/hydra_ros/config/color/uhumans2_office.csv
+#   == Kimera-Semantics kimera_semantics_ros/cfg/tesse_multiscene_office1_segmentation_mapping.csv
+#      (+ Stairs_Unknown / Invalid rows that only Hydra has)
+#   class names/ids: https://raw.githubusercontent.com/MIT-SPARK/Hydra/HEAD/config/label_spaces/uhumans2_office_label_space.yaml
+#   (dynamic_labels: [20] = human). Do NOT use Kimera's office2 csv: its id column is inconsistent.
+# Humans (SMPL meshes f_avg / m_avg / SMPL_f / SMPL_Female_Autonomous / SMPL_Male_Autonomous) are
+# RGB (35,213,234) in ALL uHumans2 scenes (office, subway, apartment, neighborhood) per the MIT-SPARK csvs.
+#
+# Empirical check on office_s1_00h (84 seg frames, every 100th): exactly 20 distinct colours, all listed
+# below (no anti-aliasing / blended edge colours) -> tolerance 0 is safe. Human colour is absent in 00h
+# (0 humans) -> still to be confirmed empirically on office_s1_06h/12h (open item).
+#
+# Names: COCO-style where a COCO class exists (person, chair, couch, bench, book, potted plant, laptop...)
+# so that the same role tables work for YOLO and the oracle; otherwise the Hydra label name.
+encoding: rgb
+tolerance: 0
+min_area_px: 30
+connectivity: 8
+instance_mode: components   # seg_cam is semantic (not instance) GT: touching humans merge
+classes:
+  person:        [[35, 213, 234]]               # id 20 human (dynamic_labels)
+  chair:         [[102, 255, 0]]                # id 5
+  bench:         [[35, 100, 35]]                # id 6
+  couch:         [[39, 144, 65]]                # id 7
+  cabinet:       [[154, 229, 206]]              # id 9  (doors, drawers, shelves, cabinets)
+  computer:      [[255, 23, 23]]                # id 10 (laptops, screens, keyboards, papers, mugs ...)
+  lamp:          [[62, 146, 211]]               # id 11
+  painting:      [[246, 188, 6]]                # id 12 (paintings, whiteboards, stickers)
+  potted plant:  [[38, 112, 233]]               # id 13
+  sign:          [[175, 32, 45]]                # id 14
+  stairs:        [[125, 218, 3]]                # id 15
+  desk:          [[54, 176, 239]]               # id 16 (tables, desks)
+  cubicle:       [[244, 228, 69]]               # id 17 (table screens)
+  trashcan:      [[154, 38, 91]]                # id 18 (trashcans, water dispensers)
+  wall:          [[2, 103, 71]]                 # id 19 (walls, windows, elevator)
+  book:          [[250, 50, 50]]                # id 2  (books, bookshelf)
+  air_vent:      [[255, 20, 127]]               # id 1  (vents, boxes, bottles)
+  floor:         [[124, 133, 141], [169, 169, 169]]  # id 3 (floor, carpet)
+  ceiling_light: [[102, 0, 204]]                # id 4
+  unknown:       [[32, 32, 32], [255, 255, 255]]     # id 0 (misc / invalid)
+# Hydra label ids for reference (not used by the segmenter)
+label_ids: {unknown: 0, air_vent: 1, book: 2, floor: 3, ceiling_light: 4, chair: 5, bench: 6, couch: 7,
+            cabinet: 9, computer: 10, lamp: 11, painting: 12, potted plant: 13, sign: 14, stairs: 15,
+            desk: 16, cubicle: 17, trashcan: 18, wall: 19, person: 20}

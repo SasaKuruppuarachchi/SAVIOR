@@ -1,0 +1,10 @@
+# P3a: person-only subset of savior_bringup/config/oracle/uhumans2_colormap.yaml (same colour, tolerance, min area,
+# connectivity, instance mode). With roles person_only every other class is ignored, so the published masks are
+# identical; dropping the 19 unused classes only removes per-frame connected-component work (CPU load).
+encoding: rgb
+tolerance: 0
+min_area_px: 30
+connectivity: 8
+instance_mode: components
+classes:
+  person:        [[35, 213, 234]]

@@ -1,0 +1,74 @@
+%YAML:1.0
+# SAVIOR real-world study (results/real_world): Monado MSD Valve Index. = the frozen VIODE config
+# src/savior/sota/config/viode/vins_fusion/calibration.yaml with ONLY the dataset calibration (KANNALA_BRANDT, body_T_cam, IMU noise by the
+# warehouse density-ratio rule = FREEZE_AMENDMENT A2, g_norm), image size and freq changed (scripts/make_sota_configs.py).
+
+#common parameters
+#support: 1 imu 1 cam; 1 imu 2 cam: 2 cam; 
+imu: 1         
+num_of_cam: 2  
+
+imu_topic: "/imu0"
+image0_topic: "/cam0/image_raw"
+image1_topic: "/cam1/image_raw"
+output_path: "~/output/"
+
+cam0_calib: "cam0_kb.yaml"
+cam1_calib: "cam1_kb.yaml"
+image_width: 960
+image_height: 960
+   
+
+# Extrinsic parameter between IMU and Camera.
+estimate_extrinsic: 0   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
+                        # 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
+
+body_T_cam0: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [0.015499520450, 0.999879855906, 0.000196517523, 0.069177891566,
+          -0.996933463773, 0.015438769488, 0.076715795022, 0.120856687435,
+          0.076703544084, -0.001384972928, 0.997052981629, 0.012667308040,
+          0.000000000000, 0.000000000000, 0.000000000000, 1.000000000000]
+
+body_T_cam1: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [0.021535931034, 0.999599846553, 0.018339859466, 0.069068170635,
+          -0.996852968835, 0.022869344639, -0.075902250301, -0.012925461790,
+          -0.076291298321, -0.016647517729, 0.996946587312, 0.013021838608,
+          0.000000000000, 0.000000000000, 0.000000000000, 1.000000000000]
+
+#Multiple thread support
+multiple_thread: 1
+
+#feature traker paprameters
+max_cnt: 120            # max feature number in feature tracking
+min_dist: 30            # min distance between two features 
+freq: 27                # half the 54 Hz camera rate (VIODE 10 for 20 Hz)
+F_threshold: 1.0        # ransac threshold (pixel)
+show_track: 1           # publish tracking image as topic
+flow_back: 1            # perform forward and backward optical flow to improve feature tracking accuracy
+
+#optimization parameters
+max_solver_time: 0.04  # max solver itration time (ms), to guarantee real time
+max_num_iterations: 8   # max solver itrations, to guarantee real time
+keyframe_parallax: 10.0 # keyframe selection threshold (pixel)
+
+#imu parameters       The more accurate parameters you provide, the better performance
+acc_n: 0.8         # A2: 0.1 x 0.016 / 2.0e-3 (EuRoC VINS x Monado/EuRoC density)
+gyr_n: 0.01662      # A2: 0.01 x 0.000282 / 1.6968e-4
+acc_w: 0.0003333    # A2: 0.001 x 0.001 / 3.0e-3
+gyr_w: 0.0005156    # A2: 1.0e-4 x 0.0001 / 1.9393e-5
+g_norm: 9.558     # measured static accelerometer norm of the released data (= OpenVINS gravity_mag)
+
+#unsynchronization parameters
+estimate_td: 0                      # online estimate time offset between camera and imu
+td: 0.0                             # initial value of time offset. unit: s. readed image clock + td = real image clock (IMU clock)
+
+#loop closure parameters
+load_previous_pose_graph: 0        # load and reuse previous pose graph; load from 'pose_graph_save_path'
+pose_graph_save_path: "~/output/pose_graph/" # save and load path
+save_image: 1                   # save image in pose graph for visualization prupose; you can close this function by setting 0 

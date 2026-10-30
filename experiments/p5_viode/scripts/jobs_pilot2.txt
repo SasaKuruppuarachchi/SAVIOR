@@ -1,0 +1,3 @@
+parking_lot_none openvins 0.0,0.2,0.4 1
+parking_lot_high openvins 0.2,0.4 2
+parking_lot_high oracle_dynamic 0.2,0.4 2

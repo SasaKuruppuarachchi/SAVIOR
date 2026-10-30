@@ -1,0 +1,5 @@
+aisles_t1_L3 yolo_p2 - - RATE=0.25
+aisles_t1_L3 yolo_p4 - - RATE=0.25
+aisles_t1_L3 yolo_p4_noext - - RATE=0.25
+aisles_t1_L3 yolo_p4_nointer - - RATE=0.25
+aisles_t1_L3 yolo_p6 - - RATE=0.25

@@ -1,0 +1,39 @@
+%YAML:1.0
+
+# VIODE (Minoda et al., RA-L 2021; AirSim, CC BY 4.0) stereo, ideal pinhole, no distortion, 752x480 bgr8 @ 20 Hz.
+# Source: https://github.com/kminoda/VIODE calibration_files/ (commit 521bdff, VINS-Fusion format), converted here:
+#   cam{0,1}_pinhole.yaml: PINHOLE fx = fy = 376.0, cx = 376.0, cy = 240.0, k1 = k2 = p1 = p2 = 0 (90 deg HFOV)
+#   calibration.yaml body_T_cam0 = [[0,0,1,0],[1,0,0,0],[0,1,0,0],[0,0,0,1]]
+#                    body_T_cam1 = [[0,0,1,0],[1,0,0,0.05],[0,1,0,0],[0,0,0,1]]
+#   VINS-Fusion body_T_camX = T_imu_cam (camera -> IMU/body; body = AirSim NED body: x fwd, y right, z down):
+#   cam z = body x (forward), cam x = body y (right), cam y = body z (down); cam1 is 5 cm to the right (baseline 0.05 m).
+# Camera and IMU stamps come from the same simulator clock (images rendered at the 20 Hz-undersampled GT poses)
+# -> timeshift 0. Checked numerically by savior_bringup/tools/viode_prepare.py (gyro vs differentiated GT).
+cam0:
+  T_imu_cam: #rotation from camera to IMU R_CtoI, position of camera in IMU p_CinI
+    - [0.0, 0.0, 1.0, 0.0]
+    - [1.0, 0.0, 0.0, 0.0]
+    - [0.0, 1.0, 0.0, 0.0]
+    - [0.0, 0.0, 0.0, 1.0]
+  cam_overlaps: [1]
+  camera_model: pinhole
+  distortion_coeffs: [0.0, 0.0, 0.0, 0.0]
+  distortion_model: radtan
+  intrinsics: [376.0, 376.0, 376.0, 240.0] #fu, fv, cu, cv
+  resolution: [752, 480]
+  rostopic: /cam0/image_raw
+  timeshift_cam_imu: 0.0
+cam1:
+  T_imu_cam: #rotation from camera to IMU R_CtoI, position of camera in IMU p_CinI
+    - [0.0, 0.0, 1.0, 0.0]
+    - [1.0, 0.0, 0.0, 0.05]
+    - [0.0, 1.0, 0.0, 0.0]
+    - [0.0, 0.0, 0.0, 1.0]
+  cam_overlaps: [0]
+  camera_model: pinhole
+  distortion_coeffs: [0.0, 0.0, 0.0, 0.0]
+  distortion_model: radtan
+  intrinsics: [376.0, 376.0, 376.0, 240.0] #fu, fv, cu, cv
+  resolution: [752, 480]
+  rostopic: /cam1/image_raw
+  timeshift_cam_imu: 0.0

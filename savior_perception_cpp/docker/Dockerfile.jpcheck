@@ -1,0 +1,18 @@
+# savior-cpp-jpcheck:humble-cuda12.8 -- x86_64 stand-in checks for the Jetson (JetPack 6 / L4T r36) build of
+# savior_perception_cpp: TensorRT 10.3 headers (JetPack 6.1/6.2 ships TensorRT 10.3) for an API compile check, and
+# OpenCV 4.8.0 (the JetPack 6 OpenCV version) built WITHOUT IPP (as on aarch64) for an equivalence run with the
+# Jetson's OpenCV version. Not a deployment image (the Jetson build uses Dockerfile.jetson on the device).
+FROM savior-cpp:humble-cuda12.8
+USER root
+RUN set -eux; cd /tmp; curl -fsSL -o trt.tar.gz https://github.com/NVIDIA/TensorRT/archive/refs/tags/v10.3.0.tar.gz; \
+    tar xzf trt.tar.gz --wildcards '*/include/*'; mkdir -p /opt/tensorrt-10.3/include; cp -r TensorRT-*/include/* /opt/tensorrt-10.3/include/; \
+    rm -rf trt.tar.gz TensorRT-*
+RUN set -eux; cd /tmp; curl -fsSL -o cv.tar.gz https://github.com/opencv/opencv/archive/refs/tags/4.8.0.tar.gz; \
+    tar xzf cv.tar.gz; mkdir build && cd build; \
+    cmake ../opencv-4.8.0 -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/opencv-4.8 \
+      -DBUILD_LIST=core,imgproc,calib3d,features2d,flann,video,imgcodecs -DBUILD_SHARED_LIBS=ON -DWITH_IPP=OFF \
+      -DWITH_TBB=OFF -DWITH_OPENMP=OFF -DWITH_OPENCL=OFF -DWITH_CUDA=OFF -DWITH_EIGEN=OFF -DWITH_LAPACK=OFF -DBUILD_TESTS=OFF \
+      -DBUILD_PERF_TESTS=OFF -DBUILD_EXAMPLES=OFF -DBUILD_opencv_apps=OFF -DBUILD_opencv_python3=OFF -DBUILD_JAVA=OFF \
+      -DWITH_GTK=OFF -DWITH_FFMPEG=OFF -DWITH_GSTREAMER=OFF -DWITH_V4L=OFF -DWITH_1394=OFF; \
+    make -j"$(nproc)" install; cd /tmp; rm -rf build opencv-4.8.0 cv.tar.gz
+USER savior

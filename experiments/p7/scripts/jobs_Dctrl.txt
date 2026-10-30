@@ -1,0 +1,4 @@
+uhumans2_office_s1_06h openvins 0.8 11
+uhumans2_office_s1_06h savior_none 0.8 11
+openloris_cafe1-1 openvins 1.2 11
+openloris_cafe1-1 savior_none 1.2 11

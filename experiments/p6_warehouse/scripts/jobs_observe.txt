@@ -1,0 +1,3 @@
+hall_t1_L1 oracle_moving+observe
+aisles_t1_L1 oracle_moving+observe
+hall_t1_L2 oracle_moving+observe

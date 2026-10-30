@@ -1,0 +1,294 @@
+# review runs held-out (A, B, controls) then E (low priority): seq variant offsets start [KEY=VAL]
+hall_t2_L2 ctl_sens_fix1 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L2 ctl_sens_fix1 1.0,1.2,1.4,1.6,1.8 6
+city_day_mid ctl_sens_fix1 4.1,4.3,4.5,4.7,4.9 1
+city_day_mid ctl_sens_fix1 5.1,5.3,5.5,5.7,5.9 6
+hall_t2_L2 ctl_savior_none 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L2 ctl_savior_none 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L0 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L0 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L0 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L0 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L0 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L0 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L0 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L0 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L1 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L1 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L1 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L1 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L1 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L1 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L1 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L1 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L2 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L2 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L2 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L2 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L2 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L2 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L2 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L2 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L3 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L3 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L3 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L3 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L3 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L3 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+aisles_t2_L3 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+aisles_t2_L3 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L0 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L0 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L0 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L0 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L0 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L0 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L0 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L0 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L1 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L1 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L1 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L1 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L1 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L1 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L1 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L1 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L2 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L2 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L2 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L2 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L2 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L2 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L2 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L2 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L3 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L3 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L3 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L3 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L3 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L3 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+hall_t2_L3 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+hall_t2_L3 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L0 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L0 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L0 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L0 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L0 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L0 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L0 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L0 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L1 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L1 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L1 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L1 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L1 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L1 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L1 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L1 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L2 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L2 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L2 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L2 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L2 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L2 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L2 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L2 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L3 sf1_noint 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L3 sf1_noint 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L3 sf1_nomotion 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L3 sf1_nomotion 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L3 sf1_chibest 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L3 sf1_chibest 1.0,1.2,1.4,1.6,1.8 6
+dock_t2_L3 ovchi_best 0.0,0.2,0.4,0.6,0.8 1
+dock_t2_L3 ovchi_best 1.0,1.2,1.4,1.6,1.8 6
+parking_lot_none sf1_noint 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_none sf1_noint 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_none sf1_nomotion 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_none sf1_nomotion 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_none sf1_chibest 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_none sf1_chibest 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_none ovchi_best 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_none ovchi_best 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_low sf1_noint 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_low sf1_noint 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_low sf1_nomotion 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_low sf1_nomotion 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_low sf1_chibest 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_low sf1_chibest 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_low ovchi_best 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_low ovchi_best 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_mid sf1_noint 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_mid sf1_noint 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_mid sf1_nomotion 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_mid sf1_nomotion 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_mid sf1_chibest 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_mid sf1_chibest 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_mid ovchi_best 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_mid ovchi_best 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_high sf1_noint 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_high sf1_noint 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_high sf1_nomotion 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_high sf1_nomotion 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_high sf1_chibest 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_high sf1_chibest 6.5,6.7,6.9,7.1,7.3 6
+parking_lot_high ovchi_best 5.5,5.7,5.9,6.1,6.3 1
+parking_lot_high ovchi_best 6.5,6.7,6.9,7.1,7.3 6
+city_day_none sf1_noint 4.1,4.3,4.5,4.7,4.9 1
+city_day_none sf1_noint 5.1,5.3,5.5,5.7,5.9 6
+city_day_none sf1_nomotion 4.1,4.3,4.5,4.7,4.9 1
+city_day_none sf1_nomotion 5.1,5.3,5.5,5.7,5.9 6
+city_day_none sf1_chibest 4.1,4.3,4.5,4.7,4.9 1
+city_day_none sf1_chibest 5.1,5.3,5.5,5.7,5.9 6
+city_day_none ovchi_best 4.1,4.3,4.5,4.7,4.9 1
+city_day_none ovchi_best 5.1,5.3,5.5,5.7,5.9 6
+city_day_low sf1_noint 4.1,4.3,4.5,4.7,4.9 1
+city_day_low sf1_noint 5.1,5.3,5.5,5.7,5.9 6
+city_day_low sf1_nomotion 4.1,4.3,4.5,4.7,4.9 1
+city_day_low sf1_nomotion 5.1,5.3,5.5,5.7,5.9 6
+city_day_low sf1_chibest 4.1,4.3,4.5,4.7,4.9 1
+city_day_low sf1_chibest 5.1,5.3,5.5,5.7,5.9 6
+city_day_low ovchi_best 4.1,4.3,4.5,4.7,4.9 1
+city_day_low ovchi_best 5.1,5.3,5.5,5.7,5.9 6
+city_day_mid sf1_noint 4.1,4.3,4.5,4.7,4.9 1
+city_day_mid sf1_noint 5.1,5.3,5.5,5.7,5.9 6
+city_day_mid sf1_nomotion 4.1,4.3,4.5,4.7,4.9 1
+city_day_mid sf1_nomotion 5.1,5.3,5.5,5.7,5.9 6
+city_day_mid sf1_chibest 4.1,4.3,4.5,4.7,4.9 1
+city_day_mid sf1_chibest 5.1,5.3,5.5,5.7,5.9 6
+city_day_mid ovchi_best 4.1,4.3,4.5,4.7,4.9 1
+city_day_mid ovchi_best 5.1,5.3,5.5,5.7,5.9 6
+city_day_high sf1_noint 4.1,4.3,4.5,4.7,4.9 1
+city_day_high sf1_noint 5.1,5.3,5.5,5.7,5.9 6
+city_day_high sf1_nomotion 4.1,4.3,4.5,4.7,4.9 1
+city_day_high sf1_nomotion 5.1,5.3,5.5,5.7,5.9 6
+city_day_high sf1_chibest 4.1,4.3,4.5,4.7,4.9 1
+city_day_high sf1_chibest 5.1,5.3,5.5,5.7,5.9 6
+city_day_high ovchi_best 4.1,4.3,4.5,4.7,4.9 1
+city_day_high ovchi_best 5.1,5.3,5.5,5.7,5.9 6
+city_night_none sf1_noint 6.1,6.3,6.5,6.7,6.9 1
+city_night_none sf1_noint 7.1,7.3,7.5,7.7,7.9 6
+city_night_none sf1_nomotion 6.1,6.3,6.5,6.7,6.9 1
+city_night_none sf1_nomotion 7.1,7.3,7.5,7.7,7.9 6
+city_night_none sf1_chibest 6.1,6.3,6.5,6.7,6.9 1
+city_night_none sf1_chibest 7.1,7.3,7.5,7.7,7.9 6
+city_night_none ovchi_best 6.1,6.3,6.5,6.7,6.9 1
+city_night_none ovchi_best 7.1,7.3,7.5,7.7,7.9 6
+city_night_low sf1_noint 6.1,6.3,6.5,6.7,6.9 1
+city_night_low sf1_noint 7.1,7.3,7.5,7.7,7.9 6
+city_night_low sf1_nomotion 6.1,6.3,6.5,6.7,6.9 1
+city_night_low sf1_nomotion 7.1,7.3,7.5,7.7,7.9 6
+city_night_low sf1_chibest 6.1,6.3,6.5,6.7,6.9 1
+city_night_low sf1_chibest 7.1,7.3,7.5,7.7,7.9 6
+city_night_low ovchi_best 6.1,6.3,6.5,6.7,6.9 1
+city_night_low ovchi_best 7.1,7.3,7.5,7.7,7.9 6
+city_night_mid sf1_noint 6.1,6.3,6.5,6.7,6.9 1
+city_night_mid sf1_noint 7.1,7.3,7.5,7.7,7.9 6
+city_night_mid sf1_nomotion 6.1,6.3,6.5,6.7,6.9 1
+city_night_mid sf1_nomotion 7.1,7.3,7.5,7.7,7.9 6
+city_night_mid sf1_chibest 6.1,6.3,6.5,6.7,6.9 1
+city_night_mid sf1_chibest 7.1,7.3,7.5,7.7,7.9 6
+city_night_mid ovchi_best 6.1,6.3,6.5,6.7,6.9 1
+city_night_mid ovchi_best 7.1,7.3,7.5,7.7,7.9 6
+city_night_high sf1_noint 6.1,6.3,6.5,6.7,6.9 1
+city_night_high sf1_noint 7.1,7.3,7.5,7.7,7.9 6
+city_night_high sf1_nomotion 6.1,6.3,6.5,6.7,6.9 1
+city_night_high sf1_nomotion 7.1,7.3,7.5,7.7,7.9 6
+city_night_high sf1_chibest 6.1,6.3,6.5,6.7,6.9 1
+city_night_high sf1_chibest 7.1,7.3,7.5,7.7,7.9 6
+city_night_high ovchi_best 6.1,6.3,6.5,6.7,6.9 1
+city_night_high ovchi_best 7.1,7.3,7.5,7.7,7.9 6
+openloris_cafe1-1 e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_cafe1-1 e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_cafe1-1 e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_cafe1-1 e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_cafe1-1 e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_cafe1-1 e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_cafe1-1 e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_cafe1-1 e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_cafe1-2 e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_cafe1-2 e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_cafe1-2 e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_cafe1-2 e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_cafe1-2 e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_cafe1-2 e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_cafe1-2 e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_cafe1-2 e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-1 e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-1 e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-1 e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-1 e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-1 e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-1 e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-1 e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-1 e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-2 e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-2 e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-2 e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-2 e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-2 e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-2 e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-2 e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-2 e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-3 e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-3 e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-3 e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-3 e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-3 e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-3 e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-3 e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-3 e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-4 e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-4 e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-4 e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-4 e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-4 e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-4 e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-4 e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-4 e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-5 e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-5 e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-5 e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-5 e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-5 e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-5 e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-5 e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-5 e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-6 e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-6 e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-6 e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-6 e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-6 e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-6 e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-6 e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-6 e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-7 e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-7 e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-7 e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-7 e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-7 e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-7 e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+openloris_office1-7 e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+openloris_office1-7 e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_06h e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_06h e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_06h e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_06h e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_06h e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_06h e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_06h e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_06h e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_06h e_oracle_person 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_06h e_oracle_person 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_12h e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_12h e_openvins 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_12h e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_12h e_sens_fix1 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_12h e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_12h e_yolo_naive 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_12h e_savior_none 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_12h e_savior_none 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_12h e_oracle_person 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_12h e_oracle_person 1.0,1.2,1.4,1.6,1.8 6 DSN=review_runs/runs/e
+uhumans2_office_s1_00h e_openvins 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_00h e_sens_fix1 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e
+uhumans2_office_s1_00h e_yolo_naive 0.0,0.2,0.4,0.6,0.8 1 DSN=review_runs/runs/e

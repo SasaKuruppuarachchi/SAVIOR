@@ -1,0 +1,2 @@
+cls,n_gt,AP50,AP50_95,IoU,recall,precision,rec_40-256,rec_256-1k,rec_1k-4k,rec_4k-16k,rec_>16k,rec_moving,fp_static_per100,fp_bg_per100
+person,1484,0.714,0.4,0.87,0.637,0.89,0.266,0.829,0.966,1.0,1.0,,0,2.1

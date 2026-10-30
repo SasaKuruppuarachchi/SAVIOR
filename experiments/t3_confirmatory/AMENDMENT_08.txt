@@ -1,0 +1,5 @@
+2026-10-30 06:58 coordinator (submission deadline 11:00 today): execution and reporting change, decided before any t3 outcome was seen.
+1. The analysis is unblinded now for the complete OV2 family (12 methods, 5760/5760 valid): P1–P5, the OV2-family S tests, X1–X3, Y1–Y4.
+2. The VINS-family runs restart at full machine capacity (cap 36 containers). VINS-family S tests that are unfinished at submission are
+   reported as "not completed by the submission deadline"; they are never computed on a partial set.
+3. The DynaVINS+masks secondary (AMENDMENT_02 §3) is dropped for this submission (42/96 sequences done; not analysed).

@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# savior_node overrides for uHumans2 (TESSE). Loaded AFTER savior_perception/config/default.yaml by
+# savior.launch.py; calib_file / roles_file / colormap_file are set by the launch (absolute share paths).
+savior_node:
+  ros__parameters:
+    left_topic: /tesse/left_cam/mono/image_raw
+    right_topic: /tesse/right_cam/mono/image_raw
+    cam_left: cam0
+    cam_right: cam1
+    # oracle: GT semantic image (rgb8, same stamp as the stereo pair); yolo runs on the mono left image
+    seg_topic: /tesse/seg_cam/rgb/image_raw
+    segmenter:
+      backend: oracle_colormap       # yolo | oracle_colormap | none   (launch arg backend:= overrides)
+    depth:
+      downsample: 2                  # default (b = 0.10 m, f = 415.7 px)

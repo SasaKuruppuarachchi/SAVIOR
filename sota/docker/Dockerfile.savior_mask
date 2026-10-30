@@ -1,0 +1,12 @@
+# savior-sota:noetic-mask - savior-sota:noetic + patch P9 (VINS-Fusion SAVIOR dynamic masks, deterministic mode).
+# Incremental build on top of an existing savior-sota:noetic image built before P9 existed (a fresh build of
+# docker/Dockerfile already applies P9 through patches/apply_patches.sh). Build: ../build_mask.sh
+FROM savior-sota:noetic
+COPY patches/vins_fusion_savior_mask.patch /opt/sota/patches/vins_fusion_savior_mask.patch
+COPY patches/apply_patches.sh /opt/sota/patches/apply_patches.sh
+RUN cd /opt/sota/catkin_ws/src/VINS-Fusion \
+ && (grep -q savior_mask vins_estimator/CMakeLists.txt || patch -p1 < /opt/sota/patches/vins_fusion_savior_mask.patch) \
+ && cd /opt/sota/catkin_ws && . /opt/ros/noetic/setup.sh \
+ && catkin build -j${JOBS:-8} --no-status vins \
+ && rm -rf build logs \
+ && echo "P9 vins_fusion_savior_mask.patch $(md5sum /opt/sota/patches/vins_fusion_savior_mask.patch | cut -c1-32)" >> /opt/sota/COMMITS.txt

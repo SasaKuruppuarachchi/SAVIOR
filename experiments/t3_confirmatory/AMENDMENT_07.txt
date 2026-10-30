@@ -1,0 +1,4 @@
+2026-10-29 coordinator: execution-only change (blinded; no method, setting, hypothesis or analysis change). The machine is
+under-used (load ~8 on 48 cores, GPU 22 %), so the AMENDMENT_02 §2 cap of 12 t3 containers is raised to 20 to shorten the VINS
+phase. The protection against load-induced frame loss stays: the frames audit (AMENDMENT_02/05) and the completeness check
+(AMENDMENT_06) still apply to every run, and any run that fails them is re-run.

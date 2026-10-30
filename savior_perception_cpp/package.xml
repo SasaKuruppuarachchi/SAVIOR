@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>savior_perception_cpp</name>
+  <version>0.1.0</version>
+  <description>C++ port of the SAVIOR perception hot path (savior_perception savior_node): composable ROS 2 node, TensorRT
+    YOLO26-seg, ROI SGBM depth, motion evidence, selective policy, gating, tracker, compose. Same parameters, topics and
+    mask contract as the Python node.</description>
+  <maintainer email="sasa.kuruppuarachchi@gmail.com">SAVIOR authors</maintainer>
+  <license>GPL-3.0-or-later</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>rclcpp_components</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>message_filters</depend>
+  <depend>ament_index_cpp</depend>
+  <depend>yaml-cpp</depend>
+  <depend>libopencv-dev</depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

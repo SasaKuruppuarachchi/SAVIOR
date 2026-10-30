@@ -1,0 +1,67 @@
+keys ['aisles_t2_L0', 'aisles_t2_L1'] ['aisles_t2_L0', 'aisles_t2_L1'] ['vins_fusion', 'vins_ycls', 'vins_savior', 'vins_edge', 'vins_odyn', 'vins_ocls', 'dynavins', 'vins_zero']
+== t2 L0+L1
+  OV2          gm=0.121 med=0.079 fail=5/60
+  OV2+SAVIOR   gm=0.084 med=0.083 fail=0/60
+  OV2+Y-Cls    gm=0.112 med=0.117 fail=0/60
+  VINS         gm=0.103 med=0.102 fail=0/60
+  VINS+SAVIOR  gm=0.107 med=0.109 fail=0/60
+  DynaVINS     gm=0.075 med=0.079 fail=0/60
+  OV2+SAVIOR vs DynaVINS: +11.5% [-0,+25] p=0.089 wins 23/60
+  OV2+SAVIOR vs VINS+SAVIOR: -21.6% [-29,-14] p=5.7e-05 wins 45/60
+  OV2 vs VINS: +18.2% [-14,+75] p=0.0088 wins 40/60
+  OV2+SAVIOR vs VINS: -18.3% [-26,-10] p=0.00057 wins 39/60
+== t2 L2+L3
+  OV2          gm=0.359 med=0.172 fail=13/60
+  OV2+SAVIOR   gm=0.162 med=0.115 fail=4/60
+  OV2+Y-Cls    gm=0.251 med=0.135 fail=10/60
+  VINS         gm=0.125 med=0.115 fail=0/60
+  VINS+SAVIOR  gm=0.157 med=0.156 fail=0/60
+  DynaVINS     gm=0.091 med=0.088 fail=0/60
+  OV2+SAVIOR vs DynaVINS: +78.5% [+37,+139] p=7.5e-07 wins 11/60
+  OV2+SAVIOR vs VINS+SAVIOR: +3.4% [-20,+40] p=0.0009 wins 45/60
+  OV2 vs VINS: +187.6% [+92,+351] p=4.8e-05 wins 17/60
+  OV2+SAVIOR vs VINS: +29.7% [+3,+68] p=0.71 wins 33/60
+== t2 all
+  OV2          gm=0.209 med=0.095 fail=18/120
+  OV2+SAVIOR   gm=0.117 med=0.096 fail=4/120
+  OV2+Y-Cls    gm=0.168 med=0.120 fail=10/120
+  VINS         gm=0.113 med=0.108 fail=0/120
+  VINS+SAVIOR  gm=0.130 med=0.132 fail=0/120
+  DynaVINS     gm=0.083 med=0.084 fail=0/120
+  OV2+SAVIOR vs DynaVINS: +41.1% [+22,+69] p=1.4e-06 wins 34/120
+  OV2+SAVIOR vs VINS+SAVIOR: -10.0% [-21,+7] p=1.9e-07 wins 90/120
+  OV2 vs VINS: +84.4% [+39,+146] p=0.15 wins 57/120
+  OV2+SAVIOR vs VINS: +2.9% [-10,+20] p=0.029 wins 72/120
+== viode none+low
+  OV2          gm=0.250 med=0.188 fail=6/60
+  OV2+SAVIOR   gm=0.173 med=0.167 fail=2/60
+  OV2+Y-Cls    gm=0.176 med=0.171 fail=2/60
+  VINS         gm=0.434 med=0.329 fail=7/60
+  VINS+SAVIOR  gm=0.303 med=0.283 fail=4/60
+  DynaVINS     gm=0.390 med=0.237 fail=10/60
+  OV2+SAVIOR vs DynaVINS: -55.5% [-73,-29] p=5.1e-05 wins 42/60
+  OV2+SAVIOR vs VINS+SAVIOR: -42.7% [-59,-22] p=1.6e-06 wins 53/60
+  OV2 vs VINS: -42.4% [-61,-17] p=3.6e-05 wins 47/60
+  OV2+SAVIOR vs VINS: -60.0% [-73,-42] p=5.6e-07 wins 51/60
+== viode mid+high
+  OV2          gm=0.309 med=0.266 fail=5/60
+  OV2+SAVIOR   gm=0.245 med=0.238 fail=3/60
+  OV2+Y-Cls    gm=0.250 med=0.227 fail=3/60
+  VINS         gm=0.728 med=0.553 fail=9/60
+  VINS+SAVIOR  gm=0.321 med=0.305 fail=2/60
+  DynaVINS     gm=0.616 med=0.300 fail=15/60
+  OV2+SAVIOR vs DynaVINS: -60.2% [-77,-35] p=0.021 wins 35/60
+  OV2+SAVIOR vs VINS+SAVIOR: -23.8% [-45,+6] p=0.00075 wins 41/60
+  OV2 vs VINS: -57.6% [-71,-37] p=5.9e-06 wins 51/60
+  OV2+SAVIOR vs VINS: -66.4% [-77,-53] p=4.9e-09 wins 53/60
+== viode all
+  OV2          gm=0.278 med=0.216 fail=11/120
+  OV2+SAVIOR   gm=0.206 med=0.215 fail=5/120
+  OV2+Y-Cls    gm=0.210 med=0.187 fail=5/120
+  VINS         gm=0.562 med=0.470 fail=16/120
+  VINS+SAVIOR  gm=0.312 med=0.294 fail=6/120
+  DynaVINS     gm=0.490 med=0.257 fail=25/120
+  OV2+SAVIOR vs DynaVINS: -57.9% [-71,-41] p=1e-05 wins 77/120
+  OV2+SAVIOR vs VINS+SAVIOR: -33.9% [-47,-17] p=1.3e-09 wins 94/120
+  OV2 vs VINS: -50.6% [-62,-35] p=6.5e-10 wins 98/120
+  OV2+SAVIOR vs VINS: -63.3% [-72,-52] p=1.9e-14 wins 104/120

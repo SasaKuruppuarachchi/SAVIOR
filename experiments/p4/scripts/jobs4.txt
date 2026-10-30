@@ -1,0 +1,9 @@
+openloris cafe1-1 openvins+fast20
+openloris cafe1-1 openvins+fast15
+openloris cafe1-1 openvins+fast10
+openloris cafe1-1 openvins+grid8
+openloris cafe1-1 openvins+mpx10
+openloris cafe1-1 openvins+fast15+mpx10
+openloris cafe1-1 full+mot+gate+trk
+openloris cafe1-1 full+mot+gate+trkego
+openloris cafe1-1 full+trk

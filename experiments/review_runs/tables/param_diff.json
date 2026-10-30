@@ -1,0 +1,344 @@
+{
+ "sf1_noint/warehouse": {
+  "base": "sens_fix1",
+  "diff_vs_base": {
+   "pset.gating.promote_contact": [
+    null,
+    "false"
+   ]
+  },
+  "exact_intended": true
+ },
+ "sf1_noint/viode": {
+  "base": "sens_fix1",
+  "diff_vs_base": {
+   "pset.gating.promote_contact": [
+    null,
+    "false"
+   ]
+  },
+  "exact_intended": true
+ },
+ "sf1_nomotion/warehouse": {
+  "base": "sens_fix1",
+  "diff_vs_base": {
+   "pset.motion.enable": [
+    "true",
+    "false"
+   ]
+  },
+  "exact_intended": true
+ },
+ "sf1_nomotion/viode": {
+  "base": "sens_fix1",
+  "diff_vs_base": {
+   "pset.motion.enable": [
+    "true",
+    "false"
+   ]
+  },
+  "exact_intended": true
+ },
+ "ctl_sens_fix1/warehouse": {
+  "base": "sens_fix1",
+  "diff_vs_base": {},
+  "exact_intended": true
+ },
+ "ctl_sens_fix1/viode": {
+  "base": "sens_fix1",
+  "diff_vs_base": {},
+  "exact_intended": true
+ },
+ "ctl_savior_none/warehouse": {
+  "base": "savior_none",
+  "diff_vs_base": {},
+  "exact_intended": true
+ },
+ "ctl_savior_none/viode": {
+  "base": "savior_none",
+  "diff_vs_base": {},
+  "exact_intended": true
+ },
+ "ovchi_050/warehouse": {
+  "base": "openvins",
+  "diff_vs_base": {
+   "ov_set.up_msckf_chi2_multipler": [
+    null,
+    "0.5"
+   ],
+   "ov_set.up_slam_chi2_multipler": [
+    null,
+    "0.5"
+   ]
+  },
+  "exact_intended": true
+ },
+ "ovchi_025/warehouse": {
+  "base": "openvins",
+  "diff_vs_base": {
+   "ov_set.up_msckf_chi2_multipler": [
+    null,
+    "0.25"
+   ],
+   "ov_set.up_slam_chi2_multipler": [
+    null,
+    "0.25"
+   ]
+  },
+  "exact_intended": true
+ },
+ "ovchi_010/warehouse": {
+  "base": "openvins",
+  "diff_vs_base": {
+   "ov_set.up_msckf_chi2_multipler": [
+    null,
+    "0.1"
+   ],
+   "ov_set.up_slam_chi2_multipler": [
+    null,
+    "0.1"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_fix0/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.fixed_threshold_m": [
+    null,
+    "0.0"
+   ],
+   "pset.gating.link_depth": [
+    "contact",
+    "median"
+   ],
+   "pset.gating.mode": [
+    null,
+    "fixed"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_fix1/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.fixed_threshold_m": [
+    null,
+    "1.0"
+   ],
+   "pset.gating.link_depth": [
+    "contact",
+    "median"
+   ],
+   "pset.gating.mode": [
+    null,
+    "fixed"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_fix2/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.fixed_threshold_m": [
+    null,
+    "2.0"
+   ],
+   "pset.gating.link_depth": [
+    "contact",
+    "median"
+   ],
+   "pset.gating.mode": [
+    null,
+    "fixed"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_fix3/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.fixed_threshold_m": [
+    null,
+    "3.0"
+   ],
+   "pset.gating.link_depth": [
+    "contact",
+    "median"
+   ],
+   "pset.gating.mode": [
+    null,
+    "fixed"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_fix4/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.fixed_threshold_m": [
+    null,
+    "4.0"
+   ],
+   "pset.gating.link_depth": [
+    "contact",
+    "median"
+   ],
+   "pset.gating.mode": [
+    null,
+    "fixed"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_k1/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.k_sigma": [
+    null,
+    "1.0"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_k2/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.k_sigma": [
+    null,
+    "2.0"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_k3/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.k_sigma": [
+    null,
+    "3.0"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_k4/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.k_sigma": [
+    null,
+    "4.0"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_kmed1/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.k_sigma": [
+    null,
+    "1.0"
+   ],
+   "pset.gating.link_depth": [
+    "contact",
+    "median"
+   ]
+  },
+  "exact_intended": true
+ },
+ "gate_kmed3/warehouse": {
+  "base": "p7_nb",
+  "diff_vs_base": {
+   "pset.gating.k_sigma": [
+    null,
+    "3.0"
+   ],
+   "pset.gating.link_depth": [
+    "contact",
+    "median"
+   ]
+  },
+  "exact_intended": true
+ },
+ "ovchi_best/warehouse": {
+  "base": "openvins",
+  "diff_vs_base": {
+   "ov_set.up_msckf_chi2_multipler": [
+    null,
+    "0.25"
+   ],
+   "ov_set.up_slam_chi2_multipler": [
+    null,
+    "0.25"
+   ]
+  },
+  "exact_intended": true
+ },
+ "ovchi_best/viode": {
+  "base": "openvins",
+  "diff_vs_base": {
+   "ov_set.up_msckf_chi2_multipler": [
+    null,
+    "0.25"
+   ],
+   "ov_set.up_slam_chi2_multipler": [
+    null,
+    "0.25"
+   ]
+  },
+  "exact_intended": true
+ },
+ "sf1_chibest/warehouse": {
+  "base": "sens_fix1",
+  "diff_vs_base": {
+   "ov_set.up_msckf_chi2_multipler": [
+    null,
+    "0.25"
+   ],
+   "ov_set.up_slam_chi2_multipler": [
+    null,
+    "0.25"
+   ]
+  },
+  "exact_intended": true
+ },
+ "sf1_chibest/viode": {
+  "base": "sens_fix1",
+  "diff_vs_base": {
+   "ov_set.up_msckf_chi2_multipler": [
+    null,
+    "0.25"
+   ],
+   "ov_set.up_slam_chi2_multipler": [
+    null,
+    "0.25"
+   ]
+  },
+  "exact_intended": true
+ },
+ "reuse/gate_fix1==sens_fix1": {
+  "diff": {},
+  "parameter_identical": true
+ },
+ "reuse/gate_k3==p7_nb": {
+  "diff": {
+   "pset.gating.k_sigma": [
+    null,
+    "3.0"
+   ]
+  },
+  "parameter_identical": true
+ },
+ "E/e_sens_fix1": {
+  "diff_vs_frozen_warehouse": {
+   "selective.prior_static_classes": [
+    "box,pallet,trolley",
+    "chair,suitcase,backpack,handbag,cart"
+   ]
+  },
+  "exact_intended": true
+ },
+ "E/e_yolo_naive": {
+  "diff_vs_frozen_warehouse": {},
+  "exact_intended": true
+ }
+}

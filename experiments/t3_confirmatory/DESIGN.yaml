@@ -1,0 +1,912 @@
+# SAVIOR-Warehouse t3 CONFIRMATORY split: PRE-REGISTERED DESIGN. FROZEN at 2026-10-26T17:50:54+00:00 before any t3
+# rendering (only numpy generator checks and dev-seed previews existed). Do not edit: its md5 is in DESIGN.md5
+# and src/savior/docs/IMPLEMENTATION_PLAN.md section 6. A change needs a new, dated, disclosed amendment file.
+name: SAVIOR-Warehouse t3 confirmatory split
+status: FROZEN
+frozen_at: '2026-10-26T17:50:54+00:00'
+frozen_by: t3 dataset agent (author approval of a new confirmatory split, 2026-10-26)
+rationale: 'results/stats_v3/REPORT.md: the held-out split t2 has only 3 independent trajectories (aisles / hall / dock),
+  i.e. 6 sequences per level group, too few for confirmatory claims (sign-flip p cannot go below 0.031; between-sequence variance
+  share 0.3-0.9). t3 adds new independent trajectories on several Isaac Sim warehouse environments, with the unit of inference
+  = trajectory, a fixed hierarchical (gatekeeping) primary family and frozen methods.'
+dataset:
+  sequence_name: <traj id>_t3_L<level>, e.g. fw01_t3_L3
+  generator: src/savior/savior_datasets/warehouse/scenes/procedural.py (GEN_VERSION t3-gen-1); render with isaac/render_sequence.py
+    --scene procedural:<traj id>; tools/render_t3.sh (raw + --seg-right bag + GT)
+  independent_trajectories: 24
+  per_environment: 6
+  environments:
+    fw:
+      usd: Isaac/Environments/Simple_Warehouse/full_warehouse.usd
+      used_in_t1_t2: true
+      note: the south hall (30 x 29 m, empty in the asset); new seeded lane-grid layouts (t1/t2 used hand-made layouts)
+    sw:
+      usd: Isaac/Environments/Simple_Warehouse/warehouse.usd
+      used_in_t1_t2: false
+      note: 20 x 30 m shell with one wall rack row; seeded lane-grid layouts
+    ms:
+      usd: Isaac/Environments/Simple_Warehouse/warehouse_multiple_shelves.usd
+      used_in_t1_t2: false
+      note: three 17 m rack rows with boxes / KLT bins (labelled rack / box); the two pallet bins deactivated; loop through
+        both aisles, pallet rows along the rack faces
+    wx:
+      usd: Isaac/Environments/warehouse_20x20_envi/warehouse_20x20_envi.usd
+      used_in_t1_t2: false
+      note: different asset family (white / blue hall, blue wall racks, tables); its central clutter deactivated, seeded layout
+        of Simple_Warehouse props
+  levels:
+  - 0
+  - 1
+  - 2
+  - 3
+  nesting: an actor of tier k is present at every level >= k (generated L3 -> L2 -> L1; collision checked jointly)
+  choreography:
+    L0: static layout only (pallet stacks, KLT pallets, pallet piles, dollies, rails, parked driverless forklifts)
+    L1: walking people (standing at stacks in view of the hover, one moving DURING the hover, one starting at take-off, head-on,
+      walking ahead, crossing at intersections, one across the final hover)
+    L2: + forklifts with seated drivers and loads (crossing at take-off / intersections, two leaders 5.5-8 m ahead with late
+      onset that turn off, head-on turning off, overtaking, slow parallel) and people pushing loaded carts
+    L3: + co-moving forklift(s) 3-5.5 m ahead (parked ahead during the hover, starts after take-off; a second one turns in
+      later; the last stops in front of the final hover), one alongside, raised loads, two loaded carts ahead
+  camera: quadrotor differential flatness (wh.trajectory.BodyTrajectory, as t1/t2), random tour on the lane graph, 80-92 m,
+    legs 0.70-1.30 m/s, heights 1.0-1.8 m plus one 2.2-2.4 m leg, look-around 12-14 deg, 3 s hover + 0.3 m take-off climb,
+    2 s end hover, yaw rate <= 100 deg/s
+  duration_s:
+    accepted_range:
+    - 92.0
+    - 112.0
+    nominal: ~100
+  frame_rate_hz: 20
+  imu_rate_hz: 200
+  rig: src/savior/savior_datasets/warehouse/configs/rig_zed2i_4mm.yaml (ZED 2i 4 mm, 672x376, fx 470, baseline 0.12 m)
+  imu_noise:
+    gyroscope_noise_density: 0.000244
+    gyroscope_random_walk: 2.0e-05
+    accelerometer_noise_density: 0.0016
+    accelerometer_random_walk: 0.0003
+    gyro_bias_init_sigma: 0.003
+    accel_bias_init_sigma: 0.03
+    seed: the trajectory seed (identical IMU noise at all levels of a trajectory)
+  render: RTX RaytracedLighting, 4 subframes, no motion blur / auto exposure, depth0, seg0 + seg1
+  storage: raw + bags on the HDD archive (/home/hdd/sasa/archive/savior/workspace/data/warehouse/t3), symlinked from data/warehouse/raw/<seq>
+    and data/warehouse/ros2_stereoseg/<seq>; GT data/warehouse/gt/<seq>.txt
+  coverage_targets: approximate t1/t2 levels (moving coverage mean L1 ~1 %, L2 ~4-6 %, L3 ~15-25 %), calibrated ONLY on generator
+    development seeds (dev-<site>-90xx; never t3 seeds); t3 seeds are rendered as generated
+  coverage_calibration_dev_seeds: 'final generator, low-res previews (every 5th frame, 0.25 scale) of dev-fw-9001/9011, dev-sw-9002,
+    dev-ms-9013, dev-wx-9004: moving coverage mean L1 0.3-1.2 % (mean ~0.7), L2 2.2-4.6 % (mean ~2.6), L3 16-23 % (mean ~20).
+    KNOWN DEVIATION (disclosed before freezing): L1 and especially L2 are below t1/t2 (L1 ~1.2 %, L2 ~5.6 %) in the three
+    smaller environments, where the joint collision check leaves less room; L3 matches (t1/t2 ~19-21 %). The levels stay ordered
+    L0 < L1 < L2 < L3. The high-dyn group L2+L3 is dominated by L3 as in t1/t2.'
+  pre_render_seed_rule: 'a frozen seed is replaced by the next spare seed of its site (seed formula 31000 + 1000 i_site +
+    101 k, spares k = 7..12) only if the numpy generator fails for it or its choreography is structurally incomplete (no L3
+    co-mover, < 3 moving L2 vehicles or < 6 moving L1 people). Applied by make_design.py before freezing; no rendering, no
+    VIO. After freezing: --plan clearance report per trajectory; a camera clearance < 0.25 m is reported, not tuned.'
+  trajectories:
+  - id: fw01
+    site: fw
+    seed: 31202
+  - id: fw02
+    site: fw
+    seed: 31303
+  - id: fw03
+    site: fw
+    seed: 31404
+  - id: fw04
+    site: fw
+    seed: 31505
+  - id: fw05
+    site: fw
+    seed: 31606
+  - id: fw06
+    site: fw
+    seed: 31707
+  - id: sw01
+    site: sw
+    seed: 32101
+  - id: sw02
+    site: sw
+    seed: 32202
+  - id: sw03
+    site: sw
+    seed: 32303
+  - id: sw04
+    site: sw
+    seed: 32404
+  - id: sw05
+    site: sw
+    seed: 32505
+  - id: sw06
+    site: sw
+    seed: 32707
+  - id: ms01
+    site: ms
+    seed: 33101
+  - id: ms02
+    site: ms
+    seed: 33505
+  - id: ms03
+    site: ms
+    seed: 33606
+  - id: ms04
+    site: ms
+    seed: 33707
+  - id: ms05
+    site: ms
+    seed: 33808
+  - id: ms06
+    site: ms
+    seed: 33909
+  - id: wx01
+    site: wx
+    seed: 34101
+  - id: wx02
+    site: wx
+    seed: 34202
+  - id: wx03
+    site: wx
+    seed: 34303
+  - id: wx04
+    site: wx
+    seed: 34404
+  - id: wx05
+    site: wx
+    seed: 34505
+  - id: wx06
+    site: wx
+    seed: 34606
+  seed_replacements_pre_render:
+  - site: fw
+    seed: 31101
+    reason:
+      co_movers: 1
+      l2_moving_vehicles: 7
+      l1_moving_people: 5
+      name: chkfw31101
+      site: fw
+      seed: 31101
+      env: Isaac/Environments/Simple_Warehouse/full_warehouse.usd
+      lane_w: 4.89
+      x_lanes:
+      - -22.15
+      - -7.11
+      - 1.06
+      y_lanes:
+      - -18.86
+      - -9.68
+      - 3.85
+      blocks: 16
+      props: 922
+      rails: 17
+      parked: 2
+      path_m: 88.4
+      duration_s: 103.26
+      actors:
+        1: 7
+        2: 9
+        3: 1
+  - site: sw
+    seed: 32606
+    reason:
+      error: RuntimeError('no camera tour for seed 32606')
+  - site: ms
+    seed: 33202
+    reason:
+      co_movers: 1
+      l2_moving_vehicles: 4
+      l1_moving_people: 5
+      name: chkms33202
+      site: ms
+      seed: 33202
+      env: Isaac/Environments/Simple_Warehouse/warehouse_multiple_shelves.usd
+      lane_w: 4.65
+      x_lanes:
+      - -4.62
+      - 4.78
+      y_lanes:
+      - -8.47
+      - 14.81
+      blocks: 3
+      props: 118
+      rails: 0
+      parked: 2
+      path_m: 81.4
+      duration_s: 104.55
+      actors:
+        1: 9
+        2: 7
+        3: 1
+  - site: ms
+    seed: 33303
+    reason:
+      co_movers: 1
+      l2_moving_vehicles: 5
+      l1_moving_people: 5
+      name: chkms33303
+      site: ms
+      seed: 33303
+      env: Isaac/Environments/Simple_Warehouse/warehouse_multiple_shelves.usd
+      lane_w: 4.57
+      x_lanes:
+      - -4.71
+      - 4.65
+      y_lanes:
+      - -7.8
+      - 14.94
+      blocks: 3
+      props: 236
+      rails: 3
+      parked: 2
+      path_m: 80.0
+      duration_s: 111.18
+      actors:
+        1: 6
+        2: 7
+        3: 1
+  - site: ms
+    seed: 33404
+    reason:
+      co_movers: 1
+      l2_moving_vehicles: 6
+      l1_moving_people: 5
+      name: chkms33404
+      site: ms
+      seed: 33404
+      env: Isaac/Environments/Simple_Warehouse/warehouse_multiple_shelves.usd
+      lane_w: 4.53
+      x_lanes:
+      - -4.97
+      - 4.91
+      y_lanes:
+      - -7.97
+      - 14.95
+      blocks: 2
+      props: 134
+      rails: 0
+      parked: 2
+      path_m: 90.7
+      duration_s: 108.82
+      actors:
+        1: 6
+        2: 9
+        3: 1
+  structural_check:
+    fw:31101:
+      ok: false
+      co_movers: 1
+      l2_moving_vehicles: 7
+      l1_moving_people: 5
+      lane_w: 4.89
+      props: 922
+      parked: 2
+      path_m: 88.4
+      duration_s: 103.26
+    fw:31202:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 6
+      l1_moving_people: 9
+      lane_w: 4.69
+      props: 751
+      parked: 2
+      path_m: 83.2
+      duration_s: 95.13
+    fw:31303:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 3
+      l1_moving_people: 14
+      lane_w: 4.85
+      props: 425
+      parked: 2
+      path_m: 83.9
+      duration_s: 100.33
+    fw:31404:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 7
+      l1_moving_people: 9
+      lane_w: 4.63
+      props: 922
+      parked: 3
+      path_m: 81.1
+      duration_s: 98.32
+    fw:31505:
+      ok: true
+      co_movers: 2
+      l2_moving_vehicles: 7
+      l1_moving_people: 9
+      lane_w: 4.91
+      props: 572
+      parked: 3
+      path_m: 80.9
+      duration_s: 96.2
+    fw:31606:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 6
+      l1_moving_people: 14
+      lane_w: 5.04
+      props: 859
+      parked: 2
+      path_m: 82.1
+      duration_s: 100.52
+    fw:31707:
+      ok: true
+      co_movers: 2
+      l2_moving_vehicles: 7
+      l1_moving_people: 14
+      lane_w: 5.12
+      props: 280
+      parked: 3
+      path_m: 88.7
+      duration_s: 95.31
+    sw:32101:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 4
+      l1_moving_people: 10
+      lane_w: 4.79
+      props: 401
+      parked: 2
+      path_m: 82.5
+      duration_s: 106.88
+    sw:32202:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 4
+      l1_moving_people: 12
+      lane_w: 4.64
+      props: 425
+      parked: 2
+      path_m: 80.7
+      duration_s: 109.12
+    sw:32303:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 4
+      l1_moving_people: 14
+      lane_w: 4.51
+      props: 420
+      parked: 2
+      path_m: 89.7
+      duration_s: 111.69
+    sw:32404:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 3
+      l1_moving_people: 13
+      lane_w: 4.78
+      props: 327
+      parked: 2
+      path_m: 88.7
+      duration_s: 109.82
+    sw:32505:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 4
+      l1_moving_people: 11
+      lane_w: 4.52
+      props: 452
+      parked: 2
+      path_m: 80.1
+      duration_s: 105.69
+    sw:32606:
+      ok: false
+    sw:32707:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 6
+      l1_moving_people: 16
+      lane_w: 4.45
+      props: 313
+      parked: 2
+      path_m: 83.7
+      duration_s: 108.97
+    ms:33101:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 3
+      l1_moving_people: 14
+      lane_w: 4.66
+      props: 213
+      parked: 1
+      path_m: 90.3
+      duration_s: 110.51
+    ms:33202:
+      ok: false
+      co_movers: 1
+      l2_moving_vehicles: 4
+      l1_moving_people: 5
+      lane_w: 4.65
+      props: 118
+      parked: 2
+      path_m: 81.4
+      duration_s: 104.55
+    ms:33303:
+      ok: false
+      co_movers: 1
+      l2_moving_vehicles: 5
+      l1_moving_people: 5
+      lane_w: 4.57
+      props: 236
+      parked: 2
+      path_m: 80.0
+      duration_s: 111.18
+    ms:33404:
+      ok: false
+      co_movers: 1
+      l2_moving_vehicles: 6
+      l1_moving_people: 5
+      lane_w: 4.53
+      props: 134
+      parked: 2
+      path_m: 90.7
+      duration_s: 108.82
+    ms:33505:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 4
+      l1_moving_people: 6
+      lane_w: 4.58
+      props: 19
+      parked: 2
+      path_m: 80.0
+      duration_s: 111.52
+    ms:33606:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 3
+      l1_moving_people: 6
+      lane_w: 4.66
+      props: 16
+      parked: 2
+      path_m: 79.9
+      duration_s: 108.06
+    ms:33707:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 5
+      l1_moving_people: 6
+      lane_w: 4.53
+      props: 72
+      parked: 2
+      path_m: 80.1
+      duration_s: 104.72
+    ms:33808:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 4
+      l1_moving_people: 9
+      lane_w: 4.6
+      props: 226
+      parked: 2
+      path_m: 87.7
+      duration_s: 107.25
+    ms:33909:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 3
+      l1_moving_people: 6
+      lane_w: 4.54
+      props: 225
+      parked: 2
+      path_m: 87.6
+      duration_s: 110.66
+    wx:34101:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 3
+      l1_moving_people: 11
+      lane_w: 4.31
+      props: 56
+      parked: 1
+      path_m: 84.8
+      duration_s: 101.96
+    wx:34202:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 3
+      l1_moving_people: 9
+      lane_w: 4.2
+      props: 60
+      parked: 1
+      path_m: 79.8
+      duration_s: 101.81
+    wx:34303:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 4
+      l1_moving_people: 17
+      lane_w: 4.34
+      props: 41
+      parked: 1
+      path_m: 80.1
+      duration_s: 104.06
+    wx:34404:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 5
+      l1_moving_people: 8
+      lane_w: 4.4
+      props: 104
+      parked: 1
+      path_m: 89.4
+      duration_s: 106.79
+    wx:34505:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 6
+      l1_moving_people: 6
+      lane_w: 4.46
+      props: 50
+      parked: 1
+      path_m: 82.8
+      duration_s: 105.36
+    wx:34606:
+      ok: true
+      co_movers: 1
+      l2_moving_vehicles: 3
+      l1_moving_people: 12
+      lane_w: 4.24
+      props: 76
+      parked: 1
+      path_m: 85.6
+      duration_s: 105.53
+exclusion_rule:
+  written: before any t3 rendering or sanity run; applied mechanically by results/t3_confirmatory/scripts/t3_checks.py
+  unit: trajectory (all four levels are excluded together, to keep the nested design balanced)
+  R1_data_integrity: 'exclude a trajectory if, after at most one deterministic re-render of the same frozen specification,
+    any of its sequences has: no render / no bag / no GT; cam0, cam1 or frames.csv counts that differ from meta.json; imu_noisy.csv
+    md5 that differs across its levels; IMU check (tools/check_imu.py on L0) gyro_clean vs GT RMS > 1e-4 rad/s, acc_clean
+    vs GT RMS > 1e-4 m/s^2, 10 s dead-reckoning position error > 5 mm, or estimated white-noise density off by > 5 %; geometry
+    check (tools/check_geometry.py on L3) best stereo scale != 1.00, best disparity offset != 0 px, or the true pose not best
+    in the temporal test.'
+  R2_initialisation: 'sanity runs (OpenVINS back-end v2 and oracle_moving_ext only, offsets 0.0 / 0.3 / 0.6 s, on L0 and L3):
+    exclude a trajectory if OpenVINS at L0 fails (no estimate, status != ok, or posyaw ATE > 2 m) on >= 2 of the 3 offsets.
+    L0 has no movers, so an L0 failure means the trajectory itself (motion / texture / initialisation) is broken; L3 failures
+    are treatment effects and NEVER exclude (the L3 sanity results are reported only).'
+  tolerances:
+    gyro_vs_gt_rms_max: 0.0001
+    acc_vs_gt_rms_max: 0.0001
+    dr_pos_err_max_m: 0.005
+    noise_density_rel_tol: 0.05
+    sanity_L0_min_failed_offsets: 2
+  replacement: excluded trajectories are NOT replaced; the analysis uses the remaining ones and reports the exclusions
+analysis_plan:
+  unit: trajectory
+  model: 'paired log ATE ratio per run, log(min(ATE_A, cap) / min(ATE_B, cap)), same start offset; mean over the offsets of
+    a sequence; REML random-intercept model per trajectory over its sequences (the stats_v3 code, stats3_core.reml_ri), t
+    test on the intercept with df = n_trajectories - 1; estimate exp(mu) - 1 with 95 % t interval. Sensitivity: one-stage
+    trajectory bootstrap, exact sign-flip test on the trajectory means, caps 2 / 5 / 50 m and failures excluded.'
+  metric: ATE posyaw RMSE (savior-eval multi, full sequence), failure = ATE > 2 m or status != ok (counted as inf)
+  failure_threshold_m: 2.0
+  cap_m: 10.0
+  cap_sensitivity_m:
+  - 2.0
+  - 5.0
+  - 50.0
+  - excl
+  groups:
+    static:
+    - L0
+    low:
+    - L0
+    - L1
+    high:
+    - L2
+    - L3
+  offsets_s:
+  - 0.0
+  - 0.4
+  - 0.8
+  - 1.2
+  - 1.6
+  offsets_justification: 'start offsets are within-sequence repeats; with the trajectory as the unit their variance enters
+    a trajectory mean as sigma2 / (m k), which the t2 fits show is small against the between-sequence variance (results/t3_confirmatory/
+    tables/power.json: V_B 0.609 with 5 offsets vs 0.540 with 10 for P2), so 5 offsets keep > 90 % of the information at half
+    the runs; the budget goes into 24 independent trajectories instead.'
+  rate: 0.5
+  equivalence_margin_pct:
+  - -10.0
+  - 10.0
+  primary:
+  - id: P1
+    type: superiority
+    a: oracle_moving_ext
+    b: oracle_class_ext
+    group: high
+    text: O-Dyn+B beats O-Cls+B at high-dyn (L2+L3), OpenVINS-v2
+  - id: P2
+    type: superiority
+    a: sens_fix1
+    b: yolo_naive
+    group: high
+    text: SAVIOR beats Y-Cls at high-dyn, OpenVINS-v2
+  - id: P3
+    type: superiority
+    a: sens_fix1
+    b: yolo_naive
+    group: low
+    text: SAVIOR beats Y-Cls at low-dyn (L0+L1), OpenVINS-v2
+  - id: P4
+    type: superiority
+    a: sens_fix1
+    b: openvins
+    group: high
+    text: SAVIOR beats OpenVINS at high-dyn, OpenVINS-v2
+  - id: P5
+    type: equivalence
+    a: sens_fix1
+    b: openvins
+    group: static
+    text: 'SAVIOR has no static cost vs OpenVINS at L0: 90 % CI of the ATE ratio inside [0.90, 1.10]'
+  error_control: 'fixed-sequence (hierarchical gatekeeping) P1 -> P2 -> P3 -> P4 -> P5, each at two-sided alpha 0.05 (P5:
+    TOST at 0.05); a hypothesis is tested only if all earlier ones were rejected in the stated direction; the first non-rejection
+    stops the confirmatory family (later ones are reported as exploratory). Controls the family-wise error rate at 0.05.'
+  secondary:
+    error_control: Holm over this family (cap 10 m); exploratory
+    comparisons:
+    - id: S1
+      a: vins_savior
+      b: vins_ycls
+      group: high
+    - id: S2
+      a: vins_savior
+      b: vins_ycls
+      group: low
+    - id: S3
+      a: vins_savior
+      b: vins_fusion
+      group: high
+    - id: S4
+      a: vins_odyn
+      b: vins_ocls
+      group: high
+    - id: S5
+      a: vins_ycls
+      b: vins_fusion
+      group: static
+    - id: S6
+      a: vins_savior
+      b: vins_fusion
+      group: static
+    - id: S7
+      a: sens_fix1
+      b: dynavins
+      group: high
+    - id: S8
+      a: sens_fix1
+      b: dynavins
+      group: low
+    - id: S9
+      a: savior_edge
+      b: sens_fix1
+      group: high
+    - id: S10
+      a: savior_edge
+      b: sens_fix1
+      group: low
+    - id: S11
+      a: yolo_naive
+      b: openvins
+      group: static
+    - id: S12
+      a: oracle_moving_ext
+      b: openvins
+      group: high
+    - id: S13
+      a: sens_fix1
+      b: openvins
+      group: low
+    - id: S14
+      a: dynavins
+      b: vins_fusion
+      group: high
+    other: 'failure rates per method x group (trajectory-cluster bootstrap CIs, paired sign-flip on trajectory failure differences);
+      non-failed accuracy (cap ''excl''); per-environment breakdown (fw / sw / ms / wx: the new environments are an honest
+      generalisation test of the frozen segmenter); controls savior_none == openvins and vins_zero == vins_fusion reported.'
+  methods:
+    openvins_v2_family:
+      runner: results/t3_confirmatory/scripts/run_t3_ov2.sh (results/backend_v2/scripts/run_heldout_v2.sh pattern; settings
+        from the unchanged frozen resolver bv2_args.py, back-end v2)
+      list:
+      - openvins
+      - savior_none
+      - yolo_naive
+      - sens_fix1
+      - oracle_moving_ext
+      - oracle_class_ext
+      - savior_edge
+    vins_fusion_family:
+      runner: run_t3.sh step vins (frozen src/savior/sota run_method.sh + export_masks.py via export_masks_t3.py; the results/vins_savior/scripts/heldout
+        protocol; rate 0.5, deterministic, P9 gate)
+      list:
+      - vins_fusion
+      - vins_zero
+      - vins_savior
+      - vins_ycls
+      - vins_odyn
+      - vins_ocls
+    dynavins:
+      list:
+      - dynavins
+      note: upstream DynaVINS (savior-sota:noetic)
+      ? same offsets; DynaVINS+masks (results/dynavins_masks) was not finished / frozen at design time and is NOT part of
+        this plan
+      : null
+  power:
+    method: results/t3_confirmatory/scripts/power_t3.py (t2 variance components from results/stats_v3/tables/stats3_all.json)
+    decision: '24 trajectories (6 per environment): power >= 0.8 for P1-P4 at the t2 effect sizes under the nested variance
+      model A (P4 0.82, the weakest), and P(passing P1..P4 in sequence) 0.79; 12 trajectories would give 0.49 (P4) and 0.34.
+      P5 is powered (0.92) only if the true static ratio is ~1.00; at the t2 estimate (+8 %) it is expected to fail.'
+    table:
+      P1:
+        power_A:
+        - 0.872
+        - 0.98
+        - 0.998
+        - 1.0
+        - 1.0
+        - 1.0
+        power_B:
+        - 0.596
+        - 0.814
+        - 0.922
+        - 0.97
+        - 0.989
+        - 0.999
+        power_A_half_effect:
+        - 0.347
+        - 0.525
+        - 0.668
+        - 0.775
+        - 0.851
+        - 0.939
+      P2:
+        power_A:
+        - 0.488
+        - 0.704
+        - 0.84
+        - 0.918
+        - 0.96
+        - 0.991
+        power_B:
+        - 0.28
+        - 0.427
+        - 0.556
+        - 0.664
+        - 0.75
+        - 0.868
+        power_A_half_effect:
+        - 0.163
+        - 0.24
+        - 0.316
+        - 0.39
+        - 0.459
+        - 0.582
+      P3:
+        power_A:
+        - 0.958
+        - 0.998
+        - 1.0
+        - 1.0
+        - 1.0
+        - 1.0
+        power_B:
+        - 0.75
+        - 0.927
+        - 0.982
+        - 0.996
+        - 0.999
+        - 1.0
+        power_A_half_effect:
+        - 0.462
+        - 0.675
+        - 0.815
+        - 0.9
+        - 0.948
+        - 0.987
+      P4:
+        power_A:
+        - 0.322
+        - 0.49
+        - 0.629
+        - 0.738
+        - 0.819
+        - 0.918
+        power_B:
+        - 0.241
+        - 0.368
+        - 0.484
+        - 0.585
+        - 0.672
+        - 0.802
+        power_A_half_effect:
+        - 0.117
+        - 0.163
+        - 0.209
+        - 0.255
+        - 0.301
+        - 0.389
+      P5:
+        tost_by_true_ratio:
+          '1.00':
+          - 0.23
+          - 0.494
+          - 0.711
+          - 0.838
+          - 0.916
+          - 0.977
+          '1.03':
+          - 0.187
+          - 0.38
+          - 0.527
+          - 0.635
+          - 0.713
+          - 0.823
+          '1.05':
+          - 0.139
+          - 0.258
+          - 0.343
+          - 0.415
+          - 0.467
+          - 0.566
+          '1.08':
+          - 0.075
+          - 0.113
+          - 0.137
+          - 0.154
+          - 0.167
+          - 0.195
+    n_grid:
+    - 8
+    - 12
+    - 16
+    - 20
+    - 24
+    - 32
+    gate_P1_to_P4_A:
+    - 0.131
+    - 0.337
+    - 0.527
+    - 0.677
+    - 0.786
+    - 0.91
+no_tuning:
+  rule: 'nothing is tuned, selected or debugged on t3: the frozen warehouse YOLO26 engine (models/warehouse/ yolo26s-seg-warehouse.engine),
+    results/p7/final_config.yaml + addendum, back-end v2 (results/backend_v2/ backend_config.yaml), the VINS freeze (results/vins_savior/FREEZE.md5)
+    are used as they are. The segmenter is NOT retrained on the new environments (generalisation test).'
+  allowed_before_freeze: generator development on dev seeds (dev-<site>-900x), numpy plan checks, low-res coverage previews
+    of dev seeds
+code_md5:
+  scenes/procedural.py: 48881717627ac0045e50a812d1ff6e2d
+  scenes/full_warehouse.py: ef920aeebf79deb22c580b9a268c14d0
+  isaac/render_sequence.py: e3152b1bf8f9c3b7f80bd8c0e6d89678
+  isaac/stage_builder.py: 7cd7c6b176543bfa8e8d6774cb86535e
+  isaac/common.py: 28ab567fc84079f3848cdb421fe8c0d9
+  wh/scenario.py: 0c7cf02c877cfcda8ade083d2df3244e
+  wh/trajectory.py: b0ed3120338324ad31a3aad23c4d1192
+  wh/rig.py: 1521efc893f58015038b57107cc79aa4
+  wh/classes.py: 23e2819713a04e45dfcfd7c7bfb5d9ed
+  wh/se3.py: 694cde1352f88e8ca21820042acbecf6
+  configs/rig_zed2i_4mm.yaml: c279844d76f7a4cfcdca1399b5e822a9
+  tools/to_ros2.py: 2b9d9b6efbe1add670f28826ef6a81c7
+  tools/render_t3.sh: ffa9f13cea6909e95927ecce227fa239
+  tools/check_imu.py: 653f10eb8937058cff48455434831a38
+  tools/check_geometry.py: 5c375bb23e8afe32ff71b546a1b659d9
+  tools/coverage_report.py: 7bd6b336f927c39de4cea0917a3389b1
+frozen_inputs_md5:
+  results/backend_v2/backend_config.yaml: 10c2144bc45310d3eab3d87f7b9b638a
+  results/backend_v2/config/warehouse/estimator_config.yaml: 2abf884b5d4ea0ec1074c92e4fbd0952
+  results/p7/final_config.yaml: 6fea24e550b7198659d8de35d19b3c67
+  results/p7/final_config_addendum.yaml: f07c9c30f29a775c243d2a6ae00b9a45
+  results/vins_savior/FREEZE.md5: a3e0fb85c173b22aec824d755e7048e0
+  results/stats_v3/scripts/stats3_core.py: 187ad659e27e7a0c452d5c7edc9acd9f
+  results/t3_confirmatory/scripts/power_t3.py: fe928aeab8832590acf41bcc4378f0d7
+  results/t3_confirmatory/scripts/stats_t3.py: 5844316e98f3fcfac2024538fe578a08
+  results/t3_confirmatory/scripts/t3_checks.py: 6a4e4d6f46021823facf9fbe59ae2fa6
+  results/t3_confirmatory/scripts/run_t3.sh: 4ed44ae8d333f29b9ae0938f4da5a806
+  results/t3_confirmatory/scripts/run_t3_ov2.sh: ae8535958e8d6b9c93bba64a36208489
+  results/t3_confirmatory/scripts/export_masks_t3.py: 0b106f6deb2197be7abcc674201e1338
+  results/t3_confirmatory/scripts/sanity_t3.sh: 536174ddd7aba2cacb9fba455b7cb7cc
+  models/warehouse/yolo26s-seg-warehouse.engine: 393c07cf281f26115f049fedf3ad1336

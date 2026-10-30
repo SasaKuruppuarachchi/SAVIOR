@@ -1,0 +1,6 @@
+city_day_low oracle_all_vehicles 4.1,4.3 1
+city_day_low oracle_dynamic 4.1,4.3 1
+city_day_low yolo_p4_pot 4.1 1
+city_day_mid yolo_p4_dyn+fast15 4.1 1
+city_day_none oracle_all_vehicles 4.1,4.3 1
+city_day_none oracle_dynamic 4.1,4.3 1

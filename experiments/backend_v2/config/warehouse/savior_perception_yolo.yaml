@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# savior_node overrides for SAVIOR-Warehouse with the fine-tuned YOLO26-seg (8 warehouse classes, trained only on
+# Isaac Sim renders: savior_datasets/warehouse/train/, results/yolo_warehouse/). Use with the warehouse role table:
+#   dynamic: person | potential: forklift, box, pallet, trolley | static: rack, guard_rail, window
+# (roles/warehouse.yaml; class names = the model's names exactly). With segmenter.filter_classes the static
+# classes are dropped after the head, so only person / forklift / box / pallet / trolley reach the pipeline.
+#
+#   SHARE=$(ros2 pkg prefix savior_bringup)/share/savior_bringup
+#   ros2 launch savior_bringup savior.launch.py config:=warehouse backend:=yolo \
+#       perception_params:=$SHARE/config/warehouse/savior_perception_yolo.yaml \
+#       roles_file:=$SHARE/config/roles/warehouse.yaml \
+#       model:=$WS/models/warehouse/yolo26s-seg-warehouse.engine bag:=$WS/data/warehouse/ros2/hall_t1_L2 output:=...
+# perception_params replaces the default.yaml + config/warehouse/savior_perception.yaml pair of the launch; every
+# key not set here keeps its built-in default (savior_perception/params.py == config/default.yaml).
+# backend:=yolo keeps the launch from also playing the oracle /cam0/segmentation topic.
+# Offline: savior_datasets/warehouse/train/perception_offline_warehouse.py --dataset warehouse --params <this file>.
+savior_node:
+  ros__parameters:
+    left_topic: /cam0/image_raw      # mono8: YOLO sees BT.601 luma x3 (trained with 50 % grayscale for this)
+    right_topic: /cam1/image_raw
+    imu_topic: /imu0                 # only used with motion.enable (P4)
+    cam_left: cam0
+    cam_right: cam1
+    seg_topic: ""
+    segmenter:
+      backend: yolo
+      # TensorRT FP16, static 384x672 input (the engine's export shape overrides imgsz). Engines are GPU /
+      # TensorRT specific: on the Jetson build one from yolo26s-seg-warehouse.onnx (opset 17). The .pt works anywhere.
+      model: /home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      conf: 0.25                     # deployed operating point of results/yolo_warehouse (recall vs size tables)
+      iou: 0.7
+      imgsz: 672                     # .pt: 672 long side = native width, scale 1.0 (letterbox 672x384)
+      retina_masks: true
+      filter_classes: true
+    depth:
+      downsample: 2                  # b = 0.12 m, f = 470.0 px (same as savior_perception.yaml)

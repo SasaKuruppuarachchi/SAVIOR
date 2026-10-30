@@ -1,0 +1,8 @@
+2026-10-28 coordinator: disclosed execution bug fix (no method, setting, hypothesis or analysis change), made blinded, before any
+t3 VINS-family run had completed.
+Bug in the frozen run_t3.sh 'vins' step: vins_seq reads its method table from a heredoc inside a while-read loop; drun_sota.sh starts
+containers with 'docker run -i', so each container inherited the rest of the heredoc on stdin. rosbag play treats stdin keys as
+controls (space = pause), so every VINS run paused after ~3 frames, and the remaining table lines were consumed (methods skipped).
+Fix: scripts/t3_drive_a07.sh (md5 in DRIVER_A07.md5), with vins_seq_fixed(), a verbatim copy of vins_seq plus stdin </dev/null for
+every container and a per-sequence .done marker. run_t3.sh is unchanged; its 'check' and 'vins_eval' steps are still used. The hung
+partial runs are re-run from scratch. DynaVINS+masks runs (stdin /dev/null) were unaffected.

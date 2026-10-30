@@ -1,0 +1,37 @@
+# SAVIOR real-world study (Monado MSD Valve Index) - FREEZE 2026-10-26T17:20:12+02:00, written BEFORE any evaluation run.
+# Check: cd /home/sasa/workspace/savior_ws && grep -v '^#' results/real_world/FREEZE.md5 | md5sum -c --quiet
+0142d94323f13a32f8a76f14380a7dcd  results/real_world/PROTOCOL.yaml
+3310f0ed36b3151a70c1ddd99ec2c7f5  results/real_world/scripts/rw_args.py
+c22b90db09add2947caf6faa4c8102b8  results/real_world/scripts/run_rw.sh
+1d166082d7af9c3ec3a26f27e63b3428  results/real_world/scripts/prep_seq.sh
+d1b37096faf6b128df04cf3987ba5ac7  results/real_world/scripts/rw_refmasks.py
+1042925648b024c8d098ed63f70afe23  results/real_world/scripts/rw_share.py
+759deb414d00195533b870f8e171f080  results/real_world/scripts/make_sota_configs.py
+f81fc52a1ea3bee78b2aa4cd0ecd1c87  src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+ebb08fdd6e196b4856b3847b5c5bb9dc  src/savior/savior_bringup/config/monado_index/kalibr_imucam_chain.yaml
+a2490d11ba901d65390982373cec75df  src/savior/savior_bringup/config/monado_index/kalibr_imu_chain.yaml
+a3dd66cf1ee2b933e160384ef0578ab0  src/savior/savior_bringup/config/monado_index/savior_perception.yaml
+cc4b8a5989c3a7929175af73f1ef5c5d  src/savior/savior_bringup/tools/monado_prepare.py
+3c03b1420d2d75d61548338b85e445c9  src/savior/sota/config/monado/vins_fusion/calibration.yaml
+2b577df44c84a759a5fba3ac807fbced  src/savior/sota/config/monado/vins_fusion/cam0_kb.yaml
+9d214d97bcdad6653b46239644303898  src/savior/sota/config/monado/vins_fusion/cam1_kb.yaml
+1b8eb963fd3209a785579fafab72bc30  src/savior/sota/config/monado/dynavins/calibration_stereo.yaml
+2b577df44c84a759a5fba3ac807fbced  src/savior/sota/config/monado/dynavins/cam0_kb.yaml
+9d214d97bcdad6653b46239644303898  src/savior/sota/config/monado/dynavins/cam1_kb.yaml
+f32ac8c3bc244646085bc4605a71ef2e  data/monado/gt/MIO13.txt
+a5b45706c72771e71b39916955c0d9b4  data/monado/gt/MIO15.txt
+d8b6f9b2fc5e854ae43e688df0e5e294  data/monado/gt/MIO16.txt
+e0f1074848a5041ffdf8b6935a0e5868  data/monado/gt/MIO07.txt
+8103919488c4ea0f75f615f5b8702ba9  data/monado/raw/calibration.json
+e045346c04e2f54bd50375d361759da1  data/monado/ros2/MIO13/metadata.yaml
+73b93fe1c2d0a8f5756eb2db5160d1cf  data/monado/ros2/MIO15/metadata.yaml
+11fe1c9e8e8dca143787f4ea0bf51d31  data/monado/ros2/MIO16/metadata.yaml
+1baa6b07cd27b5571a0dba26f0122c06  data/monado/ros2/MIO07/metadata.yaml
+84527d3962ae7b85d34fd7bcb74cbc58  models/yolo26s-seg.engine
+2da1da97683497fd796f4a980520c123  models/yolo26x-seg.pt
+29f6f12d29f25f10f923c99e9c09170c  src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+50a74846f603593508fe6b5802942643  src/savior/savior_bringup/config/roles/viode_vehicles_dynamic.yaml
+6fea24e550b7198659d8de35d19b3c67  results/p7/final_config.yaml
+f07c9c30f29a775c243d2a6ae00b9a45  results/p7/final_config_addendum.yaml
+edad4f259c9cac88e2334a16ec99a2f4  results/backend_v2/config/viode/estimator_config.yaml
+d599edbe672ddcb52ddb6d81224049df  src/savior/savior_bringup/config/viode/savior_perception.yaml

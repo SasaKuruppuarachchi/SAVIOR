@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Class-role table for the Isaac Sim warehouse (custom-trained segmenter, paper Table 4.1) — IMPLEMENTATION_PLAN §3.4.
+# role ∈ {static, potential, dynamic, ignore}; class names as emitted by the warehouse segmenter.
+dynamic:   [person]
+potential: [forklift, box, pallet, trolley]
+static:    [rack, guard_rail, window]
+default: ignore            # classes not listed
+half_extent_m:
+  forklift: 1.5
+  pallet: 0.6
+  trolley: 0.5
+  box: 0.3

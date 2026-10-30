@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# SAVIOR-Warehouse NAIVE class masking (P6): every potentially-dynamic class is masked, moving or not
+# (oracle_class_naive with oracle/warehouse_colormap.yaml, yolo_naive with the fine-tuned YOLO26-seg).
+# Compare roles/warehouse.yaml (selective: person dynamic, the others potential).
+dynamic:   [person, forklift, box, pallet, trolley]
+potential: []
+static:    [rack, guard_rail, window]
+default: ignore

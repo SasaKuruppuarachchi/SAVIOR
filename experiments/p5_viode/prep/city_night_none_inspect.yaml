@@ -1,0 +1,107 @@
+bag: /home/sasa/workspace/savior_ws/data/viode/extracted/city_night/0_none.bag
+duration_s: 61.588468737
+start_s: 1597312872.3512146
+topics:
+  /cam0/image_raw:
+    type: sensor_msgs/msg/Image
+    count: 1237
+    rate_hz: 20.085
+    frame_id: ''
+    height: 480
+    width: 752
+    encoding: rgb8
+    step: 2256
+    stamp_first_s: 1597312872.3956194
+    stamp_last_s: 1597312933.934733
+    dt_median_s: 0.049805312
+    dt_min_s: 0.049055232
+    dt_max_s: 0.050105344
+    n_dup_stamps: 0
+    n_nonmonotonic: 0
+    bag_minus_stamp_median_s: 0.0
+  /cam0/segmentation:
+    type: sensor_msgs/msg/Image
+    count: 1237
+    rate_hz: 20.085
+    frame_id: ''
+    height: 480
+    width: 752
+    encoding: rgb8
+    step: 2256
+    stamp_first_s: 1597312872.3956194
+    stamp_last_s: 1597312933.934733
+    dt_median_s: 0.049805312
+    dt_min_s: 0.049055232
+    dt_max_s: 0.050105344
+    n_dup_stamps: 0
+    n_nonmonotonic: 0
+    bag_minus_stamp_median_s: 0.0
+  /cam1/image_raw:
+    type: sensor_msgs/msg/Image
+    count: 1237
+    rate_hz: 20.085
+    frame_id: ''
+    height: 480
+    width: 752
+    encoding: rgb8
+    step: 2256
+    stamp_first_s: 1597312872.3956194
+    stamp_last_s: 1597312933.934733
+    dt_median_s: 0.049805312
+    dt_min_s: 0.049055232
+    dt_max_s: 0.050105344
+    n_dup_stamps: 0
+    n_nonmonotonic: 0
+    bag_minus_stamp_median_s: 0.0
+  /cam1/segmentation:
+    type: sensor_msgs/msg/Image
+    count: 1237
+    rate_hz: 20.085
+    frame_id: ''
+    height: 480
+    width: 752
+    encoding: rgb8
+    step: 2256
+    stamp_first_s: 1597312872.3956194
+    stamp_last_s: 1597312933.934733
+    dt_median_s: 0.049805312
+    dt_min_s: 0.049055232
+    dt_max_s: 0.050105344
+    n_dup_stamps: 0
+    n_nonmonotonic: 0
+    bag_minus_stamp_median_s: 0.0
+  /imu0:
+    type: sensor_msgs/msg/Imu
+    count: 12371
+    rate_hz: 200.866
+    frame_id: drone
+    stamp_first_s: 1597312872.3512146
+    stamp_last_s: 1597312933.9396834
+    dt_median_s: 0.004950528
+    dt_min_s: 0.004050432
+    dt_max_s: 0.005400576
+    n_dup_stamps: 0
+    n_nonmonotonic: 0
+    bag_minus_stamp_median_s: 0.0
+  /odometry:
+    type: nav_msgs/msg/Odometry
+    count: 12371
+    rate_hz: 200.866
+    frame_id: drone
+    child_frame_id: drone/odom_local_ned
+    stamp_first_s: 1597312872.3512146
+    stamp_last_s: 1597312933.9396834
+    dt_median_s: 0.004950528
+    dt_min_s: 0.004050432
+    dt_max_s: 0.005100544
+    n_dup_stamps: 0
+    n_nonmonotonic: 0
+    bag_minus_stamp_median_s: 0.0
+sync:
+  cam0: 1237
+  cam1: 1237
+  cam0&cam1: 1237
+  cam0&seg0: 1237
+  cam1&seg1: 1237
+  cam0&odom: 1237
+  cam0&imu: 1013

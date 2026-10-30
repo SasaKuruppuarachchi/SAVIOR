@@ -1,0 +1,6 @@
+office_s1_12h diag_oracle_observe 1 201
+office_s1_06h diag_oracle_observe 1 202
+office_s1_12h diag_openvins 1 203
+office_s1_12h oracle_person_diag 1 204
+office_s1_12h diag_oracle_observe 3 205
+office_s1_06h diag_oracle_observe 3 206

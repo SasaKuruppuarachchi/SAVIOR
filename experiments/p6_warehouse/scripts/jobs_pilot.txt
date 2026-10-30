@@ -1,0 +1,4 @@
+hall_t1_L3 openvins 0.0 1
+hall_t1_L3 oracle_moving 0.0 1
+hall_t1_L3 yolo_p4 0.0 1
+hall_t1_L3 oracle_class_naive 0.0 1

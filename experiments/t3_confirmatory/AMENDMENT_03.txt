@@ -1,0 +1,8 @@
+2026-10-27 coordinator: disclosed secondary addition (no change to P1–P5, S1–S14, methods or settings already planned).
+Decided after the review_runs held-out result (results/review_runs, task B: OpenVINS-v2 with chi2 multiplier x0.25, t1-tuned, beats
+SAVIOR on held-out t2) and BEFORE any t3 result was analysed or looked at (77 OV2 trajectories existed, none evaluated or opened).
+Added, exploratory, outside the P1–P5 chain and the S Holm family, reported with their own Holm family (X1–X3):
+  ovchi_best  = review_runs FREEZE.yaml (md5 d00e1421c1291253bfcd3bb464029ebb) variant ovchi_best (OpenVINS-v2, both chi2 multipliers 0.25)
+  sf1_chibest = same file, variant sf1_chibest (SAVIOR + chi2 x0.25)
+  X1 SAVIOR vs ovchi_best at L2+L3; X2 sf1_chibest vs ovchi_best at L2+L3; X3 ovchi_best vs OpenVINS-v2 at L2+L3.
+Same 96 sequences, 5 offsets, rate 0.5, t3 validity rules (m2bsync + AMENDMENT_02 frames audit), trajectory-level model of stats_t3.py.

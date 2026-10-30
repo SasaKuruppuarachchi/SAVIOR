@@ -1,0 +1,18 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# savior_node overrides for VIODE (AirSim UAV, pinhole stereo 752x480 bgr8, b = 5 cm, f = 376 px -> f*b = 18.8 px m).
+# Loaded AFTER savior_perception/config/default.yaml; calib_file / roles_file are set by the launch / run scripts.
+savior_node:
+  ros__parameters:
+    left_topic: /cam0/image_raw
+    right_topic: /cam1/image_raw
+    imu_topic: /imu0                 # P4 motion evidence (gyro, NED body = IMU frame of kalibr_imucam_chain.yaml)
+    cam_left: cam0
+    cam_right: cam1
+    seg_topic: /cam0/segmentation    # oracle backends: AirSim GT segmentation (colour = object id, rgb_ids.txt)
+    seg_right_topic: ""              # P5: /cam1/segmentation = GT right mask for the oracle methods (set per method)
+    segmenter:
+      backend: yolo                  # YOLO26s-seg on the colour left image (launch backend:= / model:= override)
+    tracker:
+      enable: false                  # P2/P4: the tracker never helped (results/p4)
+    motion:
+      max_ego_speed_mps: 5.0         # weak prior of the ego translation fit; VIODE UAV flies 1.3-2.5 m/s mean (city: faster)

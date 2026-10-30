@@ -1,0 +1,36 @@
+Fri Oct 23 09:36:53 PM EEST 2026
+ 21:36:53 up 13 days, 14:07,  4 users,  load average: 2.29, 4.72, 9.05
+18 %, 3179 MiB
+agipix_ros_dev-x86_64-container 
+21:36:53 START hall_t1_L3 openvins load=2.29 gpu=18 % others=1
+21:40:55 END   hall_t1_L3 openvins load=0.78 gpu=6 %
+21:40:55 START hall_t1_L3 e_main load=0.78 gpu=6 % others=1
+21:45:01 END   hall_t1_L3 e_main load=2.07 gpu=1 %
+21:45:01 START hall_t1_L3 e_sp_klt load=2.07 gpu=1 % others=1
+21:49:08 END   hall_t1_L3 e_sp_klt load=2.26 gpu=1 %
+21:49:08 START hall_t1_L3 e_seg_n672 load=2.26 gpu=1 % others=1
+21:53:16 END   hall_t1_L3 e_seg_n672 load=1.27 gpu=5 %
+21:53:16 START hall_t1_L3 e_as10_rot_m1 load=1.27 gpu=5 % others=1
+21:57:22 END   hall_t1_L3 e_as10_rot_m1 load=1.33 gpu=1 %
+21:57:22 START hall_t1_L3 e_c_sp_r10 load=1.33 gpu=1 % others=1
+22:01:29 END   hall_t1_L3 e_c_sp_r10 load=0.49 gpu=1 %
+22:01:29 START hall_t1_L3 e_c_sp_r5 load=0.49 gpu=1 % others=1
+22:05:37 END   hall_t1_L3 e_c_sp_r5 load=1.34 gpu=6 %
+22:05:37 START hall_t1_L3 e_L250_dfronly load=1.34 gpu=6 % others=1
+22:09:43 END   hall_t1_L3 e_L250_dfronly load=1.83 gpu=2 %
+22:09:43 START aisles_t1_L3 openvins load=1.83 gpu=2 % others=1
+22:13:37 END   aisles_t1_L3 openvins load=0.31 gpu=7 %
+22:13:37 START aisles_t1_L3 e_main load=0.31 gpu=7 % others=1
+22:17:35 END   aisles_t1_L3 e_main load=2.07 gpu=1 %
+22:17:35 START aisles_t1_L3 e_sp_klt load=2.07 gpu=1 % others=1
+22:21:34 END   aisles_t1_L3 e_sp_klt load=1.76 gpu=1 %
+22:21:34 START aisles_t1_L3 e_seg_n672 load=1.76 gpu=1 % others=1
+22:25:32 END   aisles_t1_L3 e_seg_n672 load=1.88 gpu=1 %
+22:25:32 START aisles_t1_L3 e_as10_rot_m1 load=1.88 gpu=1 % others=1
+22:29:31 END   aisles_t1_L3 e_as10_rot_m1 load=1.63 gpu=1 %
+22:29:31 START aisles_t1_L3 e_c_sp_r10 load=1.63 gpu=1 % others=1
+22:33:29 END   aisles_t1_L3 e_c_sp_r10 load=0.62 gpu=1 %
+22:33:29 START aisles_t1_L3 e_c_sp_r5 load=0.62 gpu=1 % others=1
+22:37:28 END   aisles_t1_L3 e_c_sp_r5 load=1.30 gpu=2 %
+22:37:28 START aisles_t1_L3 e_L250_dfronly load=1.30 gpu=2 % others=1
+22:41:26 END   aisles_t1_L3 e_L250_dfronly load=1.72 gpu=1 %

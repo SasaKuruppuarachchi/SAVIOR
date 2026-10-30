@@ -1,0 +1,89 @@
+%YAML:1.0
+# ORB-SLAM3 stereo-inertial settings for VIODE (SAVIOR M3a).
+# Template: ORB_SLAM3 Examples/Stereo-Inertial/EuRoC.yaml (commit 4452a3c). Changed vs. the template ONLY:
+#   - camera intrinsics / size / rate, Stereo.T_c1_c2 and IMU.T_b_c1 from VIODE's calibration (VINS-Fusion format,
+#     data/viode/meta/calibration_files: pinhole fx=fy=376, cx=376, cy=240, no distortion, 5 cm baseline);
+#   - loopClosing: 0 (odometry comparison; also disables map merging). The harness flips it to 1 for "+lc" runs.
+# Everything else (ORB extractor, ThDepth, IMU noise = EuRoC values) is the upstream default.
+File.version: "1.0"
+
+loopClosing: 0
+
+Camera.type: "PinHole"
+
+Camera1.fx: 376.0
+Camera1.fy: 376.0
+Camera1.cx: 376.0
+Camera1.cy: 240.0
+Camera1.k1: 0.0
+Camera1.k2: 0.0
+Camera1.p1: 0.0
+Camera1.p2: 0.0
+
+Camera2.fx: 376.0
+Camera2.fy: 376.0
+Camera2.cx: 376.0
+Camera2.cy: 240.0
+Camera2.k1: 0.0
+Camera2.k2: 0.0
+Camera2.p1: 0.0
+Camera2.p2: 0.0
+
+Camera.width: 752
+Camera.height: 480
+
+# VIODE cameras run at 20 Hz
+Camera.fps: 20
+
+# Color order (images are given as mono8 by the driver, so this is ignored)
+Camera.RGB: 1
+
+# Close/Far threshold. Baseline times. (upstream default)
+Stereo.ThDepth: 60.0
+
+# T_c0_c1 = inv(body_T_cam0) * body_T_cam1 : right camera 5 cm along +x of the left camera
+Stereo.T_c1_c2: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: f
+  data: [1.0, 0.0, 0.0, 0.05,
+         0.0, 1.0, 0.0, 0.0,
+         0.0, 0.0, 1.0, 0.0,
+         0.0, 0.0, 0.0, 1.0]
+
+# Transformation from camera 0 to body-frame (imu) = VIODE body_T_cam0
+IMU.T_b_c1: !!opencv-matrix
+  rows: 4
+  cols: 4
+  dt: f
+  data: [0.0, 0.0, 1.0, 0.0,
+         1.0, 0.0, 0.0, 0.0,
+         0.0, 1.0, 0.0, 0.0,
+         0.0, 0.0, 0.0, 1.0]
+
+# IMU noise (upstream EuRoC defaults)
+IMU.NoiseGyro: 1.7e-04
+IMU.NoiseAcc: 2.0e-03
+IMU.GyroWalk: 1.9393e-05
+IMU.AccWalk: 3.e-03
+IMU.Frequency: 200.0
+
+# ORB parameters (upstream defaults)
+ORBextractor.nFeatures: 1200
+ORBextractor.scaleFactor: 1.2
+ORBextractor.nLevels: 8
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+# Viewer parameters (viewer disabled; kept so the settings parser is satisfied)
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1.0
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2.0
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3.0
+Viewer.ViewpointX: 0.0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500.0
+Viewer.imageViewScale: 1.0

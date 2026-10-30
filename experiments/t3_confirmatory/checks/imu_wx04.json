@@ -1,0 +1,39 @@
+{
+ "sequence": "wx04_t3_L0",
+ "samples": 21359,
+ "dt": 0.004999999999999005,
+ "gyro_vs_gt_rms": 4.4634904461089106e-05,
+ "gyro_vs_gt_max": 0.0006191589413134801,
+ "gyro_signal_rms": 0.28127024025980363,
+ "acc_vs_gt_rms": 3.1419090903877584e-05,
+ "acc_vs_gt_max": 0.00035118415358148525,
+ "acc_dyn_signal_rms": 0.21869331960725474,
+ "vel_vs_gt_rms": 3.4546757646826453e-06,
+ "dead_reckoning_window_s": 10.0,
+ "dr_pos_err_mean_m": 0.00025976083269376056,
+ "dr_pos_err_max_m": 0.0013956900091033882,
+ "dr_rot_err_max_deg": 0.00024493581577681627,
+ "gyro_noise_density_est": 0.00024241302047557894,
+ "gyro_noise_density_cfg": 0.000244,
+ "acc_noise_density_est": 0.001603363413560246,
+ "acc_noise_density_cfg": 0.0016,
+ "gyro_rw_est": 1.9936897368324173e-05,
+ "gyro_rw_cfg": 2e-05,
+ "acc_rw_est": 0.0003005103236552399,
+ "acc_rw_cfg": 0.0003,
+ "gyro_bias0": [
+  -0.0007616015209,
+  0.003711973475,
+  -0.0007818214183
+ ],
+ "acc_bias0": [
+  0.0205601174,
+  0.03313552218,
+  -0.03497097426
+ ],
+ "max_rate_deg_s": 95.41676170115335,
+ "max_yaw_rate_deg_s": 94.98643227950586,
+ "max_speed_m_s": 1.2275059664438759,
+ "mean_speed_moving_m_s": 0.8862659104361819,
+ "max_tilt_deg": 11.903896430367872
+}

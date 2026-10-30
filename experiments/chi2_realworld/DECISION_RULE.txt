@@ -1,0 +1,8 @@
+2026-10-28 coordinator, written BEFORE any run: real-world (Monado) check of the frozen t1-tuned chi2 x0.25 gate
+(review_runs FREEZE.yaml md5 d00e1421…, variants ovchi_best and sf1_chibest), 4 sequences x 10 offsets, rate 0.25, real-world
+validity rules incl. the frame rule; paired with the existing rate-0.25 OpenVINS / SAVIOR / Y-Cls / VINS-Fusion runs.
+"The tuned-threshold result transfers to real data" iff BOTH of these hold:
+  T1 ovchi_best vs OpenVINS on the person group (MIO13/15/16): geometric-mean ATE change < 0 with the run-level 95 % CI excluding 0, AND
+  T2 ovchi_best is not worse than SAVIOR on the person group (geometric-mean ratio <= 1.0) with failures (> 1 m) <= SAVIOR's + 2.
+Otherwise it "does not transfer". The static MIO07 result and sf1_chibest vs SAVIOR are reported descriptively.
+Whatever the outcome, the synthetic-data chi2 results are reported (at least in the supplement); only the framing depends on this rule.

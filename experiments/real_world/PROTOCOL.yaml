@@ -1,0 +1,66 @@
+# ============================================================================================================
+# SAVIOR REAL-WORLD STUDY - PRE-REGISTERED PROTOCOL (written before any evaluation run; md5 in FREEZE.md5)
+# Dataset: Monado SLAM Dataset (MSD), Valve Index (MI_valve_index), Collabora / TUM, de Mayo, Cremers, Pire,
+#          arXiv 2508.00088; https://huggingface.co/datasets/collabora/monado-slam-datasets ; licence CC BY 4.0.
+# Only smoke tests on a 45 s cut of MIO13 (results/real_world/smoke, smoke_r025) were run before the freeze, to check that every
+# method launches, produces poses and passes the sync-validity rule; their accuracy was not evaluated or looked at.
+# Smoke findings that shaped the protocol (throughput only): (1) at the native 54 Hz the SAVIOR node received every frame
+# (27 fps at rate 0.5) and fell behind (ROI stereo on 960x960 fisheye with a close person: depth 50-95 ms/frame) -> bags
+# carry only the stereo pairs OpenVINS tracks (track_frequency 28.35 rule, 27 Hz; OpenVINS output md5-identical to the
+# 54 Hz bag); (2) even then rate 0.5 gave mask fallbacks (invalid runs) -> masked methods run at rate 0.25 (0 fallbacks).
+# deterministic_processing makes the result rate-independent: openvins rate 0.25 == rate 0.5 (md5) on the smoke cut.
+# ============================================================================================================
+status: FROZEN - pre-registered before any evaluation run
+dataset:
+  name: Monado SLAM Dataset, Valve Index
+  licence: CC BY 4.0 (attribution: the Monado project / Collabora; cite arXiv 2508.00088)
+  sensors: 2 x 960x960 global-shutter grey fisheye (kb4) @ 54 Hz (stereo, b = 13.4 cm), IMU @ 1 kHz
+  ground_truth: SteamVR lighthouse 2.0 tracking (3 base stations), converted by the authors to the IMU frame and clock (~1 mm class)
+  calibration: MI_valve_index/extras/calibration.json (Basalt), verbatim -> config/monado_index/kalibr_*.yaml
+  sequences:
+    MIO13: {name: MIO13_moving_person, role: person-dynamic, note: one person walking/moving close to the headset}
+    MIO15: {name: MIO15_moving_person_props, role: person-dynamic, note: person moving props (chairs, rug, objects)}
+    MIO16: {name: MIO16_moving_screens_person_props, role: person-dynamic, note: person + props + moving screen patterns}
+    MIO07: {name: MIO07_mapping_easy, role: static control, note: no moving objects}
+  not_used: 'MIO12 moving_screens / MIO14 moving_props (dynamic content outside COCO person/vehicle roles; disk budget);
+    the other MIO/MIP sequences have no moving people. MGO/MOO headsets have no moving-person sequences.'
+methods:   # results/p7/final_config_addendum.yaml section viode.methods, verbatim (COCO instantiation), via scripts/rw_args.py
+  openvins: OpenVINS (back-end v2 rule)
+  savior_none: SAVIOR pipeline with the empty mask (control; must equal openvins)
+  yolo_naive: Y-Cls (naive class-level masking, roles viode_vehicles_dynamic = person + vehicles always dynamic)
+  sens_fix1: SAVIOR (frozen savior_node keys, roles viode_vehicles_potential = person always-dynamic, vehicles potential)
+  diag_openvins: OpenVINS with the P5 diagnostic overlay (feature-fate log), for the measurement share only
+  oracles: none (the dataset has no GT masks)
+estimator: src/savior/savior_bringup/config/monado_index/estimator_config.yaml = results/backend_v2/config/viode/estimator_config.yaml
+  with track_frequency 28.35 (1.05 x half of 54 Hz, the v2 rule as VIODE 10.5 for 20 Hz), max_clones 15 (v2), gravity_mag 9.558
+  (measured static accelerometer norm of the released data, see the config comment); everything else frozen.
+perception: src/savior/savior_bringup/config/monado_index/savior_perception.yaml = config/viode/savior_perception.yaml with the
+  dataset I/O only (no seg topic). YOLO26s-seg COCO TensorRT engine models/yolo26s-seg.engine (md5 84527d39...).
+protocol:
+  rate: '0.5 for openvins, savior_none, diag_openvins; 0.25 for yolo_naive and sens_fix1 (front-end throughput; deterministic
+    processing + mask_policy wait make the estimate independent of the rate as long as the validity rule holds)'
+  bag: 'data/monado/ros2/<seq>: zstd mcap, /cam0,/cam1 = the stereo pairs OpenVINS tracks at 28.35 Hz (27 Hz of 54 Hz), /imu0 1 kHz'
+  start_offsets_s: [0.0, 0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8]   # final_config.yaml protocol (all sequences start at rest)
+  mask_policy: wait (30 s timeout), feature_stats auto, ov_set = final_config.yaml ov_set (deterministic_processing ...)
+  validity: 'as final_config.yaml: clean exit, non-empty trajectory, FINAL fallback_latest = fallback_empty = late_masks = 0,
+    n_in_core = 0; pose-count rule poses >= same-offset openvins count - 1; invalid runs are re-run, never dropped'
+  evaluation: savior-eval multi --runs <dir> --gt data/monado/gt/<seq>.txt (posyaw alignment, full sequence)
+  failure_threshold_m: 1.0     # room-scale (~5 x 5 m room); as VIODE. Sensitivity: 0.5 m and 2.0 m reported
+  failure_cap_m: 10.0
+analysis_plan:
+  metric: ATE RMSE (posyaw); secondary RPE (savior-eval sub-lengths, shortest), failures
+  statistics: 'paired per-offset log ATE ratio (capped at 10 m); geometric-mean ratio - 1; run-level bootstrap 95 % CI (20000,
+    seed 0) + Wilcoxon; sequence-level (stats_v3 code): mean of per-sequence mean log ratios, two-stage cluster bootstrap,
+    exact sign-flip (k = 3 person sequences -> min p = 0.25: sequence-level significance is structurally impossible, reported)'
+  groups: [person (MIO13+MIO15+MIO16), static (MIO07), each sequence]
+  comparisons: [sens_fix1 vs openvins, yolo_naive vs openvins, sens_fix1 vs yolo_naive, savior_none vs openvins (control)]
+  holm: within (group, reference) over the methods, as the addendum
+  hypotheses:
+    R1: SAVIOR better than OpenVINS on the person sequences
+    R2: SAVIOR not worse than Y-Cls on the person sequences
+    R3 (control): SAVIOR within the offset sensitivity of OpenVINS on the static control MIO07
+  measurement_share: 'share of MSCKF-used measurements (diag_openvins, post-init) that fall on a person in the offline reference
+    masks (YOLO26x-seg @960, person, scripts/rw_refmasks.py; never used at run time), per sequence -> placed on the paper
+    share-vs-gain curve (results/p5_viode tables/share_vs_gain.csv and the warehouse points)'
+sota: VINS-Fusion and DynaVINS (src/savior/sota, savior-sota:noetic) with configs = the frozen VIODE ones + the Monado calibration
+  (KANNALA_BRANDT, dataset IMU noise, g_norm 9.558, freq = half camera rate); same offsets, rate 0.5. Optional, within budget.

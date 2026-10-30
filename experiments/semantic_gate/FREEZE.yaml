@@ -1,0 +1,440 @@
+status: FROZEN - SAVIOR-SG t1 selection (pre-declared rule, GRID.yaml) and the NIS control; NO held-out run was made. Any held-out evaluation
+  is the coordinator's decision and must use exactly these settings.
+frozen_at: '2026-10-27T15:47:28+00:00'
+frozen_by: semantic-gate agent
+grid:
+  path: results/semantic_gate/GRID.yaml
+  md5: cf463f700171a00585e30bb602666b36
+selection:
+  rule: 'Among the SG grid points, select the lowest pooled paired geometric-mean ATE change vs OpenVINS-v2 on t1 group "all" (8 sequences x 10
+    offsets, bv2analyze.py statistics), subject to (i) 0 failures (ATE > 2 m) over the 80 t1 runs and (ii) no worse than SAVIOR (sens_fix1) at
+    L0: the 95 % bootstrap CI of the paired gm ATE change vs sens_fix1 at L0 must not lie entirely above 0. If no point satisfies (i) and (ii),
+    no SG configuration is selected (reported as such). The NIS control is reported, not selected (its settings are fixed above).'
+  table:
+  - point: sg_s025_b025_kb0
+    result_of: sg_s025_b025_kb0
+    gm_all_vs_ov: -49.18332660944645
+    fails: 0
+    l0_vs_sf1: -1.097318199039543
+    l0_ci:
+    - -6.531450278253903
+    - 4.715057093557085
+    eligible: true
+  - point: sg_s025_b025_kb1
+    result_of: sg_s025_b025_kb1
+    gm_all_vs_ov: -49.18332660944645
+    fails: 0
+    l0_vs_sf1: -1.097318199039543
+    l0_ci:
+    - -6.531450278253903
+    - 4.715057093557085
+    eligible: true
+  - point: sg_s025_b050_kb0
+    result_of: sg_s025_b025_kb0
+    gm_all_vs_ov: -49.18332660944645
+    fails: 0
+    l0_vs_sf1: -1.097318199039543
+    l0_ci:
+    - -6.531450278253903
+    - 4.715057093557085
+    eligible: true
+  - point: sg_s025_b050_kb1
+    result_of: sg_s025_b025_kb1
+    gm_all_vs_ov: -49.18332660944645
+    fails: 0
+    l0_vs_sf1: -1.097318199039543
+    l0_ci:
+    - -6.531450278253903
+    - 4.715057093557085
+    eligible: true
+  - point: sg_s050_b025_kb0
+    result_of: sg_s050_b050_kb0
+    gm_all_vs_ov: -49.17216691703593
+    fails: 0
+    l0_vs_sf1: -0.5930668904557623
+    l0_ci:
+    - -3.7839742309912383
+    - 2.7547328845108465
+    eligible: true
+  - point: sg_s050_b025_kb1
+    result_of: sg_s050_b050_kb1
+    gm_all_vs_ov: -49.17216691703593
+    fails: 0
+    l0_vs_sf1: -0.5930668904557623
+    l0_ci:
+    - -3.7839742309912383
+    - 2.7547328845108465
+    eligible: true
+  - point: sg_s050_b050_kb0
+    result_of: sg_s050_b050_kb0
+    gm_all_vs_ov: -49.17216691703593
+    fails: 0
+    l0_vs_sf1: -0.5930668904557623
+    l0_ci:
+    - -3.7839742309912383
+    - 2.7547328845108465
+    eligible: true
+  - point: sg_s050_b050_kb1
+    result_of: sg_s050_b050_kb1
+    gm_all_vs_ov: -49.17216691703593
+    fails: 0
+    l0_vs_sf1: -0.5930668904557623
+    l0_ci:
+    - -3.7839742309912383
+    - 2.7547328845108465
+    eligible: true
+  selected: sg_s025_b025_kb0
+  tie_note: 'All 8 points pass the constraints and are within 0.011 pp of each other (m_s = 0.25: -49.183 %, m_s = 0.5: -49.172 %), i.e. the rule
+    picks m_s = 0.25 on a negligible margin. m_b is inert (GRID run_plan check passed: 80/80 md5-identical, 0 band-labelled chi2 tests). keep_band
+    true and false are md5-identical in 80/80 t1 runs; this tie between two m_b = m_s points is not covered by the pre-declared tie-break; it
+    is resolved post hoc to keep_band = false (the default, first in the declared grid order), which cannot change any t1 number.'
+methods:
+  savior_sg:
+    role: selected SAVIOR-SG configuration
+    label: SAVIOR-SG m_s=0.25 m_b=0.25 keep_band=False
+    variant: sg_s025_b025_kb0
+    t1_result_of: sg_s025_b025_kb0
+    base: sens_fix1
+    pset_set:
+      compose.movable_static_value: 64
+    ovset_add:
+      savior_semantic_gate: true
+      savior_sg_mult_static: 0.25
+      savior_sg_mult_band: 0.25
+      savior_sg_keep_band: false
+    warehouse_t1_instantiation:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_semantic_gate=true savior_sg_mult_static=0.25
+        savior_sg_mult_band=0.25 savior_sg_keep_band=false
+      pset: compose.movable_static_value=64 compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median
+        gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0
+        segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true
+        tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+    t1_failures: 0
+    t1_vs_openvins_v2:
+      all:
+        gm_pct: -49.18
+        ci:
+        - -64.9
+        - -29.7
+        holm: 0.10124354455159712
+        wins: 49
+        losses: 31
+      L0:
+        gm_pct: 2.07
+        ci:
+        - -11.2
+        - 17.3
+        holm: 1.0
+        wins: 9
+        losses: 11
+      L0+L1:
+        gm_pct: 4.34
+        ci:
+        - -5.0
+        - 14.6
+        holm: 1.0
+        wins: 18
+        losses: 22
+      L2+L3:
+        gm_pct: -75.25
+        ci:
+        - -86.7
+        - -55.7
+        holm: 0.0008479633743263548
+        wins: 31
+        losses: 9
+      hall_L3:
+        gm_pct: -98.49
+        ci:
+        - -99.0
+        - -97.4
+        holm: 0.02734375
+        wins: 10
+        losses: 0
+    t1_vs_sens_fix1:
+      all:
+        gm_pct: 0.37
+        ci:
+        - -1.9
+        - 2.6
+        holm: 1.0
+        wins: 30
+        losses: 50
+      L0:
+        gm_pct: -1.1
+        ci:
+        - -6.5
+        - 4.7
+        holm: 1.0
+        wins: 8
+        losses: 12
+      L0+L1:
+        gm_pct: -1.25
+        ci:
+        - -4.7
+        - 2.2
+        holm: 1.0
+        wins: 17
+        losses: 23
+      L2+L3:
+        gm_pct: 2.01
+        ci:
+        - -0.9
+        - 4.9
+        holm: 0.5001572640048835
+        wins: 13
+        losses: 27
+      hall_L3:
+        gm_pct: 8.98
+        ci:
+        - 6.0
+        - 12.4
+        holm: 0.013671875
+        wins: 0
+        losses: 10
+  sf1_nis:
+    role: non-semantic self-tuning control on SAVIOR (NIS-adaptive gate)
+    label: SAVIOR + NIS-adaptive gate
+    variant: sf1_nis
+    t1_result_of: sf1_nis
+    base: sens_fix1
+    pset_set: {}
+    ovset_add:
+      savior_nis_gate: true
+    warehouse_t1_instantiation:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+    t1_failures: 0
+    t1_vs_openvins_v2:
+      all:
+        gm_pct: -59.37
+        ci:
+        - -72.4
+        - -42.8
+        holm: 7.350816603766834e-07
+        wins: 58
+        losses: 22
+      L0:
+        gm_pct: -9.72
+        ci:
+        - -20.3
+        - 0.9
+        holm: 1.0
+        wins: 11
+        losses: 9
+      L0+L1:
+        gm_pct: -8.15
+        ci:
+        - -15.9
+        - 0.1
+        holm: 1.0
+        wins: 22
+        losses: 18
+      L2+L3:
+        gm_pct: -82.03
+        ci:
+        - -90.6
+        - -67.2
+        holm: 3.211243893019855e-08
+        wins: 36
+        losses: 4
+      hall_L3:
+        gm_pct: -98.98
+        ci:
+        - -99.4
+        - -98.1
+        holm: 0.02734375
+        wins: 10
+        losses: 0
+    t1_vs_sens_fix1:
+      all:
+        gm_pct: -19.75
+        ci:
+        - -24.6
+        - -14.5
+        holm: 2.2400936784923993e-07
+        wins: 61
+        losses: 19
+      L0:
+        gm_pct: -12.53
+        ci:
+        - -23.9
+        - 1.1
+        holm: 0.5269908905029297
+        wins: 12
+        losses: 8
+      L0+L1:
+        gm_pct: -13.06
+        ci:
+        - -20.0
+        - -5.2
+        holm: 0.016623777231870918
+        wins: 27
+        losses: 13
+      L2+L3:
+        gm_pct: -25.93
+        ci:
+        - -31.8
+        - -19.3
+        holm: 1.144078851211816e-06
+        wins: 34
+        losses: 6
+      hall_L3:
+        gm_pct: -26.38
+        ci:
+        - -37.6
+        - -12.1
+        holm: 0.0390625
+        wins: 8
+        losses: 2
+  ov_nis:
+    role: non-semantic self-tuning control on OpenVINS-v2 (NIS-adaptive gate)
+    label: OpenVINS-v2 + NIS-adaptive gate
+    variant: ov_nis
+    t1_result_of: ov_nis
+    base: openvins
+    pset_set: {}
+    ovset_add:
+      savior_nis_gate: true
+    warehouse_t1_instantiation:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      pset: ''
+      launch_args: []
+    t1_failures: 19
+    t1_vs_openvins_v2:
+      all:
+        gm_pct: 23.67
+        ci:
+        - -1.6
+        - 60.5
+        holm: 0.26743509695924395
+        wins: 44
+        losses: 26
+      L0:
+        gm_pct: -13.47
+        ci:
+        - -24.6
+        - -0.7
+        holm: 1.0
+        wins: 12
+        losses: 8
+      L0+L1:
+        gm_pct: -18.51
+        ci:
+        - -26.0
+        - -9.8
+        holm: 0.0042862792979576625
+        wins: 30
+        losses: 10
+      L2+L3:
+        gm_pct: 87.69
+        ci:
+        - 23.2
+        - 197.3
+        holm: 0.11680576149956323
+        wins: 14
+        losses: 16
+      hall_L3:
+        gm_pct: 30.52
+        ci:
+        - 0.0
+        - 90.9
+        holm: 0.5
+        wins: 0
+        losses: 2
+    t1_vs_sens_fix1: null
+caveat: 'Selected on warehouse t1, the split on which SAVIOR (sens_fix1), the back-end v2 and the chi2 x0.25 value were also tuned: every t1 number
+  is optimistic. m_b / keep_band act only on 192 band pixels, which the frozen SAVIOR pset never produces (extension.enable=false).'
+references:
+  backend_config:
+    path: results/backend_v2/backend_config.yaml
+    md5: 10c2144bc45310d3eab3d87f7b9b638a
+  final_config:
+    path: results/p7/final_config.yaml
+    md5: 6fea24e550b7198659d8de35d19b3c67
+  final_config_addendum:
+    path: results/p7/final_config_addendum.yaml
+    md5: f07c9c30f29a775c243d2a6ae00b9a45
+  estimator_v2_warehouse: 2abf884b5d4ea0ec1074c92e4fbd0952
+  estimator_v2_viode: edad4f259c9cac88e2334a16ec99a2f4
+install:
+  path: results/semantic_gate/install
+  built_by: results/semantic_gate/scripts/build_sg.sh (Release, no symlink-install)
+  run_subscribe_msckf_md5: 4f0be6c294c2398f79af0084ed2ea62b
+  libov_msckf_lib_md5: 5e2ddca0b7baae5392fbe52d5ab2eeaa
+  libov_core_lib_md5: cafc5a8b9ef10f8393e7a111324dfb7b
+  note: the frozen workspace install/ (pre-SG code) is untouched; pre-SG source snapshot in source/src_savior_pre_sg.tgz
+code:
+  savior_perception:
+    md5: 498ba9cff21cde097d59b8fea2292ccc
+    n_files: 21
+    files: src/savior/savior_perception/savior_perception/**/*.py
+  savior_perception_default_yaml: e161e943acd1086745b34d239a97322c
+  savior_bringup_launch:
+    md5: b1baf72901fe2e3699bb534640f3ec02
+    n_files: 2
+    files: src/savior/savior_bringup/launch/*.py
+  ov_msckf_fork:
+    md5: f2b6375e28a4147d990c79167ac2a05b
+    n_files: 36
+    files: src/savior/open_vins/ov_msckf/src/**/*.cpp,**/*.h
+  ov_core_fork:
+    md5: 3a883950435db69feeca065e8361e943
+    n_files: 51
+    files: src/savior/open_vins/ov_core/src/**/*.cpp,**/*.h
+  changed_files:
+    src/savior/savior_perception/savior_perception/core/types.py: 8f413b331c1ae26ea0cd544934c5adce
+    src/savior/savior_perception/savior_perception/core/config.py: 9ab271baeffc07849a7fed5b23c95b25
+    src/savior/savior_perception/savior_perception/core/compose.py: 14b4e4e21a7bcacef3bea4b4e57562ac
+    src/savior/savior_perception/savior_perception/core/pipeline.py: ca3ff8a99ab0f34897c251fb5dbf5077
+    src/savior/savior_perception/config/default.yaml: e161e943acd1086745b34d239a97322c
+    src/savior/open_vins/ov_core/src/feat/Feature.h: 8dab9195fd06d01f5837a7b16385df37
+    src/savior/open_vins/ov_core/src/feat/FeatureDatabase.h: e81943db444873d904aed4a3f9adfb18
+    src/savior/open_vins/ov_core/src/feat/FeatureDatabase.cpp: 5e66f17a4ea4a9ee5525c5a4d04599ca
+    src/savior/open_vins/ov_core/src/track/TrackBase.h: 55de6fbbfcf92bd294e7591235d000bc
+    src/savior/open_vins/ov_core/src/track/TrackBase.cpp: 7199113e9836542dba1a87ab0e72a339
+    src/savior/open_vins/ov_core/src/track/TrackKLT.cpp: 1ae53796b8bdc804118fc732463a94f0
+    src/savior/open_vins/ov_msckf/src/update/SaviorGate.h: c33992b2dea33fffc019c485a756c37c
+    src/savior/open_vins/ov_msckf/src/update/UpdaterOptions.h: 318fa970406e728f0902d01c32002d86
+    src/savior/open_vins/ov_msckf/src/update/UpdaterMSCKF.h: 1d28b7c02a67967decca2b87742c2022
+    src/savior/open_vins/ov_msckf/src/update/UpdaterMSCKF.cpp: 18fcd837abb8e638686a59179d0e4c57
+    src/savior/open_vins/ov_msckf/src/update/UpdaterSLAM.h: db88981233eeacc0f0d66b50177d0c7d
+    src/savior/open_vins/ov_msckf/src/update/UpdaterSLAM.cpp: bcc586a7357b05b280a94a69323704cd
+    src/savior/open_vins/ov_msckf/src/core/VioManagerOptions.h: 41a81e34722037694c833d31e65a3ade
+    src/savior/open_vins/ov_msckf/src/core/VioManager.cpp: 647469b11b82c4c3bc20b95d23cc1524
+  scripts:
+    results/semantic_gate/scripts/build_sg.sh: fb9fc79a738615794fd4792fcede76b1
+    results/semantic_gate/scripts/mkfreeze_sg.py: d0800642a77f49663d31859aad3a1272
+    results/semantic_gate/scripts/run_sg.sh: ab7938890948192cf5ae78d205fff732
+    results/semantic_gate/scripts/sg_analyze.py: ea96ec5d89e7d521cc067c7b53524a61
+    results/semantic_gate/scripts/sg_args.py: 4e62c4fd4eff80af1bda77aa357cd048
+    results/semantic_gate/scripts/sg_audit.py: 092c03e57813e243227cbfb73c5e52de
+    results/semantic_gate/scripts/sg_variants.py: b1326e5f4255b718e7f8627714d0916b
+    results/semantic_gate/scripts/sgpy.sh: e21c04fe5e60f5af933a8aab954819e4
+image:
+  tag: savior:humble-cuda12.8
+  id: sha256:1a13b4aa1cf15c0e0cadfe8a83c59517d0d78175a1b796d131a03ea1ab3f69bb
+protocol: rate 0.5, 10 start offsets 0.0..1.8 s, mask_policy wait (30 s), feature_stats auto, ov_set deterministic_processing=true dynamic_mask_upstream_compat=true
+  dynamic_mask_max_pending=0 (+ the method delta), failure > 2 m, cap 10 m (scripts/run_sg.sh; held-out instantiation = the same delta on the
+  frozen held-out instantiation of the base method)

@@ -1,0 +1,10 @@
+2026-10-30 13:40 coordinator: VINS-family analysis (after submission; decided before any VINS-family t3 outcome was computed).
+1. The VINS-family runs are complete: 3360/3360 valid. The final combined frames audit (OV + VINS) covers 9120/9120 runs and finds
+   0 invalid (8811 strict, 309 tail only). The driver's own call of that final audit failed on an unquoted empty --tag. It was re-run by
+   hand with the same script and arguments and the default (empty) tag.
+2. The frozen VINS-family secondary tests (C1-C8, C14 in the paper's labels) are computed now by the frozen, unedited scripts
+   (stats_t3.py and the others, md5 in ANALYSIS_PREP.md5). They are never computed on a partial set; the set is now complete.
+3. The runner is scripts/t3_run_analysis_vins.sh = t3_run_analysis_ov2.sh with ONE change: vins_runs is no longer hidden. The
+   DynaVINS+masks directory stays hidden (AMENDMENT_08 section 3 stays in force).
+4. The tables of the submitted analysis are kept unchanged in tables_submission_ov2/. The OV2-family results in the new tables must equal
+   them; any difference is reported.

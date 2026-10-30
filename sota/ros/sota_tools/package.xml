@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>sota_tools</name>
+  <version>0.1.0</version>
+  <description>SAVIOR SOTA baselines: TUM pose recorder (ROS 1) and an ORB-SLAM3 stereo-inertial rosbag driver.</description>
+  <maintainer email="sasa.kuruppuarachchi@gmail.com">SAVIOR</maintainer>
+  <license>GPL-3.0</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>rosbag</depend>
+  <depend>sensor_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>cv_bridge</depend>
+</package>

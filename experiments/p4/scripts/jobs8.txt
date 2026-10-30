@@ -1,0 +1,5 @@
+openloris cafe1-1 none+compat
+openloris cafe1-1 openvins+compat 0.0,0.2
+openloris cafe1-1 full+compat
+uhumans2 office_s1_06h none+compat 0.0,0.2
+uhumans2 office_s1_12h none+compat 0.0,0.2

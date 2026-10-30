@@ -1,0 +1,16 @@
+hall_t1_L3 up_a ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5
+hall_t1_L3 up_b ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5
+hall_t1_L3 det_a ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_DETERMINISTIC=1
+hall_t1_L3 det_b ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_DETERMINISTIC=1
+hall_t1_L3 detnt_a ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+hall_t1_L3 detnt_b ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+hall_t1_L3 det_zero ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_DETERMINISTIC=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/zero/off_all
+hall_t1_L3 up_oldimg ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_IMAGE=savior-sota:noetic
+hall_t1_L0 up_a ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5
+hall_t1_L0 up_b ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5
+hall_t1_L0 det_a ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_DETERMINISTIC=1
+hall_t1_L0 det_b ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_DETERMINISTIC=1
+hall_t1_L0 detnt_a ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+hall_t1_L0 detnt_b ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+hall_t1_L0 det_zero ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_DETERMINISTIC=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L0/zero/off_all
+hall_t1_L0 up_oldimg ROOT=/home/sasa/workspace/savior_ws/results/vins_savior/validation/determinism RUNS=1,5 SOTA_IMAGE=savior-sota:noetic

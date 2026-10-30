@@ -1,0 +1,13 @@
+REVIEW RUNS - FREEZE AMENDMENT 1 (2026-10-27 02:06 EET). FREEZE.yaml (md5 d00e1421c1291253bfcd3bb464029ebb) is NOT modified.
+
+What: runner bug fix in scripts/run_rr.sh only (md5 bf4530d74d2a265dc628d307e99b36d0 -> bcf203c319bc931f1e4fff10f5cf338e).
+ 1. Task-E variants have an empty TOPICS line (dataset topic preset of savior.launch.py / baseline.launch.py, as in
+    results/p7/scripts/run_noharm.sh). run_rr.sh passed 'topics:=' and ros2 launch refused it ("malformed launch argument").
+    Now the argument is omitted when empty.
+ 2. data/openloris/ros2 and data/uhumans2/ros2 are symlinks into /home/hdd/sasa/archive/savior (storage cleanup of
+    2026-10-23); that path is now bind-mounted read-only in the container.
+Effect: none of the 95 task-E jobs produced a pose (every run exited within 1 s: 0 trajectories, nothing evaluated or seen);
+the failed attempts were moved to the scratch directory (rr/failed_e) and all task-E runs are redone with the fixed runner.
+No variant, setting, sequence, offset or analysis changes; rr_args.py still asserts the frozen pset / ov_set / cfg of every
+E variant against FREEZE.yaml. Warehouse t2 / VIODE (tasks A, B) runs were complete before this change and are unaffected
+(their command lines are identical with or without the fix, the topics line being non-empty there).

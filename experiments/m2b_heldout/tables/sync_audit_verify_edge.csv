@@ -1,0 +1,3 @@
+seq,method,run,status,traj,ov_traj,final,meas,exact,fb_latest,fb_empty,late,in_core,md5,edge_too_late,pose_ok,sync_ok,valid
+aisles_t1_L2,savior_edge,run_07,ok/0,2103,-1,ok,2152,4304,0,0,0,0,3ecb7dfb829557672a40e19e59387f88,0,0,1,0
+hall_t1_L3,savior_edge,run_03,ok/0,2186,-1,ok,2250,4500,0,0,0,0,05cd628555dbee78cd3aa93df3107f93,0,0,1,0

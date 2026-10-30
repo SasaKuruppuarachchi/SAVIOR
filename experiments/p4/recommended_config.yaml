@@ -1,0 +1,17 @@
+# P4 recommended configuration (agent H, 2026-10-15). Code defaults stay P2 (all P4 features off); apply these as
+# savior.launch.py pset / ov_set overrides. Evidence: results/p4/tables/*.txt
+savior_node:                      # pset:="..."
+  motion.enable: true             # keeps static people / chairs unmasked: core mask -48..-84 % on OpenLORIS, ATE n.s.
+  gating.link_depth: contact      # short-baseline gate: refuses occlusion contacts (-10..-20 % promoted chair area)
+  gating.max_noise_m: 0.5
+  tracker.enable: false           # still worse than no tracker (cafe1-1); if used: tracker.motion_model: ego
+  extension.enable: true          # noext / band-only still: no gain
+  motion.still_policy: unmask
+  compose.right_fallback: median  # geometric fix (right polygons for the 7-13 % depth-less instances on uHumans2); ATE n.s.
+  num_threads: 4                  # (default now 4) + env SAVIOR_NUM_THREADS
+openvins:                         # ov_set:="..."
+  dynamic_mask_upstream_compat: true   # clean controls: backend none == openvins bit-identical (recommend as default for P5+)
+  dynamic_mask_init_policy: normal     # none / core / relax: no gain
+  dynamic_mask_min_features: 30        # unchanged (P2)
+frontend_finding:                 # apply to the baseline too (separate finding, not a SAVIOR gain)
+  fast_threshold: 15              # OpenLORIS held-out: openvins +9.9 % ATE [4.7, 15.2], p < 0.001; cafe1-1 -4 % (n.s.)

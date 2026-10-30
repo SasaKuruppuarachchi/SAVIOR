@@ -1,0 +1,8 @@
+2026-10-27 coordinator: clarification of the AMENDMENT_02 frame rule, made while blinded (only progress/validity reported; no outcome
+seen). Mechanism found in the interim audit: in ~6 % of SAVIOR-launch runs the FINAL stereo frame is not fed to OpenVINS because its
+mask is released after the last IMU sample (FINAL line: all frames received with exact masks). This is the same end-of-bag tail the
+warehouse AUDIT_NOTE already tolerates (0.101 s end tolerance, results/backend_v2/heldout/tables/AUDIT_NOTE.md).
+Rule (all methods): processed frames == expected, OR expected − 1 where the single unprocessed frame is the last stereo pair of the
+bag (its stamp is after the final IMU sample used). Any other shortfall (mid-sequence loss) is invalid and is re-run as before.
+Both the strict (±0) and the clarified counts are reported; the analysis uses the clarified rule. A sensitivity analysis restricted
+to strictly complete runs is reported alongside the primary results.

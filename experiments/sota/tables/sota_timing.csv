@@ -1,0 +1,23 @@
+dataset,seq,method,label,component,n,median_ms,mean_ms,p90_ms,max_ms,load1_start,containers_start
+viode,city_day_high,dynavins,DynaVINS,frontend,1246,7.43,7.35,8.08,10.79,2.09,2
+viode,city_day_high,dynavins,DynaVINS,backend,623,52.49,47.35,61.68,96.63,2.09,2
+viode,city_day_high,dynavins,DynaVINS,per stereo pair (fe + be amortised),1246,,31.03,,,2.09,2
+viode,city_day_high,orbslam3,ORB-SLAM3,track_all,1246,16.0,15.76,17.25,21.0,4.71,2
+viode,city_day_high,orbslam3,ORB-SLAM3,track_ok,1238,16.01,15.79,17.26,21.0,4.71,2
+viode,city_day_high,vins_fusion,VINS-Fusion,frontend,1246,7.25,7.26,7.88,11.36,1.22,2
+viode,city_day_high,vins_fusion,VINS-Fusion,backend,623,16.96,16.79,24.09,30.67,1.22,2
+viode,city_day_high,vins_fusion,VINS-Fusion,per stereo pair (fe + be amortised),1246,,15.66,,,1.22,2
+viode,parking_lot_high,dynavins,DynaVINS,frontend,1082,6.82,6.66,7.42,10.17,2.83,2
+viode,parking_lot_high,dynavins,DynaVINS,backend,541,21.69,22.53,32.15,153.89,2.83,2
+viode,parking_lot_high,dynavins,DynaVINS,per stereo pair (fe + be amortised),1082,,17.92,,,2.83,2
+viode,parking_lot_high,orbslam3,ORB-SLAM3,track_all,1082,13.85,13.58,14.95,18.99,1.33,2
+viode,parking_lot_high,orbslam3,ORB-SLAM3,track_ok,1069,13.87,13.64,14.96,18.99,1.33,2
+viode,parking_lot_high,vins_fusion,VINS-Fusion,frontend,1082,6.91,7.01,7.65,10.74,4.84,2
+viode,parking_lot_high,vins_fusion,VINS-Fusion,backend,541,11.44,11.68,16.08,21.47,4.84,2
+viode,parking_lot_high,vins_fusion,VINS-Fusion,per stereo pair (fe + be amortised),1082,,12.85,,,4.84,2
+warehouse,hall_t2_L3,dynavins,DynaVINS,frontend,2244,5.46,5.35,5.82,9.38,3.26,2
+warehouse,hall_t2_L3,dynavins,DynaVINS,backend,1122,40.75,39.49,56.08,122.64,3.26,2
+warehouse,hall_t2_L3,dynavins,DynaVINS,per stereo pair (fe + be amortised),2244,,25.09,,,3.26,2
+warehouse,hall_t2_L3,vins_fusion,VINS-Fusion,frontend,2244,5.7,5.69,6.07,10.98,2.33,2
+warehouse,hall_t2_L3,vins_fusion,VINS-Fusion,backend,1122,14.43,14.27,19.24,29.2,2.33,2
+warehouse,hall_t2_L3,vins_fusion,VINS-Fusion,per stereo pair (fe + be amortised),2244,,12.83,,,2.33,2

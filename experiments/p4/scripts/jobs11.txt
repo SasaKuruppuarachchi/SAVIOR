@@ -1,0 +1,2 @@
+uhumans2 office_s1_00h full+mot+gate
+uhumans2 office_s1_00h none

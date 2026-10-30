@@ -1,0 +1,8 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# VIODE / outdoor COCO roles (YOLO26-seg), vehicles DYNAMIC: always masked unless the P4 motion evidence confirms them
+# static (status still -> unmasked). Without motion.enable this is naive class masking (yolo_naive).
+dynamic:   [person, car, truck, bus, motorcycle, bicycle]
+potential: []
+static:    []
+default: ignore
+half_extent_m: {car: 1.5, truck: 2.5, bus: 3.0, motorcycle: 0.6, bicycle: 0.6}

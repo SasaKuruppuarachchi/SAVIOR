@@ -1,0 +1,10 @@
+uhumans2 office_s1_06h openvins
+uhumans2 office_s1_06h full
+uhumans2 office_s1_06h full+mot
+uhumans2 office_s1_06h none
+openloris cafe1-1 openvins
+openloris cafe1-1 none
+openloris cafe1-1 full
+openloris cafe1-1 full+mot
+openloris cafe1-1 full+mot+gate
+openloris cafe1-1 full+gate

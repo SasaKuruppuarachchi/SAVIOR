@@ -1,0 +1,11 @@
+2026-10-27 coordinator: disclosed secondary addition, made BEFORE any t3 outcome was analysed or seen (analysis on hold since the
+blinding instruction; only run counts and validity have been reported). No change to P1–P5, S1–S14, X1–X3 or any planned method.
+Added (frozen in results/semantic_gate/FREEZE.yaml, md5 0457d646d61995b1de656cdd86ecb5bc; developed on t1 only):
+  sf1_nis   = SAVIOR + NIS-adaptive chi2 gate (savior_nis_gate, window 200, clamp [0.05, 20])
+  ov_nis    = OpenVINS-v2 + the same NIS gate (non-semantic control)
+  savior_sg = SAVIOR + semantic gate (movable-static level 64, mult 0.25)
+Own Holm family Y1–Y4, all at L2+L3 except Y4:
+  Y1 sf1_nis vs sens_fix1; Y2 sf1_nis vs ovchi_best; Y3 sf1_nis vs ov_nis; Y4 sf1_nis vs openvins-v2 at L0 (static cost, same
+  equivalence bounds as P5). savior_sg vs sens_fix1 is reported descriptively.
+Same 96 sequences, 5 offsets, rate 0.5, t3 validity rules (m2bsync + AMENDMENT_02 frames audit), trajectory-level model of stats_t3.py.
+Binary: results/semantic_gate/install (read-only).

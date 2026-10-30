@@ -1,0 +1,25 @@
+# Controls (all levels)
+
+| control | identical trajectories (md5) | median / max relative ATE difference | pairs > 1 % | LMM all levels |
+|---|---|---|---|---|
+| SAVIOR-none (control) vs OpenVINS | 480 / 480 | 0.00e+00 / 0.00e+00 | 0 | +0.00 % [+0.00, +0.00], p 1.000 |
+| VINS+zero (control) vs VINS-Fusion | 480 / 480 | 0.00e+00 / 0.00e+00 | 0 | +0.00 % [+0.00, +0.00], p 1.000 |
+| DynaVINS+zero (control) vs DynaVINS (det.) | 0 / 0 | - | 0 | - |
+
+# DynaVINS + SAVIOR masks on t3 (AMENDMENT_02 section 3): EXPLORATORY, outside P1-P5 and the S1-S14 Holm family
+
+Model as stats_t3 (cap 10 m, trajectory LMM); Holm within DM1-DM9 only.
+
+| id | comparison | group | estimate [95 % CI] | p | Holm p (DM family) | sign-flip p | traj better/worse | n traj |
+|---|---|---|---|---|---|---|---|---|
+
+## Failures (ATE > 2 m), trajectory-cluster bootstrap 95 % CI
+
+| method | group | failures / runs | rate [CI] | traj with a failure |
+|---|---|---|---|---|
+
+## Cap sensitivity
+
+| id | cap | estimate [95 % CI] | p | n traj |
+|---|---|---|---|---|
+

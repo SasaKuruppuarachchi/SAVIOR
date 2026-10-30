@@ -1,14 +1,25 @@
-cmake-build-*
-build
-Build
-*.*~
-.idea
-doxgen_generated
+# colcon
+build/
+install/
+log/
+
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# model weights / engines (not in git; see README "Segmenter weights")
+*.engine
+*.onnx
+*.pt
+
+# workspace-level data and outputs (not in git)
+data/
+results/
+models/
+
+# editor / OS
+.vscode/
+.idea/
 *.swp
-*.swo
-doc
-.vscode
-.github/agents
-.github/skills
-.agent-memory
-IEEE-JSEN-paper
+.DS_Store

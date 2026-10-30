@@ -1,0 +1,39 @@
+{
+ "description": "Ultralytics YOLO26s-seg model trained on <ws>/data/warehouse/seg_train/yolo_inst/data.yaml",
+ "author": "Ultralytics",
+ "date": "2026-10-15T15:12:03.086163+00:00",
+ "version": "8.4.177",
+ "license": "AGPL-3.0 License (https://ultralytics.com/license)",
+ "docs": "https://docs.ultralytics.com",
+ "stride": 32,
+ "task": "segment",
+ "head": "Segment26",
+ "batch": 1,
+ "imgsz": [
+  384,
+  672
+ ],
+ "names": {
+  "0": "rack",
+  "1": "guard_rail",
+  "2": "window",
+  "3": "forklift",
+  "4": "box",
+  "5": "pallet",
+  "6": "trolley",
+  "7": "person"
+ },
+ "args": {
+  "data": null,
+  "batch": 1,
+  "fraction": 1.0,
+  "quantize": 16,
+  "nms": null,
+  "dynamic": false,
+  "simplify": true,
+  "opset": null,
+  "workspace": 4.0
+ },
+ "channels": 3,
+ "end2end": false
+}

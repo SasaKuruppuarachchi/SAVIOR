@@ -1,0 +1,94 @@
+bag: /home/sasa/workspace/savior_ws/data/viode/extracted/city_night/3_high.bag
+frames:
+  odom:
+  - drone
+  - drone/odom_local_ned
+  imu: drone
+n_odom: 12371
+n_imu: 12371
+odom_rate_hz: 201.99884415334233
+imu_rate_hz: 201.99884415334233
+gyro_time_offset_s(t_imu=t_gt+off): 4.163336342344337e-17
+gyro:
+  rms_rate_rad_s: 0.756806886551521
+  residual_rms_per_axis:
+  - 0.00281
+  - 0.002532
+  - 0.002007
+  residual_mean_per_axis(bias):
+  - 2.7e-05
+  - -3.0e-06
+  - -9.0e-06
+  kabsch_R_imu_from_odomchild:
+  - - 1.0
+    - -6.0e-05
+    - -4.0e-05
+  - - 6.0e-05
+    - 1.0
+    - -3.0e-05
+  - - 4.0e-05
+    - 3.0e-05
+    - 1.0
+  kabsch_angle_deg: 0.004213300363089159
+accel_norm_median: 9.873315780743805
+accel:
+  twist_linear/ned_g+z:
+    residual_mean:
+    - -0.0007
+    - -0.0
+    - -0.0003
+    residual_median_abs:
+    - 0.0506
+    - 0.0507
+    - 0.0561
+    residual_rms:
+    - 0.0751
+    - 0.0744
+    - 0.2163
+  twist_linear/enu_g-z:
+    residual_mean:
+    - 0.0516
+    - 0.0807
+    - -19.3259
+    residual_median_abs:
+    - 0.965
+    - 0.5595
+    - 19.5207
+    residual_rms:
+    - 2.2386
+    - 2.4324
+    - 19.3343
+  pos_diff/ned_g+z:
+    residual_mean:
+    - -0.0007
+    - 0.0
+    - -0.0003
+    residual_median_abs:
+    - 0.0577
+    - 0.0605
+    - 0.0569
+    residual_rms:
+    - 0.0994
+    - 0.1046
+    - 0.2191
+  pos_diff/enu_g-z:
+    residual_mean:
+    - 0.0516
+    - 0.0807
+    - -19.3259
+    residual_median_abs:
+    - 0.9671
+    - 0.5701
+    - 19.5204
+    residual_rms:
+    - 2.2395
+    - 2.4335
+    - 19.3344
+twist_linear_frame:
+  rms_vs_world_posdiff: 0.003920859291545201
+  rms_vs_body_posdiff: 4.241170098700607
+gt_file: /home/sasa/workspace/savior_ws/data/viode/gt/city_night_high.txt
+gt_span_s:
+- 1597312872.3512146
+- 1597312933.9396834
+path_length_m: 165.68300748273896

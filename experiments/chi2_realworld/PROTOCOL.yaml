@@ -1,0 +1,207 @@
+status: FROZEN - chi2-realworld protocol, written BEFORE any run (one-shot, no tuning)
+frozen_at: 2026-10-28T14:52:07+0200
+purpose: 'Run ONCE, untuned, the frozen t1-tuned chi2 x0.25 gate variants (review_runs FREEZE.yaml: ovchi_best, sf1_chibest) on the real-world Monado data,
+  paired with the existing rate-0.25 real-world OpenVINS / SAVIOR / Y-Cls / VINS-Fusion runs, and apply the pre-registered DECISION_RULE.txt (T1 and T2).'
+references:
+  decision_rule:
+    path: results/chi2_realworld/DECISION_RULE.txt
+    md5: ad5789081473e4cc36909ddd6ac319f8
+  review_runs_freeze:
+    path: results/review_runs/FREEZE.yaml
+    md5: d00e1421c1291253bfcd3bb464029ebb
+  final_config: 6fea24e550b7198659d8de35d19b3c67
+  final_config_addendum: f07c9c30f29a775c243d2a6ae00b9a45
+  real_world_protocol:
+    path: results/real_world/PROTOCOL.yaml
+    md5: 0142d94323f13a32f8a76f14380a7dcd
+  real_world_amendment:
+    path: results/real_world/FREEZE_AMENDMENT.txt
+    md5: 0d5ddb677876801aff6afbacdb53c0c3
+  real_world_expected_frames:
+    path: results/real_world/prep/expected_frames.yaml
+    md5: 37c048e8990e0f2ebfea57ca2a9fff0b
+  install_run_subscribe_msckf_md5: 4818edea9b10db0e2bbe614a583b667b
+methods:
+  ovchi_best: OpenVINS (frozen real-world openvins instantiation) + ov_set up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+  sf1_chibest: SAVIOR (frozen real-world sens_fix1 instantiation) + the same two ov_set keys
+  install: workspace install/ (ORIGINAL frozen build, as the real-world baselines and the review_runs variants; NOT the SG install)
+  delta_rule: review_runs FREEZE.yaml variants.<v>.ovset_add appended to the ov_set ROS-parameter string of the frozen real-world instantiation produced
+    by the unchanged results/real_world/scripts/rw_args.py (no yaml edit); nothing else
+  parameter_diff: 'scripts/cr_check.py -> tables/param_diff.md: 115 / 115 recorded settings: exactly the chi2 delta. Errors: 0. (vs every rw_settings file
+    and every run_info.yaml launch command of real_world/runs/<seq>/{openvins,sens_fix1})'
+runs:
+  sequences:
+    person:
+    - MIO13
+    - MIO15
+    - MIO16
+    static_control:
+    - MIO07
+  offsets_s: &id001
+  - 0.0
+  - 0.2
+  - 0.4
+  - 0.6
+  - 0.8
+  - 1.0
+  - 1.2
+  - 1.4
+  - 1.6
+  - 1.8
+  rate: 0.25
+  runner: scripts/run_cr.sh (= real_world run_rw.sh container / savior-run protocol)
+  queue: results/backend_v2/scripts/bv2queue.py, RUNNER=run_cr.sh, PREFIX=cr_, GLOBAL_MAX=6 (at most 6 containers)
+  dirs: results/chi2_realworld/runs/<seq>/<variant>/run_XX (run index = offset index, as the baselines)
+validity:
+  rule: 'results/real_world/scripts/rw_analyze.py rules: run_info status ok/0, non-empty trajectory, FINAL (savior launch) fallback_latest + fallback_empty
+    = late_masks = 0, n_in_core = 0, pose rule poses >= same-offset real-world openvins - 1, and the Amendment-2 frame rule: processed stereo frames ("[TIME]:
+    ... seconds total" lines) == real_world/prep/expected_frames.yaml ros2_pairs for the offset, +-0'
+  delta_applied: launch.log must show both chi2 keys overridden from ROS (0.25)
+  reruns: an invalid run is re-run unchanged (FORCE), up to 3 attempts in total; any run still invalid is reported and excluded pairwise from the primary
+    statistics (include-all sensitivity reported)
+evaluation: savior-eval multi --runs <dir> --gt data/monado/gt/<seq>.txt --no-plot (posyaw, full sequence; = real_world rw_eval.sh)
+statistics:
+  as: 'results/real_world/scripts/rw_analyze.py (functions copied verbatim): paired per-offset log ATE ratio capped at 10 m; geometric-mean ratio - 1; run-level
+    iid bootstrap 95 % CI (20000, seed 0); Wilcoxon; Holm within (group, reference); sequence-level two-stage cluster bootstrap + exact sign-flip; failures
+    > 1 m; RPE (shortest sub-length, non-failed runs)'
+  pairings: openvins, sens_fix1, yolo_naive, vins_fusion from results/real_world/runs (rate 0.25, Amendment 2), same sequence + offset
+  groups: person (MIO13+15+16), each sequence, static MIO07
+  comparisons:
+  - ovchi_best vs openvins (T1)
+  - ovchi_best vs sens_fix1 (T2)
+  - sf1_chibest vs sens_fix1
+  - sf1_chibest vs openvins
+  - ovchi_best vs yolo_naive
+  - ovchi_best vs vins_fusion
+  - sf1_chibest vs ovchi_best
+  - sf1_chibest vs vins_fusion
+  decision: 'DECISION_RULE.txt verbatim: transfers iff T1 (person group GM change < 0 with run-level 95 % CI excluding 0) AND T2 (ovchi_best vs SAVIOR person-group
+    GM ratio <= 1.0 and failures > 1 m <= SAVIOR failures + 2); otherwise does not transfer'
+scripts_md5:
+  results/backend_v2/scripts/bv2queue.py: 7d10e09208fe024f85f9101a9c0647cc
+  results/chi2_realworld/scripts/cr_args.py: 9c6ce0dd8283102b2414588e022ea96e
+  results/chi2_realworld/scripts/cr_check.py: c91825d3de4ef57877a7dcb0c2f7dfbf
+  results/chi2_realworld/scripts/mkprotocol.py: 9def03a008278cc25f24ef94448867cf
+  results/chi2_realworld/scripts/run_cr.sh: 98c881dee657718bfb5fce40a6c406be
+  results/real_world/scripts/rw_analyze.py: 4df8f5c45b1b4deaef91a02902ea8efa
+  results/real_world/scripts/rw_args.py: 2f825875ea4df0cf56700b7625f8af70
+  results/real_world/scripts/rw_eval.sh: 3617b7fa5e12a15ab4936fabff35594a
+instantiation:
+  ovchi_best:
+    MIO13:
+      install: /home/sasa/workspace/savior_ws/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO13
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO13.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.25
+      offsets_s: *id001
+    MIO15:
+      install: /home/sasa/workspace/savior_ws/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO15
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO15.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.25
+      offsets_s: *id001
+    MIO16:
+      install: /home/sasa/workspace/savior_ws/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO16
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO16.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.25
+      offsets_s: *id001
+    MIO07:
+      install: /home/sasa/workspace/savior_ws/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO07
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO07.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.25
+      offsets_s: *id001
+  sf1_chibest:
+    MIO13:
+      install: /home/sasa/workspace/savior_ws/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO13
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO13.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.25
+      offsets_s: *id001
+    MIO15:
+      install: /home/sasa/workspace/savior_ws/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO15
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO15.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.25
+      offsets_s: *id001
+    MIO16:
+      install: /home/sasa/workspace/savior_ws/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO16
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO16.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.25
+      offsets_s: *id001
+    MIO07:
+      install: /home/sasa/workspace/savior_ws/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO07
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO07.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.25
+      offsets_s: *id001

@@ -1,0 +1,4 @@
+CPU: AMD Ryzen Threadripper 9960X 24-Cores (48 threads, 24 cores, max 5489 MHz)
+RAM: 125 GiB
+GPU: NVIDIA RTX PRO 6000 Blackwell Max-Q Workstation Edition, 97887 MiB, driver 580.178.04, CUDA (driver) 13.0
+OS: Linux 7.0.0-38-generic, Docker 29.7.2, image savior:humble-cuda12.8 (sha256:1a13b4aa1cf1)

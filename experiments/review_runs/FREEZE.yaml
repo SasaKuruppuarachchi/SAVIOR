@@ -1,0 +1,516 @@
+# REVIEW RUNS FREEZE - do not edit. Written before any held-out / task-E review run; md5 in FREEZE.md5.
+status: FROZEN - review runs (reviewer request, author-approved 2026-10-26), written BEFORE any held-out (warehouse t2 / VIODE) or task-E (OpenLORIS
+  / uHumans2) review run
+frozen_at: '2026-10-26T16:12:52+00:00'
+frozen_by: review-runs agent (VIO evaluation engineer)
+references:
+  backend_config:
+    path: results/backend_v2/backend_config.yaml
+    md5: 10c2144bc45310d3eab3d87f7b9b638a
+  final_config:
+    path: results/p7/final_config.yaml
+    md5: 6fea24e550b7198659d8de35d19b3c67
+  final_config_addendum:
+    path: results/p7/final_config_addendum.yaml
+    md5: f07c9c30f29a775c243d2a6ae00b9a45
+  estimator_v2_warehouse: 2abf884b5d4ea0ec1074c92e4fbd0952
+  estimator_v2_viode: edad4f259c9cac88e2334a16ec99a2f4
+  estimator_original_openloris_t265: 4419619517f85624251be50dc15bb5cb
+  estimator_original_uhumans2: 64e0e2e985b5120eea673a22b8bdf0af
+  install_note: 'workspace install/ (frozen build; reproduces the frozen held-out runs: ctl_* controls)'
+scripts_md5:
+  results/review_runs/scripts/rr_variants.py: 29ec7bf94973db615258a96ae8eb2d3c
+  results/review_runs/scripts/rr_args.py: c16f40d9ddce2acadb61461847502f60
+  results/review_runs/scripts/run_rr.sh: bf4530d74d2a265dc628d307e99b36d0
+  results/review_runs/scripts/rr_check.py: ae36219f9245cca1d1ea60e8bfe91b23
+  results/review_runs/scripts/rr_analyze.py: 9cdb196f477804bcb133466ca79180c9
+  results/review_runs/scripts/rr_audit.py: 62bbb16f63db88e6deede0ae27be8e70
+  results/backend_v2/scripts/bv2_args.py: 9ae4b70fbe1b9bf70db965953664467d
+  results/backend_v2/scripts/bv2queue.py: 7d10e09208fe024f85f9101a9c0647cc
+  results/m2b_heldout/scripts/m2b_args.py: 6c00bc9af5ef580d3cc1c4754b192558
+parameter_diff_check: 'scripts/rr_check.py -> tables/param_diff.json: ALL EXACT (each variant differs from its frozen base by exactly the listed
+  delta; E instantiation = frozen keys + coco_real_robot override; gate_fix1 == sens_fix1, gate_k3 == p7_nb)'
+task_B_selection:
+  rule: pooled paired geometric-mean ATE vs OpenVINS-v2 on warehouse t1 (8 sequences x 10 offsets, group "all"), lowest wins; both up_msckf_chi2_multipler
+    and up_slam_chi2_multipler set to the same value; grid {1 (current), 0.5, 0.25, 0.1}
+  t1_results_vs_openvins_v2:
+    ovchi_050:
+      gm_pct: -22.61
+      ci:
+      - -41.0
+      - -0.7
+      ci_cluster:
+      - -51.8
+      - 7.0
+      holm: 0.008363001433378595
+      wins: 46
+      losses: 28
+    ovchi_025:
+      gm_pct: -46.52
+      ci:
+      - -60.3
+      - -31.1
+      ci_cluster:
+      - -71.6
+      - -18.1
+      holm: 1.2387540618623583e-09
+      wins: 64
+      losses: 12
+    ovchi_010:
+      gm_pct: -39.31
+      ci:
+      - -55.6
+      - -19.5
+      ci_cluster:
+      - -67.1
+      - -5.6
+      holm: 2.1038143109704556e-07
+      wins: 61
+      losses: 14
+  chosen: 0.25
+  robust_loss_note: 'the OpenVINS MSCKF / SLAM update has no robust loss (only the chi2 gate: UpdaterMSCKF.cpp:225, UpdaterSLAM.cpp:410, StateHelper::initialize);
+    none was implemented'
+variants:
+  sf1_noint:
+    scope: heldout
+    label: SAVIOR w/o interaction (class prior + motion-consistency, no association tree)
+    base: sens_fix1
+    pset_set:
+      gating.promote_contact: 'False'
+    ovset_add: {}
+    warehouse:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed gating.promote_contact=false motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0
+        segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true
+        tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/warehouse/estimator_config.yaml: 2abf884b5d4ea0ec1074c92e4fbd0952
+        results/backend_v2/config/warehouse/kalibr_imu_chain.yaml: 5ab8bb991b0be8ab62c24988a1369f64
+        results/backend_v2/config/warehouse/kalibr_imucam_chain.yaml: 3ee47a38b09c39a6aa651c771594c337
+        results/backend_v2/config/warehouse/savior_perception.yaml: 0b1a8563db31eb131e13b711c66978e5
+        results/backend_v2/config/warehouse/savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+        src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+        models/warehouse/yolo26s-seg-warehouse.engine: 393c07cf281f26115f049fedf3ad1336
+        src/savior/savior_bringup/config/roles/warehouse.yaml: 1537a5b055dc76f400e319a6b23a9cf1
+    viode:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed gating.promote_contact=false motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0
+        segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true
+        tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/viode/estimator_config.yaml: edad4f259c9cac88e2334a16ec99a2f4
+        results/backend_v2/config/viode/kalibr_imu_chain.yaml: 57eec0ab10a2d06d2c69d457edca8578
+        results/backend_v2/config/viode/kalibr_imucam_chain.yaml: dde4d7ee63e08bd4c85ca6399f22bb8a
+        results/backend_v2/config/viode/savior_perception.yaml: d599edbe672ddcb52ddb6d81224049df
+        models/yolo26s-seg.engine: 84527d3962ae7b85d34fd7bcb74cbc58
+        src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml: 29f6f12d29f25f10f923c99e9c09170c
+  sf1_nomotion:
+    scope: heldout
+    label: SAVIOR w/o motion evidence (class prior + interaction)
+    base: sens_fix1
+    pset_set:
+      motion.enable: 'False'
+    ovset_add: {}
+    warehouse:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=false motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/warehouse/estimator_config.yaml: 2abf884b5d4ea0ec1074c92e4fbd0952
+        results/backend_v2/config/warehouse/kalibr_imu_chain.yaml: 5ab8bb991b0be8ab62c24988a1369f64
+        results/backend_v2/config/warehouse/kalibr_imucam_chain.yaml: 3ee47a38b09c39a6aa651c771594c337
+        results/backend_v2/config/warehouse/savior_perception.yaml: 0b1a8563db31eb131e13b711c66978e5
+        results/backend_v2/config/warehouse/savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+        src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+        models/warehouse/yolo26s-seg-warehouse.engine: 393c07cf281f26115f049fedf3ad1336
+        src/savior/savior_bringup/config/roles/warehouse.yaml: 1537a5b055dc76f400e319a6b23a9cf1
+    viode:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=false motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/viode/estimator_config.yaml: edad4f259c9cac88e2334a16ec99a2f4
+        results/backend_v2/config/viode/kalibr_imu_chain.yaml: 57eec0ab10a2d06d2c69d457edca8578
+        results/backend_v2/config/viode/kalibr_imucam_chain.yaml: dde4d7ee63e08bd4c85ca6399f22bb8a
+        results/backend_v2/config/viode/savior_perception.yaml: d599edbe672ddcb52ddb6d81224049df
+        models/yolo26s-seg.engine: 84527d3962ae7b85d34fd7bcb74cbc58
+        src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml: 29f6f12d29f25f10f923c99e9c09170c
+  ctl_sens_fix1:
+    scope: heldout
+    label: 'control: SAVIOR re-run'
+    base: sens_fix1
+    pset_set: {}
+    ovset_add: {}
+    warehouse:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/warehouse/estimator_config.yaml: 2abf884b5d4ea0ec1074c92e4fbd0952
+        results/backend_v2/config/warehouse/kalibr_imu_chain.yaml: 5ab8bb991b0be8ab62c24988a1369f64
+        results/backend_v2/config/warehouse/kalibr_imucam_chain.yaml: 3ee47a38b09c39a6aa651c771594c337
+        results/backend_v2/config/warehouse/savior_perception.yaml: 0b1a8563db31eb131e13b711c66978e5
+        results/backend_v2/config/warehouse/savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+        src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+        models/warehouse/yolo26s-seg-warehouse.engine: 393c07cf281f26115f049fedf3ad1336
+        src/savior/savior_bringup/config/roles/warehouse.yaml: 1537a5b055dc76f400e319a6b23a9cf1
+    viode:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/viode/estimator_config.yaml: edad4f259c9cac88e2334a16ec99a2f4
+        results/backend_v2/config/viode/kalibr_imu_chain.yaml: 57eec0ab10a2d06d2c69d457edca8578
+        results/backend_v2/config/viode/kalibr_imucam_chain.yaml: dde4d7ee63e08bd4c85ca6399f22bb8a
+        results/backend_v2/config/viode/savior_perception.yaml: d599edbe672ddcb52ddb6d81224049df
+        models/yolo26s-seg.engine: 84527d3962ae7b85d34fd7bcb74cbc58
+        src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml: 29f6f12d29f25f10f923c99e9c09170c
+  ctl_savior_none:
+    scope: heldout
+    label: 'control: SAVIOR-none re-run'
+    base: savior_none
+    pset_set: {}
+    ovset_add: {}
+    warehouse:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: ''
+      launch_args:
+      - backend:=none
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/warehouse/estimator_config.yaml: 2abf884b5d4ea0ec1074c92e4fbd0952
+        results/backend_v2/config/warehouse/kalibr_imu_chain.yaml: 5ab8bb991b0be8ab62c24988a1369f64
+        results/backend_v2/config/warehouse/kalibr_imucam_chain.yaml: 3ee47a38b09c39a6aa651c771594c337
+        results/backend_v2/config/warehouse/savior_perception.yaml: 0b1a8563db31eb131e13b711c66978e5
+        results/backend_v2/config/warehouse/savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+  ovchi_best:
+    scope: heldout
+    label: OpenVINS chi2 x0.25 (t1-tuned)
+    base: openvins
+    pset_set: {}
+    ovset_add:
+      up_msckf_chi2_multipler: '0.25'
+      up_slam_chi2_multipler: '0.25'
+    warehouse:
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      pset: ''
+      launch_args: []
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/warehouse/estimator_config.yaml: 2abf884b5d4ea0ec1074c92e4fbd0952
+        results/backend_v2/config/warehouse/kalibr_imu_chain.yaml: 5ab8bb991b0be8ab62c24988a1369f64
+        results/backend_v2/config/warehouse/kalibr_imucam_chain.yaml: 3ee47a38b09c39a6aa651c771594c337
+        results/backend_v2/config/warehouse/savior_perception.yaml: 0b1a8563db31eb131e13b711c66978e5
+        results/backend_v2/config/warehouse/savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+    viode:
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      pset: ''
+      launch_args: []
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/viode/estimator_config.yaml: edad4f259c9cac88e2334a16ec99a2f4
+        results/backend_v2/config/viode/kalibr_imu_chain.yaml: 57eec0ab10a2d06d2c69d457edca8578
+        results/backend_v2/config/viode/kalibr_imucam_chain.yaml: dde4d7ee63e08bd4c85ca6399f22bb8a
+        results/backend_v2/config/viode/savior_perception.yaml: d599edbe672ddcb52ddb6d81224049df
+  sf1_chibest:
+    scope: heldout
+    label: SAVIOR + OpenVINS chi2 x0.25
+    base: sens_fix1
+    pset_set: {}
+    ovset_add:
+      up_msckf_chi2_multipler: '0.25'
+      up_slam_chi2_multipler: '0.25'
+    warehouse:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/warehouse/estimator_config.yaml: 2abf884b5d4ea0ec1074c92e4fbd0952
+        results/backend_v2/config/warehouse/kalibr_imu_chain.yaml: 5ab8bb991b0be8ab62c24988a1369f64
+        results/backend_v2/config/warehouse/kalibr_imucam_chain.yaml: 3ee47a38b09c39a6aa651c771594c337
+        results/backend_v2/config/warehouse/savior_perception.yaml: 0b1a8563db31eb131e13b711c66978e5
+        results/backend_v2/config/warehouse/savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+        src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+        models/warehouse/yolo26s-seg-warehouse.engine: 393c07cf281f26115f049fedf3ad1336
+        src/savior/savior_bringup/config/roles/warehouse.yaml: 1537a5b055dc76f400e319a6b23a9cf1
+    viode:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 up_msckf_chi2_multipler=0.25 up_slam_chi2_multipler=0.25
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        results/backend_v2/config/viode/estimator_config.yaml: edad4f259c9cac88e2334a16ec99a2f4
+        results/backend_v2/config/viode/kalibr_imu_chain.yaml: 57eec0ab10a2d06d2c69d457edca8578
+        results/backend_v2/config/viode/kalibr_imucam_chain.yaml: dde4d7ee63e08bd4c85ca6399f22bb8a
+        results/backend_v2/config/viode/savior_perception.yaml: d599edbe672ddcb52ddb6d81224049df
+        models/yolo26s-seg.engine: 84527d3962ae7b85d34fd7bcb74cbc58
+        src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml: 29f6f12d29f25f10f923c99e9c09170c
+  e_openvins:
+    scope: E
+    label: OpenVINS (original back-end)
+    base: openvins
+    pset_set: {}
+    ovset_add: {}
+    openloris:
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: ''
+      launch_args: []
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml: 4419619517f85624251be50dc15bb5cb
+        src/savior/savior_bringup/config/openloris_t265/estimator_config_market.yaml: af524740bcc9d8f9c96bcb5422a9b5f2
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imu_chain.yaml: 8406c4fee61881dc8f38fdaeb79711f9
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imucam_chain.yaml: 6beda0e4f745d0bfba2a481de80f87aa
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imucam_chain_market.yaml: 6b8b9ce7e764e84aa293f77e4c743d59
+        src/savior/savior_bringup/config/openloris_t265/savior_perception.yaml: d0863c221de268c25478dee8b612d05c
+    uhumans2:
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: ''
+      launch_args: []
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        src/savior/savior_bringup/config/uhumans2/estimator_config.yaml: 64e0e2e985b5120eea673a22b8bdf0af
+        src/savior/savior_bringup/config/uhumans2/kalibr_imu_chain.yaml: 1cdbb5dbd70cb89cdc220e98414f3454
+        src/savior/savior_bringup/config/uhumans2/kalibr_imucam_chain.yaml: 755dab3c981e06d57019ab336cf5b258
+        src/savior/savior_bringup/config/uhumans2/savior_perception.yaml: dd54123cc98b0740f76c6ebce8353160
+  e_savior_none:
+    scope: E
+    label: SAVIOR-none (empty masks)
+    base: savior_none
+    pset_set: {}
+    ovset_add: {}
+    openloris:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: ''
+      launch_args:
+      - backend:=none
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml: 4419619517f85624251be50dc15bb5cb
+        src/savior/savior_bringup/config/openloris_t265/estimator_config_market.yaml: af524740bcc9d8f9c96bcb5422a9b5f2
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imu_chain.yaml: 8406c4fee61881dc8f38fdaeb79711f9
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imucam_chain.yaml: 6beda0e4f745d0bfba2a481de80f87aa
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imucam_chain_market.yaml: 6b8b9ce7e764e84aa293f77e4c743d59
+        src/savior/savior_bringup/config/openloris_t265/savior_perception.yaml: d0863c221de268c25478dee8b612d05c
+    uhumans2:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: ''
+      launch_args:
+      - backend:=none
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        src/savior/savior_bringup/config/uhumans2/estimator_config.yaml: 64e0e2e985b5120eea673a22b8bdf0af
+        src/savior/savior_bringup/config/uhumans2/kalibr_imu_chain.yaml: 1cdbb5dbd70cb89cdc220e98414f3454
+        src/savior/savior_bringup/config/uhumans2/kalibr_imucam_chain.yaml: 755dab3c981e06d57019ab336cf5b258
+        src/savior/savior_bringup/config/uhumans2/savior_perception.yaml: dd54123cc98b0740f76c6ebce8353160
+  e_yolo_naive:
+    scope: E
+    label: Y-Cls (COCO person, frozen Y-Cls keys)
+    base: yolo_naive
+    pset_set: {}
+    ovset_add: {}
+    openloris:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: compose.right_fallback=median extension.enable=false segmenter.fast_masks=true stats_compact=true tracker.enable=false
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/person_only.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml: 4419619517f85624251be50dc15bb5cb
+        src/savior/savior_bringup/config/openloris_t265/estimator_config_market.yaml: af524740bcc9d8f9c96bcb5422a9b5f2
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imu_chain.yaml: 8406c4fee61881dc8f38fdaeb79711f9
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imucam_chain.yaml: 6beda0e4f745d0bfba2a481de80f87aa
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imucam_chain_market.yaml: 6b8b9ce7e764e84aa293f77e4c743d59
+        src/savior/savior_bringup/config/openloris_t265/savior_perception.yaml: d0863c221de268c25478dee8b612d05c
+        models/yolo26s-seg.engine: 84527d3962ae7b85d34fd7bcb74cbc58
+        src/savior/savior_bringup/config/roles/person_only.yaml: 60dbf4d5d13f0db376684877c146c0eb
+    uhumans2:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: compose.right_fallback=median extension.enable=false segmenter.fast_masks=true stats_compact=true tracker.enable=false
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/person_only.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        src/savior/savior_bringup/config/uhumans2/estimator_config.yaml: 64e0e2e985b5120eea673a22b8bdf0af
+        src/savior/savior_bringup/config/uhumans2/kalibr_imu_chain.yaml: 1cdbb5dbd70cb89cdc220e98414f3454
+        src/savior/savior_bringup/config/uhumans2/kalibr_imucam_chain.yaml: 755dab3c981e06d57019ab336cf5b258
+        src/savior/savior_bringup/config/uhumans2/savior_perception.yaml: dd54123cc98b0740f76c6ebce8353160
+        models/yolo26s-seg.engine: 84527d3962ae7b85d34fd7bcb74cbc58
+        src/savior/savior_bringup/config/roles/person_only.yaml: 60dbf4d5d13f0db376684877c146c0eb
+  e_sens_fix1:
+    scope: E
+    label: SAVIOR (frozen sens_fix1, COCO instantiation)
+    base: sens_fix1
+    pset_set: {}
+    ovset_add: {}
+    openloris:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml: 4419619517f85624251be50dc15bb5cb
+        src/savior/savior_bringup/config/openloris_t265/estimator_config_market.yaml: af524740bcc9d8f9c96bcb5422a9b5f2
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imu_chain.yaml: 8406c4fee61881dc8f38fdaeb79711f9
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imucam_chain.yaml: 6beda0e4f745d0bfba2a481de80f87aa
+        src/savior/savior_bringup/config/openloris_t265/kalibr_imucam_chain_market.yaml: 6b8b9ce7e764e84aa293f77e4c743d59
+        src/savior/savior_bringup/config/openloris_t265/savior_perception.yaml: d0863c221de268c25478dee8b612d05c
+        models/yolo26s-seg.engine: 84527d3962ae7b85d34fd7bcb74cbc58
+        src/savior/savior_bringup/config/roles/coco_indoor.yaml: 169db877b9d3b1237667a1fcad1dad50
+    uhumans2:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        src/savior/savior_bringup/config/uhumans2/estimator_config.yaml: 64e0e2e985b5120eea673a22b8bdf0af
+        src/savior/savior_bringup/config/uhumans2/kalibr_imu_chain.yaml: 1cdbb5dbd70cb89cdc220e98414f3454
+        src/savior/savior_bringup/config/uhumans2/kalibr_imucam_chain.yaml: 755dab3c981e06d57019ab336cf5b258
+        src/savior/savior_bringup/config/uhumans2/savior_perception.yaml: dd54123cc98b0740f76c6ebce8353160
+        models/yolo26s-seg.engine: 84527d3962ae7b85d34fd7bcb74cbc58
+        src/savior/savior_bringup/config/roles/coco_indoor.yaml: 169db877b9d3b1237667a1fcad1dad50
+  e_oracle_person:
+    scope: E
+    label: oracle person masks (P3a definition)
+    base: oracle_person
+    pset_set: {}
+    ovset_add: {}
+    uhumans2:
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      pset: extension.enable=false segmenter.colormap_file=/home/sasa/workspace/savior_ws/results/p3a/config/uhumans2_colormap_person.yaml tracker.enable=false
+      launch_args:
+      - backend:=oracle_colormap
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/person_only.yaml
+      install: /home/sasa/workspace/savior_ws/install
+      files_md5:
+        src/savior/savior_bringup/config/uhumans2/estimator_config.yaml: 64e0e2e985b5120eea673a22b8bdf0af
+        src/savior/savior_bringup/config/uhumans2/kalibr_imu_chain.yaml: 1cdbb5dbd70cb89cdc220e98414f3454
+        src/savior/savior_bringup/config/uhumans2/kalibr_imucam_chain.yaml: 755dab3c981e06d57019ab336cf5b258
+        src/savior/savior_bringup/config/uhumans2/savior_perception.yaml: dd54123cc98b0740f76c6ebce8353160
+        src/savior/savior_bringup/config/roles/person_only.yaml: 60dbf4d5d13f0db376684877c146c0eb
+        results/p3a/config/uhumans2_colormap_person.yaml: c51fa5b6b1f65f6c6588df8f39c5d98c
+protocol:
+  heldout: warehouse t2 (12 seq) + VIODE (12 seq), offsets 0.0-1.8 s (warehouse) / P5 late-start (VIODE), rate 0.5, mask_policy wait, timeout
+    30 s, feature_stats auto, back-end v2 (BACKEND_VIODE=v2); identical to results/backend_v2/scripts/run_heldout_v2.sh
+  E: OpenLORIS cafe1-1 (tuning) + cafe1-2, office1-1..7 (held-out of P2/P4), offsets 0.0-1.8 s (superset of the P2 offsets 0.0/0.2/0.4); uHumans2
+    office_s1 00h (5 offsets 0.0-0.8 s), 06h/12h (10 offsets 0.0-1.8 s) as P3a; rate 0.5; ORIGINAL estimator configs; references re-run with the
+    same install (openvins, savior_none, oracle_person on uHumans2)
+  validity: 'scripts/rr_audit.py: clean exit, trajectory, FINAL fallbacks = late = 0, n_in_core = 0, end within 0.101 s of the same-offset OpenVINS(-v2)
+    run with <= 1 pose missing after the own first pose; pose rule reported; ctl_* md5 controls'
+  statistics: 'scripts/rr_analyze.py: bv2analyze.py statistics + two-stage sequence-cluster bootstrap (20000, seed 1); failures > 2 m warehouse
+    / > 1 m VIODE, cap 10 m; E: failures > 1 m (none expected), same paired stats'
+  comparisons:
+    A: sf1_noint, sf1_nomotion vs sens_fix1, yolo_naive, openvins
+    B: ovchi_best vs openvins; sens_fix1 / yolo_naive / sf1_chibest vs ovchi_best; sf1_chibest vs sens_fix1
+    E: e_sens_fix1 vs e_openvins and vs e_yolo_naive (run- and sequence-level); e_savior_none vs e_openvins (control); e_oracle_person vs e_savior_none
+      (uHumans2, P3a reference)
+paper_labels:
+  sf1_noint: SAVIOR w/o interaction (class prior + motion-consistency check, no association tree)
+  sf1_nomotion: SAVIOR w/o motion evidence (class prior + interaction)
+  ovchi_best: OpenVINS chi2 x0.25
+  sf1_chibest: SAVIOR + OpenVINS chi2 x0.25

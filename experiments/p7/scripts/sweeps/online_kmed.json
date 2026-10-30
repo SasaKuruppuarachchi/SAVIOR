@@ -1,0 +1,86 @@
+{
+ "sens_kmed1": [
+  "wh",
+  "warehouse",
+  {
+   "motion.enable": true,
+   "gating.link_depth": "median",
+   "gating.max_noise_m": 0.5,
+   "tracker.enable": true,
+   "extension.enable": false,
+   "motion.still_policy": "unmask",
+   "compose.right_fallback": "median",
+   "motion.use_still": false,
+   "motion.window_long_s": 2.0,
+   "gating.max_depth": 3,
+   "selective.enable": true,
+   "selective.prior_static_classes": "box,pallet,trolley",
+   "tracker.motion_model": "ego",
+   "segmenter.fast_masks": true,
+   "gating.k_sigma": 1.0
+  }
+ ],
+ "sens_kmed2": [
+  "wh",
+  "warehouse",
+  {
+   "motion.enable": true,
+   "gating.link_depth": "median",
+   "gating.max_noise_m": 0.5,
+   "tracker.enable": true,
+   "extension.enable": false,
+   "motion.still_policy": "unmask",
+   "compose.right_fallback": "median",
+   "motion.use_still": false,
+   "motion.window_long_s": 2.0,
+   "gating.max_depth": 3,
+   "selective.enable": true,
+   "selective.prior_static_classes": "box,pallet,trolley",
+   "tracker.motion_model": "ego",
+   "segmenter.fast_masks": true,
+   "gating.k_sigma": 2.0
+  }
+ ],
+ "sens_kmed3": [
+  "wh",
+  "warehouse",
+  {
+   "motion.enable": true,
+   "gating.link_depth": "median",
+   "gating.max_noise_m": 0.5,
+   "tracker.enable": true,
+   "extension.enable": false,
+   "motion.still_policy": "unmask",
+   "compose.right_fallback": "median",
+   "motion.use_still": false,
+   "motion.window_long_s": 2.0,
+   "gating.max_depth": 3,
+   "selective.enable": true,
+   "selective.prior_static_classes": "box,pallet,trolley",
+   "tracker.motion_model": "ego",
+   "segmenter.fast_masks": true,
+   "gating.k_sigma": 3.0
+  }
+ ],
+ "sens_kmed4": [
+  "wh",
+  "warehouse",
+  {
+   "motion.enable": true,
+   "gating.link_depth": "median",
+   "gating.max_noise_m": 0.5,
+   "tracker.enable": true,
+   "extension.enable": false,
+   "motion.still_policy": "unmask",
+   "compose.right_fallback": "median",
+   "motion.use_still": false,
+   "motion.window_long_s": 2.0,
+   "gating.max_depth": 3,
+   "selective.enable": true,
+   "selective.prior_static_classes": "box,pallet,trolley",
+   "tracker.motion_model": "ego",
+   "segmenter.fast_masks": true,
+   "gating.k_sigma": 4.0
+  }
+ ]
+}

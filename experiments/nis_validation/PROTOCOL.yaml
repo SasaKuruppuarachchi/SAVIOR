@@ -1,0 +1,1444 @@
+status: FROZEN - NIS validation protocol, written BEFORE any NIS-validation run (one-shot, no tuning)
+frozen_at: 2026-10-27T17:56:21+0200
+purpose: 'Evaluate ONCE, untuned, the frozen self-tuning (NIS-adaptive chi2) gate controls of the semantic-gate study on every non-t3 dataset: warehouse
+  held-out t2, VIODE held-out, OpenLORIS (cafe1-1 + 8 held-out) / uHumans2 (task-E setup), real-world Monado. t3 is excluded (confirmatory study running
+  separately).'
+references:
+  semantic_gate_freeze:
+    path: results/semantic_gate/FREEZE.yaml
+    md5: 0457d646d61995b1de656cdd86ecb5bc
+  review_runs_freeze:
+    path: results/review_runs/FREEZE.yaml
+    md5: d00e1421c1291253bfcd3bb464029ebb
+  review_runs_amendment:
+    path: results/review_runs/FREEZE_AMENDMENT.txt
+    md5: d003d1c283a6345156e429240a168a27
+  backend_config:
+    path: results/backend_v2/backend_config.yaml
+    md5: 10c2144bc45310d3eab3d87f7b9b638a
+  final_config: 6fea24e550b7198659d8de35d19b3c67
+  final_config_addendum: f07c9c30f29a775c243d2a6ae00b9a45
+  real_world_protocol:
+    path: results/real_world/PROTOCOL.yaml
+    md5: 0142d94323f13a32f8a76f14380a7dcd
+  real_world_amendment:
+    path: results/real_world/FREEZE_AMENDMENT.txt
+    md5: 0d5ddb677876801aff6afbacdb53c0c3
+  stats3_core:
+    path: results/stats_v3/scripts/stats3_core.py
+    md5: 187ad659e27e7a0c452d5c7edc9acd9f
+  sg_install_run_subscribe_msckf_md5: 4f0be6c294c2398f79af0084ed2ea62b
+methods:
+  sf1_nis: 'SAVIOR (frozen sens_fix1 instantiation of each dataset) + NIS-adaptive gate: INSTALL results/semantic_gate/install, ov_set + savior_nis_gate=true
+    (code defaults window 200, scale clamp [0.05, 20]); nothing else'
+  ov_nis: OpenVINS (frozen openvins instantiation of each dataset) + NIS-adaptive gate, same delta
+  ctl_sens_fix1 / ctl_openvins: 'md5-identity control (SG install, NO delta) on warehouse hall_t2_L3 runs 1-5 only (the held-out warehouse is bit-deterministic):
+    trajectories must equal the frozen sens_fix1 / openvins runs. Check only, not in statistics.'
+  delta_rule: held-out instantiation = the freeze delta (semantic_gate FREEZE.yaml methods.<v>.ovset_add) applied to the frozen instantiation of the base
+    method on that dataset; for Monado the key is added to the ov_set ROS-parameter string of the frozen real-world OpenVINS config exactly as the freeze
+    applies it (no yaml edit)
+  parameter_diff: 'scripts/nv_check.py -> tables/param_diff.md: 185 / 185 settings files: exactly the NIS delta. Errors: 0.'
+datasets:
+  warehouse_t2:
+    sequences:
+    - aisles_t2_L0
+    - aisles_t2_L1
+    - aisles_t2_L2
+    - aisles_t2_L3
+    - hall_t2_L0
+    - hall_t2_L1
+    - hall_t2_L2
+    - hall_t2_L3
+    - dock_t2_L0
+    - dock_t2_L1
+    - dock_t2_L2
+    - dock_t2_L3
+    offsets_s: 0.0..1.8 (10)
+    rate: 0.5
+    backend: v2
+    runner: run_nv.sh = review_runs run_rr.sh protocol
+    failure_m: 2.0
+  viode:
+    sequences:
+    - parking_lot_none
+    - parking_lot_low
+    - parking_lot_mid
+    - parking_lot_high
+    - city_day_none
+    - city_day_low
+    - city_day_mid
+    - city_day_high
+    - city_night_none
+    - city_night_low
+    - city_night_mid
+    - city_night_high
+    offsets_s: P5 late-start (parking_lot 5.5.., city_day 4.1.., city_night 6.1.., 10 each)
+    rate: 0.5
+    backend: v2 (BACKEND_VIODE=v2)
+    failure_m: 1.0
+  openloris:
+    sequences:
+    - openloris_cafe1-1
+    - openloris_cafe1-2
+    - openloris_office1-1
+    - openloris_office1-2
+    - openloris_office1-3
+    - openloris_office1-4
+    - openloris_office1-5
+    - openloris_office1-6
+    - openloris_office1-7
+    offsets_s: 0.0..1.8 (10)
+    rate: 0.5
+    config: ORIGINAL estimator config (task E)
+    failure_m: 1.0
+    note: cafe1-1 = P2 tuning sequence, reported separately
+  uhumans2:
+    sequences:
+    - uhumans2_office_s1_00h
+    - uhumans2_office_s1_06h
+    - uhumans2_office_s1_12h
+    offsets_s: 00h 0.0..0.8 (5); 06h / 12h 0.0..1.8 (10)
+    rate: 0.5
+    config: ORIGINAL estimator config (task E)
+    failure_m: 1.0
+  monado:
+    sequences:
+    - MIO13
+    - MIO15
+    - MIO16
+    - MIO07 (static control)
+    offsets_s: 0.0..1.8 (10)
+    rate: 0.25
+    config: frozen real-world configs (FREEZE.md5 + FREEZE_AMENDMENT.md5, asserted by rw_args.py)
+    failure_m: 1.0
+  cap_m: 10.0
+  runs: results/nis_validation/runs/{t2,viode,e,rw,ctl}/<seq>/<variant>/run_XX (run index = offset index, as the baselines)
+pairings:
+  warehouse_t2 / viode: openvins, sens_fix1, yolo_naive (results/backend_v2/heldout/runs); ovchi_best, sf1_chibest (results/review_runs/runs/heldout)
+  openloris / uhumans2: e_openvins, e_sens_fix1, e_yolo_naive (results/review_runs/runs/e)
+  monado: openvins, sens_fix1, yolo_naive, vins_fusion at rate 0.25 (results/real_world/runs; Amendment 2)
+  unit: same sequence and same start offset (run_XX index); existing baseline runs are reused, never re-run
+validity:
+  warehouse_t2 / viode: 'results/review_runs/scripts/rr_audit.py rules (= m2bsync + AUDIT_NOTE 0.101 s end tolerance for back-end v2): run_info ok/0, non-empty
+    trajectory, FINAL fallback_latest = fallback_empty = late_masks = 0 (savior launches), n_in_core = 0, last pose >= same-offset openvins(-v2) last pose
+    - 0.101 s and <= 1 pose missing after the own first pose; pose rule (>= openvins - 1) reported'
+  openloris / uhumans2: the same rr_audit.py rules with the reference e_openvins (review_runs/runs/e)
+  monado: 'results/real_world/scripts/rw_analyze.py rules: status ok, trajectory, FINAL (savior launch) fallbacks = late = 0, n_in_core = 0, pose rule poses
+    >= same-offset openvins - 1, and the Amendment-2 frame rule: processed stereo frames ("[TIME]: ... seconds total" lines) == prep/expected_frames.yaml
+    ros2_pairs for the offset, +-0'
+  reruns: an invalid run is re-run unchanged (FORCE), up to 3 attempts in total; any run still invalid is reported, kept in the include-all sensitivity
+    and excluded pairwise from the primary statistics (as task E did for its baselines). Baseline runs are audited with the same rule; pairs with an invalid
+    baseline run are excluded pairwise in the primary statistics.
+statistics:
+  metric: ATE RMSE (savior-eval multi, posyaw, full sequence); failures = ATE > failure_m (warehouse 2 m, others 1 m), log ratios capped at 10 m
+  run_level: 'paired per-offset log ATE ratio; geometric-mean ratio - 1; iid bootstrap 95 % CI over the pooled pairs (20000, seed 0); Wilcoxon signed-rank
+    (zero differences dropped); Holm within each dataset x group over the PRIMARY comparisons (secondary comparisons: own Holm family)'
+  sequence_level: 'results/stats_v3/scripts/stats3_core.py (imported): exp(mean of per-sequence mean log ratios) - 1, two-stage cluster bootstrap CI (boot_two_stage,
+    20000, seed 0), exact sign-flip p (signflip; min p = 2/2^k reported)'
+  rpe: savior-eval RPE, mean translational error at the shortest sub-length; paired log ratio over pairs where both runs are not failures and have RPE segments;
+    same run-level statistics (secondary)
+  lambda: 'per run, from the [SAVIOR-GATE] msckf / slam log lines (one every 200 update calls): median nis_lambda over the run, and the fraction of lines
+    at the lower clamp (<= 0.0500) and at the upper clamp (>= 20.0); reported per dataset (median over runs of the run medians, IQR, mean clamp fractions)'
+  sensitivity: include-all (invalid runs kept), failures excluded instead of capped
+primary_comparisons:
+  warehouse_t2:
+  - sf1_nis vs sens_fix1
+  - sf1_nis vs ovchi_best
+  - sf1_nis vs openvins
+  - ov_nis vs openvins
+  viode:
+  - sf1_nis vs sens_fix1
+  - sf1_nis vs ovchi_best
+  - sf1_nis vs openvins
+  - ov_nis vs openvins
+  openloris:
+  - sf1_nis vs sens_fix1
+  - sf1_nis vs openvins
+  - ov_nis vs openvins
+  uhumans2:
+  - sf1_nis vs sens_fix1
+  - sf1_nis vs openvins
+  - ov_nis vs openvins
+  monado:
+  - sf1_nis vs sens_fix1
+  - sf1_nis vs openvins
+  - ov_nis vs openvins
+secondary_comparisons:
+  warehouse_t2 / viode:
+  - sf1_nis vs yolo_naive
+  - sf1_nis vs sf1_chibest
+  - ov_nis vs ovchi_best
+  openloris / uhumans2:
+  - sf1_nis vs yolo_naive
+  monado:
+  - sf1_nis vs yolo_naive
+  - sf1_nis vs vins_fusion
+primary_groups:
+  warehouse_t2: all (12 seq); also L0, L1, L2, L3, L0+L1, L2+L3, hall_L3, dock_L3, hall+dock_L3
+  viode: all (12 seq); also none, low, mid, high, none+low, mid+high, low+mid+high
+  openloris: held-out 8 sequences (cafe1-1 reported separately; also all 9)
+  uhumans2: all 3 (also 06h+12h, each)
+  monado: person MIO13+15+16 (also each, and static MIO07)
+scripts_md5:
+  results/nis_validation/scripts/mkprotocol.py: 7a3b12252d415a1a0a7a9e0ead0ffc3e
+  results/nis_validation/scripts/nv_args.py: b8a2d19c7a4a50002d869df54f0429a4
+  results/nis_validation/scripts/nv_check.py: 7d1b10ad5f89f3ada2915b22367c6eba
+  results/nis_validation/scripts/nv_plan.py: 892d49ff35cc7fefc04b0dbcc2f48c36
+  results/nis_validation/scripts/run_nv.sh: a25c2480be65f647e2fe7e113d24d253
+instantiation:
+  sf1_nis:
+    aisles_t2_L0:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/aisles_t2_L0
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/aisles_t2_L0.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: &id001
+      - 0.0
+      - 0.2
+      - 0.4
+      - 0.6
+      - 0.8
+      - 1.0
+      - 1.2
+      - 1.4
+      - 1.6
+      - 1.8
+    aisles_t2_L1:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/aisles_t2_L1
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/aisles_t2_L1.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    aisles_t2_L2:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/aisles_t2_L2
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/aisles_t2_L2.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    aisles_t2_L3:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/aisles_t2_L3
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/aisles_t2_L3.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    hall_t2_L0:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/hall_t2_L0
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/hall_t2_L0.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    hall_t2_L1:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/hall_t2_L1
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/hall_t2_L1.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    hall_t2_L2:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/hall_t2_L2
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/hall_t2_L2.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    hall_t2_L3:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/hall_t2_L3
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/hall_t2_L3.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    dock_t2_L0:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/dock_t2_L0
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/dock_t2_L0.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    dock_t2_L1:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/dock_t2_L1
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/dock_t2_L1.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    dock_t2_L2:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/dock_t2_L2
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/dock_t2_L2.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    dock_t2_L3:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/dock_t2_L3
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/dock_t2_L3.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+    parking_lot_none:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/parking_lot_none
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/parking_lot_none.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: &id002
+      - 5.5
+      - 5.7
+      - 5.9
+      - 6.1
+      - 6.3
+      - 6.5
+      - 6.7
+      - 6.9
+      - 7.1
+      - 7.3
+    parking_lot_low:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/parking_lot_low
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/parking_lot_low.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: *id002
+    parking_lot_mid:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/parking_lot_mid
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/parking_lot_mid.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: *id002
+    parking_lot_high:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/parking_lot_high
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/parking_lot_high.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: *id002
+    city_day_none:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_day_none
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_day_none.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: &id003
+      - 4.1
+      - 4.3
+      - 4.5
+      - 4.7
+      - 4.9
+      - 5.1
+      - 5.3
+      - 5.5
+      - 5.7
+      - 5.9
+    city_day_low:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_day_low
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_day_low.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: *id003
+    city_day_mid:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_day_mid
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_day_mid.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: *id003
+    city_day_high:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_day_high
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_day_high.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: *id003
+    city_night_none:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_night_none
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_night_none.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: &id004
+      - 6.1
+      - 6.3
+      - 6.5
+      - 6.7
+      - 6.9
+      - 7.1
+      - 7.3
+      - 7.5
+      - 7.7
+      - 7.9
+    city_night_low:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_night_low
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_night_low.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: *id004
+    city_night_mid:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_night_mid
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_night_mid.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: *id004
+    city_night_high:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_night_high
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_night_high.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.5
+      offsets_s: *id004
+    openloris_cafe1-1:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/cafe1-1
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/cafe1-1.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    openloris_cafe1-2:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/cafe1-2
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/cafe1-2.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-1:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-1
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-1.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-2:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-2
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-2.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-3:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-3
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-3.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-4:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-4
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-4.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-5:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-5
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-5.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-6:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-6
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-6.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-7:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-7
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-7.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    uhumans2_office_s1_00h:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/uhumans2/ros2/office_s1_00h
+      gt: /home/sasa/workspace/savior_ws/data/uhumans2/gt/office_s1_00h.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s:
+      - 0.0
+      - 0.2
+      - 0.4
+      - 0.6
+      - 0.8
+    uhumans2_office_s1_06h:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/uhumans2/ros2/office_s1_06h
+      gt: /home/sasa/workspace/savior_ws/data/uhumans2/gt/office_s1_06h.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    uhumans2_office_s1_12h:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/uhumans2/ros2/office_s1_12h
+      gt: /home/sasa/workspace/savior_ws/data/uhumans2/gt/office_s1_12h.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=chair,suitcase,backpack,handbag,cart stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/coco_indoor.yaml
+      rate: 0.5
+      offsets_s: *id001
+    MIO13:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO13
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO13.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.25
+      offsets_s: *id001
+    MIO15:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO15
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO15.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.25
+      offsets_s: *id001
+    MIO16:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO16
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO16.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.25
+      offsets_s: *id001
+    MIO07:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO07
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO07.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - model:=/home/sasa/workspace/savior_ws/models/yolo26s-seg.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      rate: 0.25
+      offsets_s: *id001
+  ov_nis:
+    aisles_t2_L0:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/aisles_t2_L0
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/aisles_t2_L0.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    aisles_t2_L1:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/aisles_t2_L1
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/aisles_t2_L1.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    aisles_t2_L2:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/aisles_t2_L2
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/aisles_t2_L2.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    aisles_t2_L3:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/aisles_t2_L3
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/aisles_t2_L3.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    hall_t2_L0:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/hall_t2_L0
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/hall_t2_L0.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    hall_t2_L1:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/hall_t2_L1
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/hall_t2_L1.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    hall_t2_L2:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/hall_t2_L2
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/hall_t2_L2.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    hall_t2_L3:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/hall_t2_L3
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/hall_t2_L3.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    dock_t2_L0:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/dock_t2_L0
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/dock_t2_L0.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    dock_t2_L1:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/dock_t2_L1
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/dock_t2_L1.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    dock_t2_L2:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/dock_t2_L2
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/dock_t2_L2.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    dock_t2_L3:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/dock_t2_L3
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/dock_t2_L3.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    parking_lot_none:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/parking_lot_none
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/parking_lot_none.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id002
+    parking_lot_low:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/parking_lot_low
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/parking_lot_low.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id002
+    parking_lot_mid:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/parking_lot_mid
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/parking_lot_mid.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id002
+    parking_lot_high:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/parking_lot_high
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/parking_lot_high.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id002
+    city_day_none:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_day_none
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_day_none.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id003
+    city_day_low:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_day_low
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_day_low.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id003
+    city_day_mid:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_day_mid
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_day_mid.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id003
+    city_day_high:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_day_high
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_day_high.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id003
+    city_night_none:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_night_none
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_night_none.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id004
+    city_night_low:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_night_low
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_night_low.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id004
+    city_night_mid:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_night_mid
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_night_mid.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id004
+    city_night_high:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/viode/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/viode/ros2/city_night_high
+      gt: /home/sasa/workspace/savior_ws/data/viode/gt/city_night_high.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id004
+    openloris_cafe1-1:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/cafe1-1
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/cafe1-1.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    openloris_cafe1-2:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/cafe1-2
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/cafe1-2.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-1:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-1
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-1.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-2:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-2
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-2.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-3:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-3
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-3.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-4:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-4
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-4.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-5:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-5
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-5.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-6:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-6
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-6.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    openloris_office1-7:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/openloris_t265/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/openloris/ros2/office1-7
+      gt: /home/sasa/workspace/savior_ws/data/openloris/gt/office1-7.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    uhumans2_office_s1_00h:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/uhumans2/ros2/office_s1_00h
+      gt: /home/sasa/workspace/savior_ws/data/uhumans2/gt/office_s1_00h.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s:
+      - 0.0
+      - 0.2
+      - 0.4
+      - 0.6
+      - 0.8
+    uhumans2_office_s1_06h:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/uhumans2/ros2/office_s1_06h
+      gt: /home/sasa/workspace/savior_ws/data/uhumans2/gt/office_s1_06h.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    uhumans2_office_s1_12h:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/uhumans2/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/uhumans2/ros2/office_s1_12h
+      gt: /home/sasa/workspace/savior_ws/data/uhumans2/gt/office_s1_12h.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: ''
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001
+    MIO13:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO13
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO13.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.25
+      offsets_s: *id001
+    MIO15:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO15
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO15.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.25
+      offsets_s: *id001
+    MIO16:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO16
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO16.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.25
+      offsets_s: *id001
+    MIO07:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/monado_index/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/monado/ros2/MIO07
+      gt: /home/sasa/workspace/savior_ws/data/monado/gt/MIO07.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0 savior_nis_gate=true
+      topics: /cam0/image_raw /cam1/image_raw /imu0
+      pset: ''
+      launch_args: []
+      rate: 0.25
+      offsets_s: *id001
+  ctl_sens_fix1:
+    hall_t2_L3:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: savior.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/hall_t2_L3
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/hall_t2_L3.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true
+        selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      launch_args:
+      - backend:=yolo
+      - perception_params:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+      - model:=/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine
+      - roles_file:=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/roles/warehouse.yaml
+      rate: 0.5
+      offsets_s: *id001
+  ctl_openvins:
+    hall_t2_L3:
+      install: /home/sasa/workspace/savior_ws/results/semantic_gate/install
+      launch: baseline.launch.py
+      cfg: /home/sasa/workspace/savior_ws/results/backend_v2/config/warehouse/estimator_config.yaml
+      bag: /home/sasa/workspace/savior_ws/data/warehouse/ros2_stereoseg/hall_t2_L3
+      gt: /home/sasa/workspace/savior_ws/data/warehouse/gt/hall_t2_L3.txt
+      ov_set: deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0
+      topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static
+      pset: ''
+      launch_args: []
+      rate: 0.5
+      offsets_s: *id001

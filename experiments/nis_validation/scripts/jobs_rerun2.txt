@@ -1,0 +1,23 @@
+# re-run of invalid own runs: openloris = attempt 3 (last), uhumans2 = attempt 2
+openloris_cafe1-1 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_cafe1-2 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-1 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-1 sf1_nis 0.2 2 DSN=nis_validation/runs/e
+openloris_office1-1 sf1_nis 1.0 6 DSN=nis_validation/runs/e
+openloris_office1-2 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-3 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-4 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-5 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-5 sf1_nis 0.2 2 DSN=nis_validation/runs/e
+openloris_office1-6 sf1_nis 0.2 2 DSN=nis_validation/runs/e
+uhumans2_office_s1_00h sf1_nis 0.4 3 DSN=nis_validation/runs/e
+uhumans2_office_s1_00h sf1_nis 0.6 4 DSN=nis_validation/runs/e
+uhumans2_office_s1_00h sf1_nis 0.8 5 DSN=nis_validation/runs/e
+uhumans2_office_s1_06h sf1_nis 0.4 3 DSN=nis_validation/runs/e
+uhumans2_office_s1_06h sf1_nis 0.6 4 DSN=nis_validation/runs/e
+uhumans2_office_s1_06h sf1_nis 1.0 6 DSN=nis_validation/runs/e
+uhumans2_office_s1_06h sf1_nis 1.2 7 DSN=nis_validation/runs/e
+uhumans2_office_s1_12h sf1_nis 0.2 2 DSN=nis_validation/runs/e
+uhumans2_office_s1_12h sf1_nis 0.4 3 DSN=nis_validation/runs/e
+uhumans2_office_s1_12h sf1_nis 0.6 4 DSN=nis_validation/runs/e
+uhumans2_office_s1_12h sf1_nis 0.8 5 DSN=nis_validation/runs/e

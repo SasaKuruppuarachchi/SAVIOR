@@ -1,0 +1,144 @@
+t2 aisles_t2_L0 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 aisles_t2_L0 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L0/zero/off_all
+t2 aisles_t2_L0 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L0/sens_fix1/off_{off}
+t2 aisles_t2_L0 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L0/yolo_naive/off_{off}
+t2 aisles_t2_L0 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L0/oracle_moving_ext/off_{off}
+t2 aisles_t2_L0 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L0/oracle_class_ext/off_{off}
+t2 aisles_t2_L1 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 aisles_t2_L1 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L1/zero/off_all
+t2 aisles_t2_L1 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L1/sens_fix1/off_{off}
+t2 aisles_t2_L1 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L1/yolo_naive/off_{off}
+t2 aisles_t2_L1 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L1/oracle_moving_ext/off_{off}
+t2 aisles_t2_L1 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L1/oracle_class_ext/off_{off}
+t2 aisles_t2_L2 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 aisles_t2_L2 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L2/zero/off_all
+t2 aisles_t2_L2 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L2/sens_fix1/off_{off}
+t2 aisles_t2_L2 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L2/yolo_naive/off_{off}
+t2 aisles_t2_L2 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L2/oracle_moving_ext/off_{off}
+t2 aisles_t2_L2 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L2/oracle_class_ext/off_{off}
+t2 aisles_t2_L3 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 aisles_t2_L3 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L3/zero/off_all
+t2 aisles_t2_L3 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L3/sens_fix1/off_{off}
+t2 aisles_t2_L3 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L3/yolo_naive/off_{off}
+t2 aisles_t2_L3 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L3/oracle_moving_ext/off_{off}
+t2 aisles_t2_L3 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/aisles_t2_L3/oracle_class_ext/off_{off}
+t2 hall_t2_L0 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 hall_t2_L0 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L0/zero/off_all
+t2 hall_t2_L0 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L0/sens_fix1/off_{off}
+t2 hall_t2_L0 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L0/yolo_naive/off_{off}
+t2 hall_t2_L0 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L0/oracle_moving_ext/off_{off}
+t2 hall_t2_L0 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L0/oracle_class_ext/off_{off}
+t2 hall_t2_L1 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 hall_t2_L1 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L1/zero/off_all
+t2 hall_t2_L1 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L1/sens_fix1/off_{off}
+t2 hall_t2_L1 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L1/yolo_naive/off_{off}
+t2 hall_t2_L1 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L1/oracle_moving_ext/off_{off}
+t2 hall_t2_L1 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L1/oracle_class_ext/off_{off}
+t2 hall_t2_L2 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 hall_t2_L2 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L2/zero/off_all
+t2 hall_t2_L2 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L2/sens_fix1/off_{off}
+t2 hall_t2_L2 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L2/yolo_naive/off_{off}
+t2 hall_t2_L2 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L2/oracle_moving_ext/off_{off}
+t2 hall_t2_L2 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L2/oracle_class_ext/off_{off}
+t2 hall_t2_L3 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 hall_t2_L3 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L3/zero/off_all
+t2 hall_t2_L3 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L3/sens_fix1/off_{off}
+t2 hall_t2_L3 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L3/yolo_naive/off_{off}
+t2 hall_t2_L3 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L3/oracle_moving_ext/off_{off}
+t2 hall_t2_L3 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/hall_t2_L3/oracle_class_ext/off_{off}
+t2 dock_t2_L0 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 dock_t2_L0 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L0/zero/off_all
+t2 dock_t2_L0 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L0/sens_fix1/off_{off}
+t2 dock_t2_L0 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L0/yolo_naive/off_{off}
+t2 dock_t2_L0 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L0/oracle_moving_ext/off_{off}
+t2 dock_t2_L0 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L0/oracle_class_ext/off_{off}
+t2 dock_t2_L1 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 dock_t2_L1 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L1/zero/off_all
+t2 dock_t2_L1 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L1/sens_fix1/off_{off}
+t2 dock_t2_L1 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L1/yolo_naive/off_{off}
+t2 dock_t2_L1 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L1/oracle_moving_ext/off_{off}
+t2 dock_t2_L1 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L1/oracle_class_ext/off_{off}
+t2 dock_t2_L2 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 dock_t2_L2 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L2/zero/off_all
+t2 dock_t2_L2 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L2/sens_fix1/off_{off}
+t2 dock_t2_L2 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L2/yolo_naive/off_{off}
+t2 dock_t2_L2 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L2/oracle_moving_ext/off_{off}
+t2 dock_t2_L2 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L2/oracle_class_ext/off_{off}
+t2 dock_t2_L3 dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t2 dock_t2_L3 dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L3/zero/off_all
+t2 dock_t2_L3 dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L3/sens_fix1/off_{off}
+t2 dock_t2_L3 dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L3/yolo_naive/off_{off}
+t2 dock_t2_L3 dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L3/oracle_moving_ext/off_{off}
+t2 dock_t2_L3 dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/dock_t2_L3/oracle_class_ext/off_{off}
+viode parking_lot_none dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode parking_lot_none dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_none/zero/off_all
+viode parking_lot_none dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_none/sens_fix1/off_{off}
+viode parking_lot_none dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_none/yolo_naive/off_{off}
+viode parking_lot_none dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_none/oracle_moving_ext/off_{off}
+viode parking_lot_none dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_none/oracle_class_ext/off_{off}
+viode parking_lot_low dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode parking_lot_low dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_low/zero/off_all
+viode parking_lot_low dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_low/sens_fix1/off_{off}
+viode parking_lot_low dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_low/yolo_naive/off_{off}
+viode parking_lot_low dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_low/oracle_moving_ext/off_{off}
+viode parking_lot_low dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_low/oracle_class_ext/off_{off}
+viode parking_lot_mid dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode parking_lot_mid dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_mid/zero/off_all
+viode parking_lot_mid dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_mid/sens_fix1/off_{off}
+viode parking_lot_mid dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_mid/yolo_naive/off_{off}
+viode parking_lot_mid dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_mid/oracle_moving_ext/off_{off}
+viode parking_lot_mid dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_mid/oracle_class_ext/off_{off}
+viode parking_lot_high dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode parking_lot_high dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_high/zero/off_all
+viode parking_lot_high dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_high/sens_fix1/off_{off}
+viode parking_lot_high dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_high/yolo_naive/off_{off}
+viode parking_lot_high dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_high/oracle_moving_ext/off_{off}
+viode parking_lot_high dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/parking_lot_high/oracle_class_ext/off_{off}
+viode city_day_none dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode city_day_none dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_none/zero/off_all
+viode city_day_none dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_none/sens_fix1/off_{off}
+viode city_day_none dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_none/yolo_naive/off_{off}
+viode city_day_none dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_none/oracle_moving_ext/off_{off}
+viode city_day_none dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_none/oracle_class_ext/off_{off}
+viode city_day_low dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode city_day_low dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_low/zero/off_all
+viode city_day_low dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_low/sens_fix1/off_{off}
+viode city_day_low dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_low/yolo_naive/off_{off}
+viode city_day_low dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_low/oracle_moving_ext/off_{off}
+viode city_day_low dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_low/oracle_class_ext/off_{off}
+viode city_day_mid dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode city_day_mid dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_mid/zero/off_all
+viode city_day_mid dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_mid/sens_fix1/off_{off}
+viode city_day_mid dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_mid/yolo_naive/off_{off}
+viode city_day_mid dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_mid/oracle_moving_ext/off_{off}
+viode city_day_mid dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_mid/oracle_class_ext/off_{off}
+viode city_day_high dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode city_day_high dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_high/zero/off_all
+viode city_day_high dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_high/sens_fix1/off_{off}
+viode city_day_high dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_high/yolo_naive/off_{off}
+viode city_day_high dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_high/oracle_moving_ext/off_{off}
+viode city_day_high dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_day_high/oracle_class_ext/off_{off}
+viode city_night_none dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode city_night_none dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_none/zero/off_all
+viode city_night_none dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_none/sens_fix1/off_{off}
+viode city_night_none dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_none/yolo_naive/off_{off}
+viode city_night_none dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_none/oracle_moving_ext/off_{off}
+viode city_night_none dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_none/oracle_class_ext/off_{off}
+viode city_night_low dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode city_night_low dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_low/zero/off_all
+viode city_night_low dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_low/sens_fix1/off_{off}
+viode city_night_low dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_low/yolo_naive/off_{off}
+viode city_night_low dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_low/oracle_moving_ext/off_{off}
+viode city_night_low dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_low/oracle_class_ext/off_{off}
+viode city_night_mid dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode city_night_mid dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_mid/zero/off_all
+viode city_night_mid dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_mid/sens_fix1/off_{off}
+viode city_night_mid dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_mid/yolo_naive/off_{off}
+viode city_night_mid dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_mid/oracle_moving_ext/off_{off}
+viode city_night_mid dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_mid/oracle_class_ext/off_{off}
+viode city_night_high dyna_det SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+viode city_night_high dyna_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_high/zero/off_all
+viode city_night_high dyna_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_high/sens_fix1/off_{off}
+viode city_night_high dyna_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_high/yolo_naive/off_{off}
+viode city_night_high dyna_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_high/oracle_moving_ext/off_{off}
+viode city_night_high dyna_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/heldout/masks/city_night_high/oracle_class_ext/off_{off}

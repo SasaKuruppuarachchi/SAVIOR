@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# SAVIOR-Warehouse oracle MOVING masks (/cam0/segmentation_moving + oracle/warehouse_colormap_moving.yaml):
+# every coloured instance is truly moving in that frame -> all dynamic (upper bound of motion masking).
+dynamic:   [moving_rack, moving_guard_rail, moving_window, moving_forklift, moving_box, moving_pallet, moving_trolley, moving_person]
+potential: []
+static:    []
+default: ignore

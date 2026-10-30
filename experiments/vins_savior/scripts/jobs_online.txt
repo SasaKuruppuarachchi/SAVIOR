@@ -1,0 +1,6 @@
+hall_t1_L3 sens_fix1 1 61
+hall_t1_L3 savior_edge 3 62
+aisles_t1_L2 sens_fix1 7 63
+aisles_t1_L2 yolo_naive 1 64
+hall_t1_L3 oracle_moving_ext 1 65
+aisles_t1_L0 oracle_class_ext 5 66

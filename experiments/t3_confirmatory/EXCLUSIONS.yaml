@@ -1,0 +1,2 @@
+rule: DESIGN.yaml exclusion_rule (pre-written, applied mechanically by t3_checks.py)
+excluded: []

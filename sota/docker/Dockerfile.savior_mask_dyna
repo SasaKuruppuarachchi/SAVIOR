@@ -1,0 +1,12 @@
+# savior-sota:noetic-mask-dyna - savior-sota:noetic + patch P10 (DynaVINS SAVIOR dynamic masks, deterministic mode;
+# port of the VINS-Fusion patch P9). Incremental build: the pinned DynaVINS sources (with P1-P5) are already in the base
+# image, so no network is needed. Only DynaVINS (and its catkin dependency camera_models) is rebuilt; VINS-Fusion and
+# ORB-SLAM3 binaries are those of the base image. Build: ../build_mask_dyna.sh
+FROM savior-sota:noetic
+COPY patches/dynavins_savior_mask.patch /opt/sota/patches/dynavins_savior_mask.patch
+RUN cd /opt/sota/catkin_ws/src/dynaVINS \
+ && (grep -q savior_mask CMakeLists.txt || patch -p1 < /opt/sota/patches/dynavins_savior_mask.patch) \
+ && cd /opt/sota/catkin_ws && . /opt/ros/noetic/setup.sh \
+ && catkin build -j${JOBS:-8} --no-status dynaVINS \
+ && rm -rf build logs \
+ && echo "P10 dynavins_savior_mask.patch $(md5sum /opt/sota/patches/dynavins_savior_mask.patch | cut -c1-32)" >> /opt/sota/COMMITS.txt

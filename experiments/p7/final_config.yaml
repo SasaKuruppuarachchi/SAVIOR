@@ -1,0 +1,244 @@
+# ============================================================================================================
+# SAVIOR P7 FINAL CONFIGURATION - FROZEN / PRE-REGISTERED before any held-out evaluation.
+# Do not edit. Its md5 is recorded in results/p7/final_config.md5 and src/savior/docs/IMPLEMENTATION_PLAN.md section 6.
+# savior_node keys are pset:="k=v ..." on top of savior_perception/config/default.yaml + perception_params; ov_set:="k=v ...".
+# Main (sens_fix1) was selected on the t1 tuning set (stage E, post hoc among 9 gate settings): t1 numbers are optimistic.
+# ============================================================================================================
+status: FROZEN - pre-registered before any held-out evaluation
+frozen_at: '2026-10-23T13:39:21+03:00'
+frozen_by: agent N (P7 stage G) on the author's decisions of 2026-10-23 11:25
+tuned_on: 'SAVIOR-Warehouse *_t1_* only (aisles/hall L0-L3). Held-out: warehouse *_t2_*, *_t3_* (and VIODE) never opened.'
+main_method: sens_fix1
+secondary_method: p7_nb
+final_methods:
+- openvins
+- savior_none
+- oracle_moving_ext
+- oracle_class_ext
+- yolo_naive
+- sens_fix1
+- p7_nb
+paper_labels:
+  openvins: OpenVINS
+  savior_none: SAVIOR-none
+  oracle_moving_ext: O-Dyn+B
+  oracle_class_ext: O-Cls+B
+  yolo_naive: Y-Cls
+  sens_fix1: SAVIOR
+  p7_nb: SAVIOR-adaptive
+primary_comparisons:
+- sens_fix1 vs yolo_naive
+- sens_fix1 vs openvins
+- p7_nb vs yolo_naive (secondary)
+- oracle_moving_ext vs oracle_class_ext (like-for-like oracle)
+- savior_none == openvins (md5 control)
+protocol:
+  runner: savior-run (savior_eval), one isolated container per method x sequence (results/p7/scripts/run_method.sh, drun.sh)
+  bag_rate: 0.5
+  start_offsets_s:
+  - 0.0
+  - 0.2
+  - 0.4
+  - 0.6
+  - 0.8
+  - 1.0
+  - 1.2
+  - 1.4
+  - 1.6
+  - 1.8
+  mask_policy: wait
+  mask_timeout_ms: 30000
+  feature_stats: auto
+  topics: /cam0/image_raw /cam1/image_raw /imu0 /tf_static (+ the oracle segmentation topic for oracle methods)
+  estimator_config: src/savior/savior_bringup/config/warehouse/estimator_config.yaml
+  validity: 'every run: clean exit, non-empty trajectory, fork FINAL line with fallback_latest = fallback_empty = late_masks = 0, n_in_core =
+    0 (results/p7/scripts/p7sync.py); invalid runs are re-run, never dropped silently'
+  evaluation: savior-eval multi --runs <dir> --gt data/warehouse/gt/<seq>.txt (posyaw alignment, full sequence)
+  failure_threshold_m: 2.0
+  failure_cap_m: 10.0
+  statistics: paired per-offset log ATE ratio vs reference; geometric-mean ratio - 1; bootstrap 95 % CI (20000, seed 0); Wilcoxon signed-rank;
+    Holm within each (level group, reference) family; groups L0, L1, L2, L3, L0+L1, L2+L3, hall_L3 (results/p7/scripts/p7analyze.py); secondary
+    metric RPE (shortest rpg sub-length)
+ov_set:
+  deterministic_processing: true
+  dynamic_mask_upstream_compat: true
+  dynamic_mask_max_pending: 0
+methods:
+  openvins:
+    label: OpenVINS
+    role: baseline (no perception node)
+    launch: baseline.launch.py
+  savior_none:
+    label: SAVIOR-none
+    role: 'control: empty masks; must equal openvins (md5 of trajectories)'
+    launch: savior.launch.py
+    backend: none
+  oracle_moving_ext:
+    label: O-Dyn+B
+    role: 'ceiling: GT moving-object masks + depth band'
+    launch: savior.launch.py
+    backend: oracle_colormap
+    dataset: warehouse_moving
+    roles_file: src/savior/savior_bringup/config/roles/warehouse_oracle_moving.yaml
+    extra_topics: /cam0/segmentation_moving
+    savior_node:
+      extension.enable: true
+      tracker.enable: false
+      compose.right_fallback: median
+    roles_md5: 4b13bf98df1830647e7f571b2fb707f0
+  oracle_class_ext:
+    label: O-Cls+B
+    role: 'like-for-like oracle naive: GT class masks (all movable classes) + depth band'
+    launch: savior.launch.py
+    backend: oracle_colormap
+    roles_file: src/savior/savior_bringup/config/roles/warehouse_naive.yaml
+    extra_topics: /cam0/segmentation
+    savior_node:
+      extension.enable: true
+      tracker.enable: false
+      compose.right_fallback: median
+    roles_md5: b34bc9b2339d06121526e40dea6062c4
+  yolo_naive:
+    label: Y-Cls
+    role: naive YOLO class masking (all movable classes, no band)
+    launch: savior.launch.py
+    backend: yolo
+    model: models/warehouse/yolo26s-seg-warehouse.engine
+    perception_params: src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+    roles_file: src/savior/savior_bringup/config/roles/warehouse_naive.yaml
+    savior_node:
+      compose.right_fallback: median
+      extension.enable: false
+      segmenter.fast_masks: true
+      stats_compact: true
+      tracker.enable: false
+    roles_md5: b34bc9b2339d06121526e40dea6062c4
+  sens_fix1:
+    label: SAVIOR
+    role: 'MAIN (pre-registered primary): P7 selective, fixed interaction gate d_int = 1 m, median-depth link'
+    launch: savior.launch.py
+    backend: yolo
+    model: models/warehouse/yolo26s-seg-warehouse.engine
+    perception_params: src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+    roles_file: src/savior/savior_bringup/config/roles/warehouse.yaml
+    savior_node:
+      compose.right_fallback: median
+      extension.enable: false
+      gating.fixed_threshold_m: 1.0
+      gating.link_depth: median
+      gating.max_depth: 3
+      gating.max_noise_m: 0.5
+      gating.mode: fixed
+      motion.enable: true
+      motion.still_policy: unmask
+      motion.use_still: false
+      motion.window_long_s: 2.0
+      segmenter.fast_masks: true
+      selective.enable: true
+      selective.prior_static_classes: box,pallet,trolley
+      stats_compact: true
+      tracker.enable: true
+      tracker.motion_model: ego
+    roles_md5: 1537a5b055dc76f400e319a6b23a9cf1
+  p7_nb:
+    label: SAVIOR-adaptive
+    role: 'SECONDARY (pre-registered): P7 selective, adaptive interaction gate (default k_sigma 3, contact link, noise cap 0.5 m)'
+    launch: savior.launch.py
+    backend: yolo
+    model: models/warehouse/yolo26s-seg-warehouse.engine
+    perception_params: src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+    roles_file: src/savior/savior_bringup/config/roles/warehouse.yaml
+    savior_node:
+      compose.right_fallback: median
+      extension.enable: false
+      gating.link_depth: contact
+      gating.max_depth: 3
+      gating.max_noise_m: 0.5
+      motion.enable: true
+      motion.still_policy: unmask
+      motion.use_still: false
+      motion.window_long_s: 2.0
+      segmenter.fast_masks: true
+      selective.enable: true
+      selective.prior_static_classes: box,pallet,trolley
+      stats_compact: true
+      tracker.enable: true
+      tracker.motion_model: ego
+    roles_md5: 1537a5b055dc76f400e319a6b23a9cf1
+coco_real_robot:
+  role: no-harm profile (uHumans2, OpenLORIS; COCO person detector)
+  model: models/yolo26s-seg.engine
+  model_md5: 84527d3962ae7b85d34fd7bcb74cbc58
+  roles_file: src/savior/savior_bringup/config/roles/coco_indoor.yaml
+  roles_md5: 169db877b9d3b1237667a1fcad1dad50
+  savior_node_overrides:
+    selective.prior_static_classes: chair,suitcase,backpack,handbag,cart
+files:
+  model_engine:
+    path: models/warehouse/yolo26s-seg-warehouse.engine
+    md5: 393c07cf281f26115f049fedf3ad1336
+    note: TensorRT FP16 384x672, built for this GPU / TRT version; rebuild elsewhere from the .onnx
+  model_onnx:
+    path: models/warehouse/yolo26s-seg-warehouse.onnx
+    md5: e4eb23a9164f87cd6fae593eaedf80db
+  model_pt:
+    path: models/warehouse/yolo26s-seg-warehouse.pt
+    md5: 61c8c9e3143b7e217614d9dc4f88f935
+  perception_params:
+    path: src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+    md5: c9f9ff1ce34e7b02742028ca28bc229d
+  perception_defaults:
+    path: src/savior/savior_perception/config/default.yaml
+    md5: c1a2b8cc20190a8ad1178d375620b932
+  estimator_config:
+    path: src/savior/savior_bringup/config/warehouse/estimator_config.yaml
+    md5: b18ac56386df56a1c33898550127c670
+  roles:
+    warehouse.yaml: 1537a5b055dc76f400e319a6b23a9cf1
+    warehouse_naive.yaml: b34bc9b2339d06121526e40dea6062c4
+    warehouse_oracle_moving.yaml: 4b13bf98df1830647e7f571b2fb707f0
+    coco_indoor.yaml: 169db877b9d3b1237667a1fcad1dad50
+  source_trees:
+    savior_perception:
+      md5: a0f3696183341d8734fae838b1c28aab
+      n_files: 21
+      files: src/savior/savior_perception/savior_perception/**/*.py
+    savior_bringup_launch:
+      md5: b1baf72901fe2e3699bb534640f3ec02
+      n_files: 2
+      files: src/savior/savior_bringup/launch/*.py
+    ov_msckf_fork:
+      md5: e3ae3a5bb53fe46533a9081abe73ee8e
+      n_files: 35
+      files: src/savior/open_vins/ov_msckf/src/**/*.cpp,**/*.h
+    p7_scripts:
+      md5: 4de6952953fd254373568a8746373cc5
+      n_files: 8
+      files: results/p7/scripts/variants.py,mkmethods.py,mksweep_e.py,run_method.sh,drun.sh,p7sync.py,p7analyze.py,eval_all.sh
+software:
+  python: 3.10.12
+  numpy: 1.26.4
+  scipy: 1.15.3
+  cv2: 4.11.0
+  torch: 2.9.1+cu128
+  tensorrt: 10.16.1.11
+  ultralytics: 8.4.177
+  yaml: 5.4.1
+  torch_cuda: '12.8'
+  cudnn: '91002'
+  ros_distro: humble
+  ros_humble_release: 3.2.2
+  os_image: Ubuntu 22.04.5 LTS
+  docker_image: savior:humble-cuda12.8 sha256:1a13b4aa1cf15c0e0cadfe8a83c59517d0d78175a1b796d131a03ea1ab3f69bb
+  gpu_driver_host: 580.178.04
+  hardware_timing: AMD Ryzen Threadripper 9960X 24C/48T, 125 GiB RAM, NVIDIA RTX PRO 6000 Blackwell Max-Q 96 GB
+  ov_msckf_fork: 2.7.0 (OpenVINS + SAVIOR dynamic-mask fork, see SAVIOR_FORK.md)
+  savior_perception: 0.1.0
+  savior_bringup: 0.1.0
+  savior_eval: 0.1.0
+notes:
+- t1 reference runs of openvins, savior_none, oracle_moving_ext and yolo_naive were reused from P6 (md5-identical poses after the P7 rebuild;
+  0 fallbacks so dynamic_mask_max_pending had no effect); on held-out data ALL methods are run with this file.
+- segmenter.fast_masks and stats_compact are node-only (bit-identical masks / trajectories, verified in stage F).
+- 'Interaction-gate check (sens_kmed1/3: adaptive gate + median link) was run on t1 before freezing and did not change the choice.'
+stage_F_timing: results/p7/tables/timing.md (idle machine, rate 1.0)

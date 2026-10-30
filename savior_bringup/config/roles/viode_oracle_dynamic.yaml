@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# VIODE oracle ceiling (config/oracle/viode_<env>_colormap.yaml): only the vehicles listed as vehicle_dynamic_* in
+# VIODE's vehicle_ids_<env>.txt are masked.
+dynamic:   [dyn_vehicle]
+potential: []
+static:    []
+default: ignore

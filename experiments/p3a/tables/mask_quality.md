@@ -1,0 +1,152 @@
+# P3a mask quality (offline, every stereo frame; oracle = GT seg colour (35,213,234))
+
+office_s1_00h:
+  frames: 8307
+  frames_with_human: 0.0
+  human_cov_mean_all: 0.0
+  human_cov_mean_when_present: 0
+  human_cov_p90_when_present: 0
+  human_cov_max: 0.0
+  frames_cov_gt_1pct: 0.0
+  frames_cov_gt_5pct: 0.0
+  human_px_in_components_lt30: 0.0
+  oracle_core_vs_human_px: 0.0
+  right_vs_left_core_px: 0.0
+  frames_right_core_lt_half_left: null
+  yolo_person:
+    pixel_recall: 0.0
+    pixel_precision: 0.0
+    micro_iou: 0.0
+    mean_frame_iou_human_frames: null
+    median_frame_iou_human_frames: null
+    frames_detected_any: null
+    frames_with_yolo_mask: 0.0045
+    false_positive_frames: 0.0045
+    fp_instances: 37
+    mask_px_vs_oracle: 30955.0
+    instance_recall_by_area_px:
+      30-100:
+        n: 0
+        recall_at_50pct: null
+      100-300:
+        n: 0
+        recall_at_50pct: null
+      300-1000:
+        n: 0
+        recall_at_50pct: null
+      1000-3000:
+        n: 0
+        recall_at_50pct: null
+      3000-10000:
+        n: 0
+        recall_at_50pct: null
+      10000-inf:
+        n: 0
+        recall_at_50pct: null
+  yolo_full:
+    core_recall: 0.0
+    core_precision: 0.0
+    core_plus_band_recall: 0.0
+    core_cov_mean: 0.0014
+    band_cov_mean: 0.0024
+    masked_px_vs_oracle: 109635.0
+office_s1_06h:
+  frames: 8522
+  frames_with_human: 0.4927
+  human_cov_mean_all: 0.4188
+  human_cov_mean_when_present: 0.85
+  human_cov_p90_when_present: 1.772
+  human_cov_max: 11.658
+  frames_cov_gt_1pct: 0.0913
+  frames_cov_gt_5pct: 0.0147
+  human_px_in_components_lt30: 0.0012
+  oracle_core_vs_human_px: 0.9988
+  right_vs_left_core_px: 0.9544
+  frames_right_core_lt_half_left: 0.0688
+  yolo_person:
+    pixel_recall: 0.9501
+    pixel_precision: 0.8372
+    micro_iou: 0.8019
+    mean_frame_iou_human_frames: 0.6298
+    median_frame_iou_human_frames: 0.7237
+    frames_detected_any: 0.8538
+    frames_with_yolo_mask: 0.4235
+    false_positive_frames: 0.0021
+    fp_instances: 184
+    mask_px_vs_oracle: 1.135
+    instance_recall_by_area_px:
+      30-100:
+        n: 1068
+        recall_at_50pct: 0.173
+      100-300:
+        n: 1888
+        recall_at_50pct: 0.468
+      300-1000:
+        n: 2652
+        recall_at_50pct: 0.909
+      1000-3000:
+        n: 1446
+        recall_at_50pct: 0.977
+      3000-10000:
+        n: 634
+        recall_at_50pct: 0.997
+      10000-inf:
+        n: 222
+        recall_at_50pct: 1.0
+  yolo_full:
+    core_recall: 0.9502
+    core_precision: 0.6549
+    core_plus_band_recall: 0.9683
+    core_cov_mean: 0.6077
+    band_cov_mean: 0.6759
+    masked_px_vs_oracle: 3.065
+office_s1_12h:
+  frames: 9535
+  frames_with_human: 0.6891
+  human_cov_mean_all: 0.823
+  human_cov_mean_when_present: 1.1942
+  human_cov_p90_when_present: 3.062
+  human_cov_max: 15.1
+  frames_cov_gt_1pct: 0.1825
+  frames_cov_gt_5pct: 0.041
+  human_px_in_components_lt30: 0.0035
+  oracle_core_vs_human_px: 0.9965
+  right_vs_left_core_px: 0.8735
+  frames_right_core_lt_half_left: 0.1393
+  yolo_person:
+    pixel_recall: 0.9554
+    pixel_precision: 0.8609
+    micro_iou: 0.8276
+    mean_frame_iou_human_frames: 0.6501
+    median_frame_iou_human_frames: 0.7236
+    frames_detected_any: 0.891
+    frames_with_yolo_mask: 0.6151
+    false_positive_frames: 0.0009
+    fp_instances: 365
+    mask_px_vs_oracle: 1.11
+    instance_recall_by_area_px:
+      30-100:
+        n: 2287
+        recall_at_50pct: 0.202
+      100-300:
+        n: 2685
+        recall_at_50pct: 0.564
+      300-1000:
+        n: 5166
+        recall_at_50pct: 0.927
+      1000-3000:
+        n: 2708
+        recall_at_50pct: 0.986
+      3000-10000:
+        n: 1176
+        recall_at_50pct: 0.999
+      10000-inf:
+        n: 624
+        recall_at_50pct: 1.0
+  yolo_full:
+    core_recall: 0.9555
+    core_precision: 0.8123
+    core_plus_band_recall: 0.9782
+    core_cov_mean: 0.968
+    band_cov_mean: 1.0373
+    masked_px_vs_oracle: 2.437

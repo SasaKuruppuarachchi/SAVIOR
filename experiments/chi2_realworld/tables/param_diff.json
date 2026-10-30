@@ -1,0 +1,2190 @@
+{
+ "errors": [],
+ "rows": [
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/run_01/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/run_02/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/run_03/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/run_04/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/run_05/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/run_06/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/run_07/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/run_08/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/run_09/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO13/openvins/run_10/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/rw_settings_10.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/run_01/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/run_02/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/run_03/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/run_04/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/run_05/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/run_06/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/run_07/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/run_08/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/run_09/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO13",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO13/sens_fix1/run_10/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/run_01/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/run_02/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/run_03/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/run_04/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/run_05/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/run_06/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/run_07/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/run_08/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/run_09/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO15/openvins/run_10/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/run_01/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/run_02/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/run_03/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/run_04/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/run_05/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/run_06/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/run_07/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/run_08/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/run_09/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO15",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO15/sens_fix1/run_10/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/run_01/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/run_02/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/run_03/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/run_04/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/run_05/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/run_06/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/run_07/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/run_08/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/run_09/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO16/openvins/run_10/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/run_01/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/run_02/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/run_03/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/run_04/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/run_05/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/run_06/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/run_07/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/run_08/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/run_09/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO16",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO16/sens_fix1/run_10/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/rw_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/run_01/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/run_02/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/run_03/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/run_04/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/run_05/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/run_06/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/run_07/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/run_08/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/run_09/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "ovchi_best",
+   "baseline": "results/real_world/runs/MIO07/openvins/run_10/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "rw_settings",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/rw_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "OVSET": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/run_01/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/run_02/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/run_03/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/run_04/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/run_05/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/run_06/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/run_07/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/run_08/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/run_09/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  },
+  {
+   "kind": "run_info_cmd",
+   "seq": "MIO07",
+   "variant": "sf1_chibest",
+   "baseline": "results/real_world/runs/MIO07/sens_fix1/run_10/run_info.yaml",
+   "exact": true,
+   "diff": {
+    "ov_set": {
+     "up_msckf_chi2_multipler": [
+      null,
+      "0.25"
+     ],
+     "up_slam_chi2_multipler": [
+      null,
+      "0.25"
+     ]
+    }
+   }
+  }
+ ]
+}

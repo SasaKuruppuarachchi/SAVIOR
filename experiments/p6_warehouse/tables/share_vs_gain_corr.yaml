@@ -1,0 +1,72 @@
+'warehouse: gain_oracle_moving_pct ~ px_dyn':
+  n: 8
+  spearman_rho: 0.927710843373494
+  p: 0.0008939450793069665
+'warehouse: gain_yolo_p4_pct ~ px_dyn':
+  n: 8
+  spearman_rho: 0.8742671711966791
+  p: 0.004512385603651026
+'warehouse: gain_oracle_moving_pct ~ kept_dyn_cam0':
+  n: 8
+  spearman_rho: 0.8554216867469879
+  p: 0.0067597048147543075
+'warehouse: gain_yolo_p4_pct ~ kept_dyn_cam0':
+  n: 8
+  spearman_rho: 0.8503146459584138
+  p: 0.007471414639953467
+'warehouse: gain_oracle_moving_pct ~ msckf_used_meas_dyn':
+  n: 8
+  spearman_rho: 0.8313253012048192
+  p: 0.010530923074814309
+'warehouse: gain_yolo_p4_pct ~ msckf_used_meas_dyn':
+  n: 8
+  spearman_rho: 0.8024095954818835
+  p: 0.016540722800677185
+'viode_p5: gain_oracle_moving_pct ~ px_dyn':
+  n: 12
+  spearman_rho: 0.7183276715080786
+  p: 0.008500356838181455
+'viode_p5: gain_yolo_p4_pct ~ px_dyn':
+  n: 12
+  spearman_rho: 0.6056488210754388
+  p: 0.036879648297599016
+'viode_p5: gain_oracle_moving_pct ~ kept_dyn_cam0':
+  n: 12
+  spearman_rho: 0.7535398122682787
+  p: 0.0046530767010300456
+'viode_p5: gain_yolo_p4_pct ~ kept_dyn_cam0':
+  n: 12
+  spearman_rho: 0.6338185336835989
+  p: 0.026890700735823832
+'viode_p5: gain_oracle_moving_pct ~ msckf_used_meas_dyn':
+  n: 12
+  spearman_rho: 0.6760731025958387
+  p: 0.01579277207866749
+'viode_p5: gain_yolo_p4_pct ~ msckf_used_meas_dyn':
+  n: 12
+  spearman_rho: 0.6831155307478788
+  p: 0.014338998433725771
+'combined: gain_oracle_moving_pct ~ px_dyn':
+  n: 20
+  spearman_rho: 0.780618943834631
+  p: 4.88349455941764e-05
+'combined: gain_yolo_p4_pct ~ px_dyn':
+  n: 20
+  spearman_rho: 0.7272935980266745
+  p: 0.000279524547627901
+'combined: gain_oracle_moving_pct ~ kept_dyn_cam0':
+  n: 20
+  spearman_rho: 0.7503036450449366
+  p: 0.0001387325763529455
+'combined: gain_yolo_p4_pct ~ kept_dyn_cam0':
+  n: 20
+  spearman_rho: 0.6894137231294519
+  p: 0.000771835283250405
+'combined: gain_oracle_moving_pct ~ msckf_used_meas_dyn':
+  n: 20
+  spearman_rho: 0.7017991669814256
+  p: 0.0005631049863550067
+'combined: gain_yolo_p4_pct ~ msckf_used_meas_dyn':
+  n: 20
+  spearman_rho: 0.6515338482322293
+  p: 0.0018572725565259257

@@ -1,0 +1,6 @@
+# re-run attempt 3 (last) of invalid uhumans2 runs
+uhumans2_office_s1_00h sf1_nis 0.4 3 DSN=nis_validation/runs/e
+uhumans2_office_s1_06h sf1_nis 0.4 3 DSN=nis_validation/runs/e
+uhumans2_office_s1_06h sf1_nis 1.0 6 DSN=nis_validation/runs/e
+uhumans2_office_s1_12h sf1_nis 0.2 2 DSN=nis_validation/runs/e
+uhumans2_office_s1_12h sf1_nis 0.8 5 DSN=nis_validation/runs/e

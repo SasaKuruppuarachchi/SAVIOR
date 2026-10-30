@@ -1,0 +1,18 @@
+[motion.enable=false]
+   pipeline  CPU ms/frame: median 28.35  mean 27.16  p90 37.73
+   depth     CPU ms/frame: median 20.66  mean 19.35  p90 27.10
+[gating.link_depth=contact gating.max_noise_m=0.5]
+   pipeline  CPU ms/frame: median 29.32  mean 27.93  p90 38.79
+   depth     CPU ms/frame: median 20.63  mean 19.30  p90 27.34
+[motion.enable=true]
+   pipeline  CPU ms/frame: median 33.36  mean 31.62  p90 41.44
+   motion    CPU ms/frame: median 6.57  mean 6.50  p90 7.49
+   depth     CPU ms/frame: median 20.42  mean 19.28  p90 27.14
+[motion.enable=true gating.link_depth=contact gating.max_noise_m=0.5]
+   pipeline  CPU ms/frame: median 33.51  mean 32.10  p90 41.63
+   motion    CPU ms/frame: median 6.58  mean 6.48  p90 7.47
+   depth     CPU ms/frame: median 20.54  mean 19.33  p90 27.29
+[motion.enable=true tracker.enable=true tracker.motion_model=ego]
+   pipeline  CPU ms/frame: median 35.54  mean 34.00  p90 44.08
+   motion    CPU ms/frame: median 6.59  mean 6.52  p90 7.47
+   depth     CPU ms/frame: median 20.34  mean 19.28  p90 27.21

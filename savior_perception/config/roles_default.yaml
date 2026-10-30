@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Default class-role table (COCO names as emitted by YOLO-seg), docs/INTERFACE.md §3.4.
+# Dataset-specific tables live in savior_bringup/config/roles/*.yaml.
+# role ∈ {static, potential, dynamic, ignore}
+dynamic:   [person]
+potential: [chair, suitcase, backpack, handbag, bicycle, car, cart]
+static:    []
+default: ignore            # classes not listed
+# optional: per-class half depth extent [m] for the promotion size prior
+# (gating.default_half_extent_m is used for unlisted classes)
+half_extent_m:
+  bicycle: 0.6
+  car: 1.5
+  cart: 0.5

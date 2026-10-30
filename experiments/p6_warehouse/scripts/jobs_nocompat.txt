@@ -1,0 +1,4 @@
+hall_t1_L1 savior_none+nocompat
+aisles_t1_L1 savior_none+nocompat
+hall_t1_L2 savior_none+nocompat
+hall_t1_L0 savior_none+nocompat

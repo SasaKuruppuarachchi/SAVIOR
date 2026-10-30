@@ -1,0 +1,7 @@
+aisles_t2_L0 ovchi_best run_01
+aisles_t2_L0 sf1_chibest run_01
+aisles_t2_L0 sf1_chibest run_06
+aisles_t2_L0 sf1_noint run_03
+aisles_t2_L0 sf1_noint run_07
+aisles_t2_L0 sf1_nomotion run_02
+aisles_t2_L0 sf1_nomotion run_06

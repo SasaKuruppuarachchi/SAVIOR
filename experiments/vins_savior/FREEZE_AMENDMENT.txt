@@ -1,0 +1,7 @@
+2026-10-25 coordinator amendment (bug fix, no method change). Original freeze: FREEZE.md5.orig_20261025.
+- export_masks.py bag_reader: VIODE ros2 bags are uncompressed, and SequentialCompressionReader rejects them
+  ("should not be initialized with NONE compression mode"), so every VIODE export failed. The fix falls back to
+  SequentialReader on that ValueError. Compressed warehouse bags take the unchanged path, and their masks
+  (already exported) were not regenerated.
+- run_heldout.sh: opt-in VS_MASKS_VIODE_ONLY=1 restricts the masks step to VIODE (the T2 list is restored for later steps).
+No VINS run had started when the failure was found. Only the md5s of these two files changed in FREEZE.md5.

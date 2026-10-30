@@ -1,0 +1,5 @@
+hall_t1_L0 openvins 0.0,0.2,0.4,0.6,0.8 1
+hall_t1_L3 sens_fix1 0.0,0.2,0.4,0.6,0.8 1
+hall_t1_L3 savior_edge 0.0,0.2,0.4,0.6,0.8 1
+hall_t1_L3 oracle_moving 0.0,0.2,0.4,0.6,0.8 1
+hall_t1_L3 savior_edge 0.0,0.2,0.4,0.6,0.8 1 BACKEND=v1 DSN=backend_v2/runs_v1

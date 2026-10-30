@@ -1,0 +1,68 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# YOLO26-seg fine-tuning on SAVIOR-Warehouse (synthetic, Isaac Sim 6.0). Read by train.py; every key except
+# `simreal_aug` is an Ultralytics train argument (ultralytics 8.4.177, image savior:humble-cuda12.8).
+# Per-run overrides (model / optimizer / name) are given on the train.py command line; run_all.sh has the exact runs.
+# `$SAVIOR_WS` in data / project / model is expanded by train.py (default: the colcon workspace above this repo).
+data: $SAVIOR_WS/data/warehouse/seg_train/yolo_inst/data.yaml   # make_yolo_inst.py
+project: $SAVIOR_WS/results/yolo_warehouse/runs
+model: $SAVIOR_WS/models/yolo26s-seg.pt      # COCO-pretrained; cls_remap keeps 'person'
+pretrained: true
+cls_remap: true            # person head row initialised from COCO 'person'
+
+# schedule / early stopping
+epochs: 150
+patience: 30               # stop after 30 epochs without val fitness gain (0.9 mAP50-95 + 0.1 mAP50, box + mask)
+close_mosaic: 10
+batch: 16
+nbs: 64
+imgsz: 672                 # = native 672x376 width -> scale 1.0 at inference (letterbox 672x384, rect engine)
+rect: false                # square mosaic training; val / export use rect 384x672
+cache: false               # RAM cache is copied into every forked worker (+~15 GB per run on a shared host)
+workers: 8                 # CPU is shared with the VIODE VIO runs
+seed: 0
+deterministic: true
+amp: true
+plots: true
+val: true
+
+# optimiser: per run (run_all.sh): optimizer=auto vs the paper's SGD (lr0 1e-3, momentum 0.9, weight decay 5e-4).
+# Ultralytics 'auto' counts iterations as ceil(N / max(batch, nbs)) * epochs = 38 * 150 = 5700 < 10k
+# -> AdamW, lr0 = 0.002 * 5 / (4 + nc) = 8.33e-4, beta1 0.9, warmup_bias_lr 0 (MuSGD only above 10k iterations).
+# Defaults below = paper values.
+optimizer: SGD
+lr0: 0.001
+lrf: 0.01                  # linear decay to lr0 * lrf (Ultralytics has no step decay; paper: x0.1 at ep 34 and 45)
+momentum: 0.9
+weight_decay: 0.0005
+warmup_epochs: 3.0
+warmup_momentum: 0.8
+cos_lr: false
+
+# segmentation
+overlap_mask: true
+mask_ratio: 4
+
+# geometric / photometric augmentation (sim data)
+mosaic: 1.0
+mixup: 0.0
+copy_paste: 0.1            # paste instances (flip mode): more rare-class (trolley) / person samples
+scale: 0.5                 # +-50 % zoom: objects 1.5-15 m away
+translate: 0.1
+degrees: 0.0               # roll is already randomised in the renders (sigma 3 deg)
+shear: 0.0
+perspective: 0.0
+fliplr: 0.5
+flipud: 0.0
+hsv_h: 0.015
+hsv_s: 0.7
+hsv_v: 0.4
+
+# sim-to-real degradation (simreal_aug.py replaces the no-op Albumentations stage), probabilities per sample
+simreal_aug:
+  gray: 0.5
+  motion_blur: 0.2
+  gauss_blur: 0.15
+  downscale: 0.10
+  gamma: 0.25
+  noise: 0.4
+  jpeg: 0.2

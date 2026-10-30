@@ -1,0 +1,11 @@
+tables median ATE all runs: {'dyna_det': 0.099, 'dyna_ycls': 0.089, 'dyna_savior': 0.083, 'dyna_odyn': 0.094, 'dyna_ocls': 0.117, 'dyna_zero': 0.099, 'dyna_up': 0.099}
+   aisles_t1 ycls -0.0%, savior -7.7%, odyn -11.0%, ocls +17.7%
+   hall_t1 ycls -18.2%, savior -35.8%, odyn -1.8%, ocls +8.3%
+tables_t2 median ATE all runs: {'dyna_det': 0.084, 'dyna_ycls': 0.079, 'dyna_savior': 0.079, 'dyna_odyn': 0.076, 'dyna_ocls': 0.103, 'dyna_zero': 0.084, 'dyna_up': 0.084}
+   aisles_t2 ycls -11.1%, savior -3.2%, odyn -11.2%, ocls -1.7%
+   dock_t2 ycls +7.1%, savior -17.2%, odyn -5.2%, ocls +82.2%
+   hall_t2 ycls -6.5%, savior +0.2%, odyn -17.7%, ocls +2.1%
+tables_viode median ATE all runs: {'dyna_det': 0.261, 'dyna_ycls': 0.228, 'dyna_savior': 0.233, 'dyna_odyn': 0.216, 'dyna_ocls': 0.197, 'dyna_zero': 0.261, 'dyna_up': 0.257}
+   city_day ycls -2.3%, savior +2.6%, odyn -7.8%, ocls -17.2%
+   city_night ycls -8.0%, savior -6.8%, odyn -3.2%, ocls -4.4%
+   parking_lot ycls -74.8%, savior -77.4%, odyn -89.7%, ocls -89.8%

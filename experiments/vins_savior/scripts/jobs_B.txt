@@ -1,0 +1,32 @@
+hall_t1_L3 vins_edge SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/savior_edge/off_{off} SOTA_MASK_MODE=deferred SOTA_MASK_LATENCY_MS=250
+hall_t1_L3 vins_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/yolo_naive/off_{off}
+hall_t1_L3 vins_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/oracle_moving_ext/off_{off}
+aisles_t1_L3 vins_edge SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L3/savior_edge/off_{off} SOTA_MASK_MODE=deferred SOTA_MASK_LATENCY_MS=250
+aisles_t1_L3 vins_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L3/yolo_naive/off_{off}
+aisles_t1_L3 vins_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L3/oracle_moving_ext/off_{off}
+hall_t1_L2 vins_edge SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L2/savior_edge/off_{off} SOTA_MASK_MODE=deferred SOTA_MASK_LATENCY_MS=250
+hall_t1_L2 vins_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L2/yolo_naive/off_{off}
+hall_t1_L2 vins_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L2/oracle_moving_ext/off_{off}
+aisles_t1_L2 vins_edge SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L2/savior_edge/off_{off} SOTA_MASK_MODE=deferred SOTA_MASK_LATENCY_MS=250
+aisles_t1_L2 vins_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L2/yolo_naive/off_{off}
+aisles_t1_L2 vins_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L2/oracle_moving_ext/off_{off}
+hall_t1_L1 vins_edge SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L1/savior_edge/off_{off} SOTA_MASK_MODE=deferred SOTA_MASK_LATENCY_MS=250
+hall_t1_L1 vins_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L1/yolo_naive/off_{off}
+hall_t1_L1 vins_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L1/oracle_moving_ext/off_{off}
+aisles_t1_L1 vins_edge SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L1/savior_edge/off_{off} SOTA_MASK_MODE=deferred SOTA_MASK_LATENCY_MS=250
+aisles_t1_L1 vins_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L1/yolo_naive/off_{off}
+aisles_t1_L1 vins_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L1/oracle_moving_ext/off_{off}
+hall_t1_L0 vins_edge SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L0/savior_edge/off_{off} SOTA_MASK_MODE=deferred SOTA_MASK_LATENCY_MS=250
+hall_t1_L0 vins_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L0/yolo_naive/off_{off}
+hall_t1_L0 vins_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L0/oracle_moving_ext/off_{off}
+aisles_t1_L0 vins_edge SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L0/savior_edge/off_{off} SOTA_MASK_MODE=deferred SOTA_MASK_LATENCY_MS=250
+aisles_t1_L0 vins_ycls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L0/yolo_naive/off_{off}
+aisles_t1_L0 vins_odyn SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L0/oracle_moving_ext/off_{off}
+hall_t1_L3 vins_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/oracle_class_ext/off_{off}
+aisles_t1_L3 vins_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L3/oracle_class_ext/off_{off}
+hall_t1_L2 vins_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L2/oracle_class_ext/off_{off}
+aisles_t1_L2 vins_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L2/oracle_class_ext/off_{off}
+hall_t1_L1 vins_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L1/oracle_class_ext/off_{off}
+aisles_t1_L1 vins_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L1/oracle_class_ext/off_{off}
+hall_t1_L0 vins_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L0/oracle_class_ext/off_{off}
+aisles_t1_L0 vins_ocls SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L0/oracle_class_ext/off_{off}

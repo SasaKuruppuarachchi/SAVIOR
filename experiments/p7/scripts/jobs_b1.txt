@@ -1,0 +1,16 @@
+hall_t1_L3 p7
+hall_t1_L2 p7
+aisles_t1_L3 p7
+aisles_t1_L2 p7
+hall_t1_L3 yolo_naive_band
+hall_t1_L2 yolo_naive_band
+aisles_t1_L3 yolo_naive_band
+aisles_t1_L2 yolo_naive_band
+hall_t1_L1 p7
+aisles_t1_L1 p7
+hall_t1_L0 p7
+aisles_t1_L0 p7
+hall_t1_L1 yolo_naive_band
+aisles_t1_L1 yolo_naive_band
+hall_t1_L0 yolo_naive_band
+aisles_t1_L0 yolo_naive_band

@@ -1,0 +1,15 @@
+aisles_t1_L1 yolo_p2 - - RATE=0.25
+aisles_t1_L1 yolo_p4_nointer - - RATE=0.25
+aisles_t1_L1 yolo_coco_person_p4 - - RATE=0.25
+hall_t1_L0 yolo_p4 - - RATE=0.25
+hall_t1_L0 yolo_p6 - - RATE=0.25
+hall_t1_L0 yolo_naive - - RATE=0.25
+hall_t1_L0 yolo_p2 - - RATE=0.25
+hall_t1_L0 yolo_p4_nointer - - RATE=0.25
+hall_t1_L0 yolo_coco_person_p4 - - RATE=0.25
+aisles_t1_L0 yolo_p4 - - RATE=0.25
+aisles_t1_L0 yolo_p6 - - RATE=0.25
+aisles_t1_L0 yolo_naive - - RATE=0.25
+aisles_t1_L0 yolo_p2 - - RATE=0.25
+aisles_t1_L0 yolo_p4_nointer - - RATE=0.25
+aisles_t1_L0 yolo_coco_person_p4 - - RATE=0.25

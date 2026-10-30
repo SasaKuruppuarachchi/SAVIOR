@@ -1,0 +1,6 @@
+aisles_t1_L3: frames 400 instances 33175 frames_with_differences 0
+fast_masks=False predict ms median 5.31 p90 15.09 p99 24.25
+fast_masks=True predict ms median 3.67 p90 5.85 p99 7.98
+hall_t1_L3: frames 400 instances 13046 frames_with_differences 0
+fast_masks=False predict ms median 2.54 p90 5.52 p99 12.89
+fast_masks=True predict ms median 2.18 p90 3.83 p99 5.79

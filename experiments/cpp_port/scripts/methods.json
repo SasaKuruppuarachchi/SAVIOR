@@ -1,0 +1,51 @@
+{
+ "cpp_main": {
+  "impl": "cpp",
+  "variant": "sys",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": ""
+ },
+ "cpp_main_cv411": {
+  "impl": "cpp",
+  "variant": "411",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": ""
+ },
+ "py_main_ctrl": {
+  "impl": "python",
+  "variant": "final",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": ""
+ },
+ "cpp_main_final": {
+  "impl": "cpp",
+  "variant": "final",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": ""
+ },
+ "cpp_main_composed": {
+  "impl": "cpp_composed",
+  "variant": "final",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego",
+  "roles": "warehouse",
+  "model": "/home/sasa/workspace/savior_ws/models/warehouse/yolo26s-seg-warehouse.engine",
+  "ov": ""
+ },
+ "cpp_edge_final": {
+  "impl": "cpp",
+  "variant": "final",
+  "pset": "compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5 gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego segmenter.imgsz=672",
+  "roles": "warehouse",
+  "model": "/home/sasa/workspace/savior_ws/frozen_edge/models/yolo26n-seg-warehouse-672.engine",
+  "ov": "dynamic_mask_sim_latency_ms=250.0 dynamic_mask_deferred=true dynamic_mask_stale_gating=false",
+  "underlay": "/home/sasa/workspace/savior_ws/frozen_edge/install"
+ }
+}

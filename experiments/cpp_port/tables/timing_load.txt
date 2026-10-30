@@ -1,0 +1,16 @@
+Sat Oct 24 05:52:58 AM EEST 2026
+ 05:52:58 up 13 days, 22:23,  4 users,  load average: 3.16, 8.72, 13.52
+49 %, 3187 MiB
+sota_orbslam3_dock_t2_L0_146078 sota_vins_fusion_dock_t2_L0_146076 sota_dynavins_dock_t2_L0_146077 agipix_ros_dev-x86_64-container 
+05:52:58 START hall_t1_L3 py_main_ctrl load=3.16 gpu=49 % others=4
+05:57:05 END   hall_t1_L3 py_main_ctrl load=4.67 gpu=1 %
+05:57:05 START hall_t1_L3 cpp_main_final load=4.67 gpu=1 % others=4
+06:01:08 END   hall_t1_L3 cpp_main_final load=1.23 gpu=1 %
+06:01:08 START hall_t1_L3 cpp_main_composed load=1.23 gpu=1 % others=4
+06:05:11 END   hall_t1_L3 cpp_main_composed load=9.13 gpu=1 %
+06:05:11 START aisles_t1_L3 py_main_ctrl load=9.13 gpu=1 % others=4
+06:09:09 END   aisles_t1_L3 py_main_ctrl load=5.94 gpu=1 %
+06:09:09 START aisles_t1_L3 cpp_main_final load=5.94 gpu=1 % others=4
+06:13:04 END   aisles_t1_L3 cpp_main_final load=2.18 gpu=2 %
+06:13:04 START aisles_t1_L3 cpp_main_composed load=2.18 gpu=2 % others=4
+06:16:59 END   aisles_t1_L3 cpp_main_composed load=1.97 gpu=1 %

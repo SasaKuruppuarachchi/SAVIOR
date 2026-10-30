@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Class-role table of the "naive class masking" baseline (P2 method naive_person): only COCO person is masked,
+# no potential classes (so promotion never fires). docs/IMPLEMENTATION_PLAN.md §3.4.
+dynamic:   [person]
+potential: []
+static:    []
+default: ignore

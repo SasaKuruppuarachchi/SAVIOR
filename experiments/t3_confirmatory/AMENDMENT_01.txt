@@ -1,0 +1,7 @@
+2026-10-27 t3 dataset agent: disclosed bug fix in the evaluation script (no method, setting or analysis change). The design
+DESIGN.yaml (md5 bb07909870ccc6abae07f79a6473c403) is unchanged.
+- scripts/run_t3.sh, step vins, mask completeness check: the frozen export_masks.py writes export_info.yaml only for
+  perception exports, not for the 'zero' control (verified by a zero-mask smoke test on wx01_t3_L0, output discarded;
+  same as the t2 protocol, whose check expects 24 x 5 x 10 = 1200 without zero). Expected count 21 -> 20.
+  run_t3.sh md5 4ed44ae8d333f29b9ae0938f4da5a806 (listed in DESIGN.yaml frozen_inputs_md5) -> 6930d73dcee2a8585c72a7e4a2c30d12.
+Found before any t3 evaluation run.

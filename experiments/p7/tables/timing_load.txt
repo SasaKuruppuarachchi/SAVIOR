@@ -1,0 +1,17 @@
+Fri Oct 23 11:23:42 AM EEST 2026
+ 11:23:42 up 13 days,  3:53,  2 users,  load average: 0.38, 0.49, 1.43
+3 %, 2909 MiB
+11:29:43 hall_t1_L3 openvins load=0.14 gpu=1 %
+11:35:51 hall_t1_L3 tim_sens_fix1_fast load=1.52 gpu=1 %
+11:42:00 hall_t1_L3 tim_p7_nb_fast load=1.96 gpu=0 %
+11:48:08 hall_t1_L3 tim_yolo_naive_fast load=0.53 gpu=1 %
+11:54:16 hall_t1_L3 tim_sens_fix1_slow load=1.72 gpu=1 %
+12:00:25 hall_t1_L3 tim_p7_nb_slow load=2.02 gpu=4 %
+12:06:33 hall_t1_L3 tim_yolo_naive_slow load=0.43 gpu=3 %
+12:12:22 aisles_t1_L3 openvins load=0.04 gpu=1 %
+12:18:17 aisles_t1_L3 tim_sens_fix1_fast load=2.20 gpu=1 %
+12:24:13 aisles_t1_L3 tim_p7_nb_fast load=2.00 gpu=0 %
+12:30:08 aisles_t1_L3 tim_yolo_naive_fast load=0.54 gpu=0 %
+12:36:04 aisles_t1_L3 tim_sens_fix1_slow load=1.68 gpu=0 %
+12:42:00 aisles_t1_L3 tim_p7_nb_slow load=2.19 gpu=0 %
+12:47:55 aisles_t1_L3 tim_yolo_naive_slow load=0.52 gpu=1 %

@@ -1,0 +1,1 @@
+t1 hall_t1_L3 smoke_odyn RUNS=1 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/oracle_moving_ext/off_{off}

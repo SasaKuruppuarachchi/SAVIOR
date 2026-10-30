@@ -1,0 +1,98 @@
+# SAVIOR real-world study (Monado MSD Valve Index) - FREEZE AMENDMENT 1, 2026-10-27 (written BEFORE any person-sequence
+# re-run of VINS-Fusion / DynaVINS; all debugging used the static control MIO07 only; person-sequence SOTA results were
+# not consulted while fixing).  New md5s: FREEZE_AMENDMENT.md5 (supersedes the listed FREEZE.md5 entries; rw_args.py checks
+# both).  Check: cd /home/sasa/workspace/savior_ws && grep -v '^#' results/real_world/FREEZE_AMENDMENT.md5 | md5sum -c --quiet
+# The validity rule, the offsets, the rates, the evaluation and every SAVIOR / OpenVINS file are unchanged.
+
+A1  ROS 1 bags for the SOTA baselines: LZ4 chunks -> uncompressed (scripts/rw_make_ros1.py)
+    Problem : VINS-Fusion and DynaVINS "failed" on 40/40 runs incl. the static control MIO07 (no poses -> capped 10 m).
+    Cause   : the bags were written by rosbags with LZ4 chunk compression, which noetic's roslz4 cannot decode.
+              play.log of every run: "[FATAL] ROSLZ4_DATA_ERROR: malformed data to decompress"; estimator.log stops at
+              "waiting for image and imu..."; a direct rosbag.Bag(...).read_messages() fails on message 0
+              ("OSError malformed data to decompress"). Not one message was ever delivered: an integration bug, not a result.
+    Fix     : write uncompressed chunks (as the VIODE / warehouse ROS 1 bags made by rosbags-convert). Content, stamps,
+              topics, 54 Hz pairs, mono8, 1 kHz IMU are unchanged (counts OK: MIO07 4095/4095/76007, MIO13 20227/20227/375436,
+              MIO15 13545/13545/251731, MIO16 14304/14304/265048).
+    Evidence: MIO07 off 0.0, old configs: VINS-Fusion initialises, 2037 poses, ATE 0.462 m (2.6 % of the 17.6 m path),
+              no restarts, frontend 23.8 ms / backend 13.6 ms per frame (budget 37 ms at rate 0.5), no sync drops.
+              DynaVINS: 2037 poses but diverges (y runs away quadratically from ~12 s; ATE 144 m, rotation only ~1 deg) -> A2.
+
+A2  IMU noise of the SOTA configs: Basalt densities verbatim -> the SAVIOR-Warehouse SOTA derivation (scripts/make_sota_configs.py
+    -> src/savior/sota/config/monado/{vins_fusion/calibration.yaml, dynavins/calibration_stereo.yaml})
+    Problem : the configs copied the Basalt continuous-time densities (acc_n 0.016, gyr_n 0.000282, acc_w 0.001, gyr_w 1e-4)
+              into VINS's acc_n/gyr_n/acc_w/gyr_w. VINS-Fusion's own values are hand-inflated (EuRoC: 0.1 / 0.01 / 0.001 / 1e-4
+              against kalibr densities 2.0e-3 / 1.6968e-4 / 3.0e-3 / 1.9393e-5), and the frozen warehouse SOTA configs
+              (src/savior/sota/config/warehouse/*, M3b) already define the rule for a new sensor: upstream EuRoC value x
+              (dataset density / EuRoC density). The Monado configs did not apply that rule -> IMU 50-60x over-confident.
+    Fix     : the warehouse rule, no free parameter: acc_n 0.1*0.016/2.0e-3 = 0.8; gyr_n 0.01*0.000282/1.6968e-4 = 0.01662;
+              acc_w 0.001*0.001/3.0e-3 = 3.333e-4; gyr_w 1e-4*1e-4/1.9393e-5 = 5.156e-4. Identical for both baselines.
+              Nothing else changed (cam*_kb.yaml unchanged: Basalt kb4 k1..k4 = camodocal KANNALA_BRANDT k2..k5 and
+              body_T_cam = Basalt T_i_c = cam->IMU, both verified identical to the OpenVINS kalibr files; td 0 = dataset
+              cam_time_offset_ns 0; g_norm 9.558 as OpenVINS; freq/output frame unchanged).
+    Evidence (MIO07 only): debug runs off 0.0 / 1.0: VINS-Fusion 0.038 / 0.062 m, DynaVINS 0.072 / 0.090 m (OpenVINS 0.038 m).
+              Frozen-config protocol runs (runs/MIO07/{vins_fusion,dynavins}, 10 offsets, rate 0.5):
+              VINS-Fusion 10/10 ok, ATE 0.040-0.075 m (mean 0.056); DynaVINS 9/10 at 0.067-0.132 m, run_08 (off 1.4)
+              diverges (1814 m) - a genuine baseline failure of the kind already seen on the warehouse (late-start init
+              divergence), reported as is.
+
+A3  scripts/rw_args.py: also reads FREEZE_AMENDMENT.md5 (per-file supersession of FREEZE.md5); every file is still checked.
+
+A4  scripts/rw_analyze.py (analysis only; protocol unchanged):
+    - RPE: savior-eval writes trans_m.mean = 0 with num_samples = 0 when no sub-trajectory reaches the shortest length.
+      MIO13 yolo_naive run_02 (95 poses, 3.5 s) and sens_fix1 run_10 (219 poses, 8 s) are such runs -> their 0 forced the
+      geometric mean to 0.0000 (n=8 / n=10). Now NaN (= no RPE) for a length without segments.
+    - the results table lists every run that is still invalid by the pre-registered rule (it is in the statistics).
+    Note: those two MIO13 runs are INCOMPLETE (restarted at 18:13, killed seconds later: no run_info.yaml, launch.log not
+    gzipped). They are invalid by the pre-registered rule and must be re-run (protocol: "invalid runs are re-run, never dropped").
+
+# ---- after the freeze above (2026-10-27 00:20-02:35) -------------------------------------------------------------------
+R1  VINS-Fusion + DynaVINS re-run on MIO13/MIO15/MIO16 with the amended frozen configs (rw_sota.sh, 10 offsets, rate 0.5,
+    6 containers): 40/40 runs status ok, full-length trajectories. Evaluated with rw_eval.sh; tables/figures regenerated.
+R2  MIO13 yolo_naive run_02 (off 0.2) and sens_fix1 run_10 (off 1.8) re-run under the unchanged protocol (run_rw.sh,
+    rate 0.25): ok, 10037 / 10014 poses, every stereo pair processed (10116 / 10073), 0 fallbacks / late masks.
+    The interrupted directories are kept in the session scratchpad (rwfix/incomplete_MIO13).
+D1  Empty-mask control (diagnosis only, NOTHING changed / re-run - coordinator decision):
+    savior_none != openvins is NOT a mask-path bug. At rate 0.5 whole stereo frames are lost in the bag-player ->
+    OpenVINS image transport (timing / host-load dependent; machine load average 80-180): they never reach
+    callback_stereo, in BOTH launches (input completeness, tables/results.md: openvins complete on MIO07 0/10 runs,
+    savior_none MIO15 2/10, MIO07 3/10; every rate-0.25 run complete). savior_node received every frame (savior_stats 6751
+    = bag) while OpenVINS in the same run got 6726. Repeat runs (diag_determinism/rep{A,B}, MIO15 off 0.0/1.0/1.8):
+    openvins vs openvins also loses frames (repA off 0.0: 6774/6779 frames -> ATE 4.33 m vs 0.35 m). With complete input
+    the estimate is not bit-identical (md5 differ) but ATE equal to <=1.6 % (5 runs at off 1.8: 0.1937 m each).
+    Candidate opt-in fix (not applied): run openvins / savior_none / diag_openvins at rate 0.25 like the masked methods
+    (deterministic processing is rate independent, smoke md5 check) and add "processed frames == bag pairs after offset"
+    to the validity rule - both are protocol changes.
+
+# ============================================================================================================================
+# FREEZE AMENDMENT 2, 2026-10-27 (coordinator-approved protocol amendment; written BEFORE any rate-0.25 re-run). Applies
+# uniformly to every method. New md5s appended to FREEZE_AMENDMENT.md5 (later lines supersede earlier ones).
+A5  Rate: EVERY method runs at rate 0.25 - openvins, savior_none, diag_openvins, Y-Cls (yolo_naive), SAVIOR (sens_fix1),
+    VINS-Fusion, DynaVINS (scripts/run_rw.sh DEFRATE, scripts/rw_sota.sh RATE; was 0.5 for all but Y-Cls / SAVIOR).
+    Reason: input completeness must be identical across the compared methods. At rate 0.5 whole stereo frames were lost
+    in the bag-player -> OpenVINS transport (D1; openvins complete in 0/10 MIO07 runs, savior_none 2/10 MIO15 runs), while
+    every rate-0.25 run was complete, so methods were compared on different inputs.
+A6  Validity rule, added for ALL methods (in addition to the pre-registered rule, which is unchanged):
+    processed stereo frames == bag stereo pairs after the start offset, +-0. Expected counts: scripts/rw_expected_frames.py
+    -> prep/expected_frames.yaml (pairs with bag time >= bag start + offset, the play --start-offset / rosbag -s semantics).
+      - OpenVINS family (openvins, savior_none, diag_openvins, Y-Cls, SAVIOR): 27 Hz pairs of data/monado/ros2/<seq>,
+        processed = the '[TIME]: ... seconds total' lines of launch.log (one per stereo frame fed to the filter).
+      - VINS-Fusion / DynaVINS: 54 Hz pairs of the ROS 1 bag. vins_node's estimator.log has no per-frame line, so the count
+        used is the stereo pairs RECEIVED BY THE ESTIMATOR NODE = the 'frontend' rows of the timing.csv vins_node writes
+        (one per synchronised stereo pair it receives; with multiple_thread 1 every 2nd one is optimised, unchanged).
+    Check of the rule on existing data (before any new run): all 80 rate-0.25 Y-Cls / SAVIOR runs and all 80 rate-0.5
+    VINS-Fusion / DynaVINS runs match their expected count exactly (+-0) -> the formula is exact; the existing Y-Cls / SAVIOR
+    runs pass and are kept. Failing runs are re-run once; anything still failing is reported.
+A7  The rate-0.5 runs of openvins, savior_none, diag_openvins, VINS-Fusion and DynaVINS are moved (not deleted) to
+    results/real_world/runs_rate05/ (share yamls -> share_rate05/) and analysed as a disclosed secondary
+    (tables_rate05/, figures_rate05/). DynaVINS is reported at both rates.
+A8  scripts/rw_analyze.py: implements A6 for every method (validity table incl. VINS-Fusion, DynaVINS, diag_openvins with a
+    frame-rule column; invalid-run list with frames/expected) and reads RW_RUNS / RW_TAB / RW_FIG / RW_SHARE for the secondary.
+    The ROS 1 bags (deleted after amendment 1) are rebuilt with the unchanged scripts/rw_make_ros1.py (uncompressed).
+    No estimator, perception or baseline config changes.
+
+# ---- after FREEZE AMENDMENT 2 (2026-10-27 02:53-12:35) ----------------------------------------------------------------------
+R3  Rate-0.25 re-runs (scripts/jobs_a2_r025.txt, bv2queue.py, max 6 containers): openvins, savior_none, diag_openvins,
+    VINS-Fusion, DynaVINS x 4 sequences x 10 offsets = 200 runs. All 200 + the 80 kept Y-Cls / SAVIOR runs pass the
+    pre-registered rule AND the A6 frame rule (+-0) at the first attempt -> no re-run was needed; nothing is invalid.
+    Evaluated (rw_eval.sh), share recomputed (rw_share_all.sh, 40 diag runs), rw_analyze.py -> tables/, figures/;
+    rate-0.5 secondary -> tables_rate05/, figures_rate05/. ROS 1 bags deleted again after the runs.

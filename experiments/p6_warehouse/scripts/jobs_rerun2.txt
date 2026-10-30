@@ -1,0 +1,10 @@
+aisles_t1_L2 yolo_p4 0.0 1 RATE=0.2
+aisles_t1_L2 yolo_p4 0.2 2 RATE=0.2
+aisles_t1_L2 yolo_p4_noext 0.0 1 RATE=0.2
+aisles_t1_L2 yolo_p4_noext 0.2 2 RATE=0.2
+aisles_t1_L2 yolo_p4_noext 1.2 7 RATE=0.2
+aisles_t1_L2 yolo_p4_nointer 0.2 2 RATE=0.2
+aisles_t1_L2 yolo_p4_nointer 0.4 3 RATE=0.2
+aisles_t1_L2 yolo_p4_nointer 1.4 8 RATE=0.2
+aisles_t1_L2 yolo_p6 0.0 1 RATE=0.2
+aisles_t1_L2 yolo_p6 0.2 2 RATE=0.2

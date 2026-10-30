@@ -1,0 +1,10 @@
+uhumans2 office_s1_06h full+mot+gate
+uhumans2 office_s1_06h full+mot
+uhumans2 office_s1_12h openvins
+uhumans2 office_s1_12h full
+uhumans2 office_s1_12h full+mot+gate
+uhumans2 office_s1_12h none
+uhumans2 office_s1_00h openvins
+uhumans2 office_s1_00h full
+uhumans2 office_s1_00h full+mot+gate
+uhumans2 office_s1_00h none

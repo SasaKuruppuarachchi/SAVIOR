@@ -1,0 +1,33 @@
+# savior-cpp:jetson-r36 -- arm64 build of savior_perception_cpp (+ savior_ov_component) for Jetson Orin (NX 8 GB) on
+# JetPack 6.1 / 6.2 (L4T r36.4: Ubuntu 22.04, CUDA 12.6, TensorRT 10.3, OpenCV 4.8.0 from the image).
+# Build ON THE JETSON (or an arm64 builder with the L4T base image):
+#   docker build -t savior-cpp:jetson-r36 -f Dockerfile.jetson <dir containing src/savior>
+# ROS 2 Humble comes from the official arm64 (jammy) apt repository. ros-humble-cv-bridge (needed by OpenVINS) pulls the
+# Ubuntu OpenCV 4.5.4 runtime next to JetPack's 4.8.0: savior_perception_cpp itself does not use cv_bridge and is built
+# against the JetPack OpenCV 4.8 by default (-DSAVIOR_OPENCV_DIR=/usr/lib/aarch64-linux-gnu/cmake/opencv4). For ONE-process
+# composition with OpenVINS (savior_ov_component) build both against the SAME OpenCV: pass
+# --build-arg SAVIOR_OPENCV=system to use the Ubuntu 4.5.4 that cv_bridge / OpenVINS link.
+ARG L4T_BASE=nvcr.io/nvidia/l4t-jetpack:r36.4.0
+FROM ${L4T_BASE}
+ARG SAVIOR_OPENCV=jetpack
+ENV DEBIAN_FRONTEND=noninteractive LANG=C.UTF-8 LC_ALL=C.UTF-8 ROS_DISTRO=humble
+RUN apt-get update && apt-get install -y --no-install-recommends curl gnupg2 lsb-release ca-certificates && \
+    curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg && \
+    echo "deb [arch=arm64 signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu jammy main" \
+      > /etc/apt/sources.list.d/ros2.list && apt-get update && apt-get install -y --no-install-recommends \
+      ros-humble-ros-base ros-humble-rclcpp-components ros-humble-message-filters ros-humble-cv-bridge \
+      ros-humble-image-transport ros-humble-tf2-geometry-msgs ros-humble-rosbag2-storage-mcap python3-colcon-common-extensions \
+      libyaml-cpp-dev libeigen3-dev libboost-all-dev libceres-dev build-essential cmake && rm -rf /var/lib/apt/lists/*
+# workspace: src/savior (open_vins fork, savior_perception, savior_bringup, savior_perception_cpp, savior_ov_component)
+COPY src /ws/src
+WORKDIR /ws
+RUN . /opt/ros/humble/setup.sh && \
+    if [ "$SAVIOR_OPENCV" = "jetpack" ]; then CVDIR=-DSAVIOR_OPENCV_DIR=/usr/lib/aarch64-linux-gnu/cmake/opencv4; else CVDIR=; fi && \
+    colcon build --merge-install --packages-up-to savior_perception_cpp savior_bringup ov_msckf savior_ov_component \
+      --cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_COMPILER=/usr/local/cuda/bin/nvcc -DCMAKE_CUDA_ARCHITECTURES=87 \
+                   -DTENSORRT_ROOT=/usr $CVDIR
+# engines are GPU / TensorRT-version specific: build them on the device from the ONNX, then add the Ultralytics header:
+#   /usr/src/tensorrt/bin/trtexec --onnx=models/warehouse/yolo26n-seg-warehouse.onnx --fp16 --saveEngine=/tmp/raw.engine
+#   python3 /ws/src/savior/savior_perception_cpp/tools/add_engine_metadata.py /ws/src/savior/savior_perception_cpp/config/engines/yolo26n-seg-warehouse.meta.json /tmp/raw.engine \
+#       models/warehouse/yolo26n-seg-warehouse.jetson.engine
+CMD ["bash"]

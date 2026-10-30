@@ -1,0 +1,29 @@
+# SAVIOR-Warehouse sensor rig (DEFAULT): ZED 2i with the 4 mm lens (72 x 44 deg FOV) + its internal MEMS IMU.
+# The 4 mm optics make near dynamic objects cover a larger image fraction (the regime SAVIOR targets); the
+# 2.1 mm wide-angle variant is rig_zed2i_2mm.yaml.
+# Images: rectified (ideal pinhole, no distortion), global shutter in simulation, no motion blur.
+camera:
+  width: 672             # ZED 2i "VGA" mode (672x376)
+  height: 376
+  fx: 470.0              # rectified ZED 2i 4 mm VGA focal length -> HFOV 71.1 deg, VFOV 43.6 deg
+  fy: 470.0
+  cx: 336.0
+  cy: 188.0
+  rate_hz: 20
+  baseline: 0.12         # ZED 2i baseline [m]
+  p_cam0_in_imu: [0.0, 0.06, 0.0]   # left camera 6 cm left of the IMU (IMU centred between the lenses)
+  pitch_down_deg: 0.0    # camera tilt about the body y axis (positive = looking down)
+  clip_near: 0.05
+  clip_far: 120.0
+imu:
+  rate_hz: 200
+  # ZED 2i-class MEMS IMU (Bosch BMI085 family). White noise: datasheet densities (gyro 0.014 deg/s/sqrt(Hz),
+  # accel ~160 ug/sqrt(Hz)). Bias random walk: typical Allan-variance values reported for ZED 2/2i units.
+  gyroscope_noise_density: 2.44e-4      # rad/s/sqrt(Hz)
+  gyroscope_random_walk: 2.0e-5         # rad/s^2/sqrt(Hz)
+  accelerometer_noise_density: 1.6e-3   # m/s^2/sqrt(Hz)
+  accelerometer_random_walk: 3.0e-4     # m/s^3/sqrt(Hz)
+  gyro_bias_init_sigma: 3.0e-3          # rad/s, turn-on bias (1 sigma per axis)
+  accel_bias_init_sigma: 3.0e-2         # m/s^2
+time:
+  t0_ns: 1700000000000000000            # absolute stamp of t = 0 (all stamps are exact integer ns)

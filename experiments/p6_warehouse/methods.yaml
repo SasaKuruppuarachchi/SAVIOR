@@ -1,0 +1,28 @@
+# P6 SAVIOR-Warehouse method definitions (scripts/run_method.sh is the executable source of truth).
+# Common: OpenVINS config savior_bringup/config/warehouse/estimator_config.yaml, deterministic_processing=true,
+# dynamic_mask_upstream_compat=true, mask_policy wait, mask_timeout_ms 30000, bag data/warehouse/ros2_stereoseg/<seq>
+# (= data/warehouse/ros2 + /cam1/segmentation(_moving), verified byte-identical on all original topics),
+# 10 start offsets 0.0..1.8 s (all inside the 3 s hover; static init 3.60-4.05 s for every offset and method).
+# Bag rate: 0.5 (openvins / oracle / hall L2-L3 + aisles L3 yolo_naive & coco), 0.25 for the other YOLO jobs, 0.2 for 10
+# single reruns; deterministic -> identical trajectories at any rate when all masks are exact (checked).
+openvins: {launch: baseline}
+savior_none: {backend: none}
+savior_none+nocompat: {backend: none, ov: dynamic_mask_upstream_compat=false}          # fork front-end path control
+oracle_moving: {dataset: warehouse_moving, backend: oracle_colormap, roles: warehouse_oracle_moving,
+                pset: "extension.enable=false tracker.enable=false seg_right_topic=/cam1/segmentation_moving"}
+oracle_moving_warp: {as: oracle_moving, pset: "extension.enable=false tracker.enable=false compose.right_fallback=median"}
+oracle_moving_ext: {as: oracle_moving, pset: "extension.enable=true tracker.enable=false compose.right_fallback=median"}
+oracle_class_naive: {backend: oracle_colormap, roles: warehouse_naive,
+                     pset: "extension.enable=false tracker.enable=false seg_right_topic=/cam1/segmentation"}
+yolo_naive: {backend: yolo, model: models/warehouse/yolo26s-seg-warehouse.engine, perception_params: warehouse/savior_perception_yolo.yaml,
+             roles: warehouse_naive, pset: "extension.enable=false tracker.enable=false compose.right_fallback=median"}
+yolo_p2: {as: yolo_naive, roles: warehouse,
+          pset: "motion.enable=false gating.link_depth=contact gating.max_noise_m=0.5 tracker.enable=false extension.enable=true compose.right_fallback=median"}
+yolo_p4: {as: yolo_naive, roles: warehouse,
+          pset: "motion.enable=true gating.link_depth=contact gating.max_noise_m=0.5 tracker.enable=false extension.enable=true motion.still_policy=unmask compose.right_fallback=median"}
+yolo_p4_nointer: {as: yolo_p4, pset_add: "gating.promote_contact=false"}
+yolo_p4_noext: {as: yolo_p4, pset_add: "extension.enable=false"}
+yolo_p6: {as: yolo_p4, pset_add: "motion.window_unveto_potential=true gating.max_depth=2",
+          note: "POST-HOC: selected on offline classification (offline_sens, offline_sens2) of 6 of the 8 benchmark sequences, not on ATE"}
+yolo_coco_person_p4: {as: yolo_p4, model: models/yolo26s-seg.engine, roles: person_only}
+failure_threshold_m: 2.0   # ATE RMSE; also reported at 1 m

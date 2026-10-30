@@ -1,0 +1,16 @@
+t1 hall_t1_L0 up_a RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_IMAGE=savior-sota:noetic
+t1 hall_t1_L0 p10_nokeys RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism
+t1 hall_t1_L0 det2_a RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+t1 hall_t1_L0 det2_b RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+t1 hall_t1_L0 det1_a RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t1 hall_t1_L0 det1_b RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t1 hall_t1_L0 det1_zero RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L0/zero/off_all
+t1 hall_t1_L3 up_a RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_IMAGE=savior-sota:noetic
+t1 hall_t1_L3 p10_nokeys RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism
+t1 hall_t1_L3 det2_a RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+t1 hall_t1_L3 det2_b RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+t1 hall_t1_L3 det1_a RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t1 hall_t1_L3 det1_b RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1
+t1 hall_t1_L3 det1_zero RUNS=1,5 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/zero/off_all
+t1 hall_t1_L3 smoke_savior RUNS=1 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/sens_fix1/off_{off}
+t1 hall_t1_L3 smoke_edge RUNS=1 ROOT=/home/sasa/workspace/savior_ws/results/dynavins_masks/validation/determinism SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_SOLVER_THREADS=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/savior_edge/off_{off} SOTA_MASK_MODE=deferred SOTA_MASK_LATENCY_MS=250

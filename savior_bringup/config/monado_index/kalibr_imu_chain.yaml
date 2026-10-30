@@ -1,0 +1,40 @@
+%YAML:1.0
+
+imu0:
+  T_i_b:
+    - [1.0, 0.0, 0.0, 0.0]
+    - [0.0, 1.0, 0.0, 0.0]
+    - [0.0, 0.0, 1.0, 0.0]
+    - [0.0, 0.0, 0.0, 1.0]
+  # [SAVIOR] Monado MSD Valve Index calibration.json, verbatim (Basalt continuous-time values: accel_noise_std,
+  # gyro_noise_std = white-noise densities; accel_bias_std, gyro_bias_std = bias random walks). The dataset README
+  # states these were not identified (Basalt defaults). No inflation, no tuning. imu0/data.csv is already
+  # bias / scale-misalignment corrected (calib_*_bias all zero in calibration.json), hence identity Tw/Ta, zero Tg.
+  accelerometer_noise_density: 0.016
+  accelerometer_random_walk: 0.001
+  gyroscope_noise_density: 0.000282
+  gyroscope_random_walk: 0.0001
+  rostopic: /imu0
+  time_offset: 0.0
+  update_rate: 1000.0
+  model: "kalibr"
+  Tw:
+    - [ 1.0, 0.0, 0.0 ]
+    - [ 0.0, 1.0, 0.0 ]
+    - [ 0.0, 0.0, 1.0 ]
+  R_IMUtoGYRO:
+    - [ 1.0, 0.0, 0.0 ]
+    - [ 0.0, 1.0, 0.0 ]
+    - [ 0.0, 0.0, 1.0 ]
+  Ta:
+    - [ 1.0, 0.0, 0.0 ]
+    - [ 0.0, 1.0, 0.0 ]
+    - [ 0.0, 0.0, 1.0 ]
+  R_IMUtoACC:
+    - [ 1.0, 0.0, 0.0 ]
+    - [ 0.0, 1.0, 0.0 ]
+    - [ 0.0, 0.0, 1.0 ]
+  Tg:
+    - [ 0.0, 0.0, 0.0 ]
+    - [ 0.0, 0.0, 0.0 ]
+    - [ 0.0, 0.0, 0.0 ]

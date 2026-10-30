@@ -1,0 +1,6 @@
+2026-10-27 post-held-out amendment (figure layout only, no method / statistics change).
+- scripts/dm_figs.py: forest panels widened (tick labels of neighbouring panels overlapped) and the x range extended
+  to -92 % (VIODE effects were clipped at -80 %). The frozen version is kept as scripts/dm_figs.frozen.py
+  (md5 in FREEZE.md5 under the name dm_figs.py). No number in any table changes.
+- Post-hoc scripts added after the held-out run (not frozen, descriptive / re-analysis only, no held-out decision depends
+  on them): scripts/dm_seqlevel.py (stats_v3 sequence-level statistics), scripts/dm_extra.py (per-environment breakdown).

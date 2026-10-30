@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>savior_bringup</name>
+  <version>0.1.0</version>
+  <description>
+    SAVIOR bringup: launch files (stock-OpenVINS baseline, SAVIOR = OpenVINS fork + savior_perception),
+    per-dataset OpenVINS configs (uHumans2, OpenLORIS T265), class-role tables, oracle colour maps,
+    and dataset preparation tools (tools/: ROS1 -> ROS2 conversion, GT extraction, IMU noise id,
+    TUM pose recorder).
+  </description>
+  <maintainer email="sasa.kuruppuarachchi@gmail.com">Sasa Kuruppuarachchi</maintainer>
+  <license>GPL-3.0-or-later</license>
+
+  <exec_depend>launch</exec_depend>
+  <exec_depend>launch_ros</exec_depend>
+  <exec_depend>ros2bag</exec_depend>
+  <exec_depend>rosbag2_storage_mcap</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>ov_msckf</exec_depend>
+  <exec_depend>python3-numpy</exec_depend>
+  <exec_depend>python3-yaml</exec_depend>
+  <!-- savior.launch.py only (not required for the baseline) -->
+  <exec_depend>savior_perception</exec_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

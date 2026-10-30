@@ -1,0 +1,40 @@
+hall_t1_L3 vins_fusion SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+hall_t1_L3 vins_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/sens_fix1/off_{off}
+hall_t1_L3 vins_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L3/zero/off_all
+hall_t1_L3 dynavins METHOD=dynavins SOTA_IMAGE=savior-sota:noetic
+hall_t1_L3 vins_fusion_mt SOTA_IMAGE=savior-sota:noetic
+aisles_t1_L3 vins_fusion SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+aisles_t1_L3 vins_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L3/sens_fix1/off_{off}
+aisles_t1_L3 vins_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L3/zero/off_all
+aisles_t1_L3 dynavins METHOD=dynavins SOTA_IMAGE=savior-sota:noetic
+aisles_t1_L3 vins_fusion_mt SOTA_IMAGE=savior-sota:noetic
+hall_t1_L2 vins_fusion SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+hall_t1_L2 vins_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L2/sens_fix1/off_{off}
+hall_t1_L2 vins_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L2/zero/off_all
+hall_t1_L2 dynavins METHOD=dynavins SOTA_IMAGE=savior-sota:noetic
+hall_t1_L2 vins_fusion_mt SOTA_IMAGE=savior-sota:noetic
+aisles_t1_L2 vins_fusion SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+aisles_t1_L2 vins_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L2/sens_fix1/off_{off}
+aisles_t1_L2 vins_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L2/zero/off_all
+aisles_t1_L2 dynavins METHOD=dynavins SOTA_IMAGE=savior-sota:noetic
+aisles_t1_L2 vins_fusion_mt SOTA_IMAGE=savior-sota:noetic
+hall_t1_L1 vins_fusion SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+hall_t1_L1 vins_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L1/sens_fix1/off_{off}
+hall_t1_L1 vins_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L1/zero/off_all
+hall_t1_L1 dynavins METHOD=dynavins SOTA_IMAGE=savior-sota:noetic
+hall_t1_L1 vins_fusion_mt SOTA_IMAGE=savior-sota:noetic
+aisles_t1_L1 vins_fusion SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+aisles_t1_L1 vins_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L1/sens_fix1/off_{off}
+aisles_t1_L1 vins_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L1/zero/off_all
+aisles_t1_L1 dynavins METHOD=dynavins SOTA_IMAGE=savior-sota:noetic
+aisles_t1_L1 vins_fusion_mt SOTA_IMAGE=savior-sota:noetic
+hall_t1_L0 vins_fusion SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+hall_t1_L0 vins_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L0/sens_fix1/off_{off}
+hall_t1_L0 vins_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/hall_t1_L0/zero/off_all
+hall_t1_L0 dynavins METHOD=dynavins SOTA_IMAGE=savior-sota:noetic
+hall_t1_L0 vins_fusion_mt SOTA_IMAGE=savior-sota:noetic
+aisles_t1_L0 vins_fusion SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1
+aisles_t1_L0 vins_savior SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L0/sens_fix1/off_{off}
+aisles_t1_L0 vins_zero SOTA_DETERMINISTIC=1 SOTA_IGNORE_SOLVER_TIME=1 SOTA_MASK_DIR=/home/sasa/workspace/savior_ws/results/vins_savior/masks/aisles_t1_L0/zero/off_all
+aisles_t1_L0 dynavins METHOD=dynavins SOTA_IMAGE=savior-sota:noetic
+aisles_t1_L0 vins_fusion_mt SOTA_IMAGE=savior-sota:noetic

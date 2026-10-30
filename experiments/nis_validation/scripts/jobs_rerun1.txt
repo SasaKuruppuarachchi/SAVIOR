@@ -1,0 +1,15 @@
+# re-run attempt 2 of invalid own runs (openloris, attempt 1 invalid): seq variant offset start DSN
+openloris_cafe1-1 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_cafe1-2 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_cafe1-2 sf1_nis 0.2 2 DSN=nis_validation/runs/e
+openloris_office1-1 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-1 sf1_nis 0.2 2 DSN=nis_validation/runs/e
+openloris_office1-1 sf1_nis 1.0 6 DSN=nis_validation/runs/e
+openloris_office1-2 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-2 sf1_nis 1.0 6 DSN=nis_validation/runs/e
+openloris_office1-3 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-4 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-4 sf1_nis 1.6 9 DSN=nis_validation/runs/e
+openloris_office1-5 sf1_nis 0.0 1 DSN=nis_validation/runs/e
+openloris_office1-5 sf1_nis 0.2 2 DSN=nis_validation/runs/e
+openloris_office1-6 sf1_nis 0.2 2 DSN=nis_validation/runs/e

@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# savior_node overrides for the Monado SLAM Dataset, Valve Index (real world; kb4 fisheye stereo 960x960 mono8 @ 54 Hz,
+# b = 13.4 cm, f = 420 px -> f*b = 56 px m; IMU 1 kHz). Real-world study results/real_world (2026-10-26).
+# = config/viode/savior_perception.yaml (the frozen COCO instantiation of VIODE) with ONLY the dataset I/O changed:
+#   no GT segmentation topic (no oracle methods: the dataset has no GT masks). Depth / gating / motion keys are the
+#   package defaults exactly as for VIODE (no Monado-specific tuning; the per-method pset of results/p7/final_config_addendum.yaml
+#   sets the SAVIOR keys).
+# Loaded AFTER savior_perception/config/default.yaml; calib_file / roles_file are set by the launch / run scripts.
+savior_node:
+  ros__parameters:
+    left_topic: /cam0/image_raw
+    right_topic: /cam1/image_raw
+    imu_topic: /imu0                 # P4 motion evidence (gyro, IMU frame of kalibr_imucam_chain.yaml)
+    cam_left: cam0
+    cam_right: cam1
+    seg_topic: ""                    # no GT segmentation in this dataset
+    seg_right_topic: ""
+    segmenter:
+      backend: yolo                  # YOLO26s-seg (COCO) on the left image (launch backend:= / model:= override)
+    tracker:
+      enable: false                  # as VIODE (the sens_fix1 pset turns it on)
+    motion:
+      max_ego_speed_mps: 5.0         # as VIODE (weak prior of the ego translation fit; head-mounted walking is < 2 m/s)

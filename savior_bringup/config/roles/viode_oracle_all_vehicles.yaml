@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# VIODE GT-perfect naive class masking: every vehicle (vehicle_dynamic_* and vehicle_static_*) is masked.
+dynamic:   [dyn_vehicle, static_vehicle]
+potential: []
+static:    []
+default: ignore

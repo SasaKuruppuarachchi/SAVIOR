@@ -1,0 +1,47 @@
+%YAML:1.0
+
+# uHumans2 (TESSE simulator) IMU = frame base_link_gt (frame_id of /tesse/imu/*), 200 Hz.
+# Noise values IDENTIFIED from office_s1_00h with savior_bringup/tools/uhumans2_prepare.py imunoise:
+#   noisy = clean + bias + white;  density = std(noisy-clean-bias)*sqrt(dt);  rw = std(diff(bias))/sqrt(dt)
+#   gyro  density [1.690e-4 1.702e-4 1.698e-4]  rw [1.952e-5 1.938e-5 1.934e-5]
+#   accel density [2.001e-3 1.989e-3 1.999e-3]  rw [2.999e-3 2.998e-3 2.990e-3]
+#   (Allan cross-check on noisy-clean agrees; residual lag-1 autocorr < 0.004 -> white)
+# => TESSE injects exactly the EuRoC/ADIS16448 values, which are used below (not inflated: sim noise is
+#    exactly white + random walk, no unmodelled effects).
+imu0:
+  T_i_b:
+    - [1.0, 0.0, 0.0, 0.0]
+    - [0.0, 1.0, 0.0, 0.0]
+    - [0.0, 0.0, 1.0, 0.0]
+    - [0.0, 0.0, 0.0, 1.0]
+  accelerometer_noise_density: 2.0000e-3  # [ m / s^2 / sqrt(Hz) ]   ( accel "white noise" )
+  accelerometer_random_walk: 3.0000e-3    # [ m / s^3 / sqrt(Hz) ].  ( accel bias diffusion )
+  gyroscope_noise_density: 1.6968e-04     # [ rad / s / sqrt(Hz) ]   ( gyro "white noise" )
+  gyroscope_random_walk: 1.9393e-05       # [ rad / s^2 / sqrt(Hz) ] ( gyro bias diffusion )
+  # /tesse/imu/clean/imu = noise-free reference (same frame and stamps)
+  rostopic: /tesse/imu/noisy/imu
+  time_offset: 0.0
+  update_rate: 200.0
+  # three different modes supported:
+  # "calibrated" (same as "kalibr"), "kalibr", "rpng"
+  model: "kalibr"
+  Tw:
+    - [ 1.0, 0.0, 0.0 ]
+    - [ 0.0, 1.0, 0.0 ]
+    - [ 0.0, 0.0, 1.0 ]
+  R_IMUtoGYRO:
+    - [ 1.0, 0.0, 0.0 ]
+    - [ 0.0, 1.0, 0.0 ]
+    - [ 0.0, 0.0, 1.0 ]
+  Ta:
+    - [ 1.0, 0.0, 0.0 ]
+    - [ 0.0, 1.0, 0.0 ]
+    - [ 0.0, 0.0, 1.0 ]
+  R_IMUtoACC:
+    - [ 1.0, 0.0, 0.0 ]
+    - [ 0.0, 1.0, 0.0 ]
+    - [ 0.0, 0.0, 1.0 ]
+  Tg:
+    - [ 0.0, 0.0, 0.0 ]
+    - [ 0.0, 0.0, 0.0 ]
+    - [ 0.0, 0.0, 0.0 ]

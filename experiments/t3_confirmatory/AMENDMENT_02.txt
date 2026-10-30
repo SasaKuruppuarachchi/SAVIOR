@@ -1,0 +1,12 @@
+2026-10-27 coordinator: amendment before ANY t3 evaluation run (validity rule only; no method, setting, hypothesis or analysis change).
+Reason: the real-world study (results/real_world/DEBUG_REPORT.md) showed that under host load whole stereo frames can be lost between
+the bag player and the estimator at rate 0.5, for plain OpenVINS too; the pose-count rule relative to openvins cannot detect a loss
+in openvins itself.
+1. Added validity rule, all methods: frames processed by the estimator == stereo pairs in the bag after the offset (+-0)
+   (OpenVINS family: '[TIME]: ... seconds total' lines in the launch log; VINS family: 'frontend' rows in timing.csv, as in
+   results/real_world FREEZE_AMENDMENT 2). Implemented as a separate audit script (scripts/t3_frames_audit.py); the frozen
+   m2bsync.py is unchanged and also still applied. Runs failing either audit are re-run (unchanged) until valid, never dropped;
+   any run still invalid after 3 attempts is reported.
+2. Load cap: at most 12 t3 containers in total, and no other heavy job started by the coordinator while the t3 runs are going.
+3. Disclosed addition (secondary, exploratory, outside the P1–P5 chain and the S1–S14 Holm family): DynaVINS + SAVIOR masks
+   (results/dynavins_masks, P10, frozen FREEZE.md5; the only mismatch is the layout-only dm_figs.py) on the t3 list, same offsets.

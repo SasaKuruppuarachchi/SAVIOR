@@ -1,0 +1,18 @@
+EDGE study - pre-defined acceptance criterion ("no considerable accuracy cost"), written 2026-10-23 14:40 EEST,
+BEFORE any EDGE closed-loop accuracy run (only md5 control runs e_main / e_as20 had been run at this point).
+
+Reference: the frozen main sens_fix1 (results/p7/<seq>/sens_fix1, 10 offsets, rate 0.5), final_config.yaml md5 6fea24e550b7198659d8de35d19b3c67.
+Data: SAVIOR-Warehouse *_t1_* only (aisles/hall L0-L3), 8 sequences x 10 offsets, same protocol (edge_run.sh = run_method.sh
+against the scratch install). Statistics as p7analyze.py: paired per-offset log ATE ratio vs sens_fix1 (failures > 2 m, capped at
+10 m), geometric-mean ratio - 1, bootstrap 95 % CI (20000, seed 0), Wilcoxon signed-rank, Holm within each (group) family.
+
+A variant PASSES iff ALL hold:
+  1. geometric-mean ATE change vs sens_fix1 <= +10 % in L0+L1 AND <= +10 % in L2+L3 (point estimate; the upper 95 % CI bound is
+     reported next to it and a CI upper bound > +10 % is flagged "uncertain");
+  2. 0 failures (ATE > 2 m) on hall_t1_L3 (10 offsets);
+  3. offline moving-object recall (GT-centric, person + forklift moving instance-frames masked >= 50 % core, pooled over the 8 t1
+     sequences, edgeeval.py) within 3 points of the main's (and pixel recall of moving pixels reported).
+Also reported: failure count over all 80 runs, hall L3 ATE change, static-kept (static boxes/pallets/forklifts NOT masked),
+onset latency, RPE.
+Compute: per-stage CPU / GPU ms per frame (median / p90 / p99) on an otherwise quiet machine (run_timing.sh style, one container,
+rate 1.0), plus a 4-core cpuset run; savings relative to the frozen main measured the same way. Orin NX numbers are ESTIMATES.

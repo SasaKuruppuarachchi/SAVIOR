@@ -1,0 +1,325 @@
+# ============================================================================================================
+# SAVIOR P7 FINAL CONFIGURATION ADDENDUM (M2b) - FROZEN / PRE-REGISTERED before any held-out SAVIOR / YOLO run.
+# References results/p7/final_config.yaml (md5 6fea24e550b7198659d8de35d19b3c67), which stays unchanged.
+# Do not edit. Its md5 is in results/p7/final_config_addendum.md5 and src/savior/docs/IMPLEMENTATION_PLAN.md section 6.
+# pset = savior_node "k=v ..." (launch pset:=); ov_set_extra is appended to the frozen ov_set.
+# ============================================================================================================
+status: FROZEN-ADDENDUM - pre-registered before any held-out (warehouse t2 / VIODE) SAVIOR or YOLO run
+frozen_at: '2026-10-23T23:42:13+03:00'
+frozen_by: M2b agent, on the author approval of 2026-10-24 (SAVIOR-edge as a pre-registered addendum)
+original_config:
+  path: results/p7/final_config.yaml
+  md5: 6fea24e550b7198659d8de35d19b3c67
+  note: unchanged and authoritative for the 7 original methods on the warehouse; this addendum only adds
+final_methods:
+- openvins
+- savior_none
+- oracle_moving_ext
+- oracle_class_ext
+- yolo_naive
+- sens_fix1
+- p7_nb
+- savior_edge
+paper_labels:
+  openvins: OpenVINS
+  savior_none: SAVIOR-none
+  oracle_moving_ext: O-Dyn+B
+  oracle_class_ext: O-Cls+B
+  yolo_naive: Y-Cls
+  sens_fix1: SAVIOR
+  p7_nb: SAVIOR-adaptive
+  savior_edge: SAVIOR-edge
+addendum_comparisons:
+- savior_edge vs sens_fix1 (edge criterion, below)
+- savior_edge vs openvins
+- savior_edge vs yolo_naive (reported)
+savior_edge:
+  label: SAVIOR-edge
+  role: 'ADDENDUM: edge-study recommended combination = frozen main sens_fix1 + YOLO26n-seg 672x384 (warehouse fine-tuned, FP16) + deferred invalidation
+    only (simulated mask latency 250 ms, no stale gating)'
+  edge_study_method: 'e_c_n672_L250dfronly (results/edge_study/edge_methods.json; the only variant passing CRITERION.txt, "uncertain" CI on t1:
+    L0+L1 +6.3 % [-6, +20], L2+L3 -0.3 % [-14, +16], 0 failures)'
+  install: frozen_edge/install
+  source:
+    path: frozen_edge/src/savior
+    git_commit: fdf5fe61be1ad8c101cf0ed81db334d6992e0644
+    parent_commit_is_frozen_baseline: true
+    tree_hashes:
+      savior_perception:
+        md5: 3d4b2a36a92486865695dba63eb9868d
+        n_files: 22
+        files: src/savior/savior_perception/savior_perception/**/*.py
+      savior_bringup_launch:
+        md5: b1baf72901fe2e3699bb534640f3ec02
+        n_files: 2
+        files: src/savior/savior_bringup/launch/*.py
+      ov_msckf_fork:
+        md5: 125686dc5397833ae4ff470207e1a165
+        n_files: 35
+        files: src/savior/open_vins/ov_msckf/src/**/*.cpp,**/*.h
+      ov_core:
+        md5: 04b71bfff86c5a94b22ff5e5fb3e61c8
+        n_files: 51
+        files: src/savior/open_vins/ov_core/src/**/*.cpp,**/*.h
+    baseline_check: git HEAD~1 (frozen baseline copy) == src/savior on every frozen source tree hash (savior_perception a0f36961, launch b1baf729,
+      ov_msckf e3ae3a5b); edge changes are default-off flags
+  install_hash:
+    md5: ad2ec2eccba054563669584b0ab49310
+    n_files: 165
+    files: frozen_edge/install/**/*.py,*.so,*.yaml,*.xml + lib/ov_msckf/*, lib/savior_*/* (relative path + content)
+  warehouse:
+    launch: savior.launch.py
+    backend: yolo
+    model: frozen_edge/models/yolo26n-seg-warehouse-672.engine
+    model_md5: 4bc03c8b1d90e5dda93ec17edfcac47b
+    model_source: results/edge_study engines/n672.engine (copied, md5-identical), from models/warehouse/yolo26n-seg-warehouse.pt (md5 6ccd700ac8776ad626e2d54506faba05),
+      TensorRT FP16 384x672
+    perception_params: src/savior/savior_bringup/config/warehouse/savior_perception_yolo.yaml
+    roles_file: src/savior/savior_bringup/config/roles/warehouse.yaml
+    roles_md5: 1537a5b055dc76f400e319a6b23a9cf1
+    pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+      gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+      segmenter.imgsz=672 selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+    ov_set_extra: dynamic_mask_sim_latency_ms=250.0 dynamic_mask_deferred=true dynamic_mask_stale_gating=false
+    diff_vs_sens_fix1: 'model (s -> n engine), segmenter.imgsz=672 (redundant: = perception_params value), ov_set_extra'
+  viode:
+    launch: savior.launch.py
+    install: frozen_edge/install
+    backend: yolo
+    model: frozen_edge/models/yolo26n-seg-coco640.engine
+    roles_file: src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+    pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+      gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+      selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+    ov_set_extra: dynamic_mask_sim_latency_ms=250.0 dynamic_mask_deferred=true dynamic_mask_stale_gating=false
+    roles_md5: 29f6f12d29f25f10f923c99e9c09170c
+    note: VIODE sens_fix1 with the COCO YOLO26n engine (same 640x640 FP16 export as the COCO s engine) + deferred invalidation 250 ms; segmenter.imgsz
+      keeps the VIODE s-variant value (640 = engine input), as on the warehouse where the edge imgsz=672 equals the s-variant perception_params
+      value
+  criterion_heldout: 'as results/edge_study/CRITERION.txt items 1-2 with SAVIOR (sens_fix1) as reference on warehouse t2: geometric-mean ATE change
+    <= +10 % in L0+L1 AND in L2+L3 (point estimate; CI upper bound > +10 % flagged "uncertain"), and failures (ATE > 2 m) on hall_t2_L3 + dock_t2_L3
+    not above SAVIOR''s. VIODE: reported.'
+viode:
+  scope: 'VIODE instantiation of every final method (final_config.yaml defines none). P5 dataset settings + the frozen pipeline parameters, without
+    tuning. Note: VIODE was used in P5 (P2-P4 pipelines) but never with any P7 method.'
+  sequences:
+  - parking_lot_none
+  - parking_lot_low
+  - parking_lot_mid
+  - parking_lot_high
+  - city_day_none
+  - city_day_low
+  - city_day_mid
+  - city_day_high
+  - city_night_none
+  - city_night_low
+  - city_night_mid
+  - city_night_high
+  estimator_config: src/savior/savior_bringup/config/viode/estimator_config.yaml
+  estimator_config_md5: 54b296c2fef63c46b3e072683074227f
+  perception_params: 'launch default: savior_perception/config/default.yaml + config/viode/savior_perception.yaml (md5 d599edbe672ddcb52ddb6d81224049df),
+    as P5'
+  topics: /cam0/image_raw /cam1/image_raw /imu0
+  start_offsets_s:
+    parking_lot:
+    - 5.5
+    - 5.7
+    - 5.9
+    - 6.1
+    - 6.3
+    - 6.5
+    - 6.7
+    - 6.9
+    - 7.1
+    - 7.3
+    city_day:
+    - 4.1
+    - 4.3
+    - 4.5
+    - 4.7
+    - 4.9
+    - 5.1
+    - 5.3
+    - 5.5
+    - 5.7
+    - 5.9
+    city_night:
+    - 6.1
+    - 6.3
+    - 6.5
+    - 6.7
+    - 6.9
+    - 7.1
+    - 7.3
+    - 7.5
+    - 7.7
+    - 7.9
+  offsets_note: 'P5 late start: 10 offsets beginning 0.8 s before translation (results/p5_viode/scripts/jobs_main*.txt)'
+  failure_threshold_m: 1.0
+  failure_cap_m: 10.0
+  gt: data/viode/gt/<seq>.txt
+  evaluation: savior-eval multi (posyaw, full sequence), as P5
+  coco_engines:
+    models/yolo26s-seg.engine: 84527d3962ae7b85d34fd7bcb74cbc58
+    frozen_edge/models/yolo26n-seg-coco640.engine: 86713aace0498ef877998d0315e07938
+  coco_n_export: ultralytics 8.4.177 in savior:humble-cuda12.8, YOLO(models/yolo26n-seg.pt).export(format=engine, imgsz=640, half=True, batch=1,
+    simplify=True, device=0) = the export settings of models/yolo26s-seg.engine; pt md5 9f9df23eb27d6ab64512bb670cd0ae96, onnx md5 000305e8b62a9cc208dec53ecf574f69
+  colormaps:
+    parking_lot: d6a73611fb1ea0027a2cf2a4aa335ee3
+    city_day: a5abbb43cec5228aa934edeb33f2f175
+    city_night: 306adae5791c7955ce31fca1a8d6ea08
+  prior_static_note: 'selective.prior_static_classes kept verbatim (box,pallet,trolley): not COCO classes, so inert on VIODE'
+  methods:
+    openvins:
+      launch: baseline.launch.py
+    savior_none:
+      launch: savior.launch.py
+      backend: none
+    oracle_moving_ext:
+      launch: savior.launch.py
+      backend: oracle_colormap
+      roles_file: src/savior/savior_bringup/config/roles/viode_oracle_dynamic.yaml
+      extra_topics: /cam0/segmentation
+      pset: extension.enable=true tracker.enable=false compose.right_fallback=median segmenter.colormap_file=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/oracle/viode_{env}_colormap.yaml
+      roles_md5: 9ab5b44106c2aec5a420ba1b1dcd5935
+      note: P5 oracle_dynamic GT moving-vehicle masks + the frozen O-Dyn+B pipeline (band, no tracker, warped right mask)
+    oracle_class_ext:
+      launch: savior.launch.py
+      backend: oracle_colormap
+      roles_file: src/savior/savior_bringup/config/roles/viode_oracle_all_vehicles.yaml
+      extra_topics: /cam0/segmentation
+      pset: extension.enable=true tracker.enable=false compose.right_fallback=median segmenter.colormap_file=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/oracle/viode_{env}_colormap.yaml
+      roles_md5: 35b1e42600fb208c4f68ce4c253377b5
+      note: P5 oracle_all_vehicles GT class masks (all vehicles) + the frozen O-Cls+B pipeline
+    yolo_naive:
+      launch: savior.launch.py
+      backend: yolo
+      model: models/yolo26s-seg.engine
+      roles_file: src/savior/savior_bringup/config/roles/viode_vehicles_dynamic.yaml
+      pset: compose.right_fallback=median extension.enable=false segmenter.fast_masks=true stats_compact=true tracker.enable=false
+      roles_md5: 50a74846f603593508fe6b5802942643
+      note: 'naive class masking: person + all vehicle classes dynamic (P5 yolo_naive roles), frozen Y-Cls savior_node keys'
+    sens_fix1:
+      launch: savior.launch.py
+      backend: yolo
+      model: models/yolo26s-seg.engine
+      roles_file: src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      roles_md5: 29f6f12d29f25f10f923c99e9c09170c
+      note: frozen SAVIOR savior_node keys verbatim (fixed 1 m gate, median link); roles viode_vehicles_potential (P5)
+    p7_nb:
+      launch: savior.launch.py
+      backend: yolo
+      model: models/yolo26s-seg.engine
+      roles_file: src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      pset: compose.right_fallback=median extension.enable=false gating.link_depth=contact gating.max_depth=3 gating.max_noise_m=0.5 motion.enable=true
+        motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true selective.enable=true selective.prior_static_classes=box,pallet,trolley
+        stats_compact=true tracker.enable=true tracker.motion_model=ego
+      roles_md5: 29f6f12d29f25f10f923c99e9c09170c
+      note: frozen SAVIOR-adaptive savior_node keys verbatim; roles viode_vehicles_potential (P5)
+    savior_edge:
+      launch: savior.launch.py
+      install: frozen_edge/install
+      backend: yolo
+      model: frozen_edge/models/yolo26n-seg-coco640.engine
+      roles_file: src/savior/savior_bringup/config/roles/viode_vehicles_potential.yaml
+      pset: compose.right_fallback=median extension.enable=false gating.fixed_threshold_m=1.0 gating.link_depth=median gating.max_depth=3 gating.max_noise_m=0.5
+        gating.mode=fixed motion.enable=true motion.still_policy=unmask motion.use_still=false motion.window_long_s=2.0 segmenter.fast_masks=true
+        selective.enable=true selective.prior_static_classes=box,pallet,trolley stats_compact=true tracker.enable=true tracker.motion_model=ego
+      ov_set_extra: dynamic_mask_sim_latency_ms=250.0 dynamic_mask_deferred=true dynamic_mask_stale_gating=false
+      roles_md5: 29f6f12d29f25f10f923c99e9c09170c
+      note: VIODE sens_fix1 with the COCO YOLO26n engine (same 640x640 FP16 export as the COCO s engine) + deferred invalidation 250 ms; segmenter.imgsz
+        keeps the VIODE s-variant value (640 = engine input), as on the warehouse where the edge imgsz=672 equals the s-variant perception_params
+        value
+warehouse_heldout:
+  sequences:
+  - aisles_t2_L0
+  - aisles_t2_L1
+  - aisles_t2_L2
+  - aisles_t2_L3
+  - hall_t2_L0
+  - hall_t2_L1
+  - hall_t2_L2
+  - hall_t2_L3
+  - dock_t2_L0
+  - dock_t2_L1
+  - dock_t2_L2
+  - dock_t2_L3
+  manifest: data/warehouse/HELDOUT_MANIFEST.yaml
+  protocol: final_config.yaml protocol (offsets 0.0-1.8 s, rate 0.5, failure > 2 m, cap 10 m)
+validity_m2b:
+- final_config.yaml validity (clean exit, trajectory, FINAL fallback_latest = fallback_empty = late_masks = 0, n_in_core = 0)
+- 'PLUS pose-count rule: poses >= same-offset openvins pose count - 1'
+- rate 0.5 only; deterministic_processing, dynamic_mask_upstream_compat, dynamic_mask_max_pending=0 as frozen
+- invalid runs are re-run, never dropped; savior_none must equal openvins (md5) on the warehouse; VIODE agreement reported
+runner: results/m2b_heldout/scripts/run_m2b.sh + m2b_args.py (settings read only from final_config.yaml and this file)
+analysis_plan:
+  metric: ATE RMSE (posyaw, full sequence); secondary RPE (shortest rpg sub-length, failed runs = inf); failures
+  statistics: paired per-offset log ATE ratio vs reference (failures capped at 10 m); geometric-mean ratio - 1; bootstrap 95 % CI (20000, seed
+    0); Wilcoxon signed-rank; Holm within each (dataset, group, reference) family over the methods
+  groups_warehouse:
+  - L0
+  - L1
+  - L2
+  - L3
+  - L0+L1
+  - L2+L3
+  - hall_L3
+  - dock_L3
+  - hall+dock_L3
+  - all
+  groups_viode:
+  - none
+  - low
+  - mid
+  - high
+  - none+low
+  - mid+high
+  - low+mid+high
+  - all
+  references:
+    openvins:
+    - oracle_moving_ext
+    - oracle_class_ext
+    - yolo_naive
+    - sens_fix1
+    - p7_nb
+    - savior_edge
+    yolo_naive:
+    - sens_fix1
+    - p7_nb
+    - savior_edge
+    sens_fix1:
+    - p7_nb
+    - savior_edge
+    oracle_class_ext:
+    - oracle_moving_ext
+  hypotheses:
+    H1 (primary, the bar): 'SAVIOR vs Y-Cls on warehouse t2: no worse at L2+L3, better at L0+L1, 0 failures on hall/dock L3'
+    H2: SAVIOR better than OpenVINS (L2+L3, hall/dock L3; VIODE mid+high)
+    H3 (secondary): SAVIOR-adaptive vs Y-Cls (same bar); SAVIOR vs SAVIOR-adaptive reported
+    H4: O-Dyn+B better than O-Cls+B (selective vs class-level ceiling), L0 and L2+L3
+    H5 (addendum): SAVIOR-edge within the edge criterion vs SAVIOR (above)
+    control: savior_none == openvins (md5) on the warehouse
+  diagnostic_optional: share-vs-gain on the new sequences (optional; may be skipped)
+verification:
+  date: 2026-10-23 23:30-23:38 EEST (t1 tuning sequences only, rate 0.5, results/m2b_heldout/verify)
+  flags_off_reproduces_sens_fix1:
+    install: frozen_edge/install
+    method: sens_fix1 (all edge flags default-off)
+    sequences:
+    - hall_t1_L3
+    - aisles_t1_L2
+    runs_md5_equal: 20/20
+    reference: results/p7/<seq>/sens_fix1/run_01..10 (frozen workspace install)
+    sync: 20/20 sync-valid (0 fallbacks / late masks, n_in_core 0, clean exit)
+  savior_edge_reproduces_edge_study:
+    runs:
+    - aisles_t1_L2/run_07 3ecb7dfb829557672a40e19e59387f88
+    - hall_t1_L3/run_03 05cd628555dbee78cd3aa93df3107f93
+    runs_md5_equal: 2/2
+    reference: results/edge_study/runs/<seq>/e_c_n672_L250dfronly/<run> (scratch install)
+    sync: 2/2 sync-valid, deferred too_late=0
+  viode_preflight: all referenced files exist; COCO YOLO26n 640 engine loads and predicts on a blank 752x480 frame (no VIODE data used)

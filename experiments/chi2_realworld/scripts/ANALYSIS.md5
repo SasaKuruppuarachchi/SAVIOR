@@ -1,0 +1,4 @@
+# analysis scripts frozen 2026-10-28T14:54:12+02:00, before any chi2-realworld run was evaluated (only the baseline-only dry run was looked at)
+4e968c5d52c0b54c322c7ece83e7d86e  cr_analyze.py
+2bae41e51d58c4105bc2cefaef18cdbb  cr_eval.sh
+168d53d63b8410330d812fed8e90fa29  c2py.sh

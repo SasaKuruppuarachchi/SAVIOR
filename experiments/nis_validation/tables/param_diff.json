@@ -1,0 +1,3520 @@
+{
+ "errors": [],
+ "rows": [
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L0",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L0/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L0",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L0/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L0",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L0/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L0",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L0/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L1",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L1/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L1",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L1/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L1",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L1/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L1",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L1/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L2/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L2/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L2",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L2/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L2",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L2/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L3",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L3/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L3",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L3/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L3",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L3/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "aisles_t2_L3",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/aisles_t2_L3/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L0",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L0/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L0",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L0/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L0",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L0/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L0",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L0/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L1",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L1/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L1",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L1/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L1",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L1/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L1",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L1/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L2/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L2/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L2",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L2/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L2",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L2/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L3",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L3/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L3",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L3/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L3",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L3/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "hall_t2_L3",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/hall_t2_L3/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L0",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L0/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L0",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L0/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L0",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L0/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L0",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L0/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L1",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L1/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L1",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L1/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L1",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L1/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L1",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L1/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L2/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L2/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L2",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L2/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L2",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L2/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L3",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L3/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L3",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L3/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L3",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L3/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "warehouse_t2",
+   "seq": "dock_t2_L3",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/dock_t2_L3/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_none",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_none/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_none",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_none/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_none",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_none/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_none",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_none/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_low",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_low/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_low",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_low/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_low",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_low/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_low",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_low/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_mid",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_mid/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_mid",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_mid/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_mid",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_mid/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_mid",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_mid/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_high",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_high/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_high",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_high/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_high",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_high/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "parking_lot_high",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/parking_lot_high/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_none",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_none/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_none",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_none/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_none",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_none/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_none",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_none/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_low",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_low/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_low",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_low/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_low",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_low/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_low",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_low/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_mid",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_mid/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_mid",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_mid/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_mid",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_mid/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_mid",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_mid/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_high",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_high/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_high",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_high/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_high",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_high/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_day_high",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_day_high/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_none",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_none/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_none",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_none/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_none",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_none/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_none",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_none/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_low",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_low/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_low",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_low/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_low",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_low/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_low",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_low/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_mid",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_mid/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_mid",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_mid/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_mid",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_mid/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_mid",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_mid/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_high",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_high/sens_fix1/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_high",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_high/sens_fix1/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_high",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_high/openvins/bv2_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "viode",
+   "seq": "city_night_high",
+   "variant": "ov_nis",
+   "baseline_settings": "results/backend_v2/heldout/runs/city_night_high/openvins/bv2_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_cafe1-1",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_cafe1-1/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_cafe1-1",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_cafe1-1/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_cafe1-1",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_cafe1-1/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_cafe1-1",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_cafe1-1/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_cafe1-2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_cafe1-2/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_cafe1-2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_cafe1-2/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_cafe1-2",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_cafe1-2/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_cafe1-2",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_cafe1-2/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-1",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-1/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-1",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-1/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-1",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-1/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-1",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-1/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-2/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-2/e_sens_fix1/rr_settings_2.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-2",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-2/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-2",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-2/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-2",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-2/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-3",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-3/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-3",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-3/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-3",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-3/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-3",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-3/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-4",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-4/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-4",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-4/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-4",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-4/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-4",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-4/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-5",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-5/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-5",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-5/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-5",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-5/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-5",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-5/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-6",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-6/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-6",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-6/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-6",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-6/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-6",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-6/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-7",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-7/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-7",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-7/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-7",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-7/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "openloris_office1-7",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/openloris_office1-7/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_00h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_00h/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_00h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_00h/e_sens_fix1/rr_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_00h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_00h/e_sens_fix1/rr_settings_4.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_00h",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_00h/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_06h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_06h/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_06h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_06h/e_sens_fix1/rr_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_06h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_06h/e_sens_fix1/rr_settings_4.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_06h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_06h/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_06h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_06h/e_sens_fix1/rr_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_06h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_06h/e_sens_fix1/rr_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_06h",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_06h/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_06h",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_06h/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_12h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_12h/e_sens_fix1/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_12h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_12h/e_sens_fix1/rr_settings_2.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_12h",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_12h/e_sens_fix1/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_12h",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_12h/e_openvins/rr_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "openloris_uhumans2",
+   "seq": "uhumans2_office_s1_12h",
+   "variant": "ov_nis",
+   "baseline_settings": "results/review_runs/runs/e/uhumans2_office_s1_12h/e_openvins/rr_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/sens_fix1/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/sens_fix1/rw_settings_10.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/sens_fix1/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/sens_fix1/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/sens_fix1/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/sens_fix1/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/openvins/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/openvins/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/openvins/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/openvins/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO13",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO13/openvins/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO15",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO15/sens_fix1/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO15",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO15/sens_fix1/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO15",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO15/sens_fix1/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO15",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO15/sens_fix1/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO15",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO15/sens_fix1/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO15",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO15/openvins/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO15",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO15/openvins/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO15",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO15/openvins/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO15",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO15/openvins/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO15",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO15/openvins/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO16",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO16/sens_fix1/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO16",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO16/sens_fix1/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO16",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO16/sens_fix1/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO16",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO16/sens_fix1/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO16",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO16/sens_fix1/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO16",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO16/openvins/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO16",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO16/openvins/rw_settings_3.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO16",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO16/openvins/rw_settings_5.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO16",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO16/openvins/rw_settings_7.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO16",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO16/openvins/rw_settings_9.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO07",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO07/sens_fix1/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO07",
+   "variant": "sf1_nis",
+   "baseline_settings": "results/real_world/runs/MIO07/sens_fix1/rw_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO07",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO07/openvins/rw_settings_1.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  },
+  {
+   "dataset": "monado",
+   "seq": "MIO07",
+   "variant": "ov_nis",
+   "baseline_settings": "results/real_world/runs/MIO07/openvins/rw_settings_6.txt",
+   "exact": true,
+   "diff": {
+    "INSTALL": [
+     "/home/sasa/workspace/savior_ws/install",
+     "/home/sasa/workspace/savior_ws/results/semantic_gate/install"
+    ],
+    "OVSET": {
+     "savior_nis_gate": [
+      null,
+      "true"
+     ]
+    }
+   }
+  }
+ ]
+}

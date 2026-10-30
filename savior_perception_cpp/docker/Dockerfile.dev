@@ -1,0 +1,34 @@
+# savior-cpp:humble-cuda12.8 -- build/test image for savior_perception_cpp (x86_64 desktop).
+# Derived from the project image savior:humble-cuda12.8 (ROS 2 Humble, CUDA 12.8, TensorRT 10.16.1 python wheel,
+# system OpenCV 4.5.4, python cv2 4.11.0 wheel). Adds ONLY build/test dependencies:
+#   * TensorRT 10.16 C++ headers (NVIDIA/TensorRT OSS tag v10.16, include/) + libnvinfer.so link names pointing at the
+#     runtime that ships with the tensorrt python wheel (the engines were built with TRT 10.16.1.11 -> same runtime);
+#   * pybind11 (python bindings used by the offline Python<->C++ equivalence harness);
+#   * OpenCV 4.11.0 built from source into /opt/opencv-4.11 with the configuration of the opencv-python-headless
+#     4.11.0.86 wheel used by the Python node (IPP-ICV on, baseline SSE3, same dispatch list, pthreads). Only used by the
+#     equivalence build (-DSAVIOR_OPENCV_DIR=/opt/opencv-4.11/lib/cmake/opencv4) to separate algorithmic differences
+#     from OpenCV-version differences; the deployable build uses the system / JetPack OpenCV.
+# Build:  docker build -t savior-cpp:humble-cuda12.8 -f Dockerfile.dev .
+FROM savior:humble-cuda12.8
+USER root
+ARG OPENCV_VERSION=4.11.0
+ARG TRT_TAG=v10.16
+RUN pip3 install --no-cache-dir pybind11==2.13.6
+RUN set -eux; mkdir -p /opt/tensorrt/include /opt/tensorrt/lib; cd /tmp; \
+    curl -fsSL -o trt.tar.gz https://github.com/NVIDIA/TensorRT/archive/refs/tags/${TRT_TAG}.tar.gz; \
+    tar xzf trt.tar.gz --wildcards '*/include/*'; cp -r TensorRT-*/include/* /opt/tensorrt/include/; rm -rf trt.tar.gz TensorRT-*; \
+    L=/usr/local/lib/python3.10/dist-packages/tensorrt_libs; \
+    ln -s $L/libnvinfer.so.10 /opt/tensorrt/lib/libnvinfer.so; ln -s $L/libnvinfer.so.10 /opt/tensorrt/lib/libnvinfer.so.10; \
+    ln -s $L/libnvinfer_plugin.so.10 /opt/tensorrt/lib/libnvinfer_plugin.so; ln -s $L/libnvinfer_plugin.so.10 /opt/tensorrt/lib/libnvinfer_plugin.so.10; \
+    for f in $L/libnvinfer_builder_resource*; do ln -s $f /opt/tensorrt/lib/; done; \
+    echo /opt/tensorrt/lib > /etc/ld.so.conf.d/tensorrt.conf; ldconfig
+RUN set -eux; cd /tmp; curl -fsSL -o cv.tar.gz https://github.com/opencv/opencv/archive/refs/tags/${OPENCV_VERSION}.tar.gz; \
+    tar xzf cv.tar.gz; mkdir build && cd build; \
+    cmake ../opencv-${OPENCV_VERSION} -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/opt/opencv-4.11 \
+      -DBUILD_LIST=core,imgproc,calib3d,features2d,flann,video,imgcodecs -DBUILD_SHARED_LIBS=ON \
+      -DCPU_BASELINE=SSE3 -DCPU_DISPATCH=SSE4_1,SSE4_2,AVX,FP16,AVX2,AVX512_SKX -DWITH_IPP=ON -DWITH_TBB=OFF -DWITH_OPENMP=OFF \
+      -DWITH_OPENCL=OFF -DWITH_CUDA=OFF -DWITH_EIGEN=OFF -DWITH_LAPACK=OFF -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF \
+      -DBUILD_EXAMPLES=OFF -DBUILD_opencv_apps=OFF -DBUILD_opencv_python3=OFF -DBUILD_JAVA=OFF -DWITH_GTK=OFF -DWITH_FFMPEG=OFF \
+      -DWITH_GSTREAMER=OFF -DWITH_V4L=OFF -DWITH_1394=OFF -DOPENCV_GENERATE_PKGCONFIG=OFF; \
+    make -j"$(nproc)" install; cd /tmp; rm -rf build opencv-${OPENCV_VERSION} cv.tar.gz
+USER savior

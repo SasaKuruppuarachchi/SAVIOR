@@ -1,0 +1,94 @@
+bag: /home/sasa/workspace/savior_ws/data/viode/extracted/parking_lot/2_mid.bag
+frames:
+  odom:
+  - drone
+  - drone/odom_local_ned
+  imu: drone
+n_odom: 11924
+n_imu: 11924
+odom_rate_hz: 201.99884415334233
+imu_rate_hz: 201.99884415334233
+gyro_time_offset_s(t_imu=t_gt+off): 4.163336342344337e-17
+gyro:
+  rms_rate_rad_s: 0.6680139946042435
+  residual_rms_per_axis:
+  - 0.002218
+  - 0.002377
+  - 0.001992
+  residual_mean_per_axis(bias):
+  - 5.3e-05
+  - -6.0e-05
+  - -3.1e-05
+  kabsch_R_imu_from_odomchild:
+  - - 1.0
+    - 8.0e-05
+    - -4.0e-05
+  - - -8.0e-05
+    - 1.0
+    - -7.0e-05
+  - - 4.0e-05
+    - 7.0e-05
+    - 1.0
+  kabsch_angle_deg: 0.006140733572083994
+accel_norm_median: 9.838778452279294
+accel:
+  twist_linear/ned_g+z:
+    residual_mean:
+    - -0.0003
+    - 0.0001
+    - -0.0004
+    residual_median_abs:
+    - 0.0506
+    - 0.0501
+    - 0.0534
+    residual_rms:
+    - 0.074
+    - 0.0737
+    - 0.1361
+  twist_linear/enu_g-z:
+    residual_mean:
+    - -0.0689
+    - 0.0813
+    - -19.5006
+    residual_median_abs:
+    - 0.618
+    - 0.3118
+    - 19.5563
+    residual_rms:
+    - 1.7444
+    - 1.1591
+    - 19.5023
+  pos_diff/ned_g+z:
+    residual_mean:
+    - -0.0003
+    - 0.0001
+    - -0.0004
+    residual_median_abs:
+    - 0.0533
+    - 0.0511
+    - 0.0532
+    residual_rms:
+    - 0.0823
+    - 0.0758
+    - 0.137
+  pos_diff/enu_g-z:
+    residual_mean:
+    - -0.0689
+    - 0.0813
+    - -19.5006
+    residual_median_abs:
+    - 0.6183
+    - 0.3122
+    - 19.5567
+    residual_rms:
+    - 1.7447
+    - 1.1592
+    - 19.5023
+twist_linear_frame:
+  rms_vs_world_posdiff: 0.0017889218754688619
+  rms_vs_body_posdiff: 1.9662799759459306
+gt_file: /home/sasa/workspace/savior_ws/data/viode/gt/parking_lot_mid.txt
+gt_span_s:
+- 1597195468.5946639
+- 1597195528.2027714
+path_length_m: 75.8406729858852

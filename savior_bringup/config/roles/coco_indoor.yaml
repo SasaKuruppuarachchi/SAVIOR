@@ -1,0 +1,14 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Class-role table for indoor scenes with a COCO-trained segmenter (YOLO26-seg) — docs/IMPLEMENTATION_PLAN.md §3.4.
+# Also valid for the uHumans2 oracle (savior_bringup/config/oracle/uhumans2_colormap.yaml uses COCO names
+# where they exist: person, chair, couch, bench, ...).
+# role ∈ {static, potential, dynamic, ignore}; class names as emitted by the segmenter backend.
+dynamic:   [person]
+potential: [chair, suitcase, backpack, handbag, bicycle, car, cart]
+static:    []
+default: ignore            # classes not listed
+# optional per-class half depth extent [m] for the promotion size prior (unlisted -> gating.default_half_extent_m)
+half_extent_m:
+  bicycle: 0.6
+  car: 1.5
+  cart: 0.5

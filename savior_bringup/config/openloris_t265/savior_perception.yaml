@@ -1,0 +1,26 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
+# savior_node overrides for OpenLORIS-Scene T265 fisheye stereo. Loaded AFTER savior_perception/config/default.yaml
+# by savior.launch.py; calib_file / roles_file are set by the launch.
+savior_node:
+  ros__parameters:
+    left_topic: /t265/fisheye1/image_raw
+    right_topic: /t265/fisheye2/image_raw
+    cam_left: cam0
+    cam_right: cam1
+    seg_topic: ""
+    segmenter:
+      backend: yolo                  # COCO person (YOLO26-seg); set segmenter.model / launch model:=
+                                     # P2: yolo26s-seg.engine (TensorRT FP16, imgsz 640). On raw cafe1-1 fisheye frames
+                                     # it covers 0.89 of the person pixels of a yolo26x@1280 reference vs 0.73 for
+                                     # yolo26n (recall 0.75 vs 0.48, mostly small far people near the image centre);
+                                     # a rectified pinhole view was worse (0.41-0.59). See results/p2/REPORT.md.
+    depth:
+      downsample: 2                  # P2 (tuned on cafe1-1): 1 -> 2. Full-res SGBM cost 41 ms median / 73 ms p90 on real
+                                     # cafe frames (people close to the fisheye periphery = huge rectified ROIs) and the node
+                                     # could not keep up even at rate 0.5; ds 2: 10 ms / 18 ms, identical promotion decisions,
+                                     # person median depth within 5 percent of ds 1, no extra unknown depths.
+      rect_focal_scale: 0.7          # rectified focal = 0.7 * raw focal keeps more of the fisheye FOV
+    tracker:
+      enable: false                  # P2 (tuned on cafe1-1): the constant-velocity carry-over of lost masks in raw fisheye
+                                     # pixels hurt: ATE 0.189 -> 0.164 m (min_features 15) and 0.183 -> 0.160 m (30) with
+                                     # the tracker off; carried masks lag under ego-rotation (no IMU compensation yet).

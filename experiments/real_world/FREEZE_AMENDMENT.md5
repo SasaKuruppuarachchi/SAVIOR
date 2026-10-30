@@ -1,0 +1,16 @@
+# FREEZE_AMENDMENT.md5 - supersedes the FREEZE.md5 entries of the amended files; see FREEZE_AMENDMENT.txt
+2f825875ea4df0cf56700b7625f8af70  results/real_world/scripts/rw_args.py
+c7096457e0f46f01e1e984be816f1953  results/real_world/scripts/make_sota_configs.py
+bfc26f3ccf947c26f15a87dfa5aa8f53  results/real_world/scripts/rw_make_ros1.py
+0705e3095b7d76e9f66efbeec572a3e9  src/savior/sota/config/monado/vins_fusion/calibration.yaml
+b519a0920f3459a13e622c401ecdb97c  src/savior/sota/config/monado/dynavins/calibration_stereo.yaml
+2b577df44c84a759a5fba3ac807fbced  src/savior/sota/config/monado/vins_fusion/cam0_kb.yaml
+9d214d97bcdad6653b46239644303898  src/savior/sota/config/monado/vins_fusion/cam1_kb.yaml
+2b577df44c84a759a5fba3ac807fbced  src/savior/sota/config/monado/dynavins/cam0_kb.yaml
+9d214d97bcdad6653b46239644303898  src/savior/sota/config/monado/dynavins/cam1_kb.yaml
+# ---- FREEZE AMENDMENT 2 (2026-10-27): supersedes the entries above
+2c624f3f312a8e40eba9ba21f3f89e78  results/real_world/scripts/run_rw.sh
+9ffb9c0a9c19706c2e0333887058ec89  results/real_world/scripts/rw_sota.sh
+4d617f31d2c054928974b7932443617a  results/real_world/scripts/rw_expected_frames.py
+37c048e8990e0f2ebfea57ca2a9fff0b  results/real_world/prep/expected_frames.yaml
+4df8f5c45b1b4deaef91a02902ea8efa  results/real_world/scripts/rw_analyze.py

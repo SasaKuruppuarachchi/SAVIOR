@@ -1,0 +1,56 @@
+hall_t1_L3 oracle_moving_warp
+hall_t1_L3 yolo_p4_noext
+aisles_t1_L3 oracle_moving_warp
+aisles_t1_L3 yolo_p4_noext
+hall_t1_L2 oracle_moving_warp
+hall_t1_L2 yolo_p4_noext
+aisles_t1_L2 oracle_moving_warp
+aisles_t1_L2 yolo_p4_noext
+hall_t1_L1 oracle_moving_warp
+hall_t1_L1 yolo_p4_noext
+aisles_t1_L1 oracle_moving_warp
+aisles_t1_L1 yolo_p4_noext
+hall_t1_L0 oracle_moving_warp
+hall_t1_L0 yolo_p4_noext
+aisles_t1_L0 oracle_moving_warp
+aisles_t1_L0 yolo_p4_noext
+hall_t1_L3 diag_oracle_moving 0.0 1
+hall_t1_L3 diag_oracle_class_naive 0.0 1
+hall_t1_L3 diag_yolo_naive 0.0 1
+hall_t1_L3 diag_yolo_p4 0.0 1
+hall_t1_L3 diag_yolo_p6 0.0 1
+aisles_t1_L3 diag_oracle_moving 0.0 1
+aisles_t1_L3 diag_oracle_class_naive 0.0 1
+aisles_t1_L3 diag_yolo_naive 0.0 1
+aisles_t1_L3 diag_yolo_p4 0.0 1
+aisles_t1_L3 diag_yolo_p6 0.0 1
+hall_t1_L2 diag_oracle_moving 0.0 1
+hall_t1_L2 diag_oracle_class_naive 0.0 1
+hall_t1_L2 diag_yolo_naive 0.0 1
+hall_t1_L2 diag_yolo_p4 0.0 1
+hall_t1_L2 diag_yolo_p6 0.0 1
+aisles_t1_L2 diag_oracle_moving 0.0 1
+aisles_t1_L2 diag_oracle_class_naive 0.0 1
+aisles_t1_L2 diag_yolo_naive 0.0 1
+aisles_t1_L2 diag_yolo_p4 0.0 1
+aisles_t1_L2 diag_yolo_p6 0.0 1
+hall_t1_L1 diag_oracle_moving 0.0 1
+hall_t1_L1 diag_oracle_class_naive 0.0 1
+hall_t1_L1 diag_yolo_naive 0.0 1
+hall_t1_L1 diag_yolo_p4 0.0 1
+hall_t1_L1 diag_yolo_p6 0.0 1
+aisles_t1_L1 diag_oracle_moving 0.0 1
+aisles_t1_L1 diag_oracle_class_naive 0.0 1
+aisles_t1_L1 diag_yolo_naive 0.0 1
+aisles_t1_L1 diag_yolo_p4 0.0 1
+aisles_t1_L1 diag_yolo_p6 0.0 1
+hall_t1_L0 diag_oracle_moving 0.0 1
+hall_t1_L0 diag_oracle_class_naive 0.0 1
+hall_t1_L0 diag_yolo_naive 0.0 1
+hall_t1_L0 diag_yolo_p4 0.0 1
+hall_t1_L0 diag_yolo_p6 0.0 1
+aisles_t1_L0 diag_oracle_moving 0.0 1
+aisles_t1_L0 diag_oracle_class_naive 0.0 1
+aisles_t1_L0 diag_yolo_naive 0.0 1
+aisles_t1_L0 diag_yolo_p4 0.0 1
+aisles_t1_L0 diag_yolo_p6 0.0 1

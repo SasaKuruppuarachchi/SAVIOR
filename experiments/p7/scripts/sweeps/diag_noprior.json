@@ -1,0 +1,22 @@
+{
+ "p7_noprior": [
+  "wh",
+  "warehouse",
+  {
+   "motion.enable": true,
+   "gating.link_depth": "contact",
+   "gating.max_noise_m": 0.5,
+   "tracker.enable": true,
+   "extension.enable": true,
+   "motion.still_policy": "unmask",
+   "compose.right_fallback": "median",
+   "motion.use_still": false,
+   "motion.window_long_s": 2.0,
+   "gating.max_depth": 3,
+   "selective.enable": true,
+   "selective.prior_static_classes": "",
+   "tracker.motion_model": "ego",
+   "segmenter.fast_masks": true
+  }
+ ]
+}

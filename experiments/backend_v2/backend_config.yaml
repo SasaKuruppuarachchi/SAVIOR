@@ -1,0 +1,156 @@
+# ============================================================================================================
+# SAVIOR OPENVINS BACK-END RE-FREEZE (backend v2) - DISCLOSED ADDENDUM, approved by the author on 2026-10-24.
+# Changes ONLY two OpenVINS estimator keys. Perception (savior_node parameters, perception yamls, roles, models, pset) stays
+# exactly as pre-registered in results/p7/final_config.yaml + final_config_addendum.yaml, which are NOT modified.
+# Written BEFORE the t1 validation runs of results/backend_v2 (no t1 v2 SAVIOR/YOLO result was seen when this was written).
+# Its md5 is in results/backend_v2/backend_config.md5. Do not edit; a further change needs a new, dated addendum.
+# ============================================================================================================
+status: BACKEND-V2 ADDENDUM (estimator keys fixed; t1 validation in results/backend_v2/REPORT.md; held-out run pending the
+  author-facing freeze by the coordinator)
+written_at: '2026-10-24T18:25:00+03:00'
+written_by: backend_v2 agent (workstream A of the author decision of 2026-10-24)
+references:
+  final_config:
+    path: results/p7/final_config.yaml
+    md5: 6fea24e550b7198659d8de35d19b3c67
+    note: unchanged; authoritative for every perception / savior_node / ov_set setting of the 7 original methods
+  final_config_addendum:
+    path: results/p7/final_config_addendum.yaml
+    md5: f07c9c30f29a775c243d2a6ae00b9a45
+    note: unchanged; authoritative for SAVIOR-edge and the VIODE instantiation of all methods
+rationale: >-
+  results/ov_diag/REPORT.md (2026-10-24, warehouse t1 L0/L1 only, stock OpenVINS, 10 offsets x 4 sequences): the frozen
+  MSCKF window is too short in TIME (max_clones 11 cloned at every 20 Hz frame = 0.55 s), while VINS-Fusion uses a 10 Hz
+  front-end with a multi-second keyframe window. Cloning every 2nd frame (track_frequency 10.5) with 15 clones (1.5 s)
+  gives -29 % ATE vs the frozen config on L0+L1 ([-38, -20], p = 5e-6, 33/7 wins), halves the rotation error, 0 failures,
+  and -30 % vs VINS-Fusion; trk10 alone -29 %, clones30 at 20 Hz -26 %. IMU noise, features, init, ZUPT and sigma_px
+  variants were all no better. The variant was selected on t1 (tuning set) among ~28 back-end variants: its t1 numbers
+  are optimistic. hall L3 divergence is not config-related (ov_diag (b)).
+estimator_change:
+  track_frequency:
+    v1: 21.0
+    v2: 10.5
+    effect: 'ROS2Visualizer::callback_stereo drops a stereo frame whose stamp < last kept stamp + 1/10.5 s = 95.2 ms -> with
+      20 Hz cameras every 2nd frame is processed (10 Hz tracking, cloning and update)'
+  max_clones:
+    v1: 11
+    v2: 15
+  unchanged: every other key (max_msckf_in_update 40, max_slam 50, num_pts 150, init_*, noise, ...) and both kalibr files
+ov_diag_variant: trk10_clones15 (results/ov_diag/configs/trk10_clones15/estimator_config.yaml md5 129588c7..., same two
+  values; only the comment tag differs)
+mechanism: >-
+  CFG of the run scripts (config:=<abs estimator yaml>). savior.launch.py takes the dataset name from the directory NAME and
+  kalibr_imucam_chain.yaml / savior_perception.yaml from the same directory, so each v2 directory holds the v2 estimator
+  yaml plus VERBATIM (md5-identical) copies of the other files of the frozen directory. src/savior is not modified.
+files:
+  warehouse:
+    estimator_config_v1:
+      path: src/savior/savior_bringup/config/warehouse/estimator_config.yaml
+      md5: b18ac56386df56a1c33898550127c670
+    estimator_config_v2:
+      path: results/backend_v2/config/warehouse/estimator_config.yaml
+      md5: 2abf884b5d4ea0ec1074c92e4fbd0952
+    verbatim_copies:
+      kalibr_imu_chain.yaml: 5ab8bb991b0be8ab62c24988a1369f64
+      kalibr_imucam_chain.yaml: 3ee47a38b09c39a6aa651c771594c337
+      savior_perception.yaml: 0b1a8563db31eb131e13b711c66978e5
+      savior_perception_yolo.yaml: c9f9ff1ce34e7b02742028ca28bc229d
+  frozen_edge_warehouse:
+    note: frozen_edge/src/savior/savior_bringup/config/warehouse/estimator_config.yaml (and its install copy) is byte-identical
+      to the workspace v1 file (b18ac563...); its v2 copy is therefore byte-identical to the warehouse v2 file. M2b ran
+      SAVIOR-edge with the workspace CFG path; backend v2 runs it with results/backend_v2/config/warehouse (identical bytes).
+    estimator_config_v1:
+      path: frozen_edge/src/savior/savior_bringup/config/warehouse/estimator_config.yaml
+      md5: b18ac56386df56a1c33898550127c670
+    estimator_config_v2:
+      path: results/backend_v2/config/frozen_edge/warehouse/estimator_config.yaml
+      md5: 2abf884b5d4ea0ec1074c92e4fbd0952
+  viode:
+    estimator_config_v1:
+      path: src/savior/savior_bringup/config/viode/estimator_config.yaml
+      md5: 54b296c2fef63c46b3e072683074227f
+    estimator_config_v2:
+      path: results/backend_v2/config/viode/estimator_config.yaml
+      md5: edad4f259c9cac88e2334a16ec99a2f4
+    verbatim_copies:
+      kalibr_imu_chain.yaml: 57eec0ab10a2d06d2c69d457edca8578
+      kalibr_imucam_chain.yaml: dde4d7ee63e08bd4c85ca6399f22bb8a
+      savior_perception.yaml: d599edbe672ddcb52ddb6d81224049df
+  generator: results/backend_v2/scripts/mkbackend_v2.py
+viode_rule:
+  decision: IDENTICAL RULE (track_frequency 10.5, max_clones 15) - recommended, NOT tuned and NOT run on VIODE
+  basis: 'the VIODE v1 config has the same short window (cameras 20.0 Hz per bag metadata, track_frequency 21.0, max_clones
+    11 = 0.55 s); the rule is stated in camera-rate terms (clone at ~10 Hz, 15 clones ~ 1.5 s), so it transfers without
+    looking at VIODE results'
+  author_confirmation: required before the held-out run (held-out script default BACKEND_VIODE=v2; BACKEND_VIODE=v1 keeps the
+    frozen VIODE estimator)
+protocol:
+  same_as: results/p7/final_config.yaml protocol + results/p7/final_config_addendum.yaml validity_m2b (rate 0.5, offsets 0.0-1.8
+    s on the warehouse, P5 late-start offsets on VIODE, mask_policy wait, mask_timeout_ms 30000, ov_set
+    deterministic_processing=true dynamic_mask_upstream_compat=true dynamic_mask_max_pending=0, feature_stats auto)
+  validity: clean exit, trajectory, FINAL fallback_latest = fallback_empty = late_masks = 0, n_in_core = 0, poses >= same-offset
+    openvins (v2) poses - 1; savior_none == openvins (md5) on the warehouse
+  note_pose_count: v2 publishes one pose per PROCESSED frame (10 Hz), so pose counts are about half of v1; the pose rule compares
+    with the same-offset openvins run of the SAME back-end
+methods:
+  pre_registered: [openvins, savior_none, oracle_moving_ext, oracle_class_ext, yolo_naive, sens_fix1, p7_nb, savior_edge]
+  extra_oracles_no_band:
+    note: P6 definitions (results/p6_warehouse/methods.yaml / scripts/run_method.sh; P5 for VIODE) + the frozen ov_set; GT right
+      masks; reported as in P7 stage B (O-Dyn vs O-Cls without band)
+    oracle_moving:
+      label: O-Dyn
+      warehouse:
+        launch: savior.launch.py
+        dataset: warehouse_moving
+        backend: oracle_colormap
+        roles_file: src/savior/savior_bringup/config/roles/warehouse_oracle_moving.yaml
+        roles_md5: 4b13bf98df1830647e7f571b2fb707f0
+        extra_topics: /cam0/segmentation_moving /cam1/segmentation_moving
+        pset: extension.enable=false tracker.enable=false seg_right_topic=/cam1/segmentation_moving
+      viode:
+        launch: savior.launch.py
+        backend: oracle_colormap
+        roles_file: src/savior/savior_bringup/config/roles/viode_oracle_dynamic.yaml
+        roles_md5: 9ab5b44106c2aec5a420ba1b1dcd5935
+        extra_topics: /cam0/segmentation /cam1/segmentation
+        pset: extension.enable=false tracker.enable=false seg_right_topic=/cam1/segmentation segmenter.colormap_file=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/oracle/viode_{env}_colormap.yaml
+    oracle_class_naive:
+      label: O-Cls
+      warehouse:
+        launch: savior.launch.py
+        backend: oracle_colormap
+        roles_file: src/savior/savior_bringup/config/roles/warehouse_naive.yaml
+        roles_md5: b34bc9b2339d06121526e40dea6062c4
+        extra_topics: /cam0/segmentation /cam1/segmentation
+        pset: extension.enable=false tracker.enable=false seg_right_topic=/cam1/segmentation
+      viode:
+        launch: savior.launch.py
+        backend: oracle_colormap
+        roles_file: src/savior/savior_bringup/config/roles/viode_oracle_all_vehicles.yaml
+        roles_md5: 35b1e42600fb208c4f68ce4c253377b5
+        extra_topics: /cam0/segmentation /cam1/segmentation
+        pset: extension.enable=false tracker.enable=false seg_right_topic=/cam1/segmentation segmenter.colormap_file=/home/sasa/workspace/savior_ws/src/savior/savior_bringup/config/oracle/viode_{env}_colormap.yaml
+paper_labels:
+  openvins: OpenVINS
+  savior_none: SAVIOR-none
+  oracle_moving: O-Dyn
+  oracle_moving_ext: O-Dyn+B
+  oracle_class_naive: O-Cls
+  oracle_class_ext: O-Cls+B
+  yolo_naive: Y-Cls
+  sens_fix1: SAVIOR
+  p7_nb: SAVIOR-adaptive
+  savior_edge: SAVIOR-edge
+t1_validation:
+  sequences: [aisles_t1_L0, aisles_t1_L1, aisles_t1_L2, aisles_t1_L3, hall_t1_L0, hall_t1_L1, hall_t1_L2, hall_t1_L3]
+  v1_reference_runs: results/p6_warehouse (openvins, savior_none, oracle_moving, oracle_moving_ext, oracle_class_naive, yolo_naive),
+    results/p7 (oracle_class_ext, sens_fix1, p7_nb), SAVIOR-edge re-run with frozen_edge/install + v1 CFG in results/backend_v2/runs_v1
+  runner: results/backend_v2/scripts/run_bv2.sh + bv2_args.py
+analysis_plan:
+  metric: ATE RMSE (posyaw, full sequence); secondary RPE (shortest rpg sub-length, failed runs = inf); failures (> 2 m warehouse,
+    > 1 m VIODE), cap 10 m
+  statistics: paired per-offset log ATE ratio; geometric-mean ratio - 1; bootstrap 95 % CI (20000, seed 0); Wilcoxon signed-rank;
+    Holm within each (dataset, group, reference) family
+  comparisons_v2: [each method vs openvins, sens_fix1 vs yolo_naive, p7_nb vs yolo_naive, savior_edge vs sens_fix1,
+    oracle_moving_ext vs oracle_class_ext, oracle_moving vs oracle_class_naive]
+  comparisons_v2_vs_v1: per method, same offset (v2 / v1); and the change of each relative gain (difference of paired log ratios)

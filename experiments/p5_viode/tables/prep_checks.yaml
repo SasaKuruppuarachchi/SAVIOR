@@ -1,0 +1,144 @@
+parking_lot_none:
+  kabsch_deg: 0.0061
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.002218, 0.002377, 0.001992]
+  accel_res_mean_ned: [-0.0003, 0.0001, -0.0004]
+  accel_res_mean_enu_z: -19.5006
+  path_m: 75.8
+  dur_s: 59.6
+  gyro_density: [0.00021, 0.000228, 0.000196]
+  accel_density: [0.00549, 0.00529, 0.00665]
+  seg_unknown_share: 6.0e-06
+  dyn_px_share: 0.0
+parking_lot_low:
+  kabsch_deg: 0.0061
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.002218, 0.002377, 0.001992]
+  accel_res_mean_ned: [-0.0003, 0.0001, -0.0004]
+  accel_res_mean_enu_z: -19.5006
+  path_m: 75.8
+  dur_s: 59.6
+  gyro_density: [0.00021, 0.000228, 0.000196]
+  accel_density: [0.00549, 0.00529, 0.00665]
+  seg_unknown_share: 6.0e-06
+  dyn_px_share: 0.0051
+parking_lot_mid:
+  kabsch_deg: 0.0061
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.002218, 0.002377, 0.001992]
+  accel_res_mean_ned: [-0.0003, 0.0001, -0.0004]
+  accel_res_mean_enu_z: -19.5006
+  path_m: 75.8
+  dur_s: 59.6
+  gyro_density: [0.00021, 0.000228, 0.000196]
+  accel_density: [0.00549, 0.00529, 0.00665]
+  seg_unknown_share: 6.0e-06
+  dyn_px_share: 0.0885
+parking_lot_high:
+  kabsch_deg: 0.0061
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.002218, 0.002377, 0.001992]
+  accel_res_mean_ned: [-0.0003, 0.0001, -0.0004]
+  accel_res_mean_enu_z: -19.5006
+  path_m: 75.8
+  dur_s: 59.6
+  gyro_density: [0.00021, 0.000228, 0.000196]
+  accel_density: [0.00549, 0.00529, 0.00665]
+  seg_unknown_share: 5.0e-06
+  dyn_px_share: 0.1046
+city_day_none:
+  kabsch_deg: 0.0052
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.003013, 0.002352, 0.002106]
+  accel_res_mean_ned: [0.0, 0.0007, -0.0018]
+  accel_res_mean_enu_z: -19.2966
+  path_m: 157.7
+  dur_s: 66.3
+  gyro_density: [0.000269, 0.000221, 0.000197]
+  accel_density: [0.00605, 0.00664, 0.00892]
+  seg_unknown_share: 0.0
+  dyn_px_share: 0.0
+city_day_low:
+  kabsch_deg: 0.0052
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.003013, 0.002352, 0.002106]
+  accel_res_mean_ned: [0.0, 0.0007, -0.0018]
+  accel_res_mean_enu_z: -19.2966
+  path_m: 157.7
+  dur_s: 66.3
+  gyro_density: [0.000269, 0.000221, 0.000197]
+  accel_density: [0.00605, 0.00664, 0.00892]
+  seg_unknown_share: 0.0
+  dyn_px_share: 0.0061
+city_day_mid:
+  kabsch_deg: 0.0052
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.003013, 0.002352, 0.002106]
+  accel_res_mean_ned: [0.0, 0.0007, -0.0018]
+  accel_res_mean_enu_z: -19.2966
+  path_m: 157.7
+  dur_s: 66.3
+  gyro_density: [0.000269, 0.000221, 0.000197]
+  accel_density: [0.00605, 0.00664, 0.00892]
+  seg_unknown_share: 0.0
+  dyn_px_share: 0.0278
+city_day_high:
+  kabsch_deg: 0.0052
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.003013, 0.002352, 0.002106]
+  accel_res_mean_ned: [0.0, 0.0007, -0.0018]
+  accel_res_mean_enu_z: -19.2966
+  path_m: 157.7
+  dur_s: 66.3
+  gyro_density: [0.000269, 0.000221, 0.000197]
+  accel_density: [0.00605, 0.00664, 0.00892]
+  seg_unknown_share: 0.0
+  dyn_px_share: 0.0853
+city_night_none:
+  kabsch_deg: 0.0042
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.00281, 0.002532, 0.002007]
+  accel_res_mean_ned: [-0.0007, -0.0, -0.0003]
+  accel_res_mean_enu_z: -19.3259
+  path_m: 165.7
+  dur_s: 61.6
+  gyro_density: [0.000247, 0.000233, 0.000197]
+  accel_density: [0.00608, 0.00608, 0.00928]
+  seg_unknown_share: 0.0
+  dyn_px_share: 0.0
+city_night_low:
+  kabsch_deg: 0.0042
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.00281, 0.002532, 0.002007]
+  accel_res_mean_ned: [-0.0007, -0.0, -0.0003]
+  accel_res_mean_enu_z: -19.3259
+  path_m: 165.7
+  dur_s: 61.6
+  gyro_density: [0.000247, 0.000233, 0.000197]
+  accel_density: [0.00608, 0.00608, 0.00928]
+  seg_unknown_share: 0.0
+  dyn_px_share: 0.0097
+city_night_mid:
+  kabsch_deg: 0.0042
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.00281, 0.002532, 0.002007]
+  accel_res_mean_ned: [-0.0007, -0.0, -0.0003]
+  accel_res_mean_enu_z: -19.3259
+  path_m: 165.7
+  dur_s: 61.6
+  gyro_density: [0.000247, 0.000233, 0.000197]
+  accel_density: [0.00608, 0.00608, 0.00928]
+  seg_unknown_share: 0.0
+  dyn_px_share: 0.0157
+city_night_high:
+  kabsch_deg: 0.0042
+  gyro_offset_s: 0.0
+  gyro_res_rms: [0.00281, 0.002532, 0.002007]
+  accel_res_mean_ned: [-0.0007, -0.0, -0.0003]
+  accel_res_mean_enu_z: -19.3259
+  path_m: 165.7
+  dur_s: 61.6
+  gyro_density: [0.000247, 0.000233, 0.000197]
+  accel_density: [0.00608, 0.00608, 0.00928]
+  seg_unknown_share: 0.0
+  dyn_px_share: 0.0349

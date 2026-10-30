@@ -1,0 +1,683 @@
+diff -ruN a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2026-10-26 16:41:22.137074301 +0200
++++ b/CMakeLists.txt	2026-10-26 16:42:17.905188567 +0200
+@@ -55,7 +55,8 @@
+     vins_estimator/initial/initial_aligment.cpp
+     vins_estimator/initial/initial_sfm.cpp
+     vins_estimator/initial/initial_ex_rotation.cpp
+-    vins_estimator/featureTracker/feature_tracker.cpp)
++    vins_estimator/featureTracker/feature_tracker.cpp
++    vins_estimator/featureTracker/savior_mask.cpp)
+ target_link_libraries(vins_node ${catkin_LIBRARIES} ${OpenCV_LIBS} ${CERES_LIBRARIES})
+ 
+ 
+diff -ruN a/vins_estimator/estimator/estimator.cpp b/vins_estimator/estimator/estimator.cpp
+--- a/vins_estimator/estimator/estimator.cpp	2026-10-26 16:41:22.146880282 +0200
++++ b/vins_estimator/estimator/estimator.cpp	2026-10-26 16:42:17.905092819 +0200
+@@ -48,6 +48,9 @@
+     imageBuf_0.pop();
+   while(!imageBuf_1.empty())
+     imageBuf_1.pop();
++  while(!saviorInvBuf.empty())
++    saviorInvBuf.pop();
++  saviorInvPending.clear();
+ 
+   prevTime = -1;
+   curTime = 0;
+@@ -124,7 +127,8 @@
+   featureTracker.readIntrinsicParameter(CAM_NAMES);
+ 
+   std::cout << "MULTIPLE_THREAD is " << MULTIPLE_THREAD << '\n';
+-  if (MULTIPLE_THREAD && !initThreadFlag)
++  // SAVIOR P10: savior_deterministic -> no processing thread (synchronous processing in inputImage)
++  if (MULTIPLE_THREAD && !initThreadFlag && !SAVIOR.deterministic)
+   {
+     initThreadFlag = true;
+     processThread = std::thread(&Estimator::processMeasurements, this);
+@@ -181,6 +185,13 @@
+   else
+     featureFrame = featureTracker.trackImage(t, _img, _img1);
+   sota_timing_log("frontend", t, featureTrackerTime.toc());
++  if (!featureTracker.savior_flagged.empty())  // SAVIOR P10 deferred invalidation
++  {
++    mBuf.lock();
++    saviorInvPending.insert(featureTracker.savior_flagged.begin(), featureTracker.savior_flagged.end());
++    mBuf.unlock();
++    featureTracker.savior_flagged.clear();
++  }
+ 
+   if (SHOW_TRACK)
+   {
+@@ -195,7 +206,11 @@
+       mBuf.lock();
+       featureBuf.push(make_pair(t, featureFrame));
+       imageBuf_0.push(make_pair(t,_img.clone()));
++      saviorInvBuf.push(saviorInvPending);
++      saviorInvPending.clear();
+       mBuf.unlock();
++      if (SAVIOR.deterministic)
++        saviorProcessSync(t);
+     }
+   }
+   else
+@@ -203,6 +218,8 @@
+     mBuf.lock();
+     featureBuf.push(make_pair(t, featureFrame));
+     imageBuf_0.push(make_pair(t,_img.clone()));
++    saviorInvBuf.push(saviorInvPending);
++    saviorInvPending.clear();
+     mBuf.unlock();
+     TicToc processTime;
+     processMeasurements();
+@@ -232,6 +249,7 @@
+ {
+   mBuf.lock();
+   featureBuf.push(make_pair(t, featureFrame));
++  saviorInvBuf.push(std::set<int>());
+   mBuf.unlock();
+ 
+   if(!MULTIPLE_THREAD)
+@@ -300,7 +318,7 @@
+         else
+         {
+           printf("wait for imu ... \n");
+-          if (! MULTIPLE_THREAD)
++          if (! MULTIPLE_THREAD || SAVIOR.deterministic)
+             return;
+           std::chrono::milliseconds dura(5);
+           std::this_thread::sleep_for(dura);
+@@ -311,6 +329,12 @@
+         getIMUInterval(prevTime, curTime, accVector, gyrVector);
+ 
+       featureBuf.pop();
++      std::set<int> savior_inv;
++      if (!saviorInvBuf.empty())
++      {
++        savior_inv.swap(saviorInvBuf.front());
++        saviorInvBuf.pop();
++      }
+       mBuf.unlock();
+ 
+       if(USE_IMU)
+@@ -330,6 +354,8 @@
+         }
+       }
+       mProcess.lock();
++      if (!savior_inv.empty())  // SAVIOR P10: invalidated features leave the sliding window
++        f_manager.removeOutlier(savior_inv);
+ 
+       { TicToc sota_t; processImage(feature.second, feature.first); sota_timing_log("backend", feature.first, sota_t.toc()); }
+ //      std::cout<<"ABIAS : "<<Bas[WINDOW_SIZE].transpose()<<std::endl;
+@@ -353,7 +379,7 @@
+ 
+     }
+ 
+-    if (! MULTIPLE_THREAD)
++    if (! MULTIPLE_THREAD || SAVIOR.deterministic)
+       break;
+ 
+     std::chrono::milliseconds dura(2);
+@@ -362,6 +388,37 @@
+ }
+ 
+ 
++// SAVIOR P10 (savior_deterministic): process the queued frames synchronously, each one as soon as the IMU covers it
++// (blocking the image thread; IMU messages keep arriving through the ROS spinner). Same frames as the upstream
++// processing thread (multiple_thread: every 2nd frame), but processing no longer depends on thread timing.
++void Estimator::saviorProcessSync(double t)
++{
++  auto t0 = std::chrono::steady_clock::now();
++  while (1)
++  {
++    mBuf.lock();
++    bool ok = !USE_IMU || IMUAvailable(t + td);
++    mBuf.unlock();
++    if (ok)
++      break;
++    if (std::chrono::steady_clock::now() - t0 > std::chrono::seconds(10))
++    {
++      printf("[SAVIOR] no IMU up to t=%.9f after 10 s: frame kept queued\n", t);
++      return;
++    }
++    std::this_thread::sleep_for(std::chrono::microseconds(500));
++  }
++  while (1)
++  {
++    mBuf.lock();
++    bool ok = !featureBuf.empty() && (!USE_IMU || IMUAvailable(featureBuf.front().first + td));
++    mBuf.unlock();
++    if (!ok)
++      break;
++    processMeasurements();
++  }
++}
++
+ void Estimator::initFirstIMUPose(vector<pair<double, Eigen::Vector3d>> &accVector)
+ {
+   printf("init first imu pose\n");
+@@ -927,6 +984,8 @@
+ 
+   options.linear_solver_type = ceres::DENSE_SCHUR;
+   options.num_threads = 2;
++  if (SAVIOR.solver_threads > 0)  // SAVIOR P10: Ceres threads override (1 = order-deterministic sums)
++    options.num_threads = SAVIOR.solver_threads;
+   options.trust_region_strategy_type = ceres::DOGLEG;
+   options.max_num_iterations = NUM_ITERATIONS;
+   //options.use_explicit_schur_complement = true;
+@@ -936,9 +995,14 @@
+     options.max_solver_time_in_seconds = SOLVER_TIME * 4.0 / 5.0;
+   else
+     options.max_solver_time_in_seconds = SOLVER_TIME;
++  if (SAVIOR.ignore_solver_time)  // SAVIOR P10: iteration cap only (wall-clock independent)
++    options.max_solver_time_in_seconds = 1e6;
+   TicToc t_solver;
+   ceres::Solver::Summary summary;
+   ceres::Solve(options, &problem, &summary);
++  SAVIOR_MASKS.n_solves++;
++  if (summary.termination_type == ceres::NO_CONVERGENCE && summary.message.find("time") != std::string::npos)
++    SAVIOR_MASKS.n_solver_time_hits++;
+   costDiff = summary.final_cost/summary.initial_cost;
+ }
+ 
+diff -ruN a/vins_estimator/estimator/estimator.h b/vins_estimator/estimator/estimator.h
+--- a/vins_estimator/estimator/estimator.h	2026-10-26 16:41:22.146901195 +0200
++++ b/vins_estimator/estimator/estimator.h	2026-10-26 16:42:33.061461030 +0200
+@@ -104,6 +104,11 @@
+     double prevTime, curTime;
+     bool openExEstimation;
+ 
++    // SAVIOR P10: deferred-mode invalidated feature ids, one entry per featureBuf entry (+ ids not yet sent)
++    queue<std::set<int>> saviorInvBuf;
++    std::set<int> saviorInvPending;
++    void saviorProcessSync(double t);
++
+     std::thread trackThread;
+     std::thread processThread;
+ 
+diff -ruN a/vins_estimator/estimator/parameters.cpp b/vins_estimator/estimator/parameters.cpp
+--- a/vins_estimator/estimator/parameters.cpp	2026-10-26 16:41:22.146934416 +0200
++++ b/vins_estimator/estimator/parameters.cpp	2026-10-26 16:42:33.061504397 +0200
+@@ -8,6 +8,7 @@
+  *******************************************************/
+ 
+ #include "parameters.h"
++#include "../featureTracker/savior_mask.h"
+ 
+ 
+ bool   DYN_ON = true;
+@@ -221,5 +222,6 @@
+         printf("no imu, fix extrinsic param; no time offset calibration\n");
+     }
+ 
++    readSaviorParameters(fsSettings);  // SAVIOR P10 (optional keys; absent = upstream behaviour)
+     fsSettings.release();
+ }
+diff -ruN a/vins_estimator/featureTracker/feature_tracker.cpp b/vins_estimator/featureTracker/feature_tracker.cpp
+--- a/vins_estimator/featureTracker/feature_tracker.cpp	2026-10-26 16:41:22.147168408 +0200
++++ b/vins_estimator/featureTracker/feature_tracker.cpp	2026-10-26 16:42:33.061378763 +0200
+@@ -81,6 +81,87 @@
+             cv::circle(mask, it.second.first, MIN_DIST, 0, -1);
+         }
+     }
++    // SAVIOR P10: no new detection on masked pixels
++    if (!savior_block.empty())
++        mask.setTo(0, savior_block);
++}
++
++// SAVIOR P10: mask value at a (sub-)pixel position (nearest pixel, clamped)
++static inline int saviorAt(const cv::Mat &m, const cv::Point2f &p)
++{
++    int x = std::min(std::max(cvRound(p.x), 0), m.cols - 1);
++    int y = std::min(std::max(cvRound(p.y), 0), m.rows - 1);
++    return m.at<uchar>(y, x);
++}
++
++// SAVIOR P10 (deferred / SAVIOR-edge latency emulation, = OpenVINS fork dynamic_mask_deferred with stale gating off):
++// the mask of frame k arrives at the first frame j with t_j >= t_k + latency; every feature observed inside it at
++// frame k (left or right, pixel >= threshold) is invalidated: removed from the current tracks (never tracked again)
++// and reported to the estimator (removed from the sliding window).
++void FeatureTracker::saviorDeferred(int64_t st, bool stereo)
++{
++    const int64_t cut = st - (int64_t)llround(SAVIOR.latency_ms * 1e6);
++    std::set<int> F;
++    while (!savior_hist.empty() && savior_hist.front().stamp <= cut)
++    {
++        const SaviorObs &h = savior_hist.front();
++        if (h.stamp > savior_cut)
++        {
++            cv::Mat ml = SAVIOR_MASKS.load(h.stamp, 0, row, col);
++            cv::Mat mr = stereo ? SAVIOR_MASKS.load(h.stamp, 1, row, col) : cv::Mat();
++            if (ml.empty())
++                SAVIOR_MASKS.n_deferred_missing++;
++            else
++                SAVIOR_MASKS.n_deferred_masks++;
++            if (!ml.empty())
++                for (size_t i = 0; i < h.ids.size(); i++)
++                    if (saviorAt(ml, h.pts[i]) >= SAVIOR.threshold)
++                        F.insert(h.ids[i]);
++            if (!mr.empty())
++                for (size_t i = 0; i < h.ids_r.size(); i++)
++                    if (saviorAt(mr, h.pts_r[i]) >= SAVIOR.threshold)
++                        F.insert(h.ids_r[i]);
++        }
++        savior_hist.pop_front();
++    }
++    savior_cut = std::max(savior_cut, cut);
++    long n_tracked = 0;
++    if (!F.empty())
++    {
++        vector<uchar> s(ids.size());
++        for (size_t i = 0; i < ids.size(); i++)
++        {
++            s[i] = F.count(ids[i]) ? 0 : 1;
++            n_tracked += 1 - s[i];
++        }
++        reduceVector(cur_pts, s);
++        reduceVector(ids, s);
++        reduceVector(track_cnt, s);
++        reduceVector(cur_un_pts, s);
++        reduceVector(pts_velocity, s);
++        vector<uchar> sr(ids_right.size());
++        for (size_t i = 0; i < ids_right.size(); i++)
++            sr[i] = F.count(ids_right[i]) ? 0 : 1;
++        reduceVector(cur_right_pts, sr);
++        reduceVector(ids_right, sr);
++        reduceVector(cur_un_right_pts, sr);
++        reduceVector(right_pts_velocity, sr);
++        for (int id : F)
++            savior_flagged.insert(id);
++    }
++    SAVIOR_MASKS.n_flagged += (long)F.size();
++    SAVIOR_MASKS.n_flagged_tracked += n_tracked;
++    SAVIOR_MASKS.frameStats(st, "deferred", {(long)F.size(), n_tracked});
++    SaviorObs o;
++    o.stamp = st;
++    o.ids = ids;
++    o.pts = cur_pts;
++    if (stereo)
++    {
++        o.ids_r = ids_right;
++        o.pts_r = cur_right_pts;
++    }
++    savior_hist.push_back(o);
+ }
+ 
+ double FeatureTracker::distance(cv::Point2f &pt1, cv::Point2f &pt2)
+@@ -99,6 +180,26 @@
+     row = cur_img.rows;
+     col = cur_img.cols;
+     cv::Mat rightImg = _img1;
++    // SAVIOR P10: current-frame masks (gate mode), exact stamp
++    const int64_t sv_st = SAVIOR_CUR_STAMP_NS;
++    const bool sv_stereo = !_img1.empty() && stereo_cam;
++    cv::Mat sv_ml, sv_mr;
++    int sv_thr_l = SAVIOR.threshold, sv_thr_r = SAVIOR.threshold;
++    const bool sv_can_relax = SAVIOR.min_features > 0 && SAVIOR.relaxed_threshold > SAVIOR.threshold;
++    long sv_drop_l = 0, sv_drop_r = 0, sv_rel_l = 0, sv_rel_r = 0;
++    savior_block = cv::Mat();
++    if (SAVIOR.enabled())
++        SAVIOR_MASKS.n_frames++;
++    if (SAVIOR.gate())
++    {
++        sv_ml = SAVIOR_MASKS.load(sv_st, 0, row, col);
++        if (sv_stereo && !sv_ml.empty())
++            sv_mr = SAVIOR_MASKS.load(sv_st, 1, row, col);
++        if (sv_ml.empty())
++            SAVIOR_MASKS.n_missing++;   // missing mask: this frame runs without masking (counted)
++        else
++            SAVIOR_MASKS.n_found++;
++    }
+     /*
+     {
+         cv::Ptr<cv::CLAHE> clahe = cv::createCLAHE(3.0, cv::Size(8, 8));
+@@ -164,6 +265,34 @@
+     for (auto &n : track_cnt)
+         n++;
+ 
++    // SAVIOR P10: drop tracked features whose current pixel is masked (relaxed threshold if too few would survive),
++    // and block masked pixels for the detection below
++    if (!sv_ml.empty())
++    {
++        int n_strict = 0;
++        for (size_t i = 0; i < cur_pts.size(); i++)
++            n_strict += saviorAt(sv_ml, cur_pts[i]) < SAVIOR.threshold;
++        if (sv_can_relax && n_strict < SAVIOR.min_features)
++        {
++            sv_thr_l = SAVIOR.relaxed_threshold;
++            sv_rel_l = 1;
++        }
++        vector<uchar> s(cur_pts.size());
++        for (size_t i = 0; i < cur_pts.size(); i++)
++        {
++            s[i] = saviorAt(sv_ml, cur_pts[i]) < sv_thr_l;
++            sv_drop_l += 1 - s[i];
++        }
++        if (sv_drop_l > 0)
++        {
++            reduceVector(prev_pts, s);
++            reduceVector(cur_pts, s);
++            reduceVector(ids, s);
++            reduceVector(track_cnt, s);
++        }
++        savior_block = sv_ml >= sv_thr_l;
++    }
++
+     if (1)
+     {
+         //rejectWithF();
+@@ -229,6 +358,24 @@
+                 }
+             }
+ 
++            // SAVIOR P10: drop right observations on masked right-image pixels
++            if (!sv_mr.empty())
++            {
++                int n_strict = 0;
++                for (size_t i = 0; i < status.size(); i++)
++                    n_strict += status[i] && saviorAt(sv_mr, cur_right_pts[i]) < SAVIOR.threshold;
++                if (sv_can_relax && n_strict < SAVIOR.min_features)
++                {
++                    sv_thr_r = SAVIOR.relaxed_threshold;
++                    sv_rel_r = 1;
++                }
++                for (size_t i = 0; i < status.size(); i++)
++                    if (status[i] && saviorAt(sv_mr, cur_right_pts[i]) >= sv_thr_r)
++                    {
++                        status[i] = 0;
++                        sv_drop_r++;
++                    }
++            }
+             ids_right = ids;
+             reduceVector(cur_right_pts, status);
+             reduceVector(ids_right, status);
+@@ -245,6 +392,31 @@
+         }
+         prev_un_right_pts_map = cur_un_right_pts_map;
+     }
++    // SAVIOR P10: statistics (gate) / deferred invalidation
++    if (!sv_ml.empty())
++    {
++        long core_l = 0, core_r = 0;
++        for (auto &p : cur_pts)
++            core_l += saviorAt(sv_ml, p) == 255;
++        if (!sv_mr.empty())
++            for (auto &p : cur_right_pts)
++                core_r += saviorAt(sv_mr, p) == 255;
++        SAVIOR_MASKS.n_drop_tracked_l += sv_drop_l;
++        SAVIOR_MASKS.n_drop_tracked_r += sv_drop_r;
++        SAVIOR_MASKS.n_relaxed_l += sv_rel_l;
++        SAVIOR_MASKS.n_relaxed_r += sv_rel_r;
++        SAVIOR_MASKS.n_in_core_l += core_l;
++        SAVIOR_MASKS.n_in_core_r += core_r;
++        SAVIOR_MASKS.frameStats(sv_st, "gate", {(long)ids.size(), (long)ids_right.size(), (long)n_pts.size(), sv_drop_l,
++                                                sv_drop_r, sv_rel_l + 2 * sv_rel_r, core_l, core_r});
++    }
++    else if (SAVIOR.gate())
++        SAVIOR_MASKS.frameStats(sv_st, "missing", {(long)ids.size(), (long)ids_right.size()});
++    if (SAVIOR.deferred())
++        saviorDeferred(sv_st, sv_stereo);
++    if (SAVIOR.enabled() && SAVIOR_MASKS.n_frames % 500 == 0)
++        SAVIOR_MASKS.summary(false);
++
+     if(SHOW_TRACK)
+         drawTrackStereo(cur_img, rightImg, ids,ids_right, cur_pts, cur_right_pts, prevLeftPtsMap);
+ 
+diff -ruN a/vins_estimator/featureTracker/feature_tracker.h b/vins_estimator/featureTracker/feature_tracker.h
+--- a/vins_estimator/featureTracker/feature_tracker.h	2026-10-26 16:41:22.147188028 +0200
++++ b/vins_estimator/featureTracker/feature_tracker.h	2026-10-26 16:42:33.061425275 +0200
+@@ -25,6 +25,9 @@
+ #include "camodocal/camera_models/PinholeCamera.h"
+ #include "../estimator/parameters.h"
+ #include "../utility/tic_toc.h"
++#include "savior_mask.h"
++#include <deque>
++#include <set>
+ 
+ using namespace std;
+ using namespace camodocal;
+@@ -88,4 +91,12 @@
+     bool stereo_cam;
+     int n_id;
+     bool hasPrediction;
++
++    // SAVIOR P10: dynamic masks
++    cv::Mat savior_block;              // detection block (masked pixels) of the current frame, used by setMask()
++    std::set<int> savior_flagged;      // deferred mode: ids invalidated since the estimator last took them
++    struct SaviorObs { int64_t stamp; vector<int> ids, ids_r; vector<cv::Point2f> pts, pts_r; };
++    std::deque<SaviorObs> savior_hist; // deferred mode: observations of the frames whose masks have not arrived yet
++    int64_t savior_cut = INT64_MIN;    // deferred mode: masks with stamp <= savior_cut have arrived
++    void saviorDeferred(int64_t stamp_ns, bool stereo);
+ };
+diff -ruN a/vins_estimator/featureTracker/savior_mask.cpp b/vins_estimator/featureTracker/savior_mask.cpp
+--- a/vins_estimator/featureTracker/savior_mask.cpp	1970-01-01 02:00:00.000000000 +0200
++++ b/vins_estimator/featureTracker/savior_mask.cpp	2026-10-26 16:42:33.070262418 +0200
+@@ -0,0 +1,93 @@
++/*******************************************************
++ * SAVIOR dynamic-mask support for DynaVINS (SAVIOR sota patch P10, port of P9). GPL-3.0.
++ *******************************************************/
++#include "savior_mask.h"
++
++#include <chrono>
++#include <sys/stat.h>
++#include <thread>
++
++SaviorParams SAVIOR;
++int64_t SAVIOR_CUR_STAMP_NS = -1;
++SaviorMaskSource SAVIOR_MASKS;
++
++static bool exists(const std::string &p)
++{
++    struct stat st;
++    return stat(p.c_str(), &st) == 0;
++}
++
++void readSaviorParameters(cv::FileStorage &fs)
++{
++    if (!fs["savior_mask_dir"].empty()) fs["savior_mask_dir"] >> SAVIOR.mask_dir;
++    if (!fs["savior_mask_mode"].empty()) fs["savior_mask_mode"] >> SAVIOR.mode;
++    if (!fs["savior_mask_threshold"].empty()) SAVIOR.threshold = (int)fs["savior_mask_threshold"];
++    if (!fs["savior_mask_relaxed_threshold"].empty()) SAVIOR.relaxed_threshold = (int)fs["savior_mask_relaxed_threshold"];
++    if (!fs["savior_mask_min_features"].empty()) SAVIOR.min_features = (int)fs["savior_mask_min_features"];
++    if (!fs["savior_mask_latency_ms"].empty()) SAVIOR.latency_ms = (double)fs["savior_mask_latency_ms"];
++    if (!fs["savior_mask_wait_ms"].empty()) SAVIOR.wait_ms = (int)fs["savior_mask_wait_ms"];
++    if (!fs["savior_mask_stats"].empty()) fs["savior_mask_stats"] >> SAVIOR.stats_path;
++    if (!fs["savior_deterministic"].empty()) SAVIOR.deterministic = (int)fs["savior_deterministic"];
++    if (!fs["savior_ignore_solver_time"].empty()) SAVIOR.ignore_solver_time = (int)fs["savior_ignore_solver_time"];
++    if (!fs["savior_solver_threads"].empty()) SAVIOR.solver_threads = (int)fs["savior_solver_threads"];
++    if (SAVIOR.enabled() && SAVIOR.mode != "gate" && SAVIOR.mode != "deferred")
++    {
++        printf("[SAVIOR] unknown savior_mask_mode '%s'\n", SAVIOR.mode.c_str());
++        exit(2);
++    }
++    printf("[SAVIOR] mask_dir='%s' mode=%s threshold=%d relaxed=%d min_features=%d latency_ms=%.1f wait_ms=%d "
++           "deterministic=%d ignore_solver_time=%d solver_threads=%d\n",
++           SAVIOR.mask_dir.c_str(), SAVIOR.mode.c_str(), SAVIOR.threshold, SAVIOR.relaxed_threshold, SAVIOR.min_features,
++           SAVIOR.latency_ms, SAVIOR.wait_ms, SAVIOR.deterministic, SAVIOR.ignore_solver_time, SAVIOR.solver_threads);
++}
++
++cv::Mat SaviorMaskSource::load(int64_t stamp_ns, int cam, int rows, int cols)
++{
++    std::string p = SAVIOR.mask_dir + (cam == 0 ? "/left/" : "/right/") + std::to_string(stamp_ns) + ".png";
++    if (!exists(p) && SAVIOR.wait_ms > 0)
++    {
++        auto t0 = std::chrono::steady_clock::now();
++        while (!exists(p) && std::chrono::steady_clock::now() - t0 < std::chrono::milliseconds(SAVIOR.wait_ms))
++            std::this_thread::sleep_for(std::chrono::milliseconds(1));
++    }
++    if (!exists(p))
++        return cv::Mat();
++    cv::Mat m = cv::imread(p, cv::IMREAD_UNCHANGED);
++    if (m.empty() || m.type() != CV_8UC1 || m.rows != rows || m.cols != cols)
++    {
++        n_bad_size++;
++        return cv::Mat();
++    }
++    return m;
++}
++
++void SaviorMaskSource::frameStats(int64_t stamp_ns, const char *what, const std::vector<long> &vals)
++{
++    if (SAVIOR.stats_path.empty())
++        return;
++    if (!stats_init_)
++    {
++        stats_init_ = true;
++        stats_ = fopen(SAVIOR.stats_path.c_str(), "w");
++        if (stats_)
++            fprintf(stats_, "stamp_ns,kind,v0,v1,v2,v3,v4,v5,v6,v7\n");
++    }
++    if (!stats_)
++        return;
++    fprintf(stats_, "%lld,%s", (long long)stamp_ns, what);
++    for (long v : vals)
++        fprintf(stats_, ",%ld", v);
++    fprintf(stats_, "\n");
++    fflush(stats_);
++}
++
++void SaviorMaskSource::summary(bool final_)
++{
++    printf("[SAVIOR]%s frames=%ld found=%ld missing=%ld bad_size=%ld drop_tracked_l=%ld drop_tracked_r=%ld relaxed_l=%ld "
++           "relaxed_r=%ld in_core_l=%ld in_core_r=%ld deferred_masks=%ld deferred_missing=%ld flagged=%ld "
++           "flagged_tracked=%ld solves=%ld solver_time_hits=%ld\n",
++           final_ ? " FINAL" : "", n_frames, n_found, n_missing, n_bad_size, n_drop_tracked_l, n_drop_tracked_r, n_relaxed_l,
++           n_relaxed_r, n_in_core_l, n_in_core_r, n_deferred_masks, n_deferred_missing, n_flagged, n_flagged_tracked,
++           n_solves, n_solver_time_hits);
++    fflush(stdout);
++}
+diff -ruN a/vins_estimator/featureTracker/savior_mask.h b/vins_estimator/featureTracker/savior_mask.h
+--- a/vins_estimator/featureTracker/savior_mask.h	1970-01-01 02:00:00.000000000 +0200
++++ b/vins_estimator/featureTracker/savior_mask.h	2026-10-26 16:42:33.070213382 +0200
+@@ -0,0 +1,85 @@
++/*******************************************************
++ * SAVIOR dynamic-mask support for DynaVINS (SAVIOR sota patch P10 = port of the VINS-Fusion patch P9).
++ * Licensed under the GNU General Public License v3.0 (as DynaVINS / VINS-Fusion).
++ *
++ * Layered per-frame masks (mono8, raw image size): 0 keep, 192 extension band (relaxable), 255 dynamic core.
++ * Masks are PNG files <savior_mask_dir>/{left,right}/<left image header stamp in ns>.png (exact stamp sync).
++ * All keys are optional; without `savior_mask_dir`, `savior_deterministic`, `savior_ignore_solver_time` and
++ * `savior_solver_threads` DynaVINS is unchanged.
++ *
++ *   savior_mask_dir: "/abs/dir"          # enables masking
++ *   savior_mask_mode: "gate"             # gate     = current-frame gating (as the OpenVINS fork, policy "wait"):
++ *                                        #            tracked features whose current pixel is masked are dropped
++ *                                        #            (left and right), no new detection on masked pixels
++ *                                        # deferred = SAVIOR-edge latency emulation: no current-frame gating; the
++ *                                        #            mask of frame k "arrives" at the first frame j with
++ *                                        #            t_j >= t_k + latency, and every feature observed inside it at
++ *                                        #            frame k is invalidated: dropped from the tracker and removed
++ *                                        #            from the estimator's sliding window (FeatureManager)
++ *   savior_mask_threshold: 128           # pixel >= threshold is masked (128: core + band)
++ *   savior_mask_relaxed_threshold: 224   # used for a camera whose kept tracked features < min_features (drops band)
++ *   savior_mask_min_features: 30         # <= 0: no relaxation
++ *   savior_mask_latency_ms: 250          # deferred mode only
++ *   savior_mask_wait_ms: 0               # wait (wall) for a missing mask file; 0 = offline (all files exist)
++ *   savior_mask_stats: "/abs/file.csv"   # per-frame statistics (optional)
++ *   savior_deterministic: 1              # synchronous estimator (no processing thread, same frame selection as
++ *                                        # multiple_thread: every 2nd frame): removes the tracker/estimator race
++ *   savior_ignore_solver_time: 0         # 1: max_solver_time not applied (iteration cap only; wall-clock free)
++ *   savior_solver_threads: 0             # > 0: Ceres num_threads of optimizeVIO (upstream 2); 1 removes the
++ *                                        # thread-order dependence of Ceres' parallel cost / Schur sums
++ *******************************************************/
++#pragma once
++
++#include <cstdint>
++#include <cstdio>
++#include <map>
++#include <set>
++#include <string>
++#include <vector>
++#include <opencv2/opencv.hpp>
++
++struct SaviorParams
++{
++    std::string mask_dir;
++    std::string mode = "gate";
++    int threshold = 128;
++    int relaxed_threshold = 224;
++    int min_features = 30;
++    double latency_ms = 250.0;
++    int wait_ms = 0;
++    std::string stats_path;
++    int deterministic = 0;
++    int ignore_solver_time = 0;
++    int solver_threads = 0;
++    bool enabled() const { return !mask_dir.empty(); }
++    bool deferred() const { return enabled() && mode == "deferred"; }
++    bool gate() const { return enabled() && mode == "gate"; }
++};
++
++extern SaviorParams SAVIOR;
++// exact header stamp (ns) of the left image currently handed to the tracker (set by the ROS node)
++extern int64_t SAVIOR_CUR_STAMP_NS;
++
++void readSaviorParameters(cv::FileStorage &fs);
++
++// mask file access + counters + per-frame statistics
++class SaviorMaskSource
++{
++public:
++    // cam 0 = left, 1 = right; returns an empty Mat if the file is missing (or has the wrong size)
++    cv::Mat load(int64_t stamp_ns, int cam, int rows, int cols);
++    void frameStats(int64_t stamp_ns, const char *what, const std::vector<long> &vals);
++    void summary(bool final_);
++
++    long n_frames = 0, n_found = 0, n_missing = 0, n_bad_size = 0;
++    long n_drop_tracked_l = 0, n_drop_tracked_r = 0, n_relaxed_l = 0, n_relaxed_r = 0;
++    long n_in_core_l = 0, n_in_core_r = 0;
++    long n_deferred_masks = 0, n_deferred_missing = 0, n_flagged = 0, n_flagged_tracked = 0;
++    long n_solver_time_hits = 0, n_solves = 0;
++
++private:
++    FILE *stats_ = nullptr;
++    bool stats_init_ = false;
++};
++
++extern SaviorMaskSource SAVIOR_MASKS;
+diff -ruN a/vins_estimator/rosNodeTest.cpp b/vins_estimator/rosNodeTest.cpp
+--- a/vins_estimator/rosNodeTest.cpp	2026-10-26 16:41:22.147290757 +0200
++++ b/vins_estimator/rosNodeTest.cpp	2026-10-26 16:42:33.074161446 +0200
+@@ -77,6 +77,7 @@
+             cv::Mat image0, image1;
+             std_msgs::Header header;
+             double time = 0;
++            int64_t stamp_ns = -1;
+             m_buf.lock();
+             if (!img0_buf.empty() && !img1_buf.empty())
+             {
+@@ -96,6 +97,7 @@
+                 else
+                 {
+                     time = img0_buf.front()->header.stamp.toSec();
++                    stamp_ns = (int64_t)img0_buf.front()->header.stamp.toNSec();
+                     header = img0_buf.front()->header;
+                     image0 = getImageFromMsg(img0_buf.front());
+                     img0_buf.pop();
+@@ -106,7 +108,10 @@
+             }
+             m_buf.unlock();
+             if(!image0.empty())
++            {
++                SAVIOR_CUR_STAMP_NS = stamp_ns;  // SAVIOR P10: exact left stamp for the mask lookup
+                 estimator.inputImage(time, image0, image1);
++            }
+         }
+         else
+         {
+@@ -117,6 +122,7 @@
+             if(!img0_buf.empty())
+             {
+                 time = img0_buf.front()->header.stamp.toSec();
++                SAVIOR_CUR_STAMP_NS = (int64_t)img0_buf.front()->header.stamp.toNSec();
+                 header = img0_buf.front()->header;
+                 image = getImageFromMsg(img0_buf.front());
+                 img0_buf.pop();
+@@ -233,6 +239,8 @@
+ 
+     std::thread sync_thread{sync_process};
+     ros::spin();
++    if (SAVIOR.enabled() || SAVIOR.deterministic || SAVIOR.ignore_solver_time || SAVIOR.solver_threads)
++        SAVIOR_MASKS.summary(true);
+ 
+     return 0;
+ }

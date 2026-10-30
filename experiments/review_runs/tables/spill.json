@@ -1,0 +1,782 @@
+{
+ "sens_fix1/L0": {
+  "promoted": 296,
+  "moving": [
+   0,
+   0
+  ],
+  "static": [
+   291,
+   204597
+  ],
+  "none": [
+   5,
+   2916
+  ],
+  "static_share_det": 1.0,
+  "static_share_px": 1.0,
+  "distinct_static": 131,
+  "static_in_view": 1316,
+  "static_detframes": 292860,
+  "static_held": 1394,
+  "parent": {
+   "person_static": 8,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 200,
+   "unmatched": 83
+  },
+  "root": {
+   "person_static": 18,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 273
+  },
+  "hops": {
+   "1": 89,
+   "3": 88,
+   "2": 114
+  }
+ },
+ "sens_fix1/L1": {
+  "promoted": 18417,
+  "moving": [
+   108,
+   17144
+  ],
+  "static": [
+   18008,
+   10076787
+  ],
+  "none": [
+   301,
+   48193
+  ],
+  "static_share_det": 0.9940384190770589,
+  "static_share_px": 0.9983015536761645,
+  "distinct_static": 742,
+  "static_in_view": 1310,
+  "static_detframes": 280560,
+  "static_held": 14256,
+  "parent": {
+   "person_static": 4318,
+   "person_moving": 2233,
+   "moving_object": 18,
+   "static_object": 11259,
+   "unmatched": 180
+  },
+  "root": {
+   "person_static": 12325,
+   "person_moving": 5472,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 211
+  },
+  "hops": {
+   "2": 6403,
+   "3": 4983,
+   "1": 6622
+  }
+ },
+ "sens_fix1/L2": {
+  "promoted": 27928,
+  "moving": [
+   3577,
+   14672546
+  ],
+  "static": [
+   23995,
+   20548113
+  ],
+  "none": [
+   356,
+   57443
+  ],
+  "static_share_det": 0.8702669374727985,
+  "static_share_px": 0.583410804437248,
+  "distinct_static": 889,
+  "static_in_view": 1328,
+  "static_detframes": 272216,
+  "static_held": 14848,
+  "parent": {
+   "person_static": 4939,
+   "person_moving": 2160,
+   "moving_object": 2087,
+   "static_object": 14618,
+   "unmatched": 191
+  },
+  "root": {
+   "person_static": 14351,
+   "person_moving": 5670,
+   "moving_object": 3623,
+   "static_object": 161,
+   "unmatched": 190
+  },
+  "hops": {
+   "1": 9143,
+   "2": 8750,
+   "3": 6102
+  }
+ },
+ "sens_fix1/L3": {
+  "promoted": 42833,
+  "moving": [
+   6537,
+   191244527
+  ],
+  "static": [
+   35304,
+   36084750
+  ],
+  "none": [
+   992,
+   213681
+  ],
+  "static_share_det": 0.8437656843765684,
+  "static_share_px": 0.15873340414486076,
+  "distinct_static": 1184,
+  "static_in_view": 1316,
+  "static_detframes": 240350,
+  "static_held": 20281,
+  "parent": {
+   "person_static": 5164,
+   "person_moving": 2546,
+   "moving_object": 8400,
+   "static_object": 19007,
+   "unmatched": 187
+  },
+  "root": {
+   "person_static": 14968,
+   "person_moving": 13599,
+   "moving_object": 3858,
+   "static_object": 2684,
+   "unmatched": 195
+  },
+  "hops": {
+   "2": 15786,
+   "1": 11048,
+   "3": 8470
+  }
+ },
+ "sens_fix1/all": {
+  "promoted": 89474,
+  "moving": [
+   10222,
+   205934217
+  ],
+  "static": [
+   77598,
+   66914247
+  ],
+  "none": [
+   1654,
+   322233
+  ],
+  "static_share_det": 0.8836028239580961,
+  "static_share_px": 0.24524326074271027,
+  "distinct_static": 2946,
+  "static_in_view": 5270,
+  "static_detframes": 1085986,
+  "static_held": 50779,
+  "parent": {
+   "person_static": 14429,
+   "person_moving": 6939,
+   "moving_object": 10505,
+   "static_object": 45084,
+   "unmatched": 641
+  },
+  "root": {
+   "person_static": 41662,
+   "person_moving": 24741,
+   "moving_object": 7481,
+   "static_object": 2845,
+   "unmatched": 869
+  },
+  "hops": {
+   "1": 26902,
+   "2": 31053,
+   "3": 19643
+  }
+ },
+ "p7_nb/L0": {
+  "promoted": 346,
+  "moving": [
+   0,
+   0
+  ],
+  "static": [
+   341,
+   239254
+  ],
+  "none": [
+   5,
+   2916
+  ],
+  "static_share_det": 1.0,
+  "static_share_px": 1.0,
+  "distinct_static": 145,
+  "static_in_view": 1316,
+  "static_detframes": 292860,
+  "static_held": 1735,
+  "parent": {
+   "person_static": 13,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 248,
+   "unmatched": 80
+  },
+  "root": {
+   "person_static": 26,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 315
+  },
+  "hops": {
+   "1": 91,
+   "3": 120,
+   "2": 130
+  }
+ },
+ "p7_nb/L1": {
+  "promoted": 22567,
+  "moving": [
+   100,
+   16494
+  ],
+  "static": [
+   22095,
+   12105869
+  ],
+  "none": [
+   372,
+   69398
+  ],
+  "static_share_det": 0.9954944807389051,
+  "static_share_px": 0.9986393741880193,
+  "distinct_static": 809,
+  "static_in_view": 1310,
+  "static_detframes": 280560,
+  "static_held": 19256,
+  "parent": {
+   "person_static": 4849,
+   "person_moving": 2606,
+   "moving_object": 24,
+   "static_object": 14384,
+   "unmatched": 232
+  },
+  "root": {
+   "person_static": 14514,
+   "person_moving": 7322,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 259
+  },
+  "hops": {
+   "2": 7927,
+   "3": 6642,
+   "1": 7526
+  }
+ },
+ "p7_nb/L2": {
+  "promoted": 33041,
+  "moving": [
+   4112,
+   15671639
+  ],
+  "static": [
+   28491,
+   22802492
+  ],
+  "none": [
+   438,
+   77440
+  ],
+  "static_share_det": 0.8738766371192835,
+  "static_share_px": 0.5926707480410669,
+  "distinct_static": 983,
+  "static_in_view": 1328,
+  "static_detframes": 272216,
+  "static_held": 21107,
+  "parent": {
+   "person_static": 5223,
+   "person_moving": 2555,
+   "moving_object": 2372,
+   "static_object": 18094,
+   "unmatched": 247
+  },
+  "root": {
+   "person_static": 16115,
+   "person_moving": 7548,
+   "moving_object": 4408,
+   "static_object": 166,
+   "unmatched": 254
+  },
+  "hops": {
+   "3": 8112,
+   "2": 10330,
+   "1": 10049
+  }
+ },
+ "p7_nb/L3": {
+  "promoted": 53372,
+  "moving": [
+   7296,
+   191935354
+  ],
+  "static": [
+   44624,
+   41629519
+  ],
+  "none": [
+   1452,
+   319937
+  ],
+  "static_share_det": 0.8594761171032358,
+  "static_share_px": 0.17823535904733415,
+  "distinct_static": 1285,
+  "static_in_view": 1316,
+  "static_detframes": 240350,
+  "static_held": 27089,
+  "parent": {
+   "person_static": 5382,
+   "person_moving": 3028,
+   "moving_object": 11094,
+   "static_object": 24855,
+   "unmatched": 265
+  },
+  "root": {
+   "person_static": 17024,
+   "person_moving": 19337,
+   "moving_object": 4946,
+   "static_object": 3052,
+   "unmatched": 265
+  },
+  "hops": {
+   "1": 12180,
+   "2": 20007,
+   "3": 12437
+  }
+ },
+ "p7_nb/all": {
+  "promoted": 109326,
+  "moving": [
+   11508,
+   207623487
+  ],
+  "static": [
+   95551,
+   76777134
+  ],
+  "none": [
+   2267,
+   469691
+  ],
+  "static_share_det": 0.8925078694925228,
+  "static_share_px": 0.2699612037766964,
+  "distinct_static": 3222,
+  "static_in_view": 5270,
+  "static_detframes": 1085986,
+  "static_held": 69187,
+  "parent": {
+   "person_static": 15467,
+   "person_moving": 8189,
+   "moving_object": 13490,
+   "static_object": 57581,
+   "unmatched": 824
+  },
+  "root": {
+   "person_static": 47679,
+   "person_moving": 34207,
+   "moving_object": 9354,
+   "static_object": 3218,
+   "unmatched": 1093
+  },
+  "hops": {
+   "3": 27311,
+   "2": 38394,
+   "1": 29846
+  }
+ },
+ "sf1_nomotion/L0": {
+  "promoted": 362,
+  "moving": [
+   0,
+   0
+  ],
+  "static": [
+   357,
+   312737
+  ],
+  "none": [
+   5,
+   2916
+  ],
+  "static_share_det": 1.0,
+  "static_share_px": 1.0,
+  "distinct_static": 131,
+  "static_in_view": 1316,
+  "static_detframes": 292860,
+  "static_held": 800,
+  "parent": {
+   "person_static": 8,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 259,
+   "unmatched": 90
+  },
+  "root": {
+   "person_static": 18,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 339
+  },
+  "hops": {
+   "1": 96,
+   "3": 115,
+   "2": 146
+  }
+ },
+ "sf1_nomotion/L1": {
+  "promoted": 19199,
+  "moving": [
+   108,
+   17144
+  ],
+  "static": [
+   18786,
+   11384954
+  ],
+  "none": [
+   305,
+   49719
+  ],
+  "static_share_det": 0.9942838996506828,
+  "static_share_px": 0.9984964170628949,
+  "distinct_static": 747,
+  "static_in_view": 1310,
+  "static_detframes": 280560,
+  "static_held": 7522,
+  "parent": {
+   "person_static": 4344,
+   "person_moving": 2376,
+   "moving_object": 15,
+   "static_object": 11860,
+   "unmatched": 191
+  },
+  "root": {
+   "person_static": 12593,
+   "person_moving": 5900,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 293
+  },
+  "hops": {
+   "2": 6692,
+   "3": 5292,
+   "1": 6802
+  }
+ },
+ "sf1_nomotion/L2": {
+  "promoted": 28949,
+  "moving": [
+   5210,
+   34886993
+  ],
+  "static": [
+   23396,
+   22473697
+  ],
+  "none": [
+   343,
+   55832
+  ],
+  "static_share_det": 0.8178703768440188,
+  "static_share_px": 0.39179614122493994,
+  "distinct_static": 847,
+  "static_in_view": 1328,
+  "static_detframes": 272216,
+  "static_held": 7777,
+  "parent": {
+   "person_static": 5059,
+   "person_moving": 2377,
+   "moving_object": 1551,
+   "static_object": 14215,
+   "unmatched": 194
+  },
+  "root": {
+   "person_static": 14871,
+   "person_moving": 8286,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 239
+  },
+  "hops": {
+   "1": 7514,
+   "2": 9206,
+   "3": 6676
+  }
+ },
+ "sf1_nomotion/L3": {
+  "promoted": 41782,
+  "moving": [
+   8036,
+   237975238
+  ],
+  "static": [
+   32788,
+   39493345
+  ],
+  "none": [
+   958,
+   207583
+  ],
+  "static_share_det": 0.8031550068587106,
+  "static_share_px": 0.14233447467456162,
+  "distinct_static": 1098,
+  "static_in_view": 1316,
+  "static_detframes": 240350,
+  "static_held": 10309,
+  "parent": {
+   "person_static": 5420,
+   "person_moving": 2789,
+   "moving_object": 7946,
+   "static_object": 16433,
+   "unmatched": 200
+  },
+  "root": {
+   "person_static": 15845,
+   "person_moving": 16643,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 300
+  },
+  "hops": {
+   "2": 16046,
+   "1": 8315,
+   "3": 8427
+  }
+ },
+ "sf1_nomotion/all": {
+  "promoted": 90292,
+  "moving": [
+   13354,
+   272879375
+  ],
+  "static": [
+   75327,
+   73664733
+  ],
+  "none": [
+   1611,
+   316050
+  ],
+  "static_share_det": 0.8494153200798367,
+  "static_share_px": 0.21256957281755315,
+  "distinct_static": 2823,
+  "static_in_view": 5270,
+  "static_detframes": 1085986,
+  "static_held": 26408,
+  "parent": {
+   "person_static": 14831,
+   "person_moving": 7542,
+   "moving_object": 9512,
+   "static_object": 42767,
+   "unmatched": 675
+  },
+  "root": {
+   "person_static": 43327,
+   "person_moving": 30829,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 1171
+  },
+  "hops": {
+   "1": 22727,
+   "2": 32090,
+   "3": 20510
+  }
+ },
+ "sf1_noint/L0": {
+  "promoted": 0,
+  "moving": [
+   0,
+   0
+  ],
+  "static": [
+   0,
+   0
+  ],
+  "none": [
+   0,
+   0
+  ],
+  "static_share_det": 0.0,
+  "static_share_px": 0.0,
+  "distinct_static": 0,
+  "static_in_view": 1316,
+  "static_detframes": 292860,
+  "static_held": 161,
+  "parent": {
+   "person_static": 0,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 0
+  },
+  "root": {
+   "person_static": 0,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 0
+  },
+  "hops": {}
+ },
+ "sf1_noint/L1": {
+  "promoted": 0,
+  "moving": [
+   0,
+   0
+  ],
+  "static": [
+   0,
+   0
+  ],
+  "none": [
+   0,
+   0
+  ],
+  "static_share_det": 0.0,
+  "static_share_px": 0.0,
+  "distinct_static": 0,
+  "static_in_view": 1310,
+  "static_detframes": 280560,
+  "static_held": 163,
+  "parent": {
+   "person_static": 0,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 0
+  },
+  "root": {
+   "person_static": 0,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 0
+  },
+  "hops": {}
+ },
+ "sf1_noint/L2": {
+  "promoted": 0,
+  "moving": [
+   0,
+   0
+  ],
+  "static": [
+   0,
+   0
+  ],
+  "none": [
+   0,
+   0
+  ],
+  "static_share_det": 0.0,
+  "static_share_px": 0.0,
+  "distinct_static": 0,
+  "static_in_view": 1328,
+  "static_detframes": 272216,
+  "static_held": 318,
+  "parent": {
+   "person_static": 0,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 0
+  },
+  "root": {
+   "person_static": 0,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 0
+  },
+  "hops": {}
+ },
+ "sf1_noint/L3": {
+  "promoted": 0,
+  "moving": [
+   0,
+   0
+  ],
+  "static": [
+   0,
+   0
+  ],
+  "none": [
+   0,
+   0
+  ],
+  "static_share_det": 0.0,
+  "static_share_px": 0.0,
+  "distinct_static": 0,
+  "static_in_view": 1316,
+  "static_detframes": 240350,
+  "static_held": 485,
+  "parent": {
+   "person_static": 0,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 0
+  },
+  "root": {
+   "person_static": 0,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 0
+  },
+  "hops": {}
+ },
+ "sf1_noint/all": {
+  "promoted": 0,
+  "moving": [
+   0,
+   0
+  ],
+  "static": [
+   0,
+   0
+  ],
+  "none": [
+   0,
+   0
+  ],
+  "static_share_det": 0.0,
+  "static_share_px": 0.0,
+  "distinct_static": 0,
+  "static_in_view": 5270,
+  "static_detframes": 1085986,
+  "static_held": 1127,
+  "parent": {
+   "person_static": 0,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 0
+  },
+  "root": {
+   "person_static": 0,
+   "person_moving": 0,
+   "moving_object": 0,
+   "static_object": 0,
+   "unmatched": 0
+  },
+  "hops": {}
+ }
+}

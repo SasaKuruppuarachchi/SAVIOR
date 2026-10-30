@@ -1,0 +1,22 @@
+SAVIOR on Jetson Orin NX 8 GB - REAL-TIME criterion, written 2026-10-24 18:40 EEST BEFORE any device timing run
+(only the image build had started). Complements results/edge_study/CRITERION.txt (whose "Compute" item is a measurement
+without a threshold) and the package v1 tolerances (reference/tolerances.json, "timing: measurement, no pass/fail").
+
+Setting: MAXN, jetson_clocks locked (GPU devfreq min == max, checked before each timing session), one container, nothing
+else of ours running, bag rate 1.0 (20 Hz stereo + 200 Hz IMU), frozen configs, mask_policy wait (30 s), 2 t1 sequences
+(hall_t1_L3, aisles_t1_L2) x 2 offsets (0.0, 0.6 s).
+
+A pipeline (method x node implementation) is REAL TIME on the device iff ALL hold, pooled over its 4 runs:
+ R1 throughput: every stereo frame gets a mask: savior_node frames == bag frames and the fork FINAL line has
+    fallback_latest = fallback_empty = late_masks = 0 (SAVIOR-edge also too_late = 0), n_in_core = 0;
+ R2 the filter keeps up: OpenVINS pose count >= the same-offset OpenVINS-alone run on the device - 1 (no frame lost by
+    the estimator) and the backlog at the end is small: recv(last pose) - recv(last image) < 1 s (latency probe);
+    [amended 2026-10-24 18:50, still before any timing run: the first draft used "wall time <= bag duration / rate + 10 s",
+    which also counts node start-up (engine deserialisation, imports) and so does not measure keeping up]
+ R3 compute budget: mean savior_node callback time (node_total) < 50 ms (the 20 Hz frame period);
+ R4 latency: end-to-end latency (image publish -> OpenVINS pose publish, latency probe) p99 < 250 ms for the main
+    pipeline (wait policy: the filter is blocked by the mask), and for SAVIOR-edge mask latency (image -> mask) p99 <
+    250 ms = its deferred-invalidation budget (dynamic_mask_sim_latency_ms 250).
+ R5 memory: peak system RAM used (tegrastats) < 7.0 GB of 7.4 GB and no swap growth > 256 MB during the run.
+"Real time with margin" additionally: node_total p99 < 50 ms. Reported per method; Python and C++ node separately.
+OpenVINS alone: reported (reference for R2 and for the latency floor), no verdict.

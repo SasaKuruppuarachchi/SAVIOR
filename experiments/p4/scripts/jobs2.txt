@@ -1,0 +1,8 @@
+openloris cafe1-1 full+mot+gate+icore
+openloris cafe1-1 full+mot+gate+irelax
+openloris cafe1-1 full+mot+gate+inone
+openloris cafe1-1 full+mot+gate+band
+openloris cafe1-1 full+mot+gate+noext
+openloris cafe1-1 full+noext
+openloris cafe1-1 full+icore
+openloris cafe1-1 full+mot+still+gate

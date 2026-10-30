@@ -1,0 +1,12 @@
+hall_t1_L3 sens_fix1 0.0,0.2 1 DSN=m2b_heldout/verify/edge_install INSTALL_OVERRIDE=/home/sasa/workspace/savior_ws/frozen_edge/install
+hall_t1_L3 sens_fix1 0.4,0.6 3 DSN=m2b_heldout/verify/edge_install INSTALL_OVERRIDE=/home/sasa/workspace/savior_ws/frozen_edge/install
+hall_t1_L3 sens_fix1 0.8,1.0 5 DSN=m2b_heldout/verify/edge_install INSTALL_OVERRIDE=/home/sasa/workspace/savior_ws/frozen_edge/install
+hall_t1_L3 sens_fix1 1.2,1.4 7 DSN=m2b_heldout/verify/edge_install INSTALL_OVERRIDE=/home/sasa/workspace/savior_ws/frozen_edge/install
+hall_t1_L3 sens_fix1 1.6,1.8 9 DSN=m2b_heldout/verify/edge_install INSTALL_OVERRIDE=/home/sasa/workspace/savior_ws/frozen_edge/install
+aisles_t1_L2 sens_fix1 0.0,0.2 1 DSN=m2b_heldout/verify/edge_install INSTALL_OVERRIDE=/home/sasa/workspace/savior_ws/frozen_edge/install
+aisles_t1_L2 sens_fix1 0.4,0.6 3 DSN=m2b_heldout/verify/edge_install INSTALL_OVERRIDE=/home/sasa/workspace/savior_ws/frozen_edge/install
+aisles_t1_L2 sens_fix1 0.8,1.0 5 DSN=m2b_heldout/verify/edge_install INSTALL_OVERRIDE=/home/sasa/workspace/savior_ws/frozen_edge/install
+aisles_t1_L2 sens_fix1 1.2,1.4 7 DSN=m2b_heldout/verify/edge_install INSTALL_OVERRIDE=/home/sasa/workspace/savior_ws/frozen_edge/install
+aisles_t1_L2 sens_fix1 1.6,1.8 9 DSN=m2b_heldout/verify/edge_install INSTALL_OVERRIDE=/home/sasa/workspace/savior_ws/frozen_edge/install
+hall_t1_L3 savior_edge 0.4 3 DSN=m2b_heldout/verify ADDENDUM=/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/m2b/addendum_draft.yaml
+aisles_t1_L2 savior_edge 1.2 7 DSN=m2b_heldout/verify ADDENDUM=/tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/m2b/addendum_draft.yaml

@@ -1,0 +1,206 @@
+diff -ruN src/savior/open_vins/ov_msckf/src/core/VioManager.cpp /tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/agentG/diag_ws/src/ov_msckf/src/core/VioManager.cpp
+--- src/savior/open_vins/ov_msckf/src/core/VioManager.cpp	2026-10-15 05:01:48.376403447 +0300
++++ /tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/agentG/diag_ws/src/ov_msckf/src/core/VioManager.cpp	2026-10-15 04:29:55.992442499 +0300
+@@ -20,6 +20,7 @@
+  */
+ 
+ #include "VioManager.h"
++#include "update/SaviorDiag.h"
+ 
+ #include "feat/Feature.h"
+ #include "feat/FeatureDatabase.h"
+@@ -285,23 +286,6 @@
+   // SAVIOR: optionally do not apply the dynamic masks before the system is initialized
+   if (params.dynamic_mask_after_init && !is_initialized_vio)
+     message.masks_dynamic.clear();
+-  // SAVIOR (P4): optional relaxed dynamic masks before initialization (default "normal": unchanged)
+-  if (!is_initialized_vio && params.dynamic_mask_init_policy != "normal") {
+-    if (params.dynamic_mask_init_policy == "none") {
+-      message.masks_dynamic.clear();
+-    } else {
+-      for (size_t i = 0; i < message.masks_dynamic.size(); i++) {
+-        if (message.masks_dynamic.at(i).empty())
+-          continue;
+-        cv::Mat m; // new buffer: the message copy shares the mask data with the caller
+-        if (params.dynamic_mask_init_policy == "core")
+-          cv::threshold(message.masks_dynamic.at(i), m, 223, 255, cv::THRESH_TOZERO); // < 224 -> 0
+-        else
+-          cv::min(message.masks_dynamic.at(i), cv::Scalar(192), m); // 255 -> 192 (relaxable)
+-        message.masks_dynamic.at(i) = m;
+-      }
+-    }
+-  }
+   for (size_t i = 0; i < message.sensor_ids.size() && params.downsample_cameras; i++) {
+     cv::Mat img = message.images.at(i);
+     cv::Mat mask = message.masks.at(i);
+@@ -320,6 +304,17 @@
+ 
+   // Perform our feature tracking!
+   trackFEATS->feed_new_camera(message);
++  if (savior_diag()) {
++    auto __obs = trackFEATS->get_last_obs();
++    auto __ids = trackFEATS->get_last_ids();
++    for (size_t __c : message.sensor_ids) {
++      const auto &o = __obs[__c];
++      const auto &d = __ids[__c];
++      for (size_t k = 0; k < o.size() && k < d.size(); k++)
++        std::fprintf(savior_diag(), "T,%.6f,%d,%zu,%zu,%.2f,%.2f\n", message.timestamp, (int)is_initialized_vio, __c, d[k], o[k].pt.x, o[k].pt.y);
++    }
++    std::fflush(savior_diag());
++  }
+ 
+   // If the aruco tracker is available, the also pass to it
+   // NOTE: binocular tracking for aruco doesn't make sense as we by default have the ids
+@@ -561,6 +556,12 @@
+   // Pass them to our MSCKF updater
+   // NOTE: if we have more then the max, we select the "best" ones (i.e. max tracks) for this update
+   // NOTE: this should only really be used if you want to track a lot of features, or have limited computational resources
++  if (savior_diag() && (int)featsup_MSCKF.size() > state->_options.max_msckf_in_update) {
++    for (auto it = featsup_MSCKF.begin(); it != featsup_MSCKF.end() - state->_options.max_msckf_in_update; ++it) {
++      int __n = 0; for (const auto &__p : (*it)->timestamps) __n += __p.second.size();
++      std::fprintf(savior_diag(), "C,%.6f,%zu,%d\n", state->_timestamp, (*it)->featid, __n);
++    }
++  }
+   if ((int)featsup_MSCKF.size() > state->_options.max_msckf_in_update)
+     featsup_MSCKF.erase(featsup_MSCKF.begin(), featsup_MSCKF.end() - state->_options.max_msckf_in_update);
+   updaterMSCKF->update(state, featsup_MSCKF);
+diff -ruN src/savior/open_vins/ov_msckf/src/core/VioManagerOptions.h /tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/agentG/diag_ws/src/ov_msckf/src/core/VioManagerOptions.h
+--- src/savior/open_vins/ov_msckf/src/core/VioManagerOptions.h	2026-10-15 05:01:48.376254887 +0300
++++ /tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/agentG/diag_ws/src/ov_msckf/src/core/VioManagerOptions.h	2026-10-15 02:35:30.022918600 +0300
+@@ -480,11 +480,6 @@
+   /// features; masking people in view at the start starves it). Masks are still received / synchronized.
+   bool dynamic_mask_after_init = false;
+ 
+-  /// SAVIOR (P4): dynamic-mask policy before the filter is initialized: "normal" (default, same masks as after init),
+-  /// "none" (= dynamic_mask_after_init), "core" (only the 255 core is rejected: band pixels < 224 are cleared),
+-  /// "relax" (core 255 -> 192: everything is relaxable when the init tracker runs short of features)
+-  std::string dynamic_mask_init_policy = "normal";
+-
+   /**
+    * @brief This function will load print out all parameters related to visual tracking
+    * This allows for visual checking that everything was loaded properly from ROS/CMD parsers.
+@@ -538,13 +533,6 @@
+       parser->parse_config("record_feature_stats", record_feature_stats, false);
+       parser->parse_config("deterministic_processing", deterministic_processing, false);
+       parser->parse_config("dynamic_mask_after_init", dynamic_mask_after_init, false);
+-      parser->parse_config("dynamic_mask_init_policy", dynamic_mask_init_policy, false);
+-      if (dynamic_mask_init_policy != "normal" && dynamic_mask_init_policy != "none" && dynamic_mask_init_policy != "core" &&
+-          dynamic_mask_init_policy != "relax") {
+-        PRINT_ERROR(RED "VioManager(): invalid dynamic_mask_init_policy %s (normal, none, core, relax)\n" RESET,
+-                    dynamic_mask_init_policy.c_str());
+-        std::exit(EXIT_FAILURE);
+-      }
+       if (deterministic_processing) {
+         use_multi_threading_subs = false;
+         init_options.init_imu_until_camera = true;
+@@ -592,7 +580,6 @@
+     PRINT_DEBUG("  - record feature stats: %s\n", record_feature_stats.c_str());
+     PRINT_DEBUG("  - deterministic processing: %d\n", deterministic_processing);
+     PRINT_DEBUG("  - dynamic mask after init: %d\n", dynamic_mask_after_init);
+-    PRINT_DEBUG("  - dynamic mask init policy: %s\n", dynamic_mask_init_policy.c_str());
+     featinit_options.print(parser);
+   }
+ 
+diff -ruN src/savior/open_vins/ov_msckf/src/update/SaviorDiag.h /tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/agentG/diag_ws/src/ov_msckf/src/update/SaviorDiag.h
+--- src/savior/open_vins/ov_msckf/src/update/SaviorDiag.h	1970-01-01 02:00:00.000000000 +0200
++++ /tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/agentG/diag_ws/src/ov_msckf/src/update/SaviorDiag.h	2026-10-15 04:29:55.982905128 +0300
+@@ -0,0 +1,18 @@
++// P3a diagnostic build only (NOT part of the SAVIOR fork): logging of feature fates to $SAVIOR_DIAG_FILE.
++#pragma once
++#include <cstdio>
++#include <cstdlib>
++namespace ov_msckf {
++inline FILE *savior_diag() {
++  static FILE *f = []() -> FILE * {
++    const char *p = std::getenv("SAVIOR_DIAG_FILE");
++    if (!p || !*p)
++      return nullptr;
++    FILE *ff = std::fopen(p, "w");
++    if (ff)
++      std::fprintf(ff, "# T,t,init,cam,id,u,v | M/SD,t,featid,status,n_meas,chi2,thr | SU,t,featid,status,n_meas,chi2,thr | C,t,featid,n_meas\n");
++    return ff;
++  }();
++  return f;
++}
++} // namespace ov_msckf
+diff -ruN src/savior/open_vins/ov_msckf/src/update/UpdaterMSCKF.cpp /tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/agentG/diag_ws/src/ov_msckf/src/update/UpdaterMSCKF.cpp
+--- src/savior/open_vins/ov_msckf/src/update/UpdaterMSCKF.cpp	2026-10-14 21:41:57.444132518 +0300
++++ /tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/agentG/diag_ws/src/ov_msckf/src/update/UpdaterMSCKF.cpp	2026-10-15 04:29:55.992214526 +0300
+@@ -20,6 +20,7 @@
+  */
+ 
+ #include "UpdaterMSCKF.h"
++#include "SaviorDiag.h"
+ 
+ #include "UpdaterHelper.h"
+ 
+@@ -86,6 +87,7 @@
+ 
+     // Remove if we don't have enough
+     if (ct_meas < 2) {
++      if (savior_diag()) std::fprintf(savior_diag(), "M,%.6f,%zu,few,%d,,\n", state->_timestamp, (*it0)->featid, ct_meas);
+       (*it0)->to_delete = true;
+       it0 = feature_vec.erase(it0);
+     } else {
+@@ -134,6 +136,7 @@
+ 
+     // Remove the feature if not a success
+     if (!success_tri || !success_refine) {
++      if (savior_diag()) { int __n=0; for (const auto &__p : (*it1)->timestamps) __n += __p.second.size(); std::fprintf(savior_diag(), "M,%.6f,%zu,trifail,%d,,\n", state->_timestamp, (*it1)->featid, __n); }
+       (*it1)->to_delete = true;
+       it1 = feature_vec.erase(it1);
+       continue;
+@@ -222,6 +225,7 @@
+     }
+ 
+     // Check if we should delete or not
++    if (savior_diag()) { int __n=0; for (const auto &__p : (*it2)->timestamps) __n += __p.second.size(); std::fprintf(savior_diag(), "M,%.6f,%zu,%s,%d,%.4f,%.4f\n", state->_timestamp, (*it2)->featid, (chi2 > _options.chi2_multipler * chi2_check) ? "chi2" : "used", __n, chi2, _options.chi2_multipler * chi2_check); }
+     if (chi2 > _options.chi2_multipler * chi2_check) {
+       (*it2)->to_delete = true;
+       it2 = feature_vec.erase(it2);
+diff -ruN src/savior/open_vins/ov_msckf/src/update/UpdaterSLAM.cpp /tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/agentG/diag_ws/src/ov_msckf/src/update/UpdaterSLAM.cpp
+--- src/savior/open_vins/ov_msckf/src/update/UpdaterSLAM.cpp	2026-10-14 21:41:57.444132518 +0300
++++ /tmp/claude-1002/-home-sasa-workspace-savior-ws/c06f990f-0719-4913-a626-9c3ce83cc885/scratchpad/agentG/diag_ws/src/ov_msckf/src/update/UpdaterSLAM.cpp	2026-10-15 04:29:55.992360091 +0300
+@@ -20,6 +20,7 @@
+  */
+ 
+ #include "UpdaterSLAM.h"
++#include "SaviorDiag.h"
+ 
+ #include "UpdaterHelper.h"
+ 
+@@ -89,6 +90,7 @@
+ 
+     // Remove if we don't have enough
+     if (ct_meas < 2) {
++      if (savior_diag()) std::fprintf(savior_diag(), "SD,%.6f,%zu,few,%d,,\n", state->_timestamp, (*it0)->featid, ct_meas);
+       (*it0)->to_delete = true;
+       it0 = feature_vec.erase(it0);
+     } else {
+@@ -137,6 +139,7 @@
+ 
+     // Remove the feature if not a success
+     if (!success_tri || !success_refine) {
++      if (savior_diag()) { int __n=0; for (const auto &__p : (*it1)->timestamps) __n += __p.second.size(); std::fprintf(savior_diag(), "SD,%.6f,%zu,trifail,%d,,\n", state->_timestamp, (*it1)->featid, __n); }
+       (*it1)->to_delete = true;
+       it1 = feature_vec.erase(it1);
+       continue;
+@@ -230,7 +233,9 @@
+     // Try to initialize, delete new pointer if we failed
+     double chi2_multipler =
+         ((int)feat.featid < state->_options.max_aruco_features) ? _options_aruco.chi2_multipler : _options_slam.chi2_multipler;
+-    if (StateHelper::initialize(state, landmark, Hx_order, H_x, H_f, R, res, chi2_multipler)) {
++    bool __ok = StateHelper::initialize(state, landmark, Hx_order, H_x, H_f, R, res, chi2_multipler);
++    if (savior_diag()) { int __n=0; for (const auto &__p : (*it2)->timestamps) __n += __p.second.size(); std::fprintf(savior_diag(), "SD,%.6f,%zu,%s,%d,,\n", state->_timestamp, (*it2)->featid, __ok ? "init" : "chi2", __n); }
++    if (__ok) {
+       state->_features_SLAM.insert({(*it2)->featid, landmark});
+       (*it2)->to_delete = true;
+       it2++;
+@@ -407,6 +412,7 @@
+     // Check if we should delete or not
+     double chi2_multipler =
+         ((int)feat.featid < state->_options.max_aruco_features) ? _options_aruco.chi2_multipler : _options_slam.chi2_multipler;
++    if (savior_diag()) { int __n=0; for (const auto &__p : (*it2)->timestamps) __n += __p.second.size(); std::fprintf(savior_diag(), "SU,%.6f,%zu,%s,%d,%.4f,%.4f\n", state->_timestamp, (*it2)->featid, (chi2 > chi2_multipler * chi2_check) ? "chi2" : "used", __n, chi2, chi2_multipler * chi2_check); }
+     if (chi2 > chi2_multipler * chi2_check) {
+       if ((int)feat.featid < state->_options.max_aruco_features) {
+         PRINT_WARNING(YELLOW "[SLAM-UP]: rejecting aruco tag %d for chi2 thresh (%.3f > %.3f)\n" RESET, (int)feat.featid, chi2,

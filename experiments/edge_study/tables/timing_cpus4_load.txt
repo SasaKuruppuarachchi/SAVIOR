@@ -1,0 +1,16 @@
+Fri Oct 23 10:41:26 PM EEST 2026
+ 22:41:26 up 13 days, 15:11,  4 users,  load average: 1.72, 1.59, 1.66
+1 %, 3175 MiB
+agipix_ros_dev-x86_64-container 
+22:41:26 START hall_t1_L3 e_main load=1.72 gpu=1 % others=1
+22:45:33 END   hall_t1_L3 e_main load=1.30 gpu=1 %
+22:45:33 START hall_t1_L3 e_seg_n672 load=1.30 gpu=1 % others=1
+22:49:39 END   hall_t1_L3 e_seg_n672 load=1.80 gpu=1 %
+22:49:39 START hall_t1_L3 e_c_sp_r10 load=1.80 gpu=1 % others=1
+22:53:45 END   hall_t1_L3 e_c_sp_r10 load=1.79 gpu=1 %
+22:53:45 START aisles_t1_L3 e_main load=1.79 gpu=1 % others=1
+22:57:44 END   aisles_t1_L3 e_main load=2.21 gpu=2 %
+22:57:44 START aisles_t1_L3 e_seg_n672 load=2.21 gpu=2 % others=1
+23:01:42 END   aisles_t1_L3 e_seg_n672 load=1.98 gpu=1 %
+23:01:42 START aisles_t1_L3 e_c_sp_r10 load=1.98 gpu=1 % others=1
+23:05:40 END   aisles_t1_L3 e_c_sp_r10 load=1.50 gpu=1 %

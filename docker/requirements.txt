@@ -1,0 +1,40 @@
+# Python packages for the SAVIOR image, installed on the system python3.10 (the ROS 2 Humble
+# interpreter) on both amd64 and arm64.
+#
+# Installed by the Dockerfile together with a constraints file that pins
+#   numpy==1.26.4   ROS Humble's cv_bridge (and other compiled ROS python modules) are built
+#                   against the numpy 1.x C-API; numpy 2 breaks them.
+#   torch/torchvision (versions set by Dockerfile build args, per-arch wheel index)
+# Not listed here (installed per arch in the Dockerfile): torch, torchvision, tensorrt,
+# onnxruntime, and ultralytics itself (installed with --no-deps, see below).
+#
+# Exact pins = the versions resolved and verified together on the desktop image (2026-10);
+# bump deliberately.
+
+# --- OpenCV for python: headless build only (no Qt/X11 conflicts with rviz2). 4.11 is the last
+#     opencv-python line that still supports numpy 1.x (4.12+ requires numpy>=2). ROS/cv_bridge
+#     keep using Ubuntu's C++ libopencv 4.5.4; the pip wheel bundles its own libs, they coexist.
+opencv-python-headless==4.11.0.86
+
+# --- ultralytics runtime deps (ultralytics is installed with --no-deps because it hard-requires
+#     the GUI opencv-python wheel; this list mirrors its requirements minus opencv).
+#     pyyaml (5.4.1) and psutil (5.9.0) come from Ubuntu via the ROS packages and satisfy
+#     ultralytics' minimums, so they are deliberately not upgraded here.
+matplotlib==3.10.9
+pillow==12.3.0
+requests==2.34.2
+polars==2.0.0
+nvidia-ml-py==13.615.71
+ultralytics-thop==2.2.2
+
+# --- model export: ONNX -> TensorRT
+onnx==1.23.2
+onnxslim==0.1.98
+
+# --- tooling: ROS1 -> ROS2 bag conversion, evaluation, tests.
+#     pytest 7.x: Ubuntu's 6.2.5 (apt) fails with "No module named _pytest.scope" in our tests,
+#     and pytest >= 8 breaks ROS Humble's launch_testing pytest plugin (unless
+#     PYTEST_DISABLE_PLUGIN_AUTOLOAD=1).
+pytest==7.4.4
+rosbags==0.11.7
+scipy==1.15.3

@@ -1,0 +1,39 @@
+%YAML:1.0
+
+# SAVIOR-Warehouse IMU (= body frame, FLU), synthesised analytically from the trajectory spline.
+# Noise model (continuous time, Kalibr convention): white noise densities + bias random walk below are the
+# TRUE values used to generate imu_noisy.csv (ZED 2i-class MEMS IMU; see the dataset README).
+imu0:
+  T_i_b:
+    - [1.0, 0.0, 0.0, 0.0]
+    - [0.0, 1.0, 0.0, 0.0]
+    - [0.0, 0.0, 1.0, 0.0]
+    - [0.0, 0.0, 0.0, 1.0]
+  accelerometer_noise_density: 8.000000e-03  # OV-DIAG (was 1.600000e-03) # [ m / s^2 / sqrt(Hz) ]
+  accelerometer_random_walk: 1.500000e-03  # OV-DIAG (was 3.000000e-04) # [ m / s^3 / sqrt(Hz) ]
+  gyroscope_noise_density: 1.220000e-03  # OV-DIAG (was 2.440000e-04) # [ rad / s / sqrt(Hz) ]
+  gyroscope_random_walk: 1.000000e-04  # OV-DIAG (was 2.000000e-05) # [ rad / s^2 / sqrt(Hz) ]
+  rostopic: /imu0
+  time_offset: 0.0
+  update_rate: 200.0
+  model: "kalibr"
+  Tw:
+    - [1.0, 0.0, 0.0]
+    - [0.0, 1.0, 0.0]
+    - [0.0, 0.0, 1.0]
+  R_IMUtoGYRO:
+    - [1.0, 0.0, 0.0]
+    - [0.0, 1.0, 0.0]
+    - [0.0, 0.0, 1.0]
+  Ta:
+    - [1.0, 0.0, 0.0]
+    - [0.0, 1.0, 0.0]
+    - [0.0, 0.0, 1.0]
+  R_IMUtoACC:
+    - [1.0, 0.0, 0.0]
+    - [0.0, 1.0, 0.0]
+    - [0.0, 0.0, 1.0]
+  Tg:
+    - [0.0, 0.0, 0.0]
+    - [0.0, 0.0, 0.0]
+    - [0.0, 0.0, 0.0]

@@ -1,0 +1,9625 @@
+[
+ {
+  "group": "parking_lot_none",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -0.00012242988606248062,
+  "ci_pct": [
+   -0.00038690965210586015,
+   0.00016741788348983988
+  ],
+  "median_ratio_pct": -0.00025188838300715943,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.4921875,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -0.006797357500054613,
+  "ci_pct": [
+   -0.020608716099002056,
+   0.00027891827445447603
+  ],
+  "median_ratio_pct": -4.852070465410918e-05,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.6953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -3.434406356532216,
+  "ci_pct": [
+   -13.191110865311884,
+   9.128887542813246
+  ],
+  "median_ratio_pct": -7.90517889887441,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.556640625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -7.410837979971074,
+  "ci_pct": [
+   -16.955409152372226,
+   3.808456589448972
+  ],
+  "median_ratio_pct": -14.851483799992538,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.16015625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 3.457992229607565,
+  "ci_pct": [
+   -4.192340880992895,
+   12.665771087627231
+  ],
+  "median_ratio_pct": -2.7657007362869246,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 0.4791333621392946,
+  "ci_pct": [
+   -7.050053285761115,
+   9.138374772120649
+  ],
+  "median_ratio_pct": -2.9018685677428824,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.845703125,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -5.982032354733935,
+  "ci_pct": [
+   -15.47107303909666,
+   4.91999254579103
+  ],
+  "median_ratio_pct": -7.4740030568234195,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.322265625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 3.8059771487650274,
+  "ci_pct": [
+   -12.425441701808559,
+   21.259718194195763
+  ],
+  "median_ratio_pct": 9.930587778963806,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -2.9634300220275023,
+  "ci_pct": [
+   -12.640898427532687,
+   8.226865012393493
+  ],
+  "median_ratio_pct": -2.1253620186715394,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.76953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -7.335928726985674,
+  "ci_pct": [
+   -18.1773771929869,
+   3.597084990812993
+  ],
+  "median_ratio_pct": -1.3192450401610878,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -0.0066749357861106695,
+  "ci_pct": [
+   -0.02054137493260333,
+   0.0004741667037677644
+  ],
+  "median_ratio_pct": -8.487114073751911e-05,
+  "wins": 6,
+  "losses": 4,
+  "wil": 1.0,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -3.4342881312412032,
+  "ci_pct": [
+   -13.191079754880775,
+   9.128961722299977
+  ],
+  "median_ratio_pct": -7.905183400092097,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.556640625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -7.410724623026721,
+  "ci_pct": [
+   -16.955132054816126,
+   3.808443845159881
+  ],
+  "median_ratio_pct": -14.851024825459302,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.16015625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 3.458118893264639,
+  "ci_pct": [
+   -4.19256478658917,
+   12.66601429027643
+  ],
+  "median_ratio_pct": -2.7658150596499342,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 0.4792563787783921,
+  "ci_pct": [
+   -7.049956231416566,
+   9.138397966782751
+  ],
+  "median_ratio_pct": -2.9014510950922,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.845703125,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -5.981917248502344,
+  "ci_pct": [
+   -15.470799505135592,
+   4.9201101151918
+  ],
+  "median_ratio_pct": -7.473857195106859,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.322265625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -2.963311220120002,
+  "ci_pct": [
+   -12.640916227386946,
+   8.22713012708065
+  ],
+  "median_ratio_pct": -2.1256405241747767,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.76953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -7.335815278329905,
+  "ci_pct": [
+   -18.177242295853823,
+   3.5971651605648525
+  ],
+  "median_ratio_pct": -1.3191803234983923,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -6.521211356732614,
+  "ci_pct": [
+   -17.711106308220582,
+   6.6774452420357955
+  ],
+  "median_ratio_pct": -3.2731026157532095,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.322265625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -10.733395303223393,
+  "ci_pct": [
+   -20.675796842783413,
+   0.8621424131365574
+  ],
+  "median_ratio_pct": -9.46976793712797,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.130859375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 8.521484772055278,
+  "ci_pct": [
+   -3.1656354921712704,
+   21.3753851236413
+  ],
+  "median_ratio_pct": 9.852877043782682,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.193359375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 1.5431672498861682,
+  "ci_pct": [
+   -5.42229409705226,
+   9.250667164779847
+  ],
+  "median_ratio_pct": -0.682585176248196,
+  "wins": 6,
+  "losses": 4,
+  "wil": 1.0,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 4.052726826410624,
+  "ci_pct": [
+   -9.05937568377081,
+   18.581436058178458
+  ],
+  "median_ratio_pct": 6.406172123778897,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.556640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -2.6382336628177128,
+  "ci_pct": [
+   -8.22740767915937,
+   3.4214322143060416
+  ],
+  "median_ratio_pct": -3.050157856058222,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.431640625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 3.5495137239950347,
+  "ci_pct": [
+   -8.370467501751943,
+   15.190284736676652
+  ],
+  "median_ratio_pct": 8.583982702289905,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.556640625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 0.48596375233289635,
+  "ci_pct": [
+   -7.040304684874288,
+   9.138394573161769
+  ],
+  "median_ratio_pct": -2.901468317071243,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.845703125,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -5.975641182928015,
+  "ci_pct": [
+   -15.465327049225241,
+   4.92724363846746
+  ],
+  "median_ratio_pct": -7.442552916017875,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.322265625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_none",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 11.738771549987126,
+  "ci_pct": [
+   -2.333124921315566,
+   27.729452309926717
+  ],
+  "median_ratio_pct": 10.162144607717893,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.193359375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 0.0013560256442390894,
+  "ci_pct": [
+   -4.4449579672534156e-05,
+   0.003947476728538568
+  ],
+  "median_ratio_pct": 3.3756481188085274e-05,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.375,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -0.9874518136963384,
+  "ci_pct": [
+   -24.99704023363829,
+   27.541752997087833
+  ],
+  "median_ratio_pct": 8.809177858466622,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 0.40955582626893694,
+  "ci_pct": [
+   -25.56239701798986,
+   30.215938102298388
+  ],
+  "median_ratio_pct": 5.245196447049105,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -9.61947480026476,
+  "ci_pct": [
+   -31.916918120072914,
+   20.80967257975459
+  ],
+  "median_ratio_pct": -12.006443272922528,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.556640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -9.58147463345479,
+  "ci_pct": [
+   -28.802258805368087,
+   12.964929872791032
+  ],
+  "median_ratio_pct": -6.121657127844227,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -9.753305052324901,
+  "ci_pct": [
+   -28.90416758134534,
+   12.77537990508819
+  ],
+  "median_ratio_pct": -7.319834167202033,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -11.484886260392468,
+  "ci_pct": [
+   -36.927152132629445,
+   17.391568409682144
+  ],
+  "median_ratio_pct": 4.076511746398848,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.921875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 7,
+  "gm_ratio_pct": -18.879006619038485,
+  "ci_pct": [
+   -43.86828090135757,
+   17.97541971341916
+  ],
+  "median_ratio_pct": -23.63598006437615,
+  "wins": 4,
+  "losses": 3,
+  "wil": 0.375,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -19.5366288167799,
+  "ci_pct": [
+   -34.92705460247145,
+   -2.2243667420992597
+  ],
+  "median_ratio_pct": -16.26284678350722,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.130859375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -19.061298383683457,
+  "ci_pct": [
+   -35.47104674481035,
+   -1.617636001080569
+  ],
+  "median_ratio_pct": -6.915648232700877,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.130859375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -0.988794431034512,
+  "ci_pct": [
+   -24.99719792067019,
+   27.53979339603836
+  ],
+  "median_ratio_pct": 8.809365352716881,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 0.4081942654057924,
+  "ci_pct": [
+   -25.56253308985349,
+   30.21588229102832
+  ],
+  "median_ratio_pct": 5.2448797446939865,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -9.620700366744872,
+  "ci_pct": [
+   -31.917086653780558,
+   20.807130811274344
+  ],
+  "median_ratio_pct": -12.012042903823927,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.556640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -9.582700715219916,
+  "ci_pct": [
+   -28.804162844857572,
+   12.96360004824708
+  ],
+  "median_ratio_pct": -6.12749906797826,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -9.754528804057083,
+  "ci_pct": [
+   -28.90423185302897,
+   12.775334702951447
+  ],
+  "median_ratio_pct": -7.325601546171912,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -11.486086531757811,
+  "ci_pct": [
+   -36.92723662001616,
+   17.388653497689877
+  ],
+  "median_ratio_pct": 4.076544537366633,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.921875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -19.537719905931915,
+  "ci_pct": [
+   -34.928025552290606,
+   -2.2243508608633333
+  ],
+  "median_ratio_pct": -16.262787132762035,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.130859375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -19.06239591835064,
+  "ci_pct": [
+   -35.473832175941034,
+   -1.6189537967222
+  ],
+  "median_ratio_pct": -6.915703827651698,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.130859375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 7,
+  "gm_ratio_pct": -14.53789264875126,
+  "ci_pct": [
+   -35.634603471414685,
+   12.92370228123778
+  ],
+  "median_ratio_pct": -18.13550373101832,
+  "wins": 5,
+  "losses": 2,
+  "wil": 0.46875,
+  "sign": 0.453125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 7,
+  "gm_ratio_pct": -10.694029563364005,
+  "ci_pct": [
+   -32.55283259148953,
+   19.514250340598682
+  ],
+  "median_ratio_pct": -19.81904968750935,
+  "wins": 4,
+  "losses": 3,
+  "wil": 0.375,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -0.14807421373618235,
+  "ci_pct": [
+   -23.3603192809542,
+   32.44618106727519
+  ],
+  "median_ratio_pct": -9.522605688474062,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.76953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -2.0639528880865177,
+  "ci_pct": [
+   -20.229653662436743,
+   20.43043316023936
+  ],
+  "median_ratio_pct": -2.1026798020237547,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -10.121408062174764,
+  "ci_pct": [
+   -29.63459369154101,
+   23.521672297342345
+  ],
+  "median_ratio_pct": -14.76429842808461,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.193359375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -11.845926404894636,
+  "ci_pct": [
+   -21.722521192626864,
+   -0.745131341041616
+  ],
+  "median_ratio_pct": -8.654997473311699,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.083984375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -1.3913094510470958,
+  "ci_pct": [
+   -14.37511851600165,
+   13.013026080982515
+  ],
+  "median_ratio_pct": -3.1842866944199244,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.6953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -8.853275063817756,
+  "ci_pct": [
+   -31.325690406705597,
+   25.630619634829156
+  ],
+  "median_ratio_pct": -15.632438619093115,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.556640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -10.602125325513267,
+  "ci_pct": [
+   -25.563643558013283,
+   8.49490538305593
+  ],
+  "median_ratio_pct": -9.866618617786404,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.431640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_low",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 0.04204464039792022,
+  "ci_pct": [
+   -22.9063554227408,
+   32.446058777614084
+  ],
+  "median_ratio_pct": -9.823632632426182,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.76953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -0.0004081398630839672,
+  "ci_pct": [
+   -0.0013754939735322047,
+   0.000706673686656778
+  ],
+  "median_ratio_pct": -0.000520249378876958,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.322265625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -18.02686046465707,
+  "ci_pct": [
+   -43.001362370678876,
+   15.13143087160962
+  ],
+  "median_ratio_pct": -1.5457121752176728,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.375,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -23.06350913395725,
+  "ci_pct": [
+   -40.95967017767567,
+   -1.6549143061457938
+  ],
+  "median_ratio_pct": -15.808350207544263,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.10546875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 42.833519724551024,
+  "ci_pct": [
+   0.6600665959874741,
+   96.58461456275349
+  ],
+  "median_ratio_pct": 43.794577729129024,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.130859375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 20.019225488009475,
+  "ci_pct": [
+   -14.263166021942231,
+   68.21540109394716
+  ],
+  "median_ratio_pct": 27.003008379070348,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.431640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 21.751589282379435,
+  "ci_pct": [
+   -11.587614804914892,
+   66.94788661153504
+  ],
+  "median_ratio_pct": 31.074792624468195,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -18.629543454642516,
+  "ci_pct": [
+   -41.380033625263735,
+   10.813355826321857
+  ],
+  "median_ratio_pct": -11.922395516731665,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.322265625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 9,
+  "gm_ratio_pct": 5.48776602366341,
+  "ci_pct": [
+   -26.50359295658503,
+   46.02923422200218
+  ],
+  "median_ratio_pct": 19.95872578704563,
+  "wins": 3,
+  "losses": 6,
+  "wil": 0.734375,
+  "sign": 0.5078125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 1.4501906001890497,
+  "ci_pct": [
+   -24.669169755327935,
+   39.53389778474725
+  ],
+  "median_ratio_pct": -4.69829897097731,
+  "wins": 6,
+  "losses": 4,
+  "wil": 1.0,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 12.238190006973948,
+  "ci_pct": [
+   -16.390152013049008,
+   47.48706502146858
+  ],
+  "median_ratio_pct": 19.572973742816302,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.556640625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -12.142704251056525,
+  "ci_pct": [
+   -36.381603831661735,
+   20.825664432529777
+  ],
+  "median_ratio_pct": -21.170820909778186,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -18.026525898232105,
+  "ci_pct": [
+   -43.000865565192704,
+   15.131876025046932
+  ],
+  "median_ratio_pct": -1.5445938248658586,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.375,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -23.063195124187164,
+  "ci_pct": [
+   -40.9596912965368,
+   -1.6537552891212726
+  ],
+  "median_ratio_pct": -15.809742909134439,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.10546875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 42.83410268746215,
+  "ci_pct": [
+   0.6611087801886129,
+   96.58455022716481
+  ],
+  "median_ratio_pct": 43.79374487380334,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.130859375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 20.01971533631133,
+  "ci_pct": [
+   -14.263113301313457,
+   68.2163431179475
+  ],
+  "median_ratio_pct": 27.00144866243621,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.431640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 21.752086201177367,
+  "ci_pct": [
+   -11.587401187930224,
+   66.94928475720839
+  ],
+  "median_ratio_pct": 31.075765243347163,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -18.629211348017126,
+  "ci_pct": [
+   -41.37939878298058,
+   10.812998818399787
+  ],
+  "median_ratio_pct": -11.923477192721565,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.322265625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 1.450604660548005,
+  "ci_pct": [
+   -24.668047436147166,
+   39.532462704485496
+  ],
+  "median_ratio_pct": -4.697796027160928,
+  "wins": 6,
+  "losses": 4,
+  "wil": 1.0,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 12.238648097638638,
+  "ci_pct": [
+   -16.3891211624292,
+   47.48771502725473
+  ],
+  "median_ratio_pct": 19.57150527400977,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.556640625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -12.14234566894643,
+  "ci_pct": [
+   -36.381478046396374,
+   20.825463829346802
+  ],
+  "median_ratio_pct": -21.171108561727358,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 9,
+  "gm_ratio_pct": -0.9347635010906741,
+  "ci_pct": [
+   -16.668169305805357,
+   17.107233945854293
+  ],
+  "median_ratio_pct": 17.073956788391452,
+  "wins": 4,
+  "losses": 5,
+  "wil": 0.65234375,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 9,
+  "gm_ratio_pct": 2.1380189563840135,
+  "ci_pct": [
+   -19.83184533518282,
+   28.827638473633943
+  ],
+  "median_ratio_pct": 6.1582011895382704,
+  "wins": 3,
+  "losses": 6,
+  "wil": 0.734375,
+  "sign": 0.5078125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -14.759792017187056,
+  "ci_pct": [
+   -28.030508436076452,
+   1.7701116746692502
+  ],
+  "median_ratio_pct": -17.856234743890052,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.130859375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -43.03125995755248,
+  "ci_pct": [
+   -50.7410807023586,
+   -33.44229273642148
+  ],
+  "median_ratio_pct": -46.46560031484085,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 58.24947032529215,
+  "ci_pct": [
+   36.94056186008232,
+   82.23460496166733
+  ],
+  "median_ratio_pct": 60.684167638414024,
+  "wins": 0,
+  "losses": 10,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 5.763150397689554,
+  "ci_pct": [
+   -4.826977210452732,
+   17.85298708066245
+  ],
+  "median_ratio_pct": 5.770562661212875,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.322265625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 6.546501682887618,
+  "ci_pct": [
+   -12.004067087591563,
+   32.182694900223055
+  ],
+  "median_ratio_pct": -5.835555572269668,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.921875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 48.52620013399136,
+  "ci_pct": [
+   17.307782754782064,
+   87.45174665699473
+  ],
+  "median_ratio_pct": 44.339138206799625,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.013671875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -0.7352200896558303,
+  "ci_pct": [
+   -18.865267845827226,
+   22.025959572515607
+  ],
+  "median_ratio_pct": 2.5544775325505142,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.921875,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -15.972647233323123,
+  "ci_pct": [
+   -30.26729173774698,
+   1.8720630264362104
+  ],
+  "median_ratio_pct": -13.880447936922003,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.16015625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 7.178151583499592,
+  "ci_pct": [
+   -11.433747666765958,
+   26.829742946506553
+  ],
+  "median_ratio_pct": 14.615626515076174,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.431640625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": -6.14363896422887e-05,
+  "ci_pct": [
+   -0.0012094394053585589,
+   0.0008677157596448382
+  ],
+  "median_ratio_pct": 0.0005335156946228992,
+  "wins": 3,
+  "losses": 5,
+  "wil": 0.7421875,
+  "sign": 0.7265625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": -16.81716083730185,
+  "ci_pct": [
+   -40.14892546424975,
+   9.755171673847096
+  ],
+  "median_ratio_pct": -2.202069528784101,
+  "wins": 6,
+  "losses": 2,
+  "wil": 0.3828125,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": -18.74707281942619,
+  "ci_pct": [
+   -36.0867107606413,
+   6.080352803779054
+  ],
+  "median_ratio_pct": -18.84979643731891,
+  "wins": 6,
+  "losses": 2,
+  "wil": 0.1953125,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 7.976155463345713,
+  "ci_pct": [
+   -4.934856490959561,
+   19.30571779234256
+  ],
+  "median_ratio_pct": 10.673642136566851,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.25,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": -3.208265480575634,
+  "ci_pct": [
+   -26.18915673051574,
+   28.06028187678735
+  ],
+  "median_ratio_pct": -3.6284980074815176,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.84375,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": -6.107689462476351,
+  "ci_pct": [
+   -27.77605466200169,
+   21.57821962055926
+  ],
+  "median_ratio_pct": 1.4520335124738493,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.7421875,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": -18.920051690666106,
+  "ci_pct": [
+   -37.56151989900802,
+   8.638469510931102
+  ],
+  "median_ratio_pct": -27.44813965622447,
+  "wins": 6,
+  "losses": 2,
+  "wil": 0.1953125,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 6,
+  "gm_ratio_pct": -2.584120028141923,
+  "ci_pct": [
+   -31.35055579451027,
+   21.799447524750846
+  ],
+  "median_ratio_pct": 15.185826028579452,
+  "wins": 2,
+  "losses": 4,
+  "wil": 0.5625,
+  "sign": 0.6875,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 41.374049977957974,
+  "ci_pct": [
+   20.597166889617412,
+   66.7875954483358
+  ],
+  "median_ratio_pct": 39.117166840216974,
+  "wins": 1,
+  "losses": 7,
+  "wil": 0.015625,
+  "sign": 0.0703125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": -3.223301025326941,
+  "ci_pct": [
+   -17.724928590477273,
+   12.166050423765618
+  ],
+  "median_ratio_pct": 5.243250030621249,
+  "wins": 3,
+  "losses": 5,
+  "wil": 0.84375,
+  "sign": 0.7265625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": -14.98128344395796,
+  "ci_pct": [
+   -37.240614969128636,
+   19.133945731141043
+  ],
+  "median_ratio_pct": -16.308701163565566,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": -16.817109732737258,
+  "ci_pct": [
+   -40.14933702713211,
+   9.755548068378793
+  ],
+  "median_ratio_pct": -2.20320316891387,
+  "wins": 6,
+  "losses": 2,
+  "wil": 0.3828125,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": -18.747022900530574,
+  "ci_pct": [
+   -36.08724412839498,
+   6.081235128817197
+  ],
+  "median_ratio_pct": -18.850737102697558,
+  "wins": 6,
+  "losses": 2,
+  "wil": 0.1953125,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 7.9762218000380525,
+  "ci_pct": [
+   -4.934949643962039,
+   19.305736525864425
+  ],
+  "median_ratio_pct": 10.673023247230585,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.25,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": -3.20820601519195,
+  "ci_pct": [
+   -26.189781853936843,
+   28.06192772323164
+  ],
+  "median_ratio_pct": -3.629615112940676,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.84375,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": -6.107631778395151,
+  "ci_pct": [
+   -27.775915057185852,
+   21.578882285156475
+  ],
+  "median_ratio_pct": 1.4514922528402474,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.7421875,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": -18.920001878042548,
+  "ci_pct": [
+   -37.56197109713588,
+   8.638862942258353
+  ],
+  "median_ratio_pct": -27.44834805728239,
+  "wins": 6,
+  "losses": 2,
+  "wil": 0.1953125,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 41.37413683312352,
+  "ci_pct": [
+   20.59663906648246,
+   66.78968846140492
+  ],
+  "median_ratio_pct": 39.11711547641512,
+  "wins": 1,
+  "losses": 7,
+  "wil": 0.015625,
+  "sign": 0.0703125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": -3.223241569180546,
+  "ci_pct": [
+   -17.724935370189154,
+   12.167263376188142
+  ],
+  "median_ratio_pct": 5.243151421210235,
+  "wins": 3,
+  "losses": 5,
+  "wil": 0.84375,
+  "sign": 0.7265625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": -14.981231211495894,
+  "ci_pct": [
+   -37.24052497939601,
+   19.134090623947685
+  ],
+  "median_ratio_pct": -16.306791890380723,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 7,
+  "gm_ratio_pct": 41.40157322593838,
+  "ci_pct": [
+   15.398998919816997,
+   74.10964856027545
+  ],
+  "median_ratio_pct": 42.348042706248165,
+  "wins": 1,
+  "losses": 6,
+  "wil": 0.046875,
+  "sign": 0.125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 7,
+  "gm_ratio_pct": -10.968899661863663,
+  "ci_pct": [
+   -29.742570345169128,
+   17.02231837895265
+  ],
+  "median_ratio_pct": -13.416738314339128,
+  "wins": 6,
+  "losses": 1,
+  "wil": 0.21875,
+  "sign": 0.125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -17.943062950222753,
+  "ci_pct": [
+   -33.6801886026189,
+   1.5864276563354762
+  ],
+  "median_ratio_pct": -24.261916659993155,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.16015625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -25.504369962249317,
+  "ci_pct": [
+   -39.54408237269587,
+   -6.42666398556816
+  ],
+  "median_ratio_pct": -29.737601065894726,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.064453125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 16.354462210622888,
+  "ci_pct": [
+   -0.016136504495378734,
+   35.24536818507611
+  ],
+  "median_ratio_pct": 18.32172482818788,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.10546875,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 5.632738458491304,
+  "ci_pct": [
+   -10.971436364805399,
+   26.736027056648616
+  ],
+  "median_ratio_pct": 3.3791683039181786,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 12.81017903727022,
+  "ci_pct": [
+   -6.432733813420244,
+   35.695324956696936
+  ],
+  "median_ratio_pct": 20.514707514782728,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.322265625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 3.141811495735425,
+  "ci_pct": [
+   -12.534817054808322,
+   22.27267629632903
+  ],
+  "median_ratio_pct": 3.7485789377101675,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.76953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -6.362405095029255,
+  "ci_pct": [
+   -22.065766226335725,
+   12.070648639150395
+  ],
+  "median_ratio_pct": -2.127179182136485,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -17.820738822634542,
+  "ci_pct": [
+   -35.14331944944576,
+   5.14567769197789
+  ],
+  "median_ratio_pct": -19.37902168157377,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.193359375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "parking_lot_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -2.561986824604867,
+  "ci_pct": [
+   -17.280170643959824,
+   16.60353088061497
+  ],
+  "median_ratio_pct": -8.630979338002875,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.76953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 0.010514987630139139,
+  "ci_pct": [
+   -0.0003567990223607431,
+   0.031926927712810915
+  ],
+  "median_ratio_pct": -7.351224273755008e-06,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.921875,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -9.379969659883969e-05,
+  "ci_pct": [
+   -0.000311275034048375,
+   7.308537643968549e-05
+  ],
+  "median_ratio_pct": -5.136286340690077e-06,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 1.7079891123293667,
+  "ci_pct": [
+   -11.154889948308567,
+   18.344721473770022
+  ],
+  "median_ratio_pct": -7.000229043018891,
+  "wins": 7,
+  "losses": 3,
+  "wil": 1.0,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 18.43197519764268,
+  "ci_pct": [
+   2.6514224477060866,
+   38.269519989098754
+  ],
+  "median_ratio_pct": 18.50426435661381,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.083984375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 3.8596795502019665,
+  "ci_pct": [
+   -6.935674165775274,
+   16.400421132251573
+  ],
+  "median_ratio_pct": 3.8943880141141918,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.6953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 1.8618314935496594,
+  "ci_pct": [
+   -13.638703173566913,
+   19.970005935529844
+  ],
+  "median_ratio_pct": -1.1673928993576888,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 13.149991955675699,
+  "ci_pct": [
+   -1.5696802601378401,
+   33.567888495829436
+  ],
+  "median_ratio_pct": 9.794936152175527,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.232421875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 3.0069335705141587,
+  "ci_pct": [
+   -15.365499168401797,
+   24.611612324998756
+  ],
+  "median_ratio_pct": 2.0585402302271794,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.845703125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -5.282787541973278,
+  "ci_pct": [
+   -17.60527976828724,
+   9.721068589065606
+  ],
+  "median_ratio_pct": -13.657367592129898,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 14.994394441261472,
+  "ci_pct": [
+   -2.9341376286447285,
+   35.98332336793788
+  ],
+  "median_ratio_pct": 6.264423341730518,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.10546875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -0.010607671931350815,
+  "ci_pct": [
+   -0.031889392392547844,
+   0.00011261984695920546
+  ],
+  "median_ratio_pct": -2.199837962901796e-05,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.76953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 1.6972956542711248,
+  "ci_pct": [
+   -11.160894514414876,
+   18.3193090645994
+  ],
+  "median_ratio_pct": -7.000207034840711,
+  "wins": 7,
+  "losses": 3,
+  "wil": 1.0,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 18.419523399405556,
+  "ci_pct": [
+   2.632581114802779,
+   38.254699749610445
+  ],
+  "median_ratio_pct": 18.44201634117959,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.083984375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 3.848759865948015,
+  "ci_pct": [
+   -6.9357130952487855,
+   16.38814600464191
+  ],
+  "median_ratio_pct": 3.8944004783461494,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.6953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 1.8511218606848345,
+  "ci_pct": [
+   -13.638709940591642,
+   19.952146440146223
+  ],
+  "median_ratio_pct": -1.1673737223617753,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 13.138095498929015,
+  "ci_pct": [
+   -1.569550616799098,
+   33.54035295978408
+  ],
+  "median_ratio_pct": 9.795077436186173,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.232421875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -5.292745998016435,
+  "ci_pct": [
+   -17.60554618466017,
+   9.69640300516328
+  ],
+  "median_ratio_pct": -13.65735355430645,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 14.982304066212059,
+  "ci_pct": [
+   -2.941240339116913,
+   35.94627870889291
+  ],
+  "median_ratio_pct": 6.265124116313858,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.10546875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -8.047731181913731,
+  "ci_pct": [
+   -23.311163764104915,
+   9.985962081780709
+  ],
+  "median_ratio_pct": -8.586080688522479,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.4921875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": 11.637528130609986,
+  "ci_pct": [
+   -0.423277771197228,
+   27.338613701001215
+  ],
+  "median_ratio_pct": 4.384114645569137,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.083984375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -13.99127530925689,
+  "ci_pct": [
+   -30.694250977135397,
+   3.3952172248007617
+  ],
+  "median_ratio_pct": -9.421611502826222,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.275390625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -4.459930042669857,
+  "ci_pct": [
+   -14.526254572517816,
+   6.271632786192005
+  ],
+  "median_ratio_pct": -1.4902758251400305,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.556640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 0.15125889574945095,
+  "ci_pct": [
+   -13.550510330561371,
+   20.731338617997142
+  ],
+  "median_ratio_pct": -1.1266681809110057,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.6953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 11.249856518851665,
+  "ci_pct": [
+   -2.8815272954723414,
+   24.54655912276902
+  ],
+  "median_ratio_pct": 13.837140201470133,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.083984375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -1.6793989606258997,
+  "ci_pct": [
+   -15.501047501896814,
+   12.555258531950475
+  ],
+  "median_ratio_pct": 7.527231787450739,
+  "wins": 3,
+  "losses": 7,
+  "wil": 1.0,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 1.8619270397281618,
+  "ci_pct": [
+   -13.63864986499459,
+   19.97013630762927
+  ],
+  "median_ratio_pct": -1.1675571007580987,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 13.150098090124395,
+  "ci_pct": [
+   -1.5695813737068742,
+   33.56793481072189
+  ],
+  "median_ratio_pct": 9.79507756080167,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.232421875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_none",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -12.304359209683069,
+  "ci_pct": [
+   -23.154311809070972,
+   -2.0875734271937785
+  ],
+  "median_ratio_pct": -8.627635610745942,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.064453125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 0.011336888274393608,
+  "ci_pct": [
+   -1.9535895090516675e-05,
+   0.033984132885134244
+  ],
+  "median_ratio_pct": 1.67229498027055e-05,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 9.690192444197198,
+  "ci_pct": [
+   -0.996630273486554,
+   22.24655174803114
+  ],
+  "median_ratio_pct": 6.899045477445043,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.064453125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 2.4358319298775966,
+  "ci_pct": [
+   -14.923678636984295,
+   27.314621831779128
+  ],
+  "median_ratio_pct": 2.3087972067311835,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.921875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 11.97300247114985,
+  "ci_pct": [
+   -3.8902683595548826,
+   30.798125575257075
+  ],
+  "median_ratio_pct": 7.13096604507002,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.232421875,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 4.044315526178632,
+  "ci_pct": [
+   -12.848715484440609,
+   24.934503704596843
+  ],
+  "median_ratio_pct": 2.2739223000254327,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.76953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 4.161176174397219,
+  "ci_pct": [
+   -8.870771204604488,
+   18.803026076463357
+  ],
+  "median_ratio_pct": 8.52425268239454,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 4.794905136706773,
+  "ci_pct": [
+   -10.551779585381283,
+   20.950137065940755
+  ],
+  "median_ratio_pct": 8.036729963727772,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": -0.482810481368412,
+  "ci_pct": [
+   -16.714156762057087,
+   18.42685438523024
+  ],
+  "median_ratio_pct": 1.4957395816824315,
+  "wins": 3,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 0.7265625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 9,
+  "gm_ratio_pct": 7.658359974679274,
+  "ci_pct": [
+   -20.391527896166963,
+   66.19981339560464
+  ],
+  "median_ratio_pct": -10.313713525671542,
+  "wins": 5,
+  "losses": 4,
+  "wil": 0.5703125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 9,
+  "gm_ratio_pct": 28.84622303318909,
+  "ci_pct": [
+   -2.9034788140751555,
+   95.75381286130413
+  ],
+  "median_ratio_pct": 5.098090800500588,
+  "wins": 3,
+  "losses": 6,
+  "wil": 0.30078125,
+  "sign": 0.5078125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 9.677758399265613,
+  "ci_pct": [
+   -1.010139554553624,
+   22.246569273252014
+  ],
+  "median_ratio_pct": 6.899049581192029,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.064453125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 2.424220210466399,
+  "ci_pct": [
+   -14.926762058777376,
+   27.30651111902629
+  ],
+  "median_ratio_pct": 2.3087231877009895,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.921875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 11.960309655932488,
+  "ci_pct": [
+   -3.8902962061159507,
+   30.754457515465262
+  ],
+  "median_ratio_pct": 7.130904579082098,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.232421875,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 4.032521475449924,
+  "ci_pct": [
+   -12.848718709211937,
+   24.89218293434576
+  ],
+  "median_ratio_pct": 2.2739252765220153,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.76953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 4.149368876809167,
+  "ci_pct": [
+   -8.891483354843476,
+   18.801963183264014
+  ],
+  "median_ratio_pct": 8.52417416656639,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 4.7830260021183735,
+  "ci_pct": [
+   -10.563275644653613,
+   20.946630767660324
+  ],
+  "median_ratio_pct": 8.036676639645668,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 9,
+  "gm_ratio_pct": 7.6448138816713085,
+  "ci_pct": [
+   -20.41153829989425,
+   66.19931666154785
+  ],
+  "median_ratio_pct": -10.313843445409853,
+  "wins": 5,
+  "losses": 4,
+  "wil": 0.5703125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 9,
+  "gm_ratio_pct": 28.83001098127467,
+  "ci_pct": [
+   -2.9158591450763383,
+   95.710460315552
+  ],
+  "median_ratio_pct": 5.098180262868235,
+  "wins": 3,
+  "losses": 6,
+  "wil": 0.30078125,
+  "sign": 0.5078125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 8,
+  "gm_ratio_pct": -10.809527329019842,
+  "ci_pct": [
+   -19.66802715149979,
+   0.5920252927327896
+  ],
+  "median_ratio_pct": -15.481670172280737,
+  "wins": 6,
+  "losses": 2,
+  "wil": 0.1484375,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 8,
+  "gm_ratio_pct": 7.188546654335037,
+  "ci_pct": [
+   -5.6603641247851115,
+   25.720279293736592
+  ],
+  "median_ratio_pct": 1.0529234543604105,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.7421875,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -6.976526595118648,
+  "ci_pct": [
+   -23.770280886543315,
+   11.579379677392755
+  ],
+  "median_ratio_pct": 2.9902454564690872,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.845703125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -6.410560738774985,
+  "ci_pct": [
+   -19.302775882460775,
+   6.817482932041141
+  ],
+  "median_ratio_pct": -1.748517975835484,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.556640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 1.6843171105406896,
+  "ci_pct": [
+   -20.41297796316206,
+   26.793963841960334
+  ],
+  "median_ratio_pct": 6.075191621209286,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 2.302976568242321,
+  "ci_pct": [
+   -11.180862531964452,
+   18.92897096499142
+  ],
+  "median_ratio_pct": -0.9202866896012796,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.845703125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 7.081858347463399,
+  "ci_pct": [
+   -14.063904934317428,
+   30.749163886255616
+  ],
+  "median_ratio_pct": 6.057479559262791,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.4921875,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -5.040574865079906,
+  "ci_pct": [
+   -18.908810343239345,
+   13.229740108550715
+  ],
+  "median_ratio_pct": -14.527215189769581,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.556640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -4.462830448566136,
+  "ci_pct": [
+   -16.969002570343527,
+   7.78980631253372
+  ],
+  "median_ratio_pct": -0.01949119860359394,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.6953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_low",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -7.080891616721685,
+  "ci_pct": [
+   -20.14058338656941,
+   5.621160705826966
+  ],
+  "median_ratio_pct": 2.511961139290131,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.845703125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": -0.00026702092271735367,
+  "ci_pct": [
+   -0.0007303286410187404,
+   9.594512644373054e-05
+  ],
+  "median_ratio_pct": 1.4121521729748565e-07,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.9453125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 17.32379359240934,
+  "ci_pct": [
+   2.644139528170797,
+   36.34790494419864
+  ],
+  "median_ratio_pct": 8.718940090986859,
+  "wins": 1,
+  "losses": 7,
+  "wil": 0.078125,
+  "sign": 0.0703125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 7.972566228090838,
+  "ci_pct": [
+   -9.762994960755522,
+   31.263438217379537
+  ],
+  "median_ratio_pct": -0.47456266062747554,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 19.978373057770927,
+  "ci_pct": [
+   3.400219411495309,
+   39.35043530073536
+  ],
+  "median_ratio_pct": 20.069801300742675,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.109375,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 11.703047881439609,
+  "ci_pct": [
+   -3.743711087625745,
+   30.759025722458123
+  ],
+  "median_ratio_pct": 12.929990453936924,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.25,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 16.688834835649004,
+  "ci_pct": [
+   -0.1324229755239048,
+   39.312005552650575
+  ],
+  "median_ratio_pct": 16.31460106324902,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.1484375,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 32.06863755301168,
+  "ci_pct": [
+   16.81335797707566,
+   50.72772244351509
+  ],
+  "median_ratio_pct": 31.890344807971527,
+  "wins": 0,
+  "losses": 8,
+  "wil": 0.0078125,
+  "sign": 0.0078125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 7.370893375147913,
+  "ci_pct": [
+   -10.697319943857142,
+   26.67693369200117
+  ],
+  "median_ratio_pct": 11.939198954708896,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.4609375,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 3.6569896638358745,
+  "ci_pct": [
+   -15.760721974577574,
+   25.369939136929844
+  ],
+  "median_ratio_pct": 8.153403900419075,
+  "wins": 3,
+  "losses": 5,
+  "wil": 0.546875,
+  "sign": 0.7265625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 29.89654798725274,
+  "ci_pct": [
+   7.430507902566164,
+   57.683158479433615
+  ],
+  "median_ratio_pct": 22.394754127701468,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.0390625,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "openvins",
+  "n": 8,
+  "gm_ratio_pct": 15.362077942091501,
+  "ci_pct": [
+   1.4011862124379881,
+   31.764284938195118
+  ],
+  "median_ratio_pct": 12.307769080854358,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.1484375,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 17.324106872322087,
+  "ci_pct": [
+   2.644207794589426,
+   36.34884065019932
+  ],
+  "median_ratio_pct": 8.719418128091249,
+  "wins": 1,
+  "losses": 7,
+  "wil": 0.078125,
+  "sign": 0.0703125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 7.972854538203311,
+  "ci_pct": [
+   -9.763034026668993,
+   31.263794765142517
+  ],
+  "median_ratio_pct": -0.4738096404622083,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 19.978693425985195,
+  "ci_pct": [
+   3.400257172571197,
+   39.35085381203744
+  ],
+  "median_ratio_pct": 20.06970636295593,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.109375,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 11.703346152745198,
+  "ci_pct": [
+   -3.7435796301062974,
+   30.759041236408603
+  ],
+  "median_ratio_pct": 12.930579393826624,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.25,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 16.689146420084477,
+  "ci_pct": [
+   -0.13248363358167037,
+   39.31217054682969
+  ],
+  "median_ratio_pct": 16.314586169699275,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.1484375,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 32.06899020484797,
+  "ci_pct": [
+   16.813666150474347,
+   50.72799318809378
+  ],
+  "median_ratio_pct": 31.891294764202694,
+  "wins": 0,
+  "losses": 8,
+  "wil": 0.0078125,
+  "sign": 0.0078125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 3.657266450425234,
+  "ci_pct": [
+   -15.760610480569536,
+   25.37003950067689
+  ],
+  "median_ratio_pct": 8.153301573219673,
+  "wins": 3,
+  "losses": 5,
+  "wil": 0.546875,
+  "sign": 0.7265625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 29.89689483913991,
+  "ci_pct": [
+   7.4304138769546,
+   57.683729250902616
+  ],
+  "median_ratio_pct": 22.394753954861436,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.0390625,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "savior_none",
+  "n": 8,
+  "gm_ratio_pct": 15.36238598379902,
+  "ci_pct": [
+   1.4012693408153698,
+   31.764959052345464
+  ],
+  "median_ratio_pct": 12.307863860412604,
+  "wins": 2,
+  "losses": 6,
+  "wil": 0.1484375,
+  "sign": 0.2890625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 9,
+  "gm_ratio_pct": 5.00876461980051,
+  "ci_pct": [
+   -14.416699490393825,
+   31.00535461201663
+  ],
+  "median_ratio_pct": 0.5062574397992847,
+  "wins": 4,
+  "losses": 5,
+  "wil": 0.8203125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 9,
+  "gm_ratio_pct": 20.27234598799663,
+  "ci_pct": [
+   9.712584568448657,
+   31.16308634165259
+  ],
+  "median_ratio_pct": 15.270393030655939,
+  "wins": 1,
+  "losses": 8,
+  "wil": 0.0078125,
+  "sign": 0.0390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 8,
+  "gm_ratio_pct": -2.7417759870255964,
+  "ci_pct": [
+   -17.957000215923856,
+   13.637979944595436
+  ],
+  "median_ratio_pct": 2.9431450277071836,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.84375,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 8,
+  "gm_ratio_pct": 10.077036541760043,
+  "ci_pct": [
+   -8.526951436440166,
+   32.41410873648818
+  ],
+  "median_ratio_pct": 11.16683173767521,
+  "wins": 3,
+  "losses": 5,
+  "wil": 0.4609375,
+  "sign": 0.7265625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 8,
+  "gm_ratio_pct": 8.072669671613752,
+  "ci_pct": [
+   -5.0596996038662745,
+   22.35124734101781
+  ],
+  "median_ratio_pct": 11.359418253202747,
+  "wins": 3,
+  "losses": 5,
+  "wil": 0.25,
+  "sign": 0.7265625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 8,
+  "gm_ratio_pct": 22.316845997730738,
+  "ci_pct": [
+   2.646577545234252,
+   42.36292243023978
+  ],
+  "median_ratio_pct": 21.522100132583198,
+  "wins": 1,
+  "losses": 7,
+  "wil": 0.078125,
+  "sign": 0.0703125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 8,
+  "gm_ratio_pct": 8.66074382687556,
+  "ci_pct": [
+   -12.358967322567793,
+   31.985411632598158
+  ],
+  "median_ratio_pct": 25.648924498808267,
+  "wins": 3,
+  "losses": 5,
+  "wil": 0.640625,
+  "sign": 0.7265625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 8,
+  "gm_ratio_pct": -0.5412020335501921,
+  "ci_pct": [
+   -15.1854352737958,
+   16.501690466651063
+  ],
+  "median_ratio_pct": 6.5561466819806125,
+  "wins": 3,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 0.7265625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 8,
+  "gm_ratio_pct": 12.567650183411994,
+  "ci_pct": [
+   -7.425780190108277,
+   42.178587912996626
+  ],
+  "median_ratio_pct": 2.9486645548960633,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.546875,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 8,
+  "gm_ratio_pct": -6.897347384721309,
+  "ci_pct": [
+   -20.98993536717697,
+   7.956024956005647
+  ],
+  "median_ratio_pct": -0.9677848504649922,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "oracle_dynamic",
+  "n": 8,
+  "gm_ratio_pct": -1.67205269302233,
+  "ci_pct": [
+   -7.671942748857896,
+   4.92989474512695
+  ],
+  "median_ratio_pct": -1.8039751941027915,
+  "wins": 4,
+  "losses": 4,
+  "wil": 0.7421875,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 0.0002330568616537576,
+  "ci_pct": [
+   -0.00019415717721349424,
+   0.0006950573074426813
+  ],
+  "median_ratio_pct": 7.62242261975743e-05,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.4921875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -20.81655482826118,
+  "ci_pct": [
+   -32.79579242731896,
+   -8.100865385873002
+  ],
+  "median_ratio_pct": -17.545603701241753,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.037109375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -3.7672312832821353,
+  "ci_pct": [
+   -16.809773004848516,
+   10.681104669623732
+  ],
+  "median_ratio_pct": -3.704192294902209,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.556640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -12.400793406658906,
+  "ci_pct": [
+   -26.867028216338372,
+   3.8196423721605477
+  ],
+  "median_ratio_pct": -11.835445065895488,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.193359375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -13.64471546212207,
+  "ci_pct": [
+   -28.384069131908973,
+   4.972671460061684
+  ],
+  "median_ratio_pct": -18.82905106279954,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.232421875,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -16.35893033564333,
+  "ci_pct": [
+   -36.085088007890874,
+   4.717771863260234
+  ],
+  "median_ratio_pct": -13.085581791025458,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.275390625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -8.254740235763691,
+  "ci_pct": [
+   -21.12975715706128,
+   6.937229302105785
+  ],
+  "median_ratio_pct": -11.402661263932634,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.4921875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -7.940270167548869,
+  "ci_pct": [
+   -25.863831343970702,
+   10.564203798730132
+  ],
+  "median_ratio_pct": -2.1217408648400493,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.6953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -22.59941179460736,
+  "ci_pct": [
+   -43.82852076322595,
+   2.7407165845990678
+  ],
+  "median_ratio_pct": -16.2658181934918,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.193359375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -15.602677298810752,
+  "ci_pct": [
+   -36.91746574256136,
+   9.569986910277773
+  ],
+  "median_ratio_pct": -7.144449810807396,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.431640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -26.23096168918819,
+  "ci_pct": [
+   -38.285618712967796,
+   -13.112503515827234
+  ],
+  "median_ratio_pct": -25.718304641175816,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.009765625,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -20.816739370283344,
+  "ci_pct": [
+   -32.796096028459,
+   -8.101119758344922
+  ],
+  "median_ratio_pct": -17.546036043983538,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.037109375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -3.767455559830102,
+  "ci_pct": [
+   -16.8098997992549,
+   10.680950122565047
+  ],
+  "median_ratio_pct": -3.7041383863611332,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.556640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -12.400997562144834,
+  "ci_pct": [
+   -26.867098281192202,
+   3.819514470190688
+  ],
+  "median_ratio_pct": -11.83504382460432,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.193359375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -13.644916718569045,
+  "ci_pct": [
+   -28.38407027433867,
+   4.972479556803067
+  ],
+  "median_ratio_pct": -18.828681649758426,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.232421875,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -16.359125266441044,
+  "ci_pct": [
+   -36.085207114608544,
+   4.717428772141652
+  ],
+  "median_ratio_pct": -13.08500382736436,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.275390625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -8.254954053888497,
+  "ci_pct": [
+   -21.129903640730387,
+   6.937282609576512
+  ],
+  "median_ratio_pct": -11.403443763582665,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.4921875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -22.599592181568728,
+  "ci_pct": [
+   -43.82850906562753,
+   2.740322542916518
+  ],
+  "median_ratio_pct": -16.2652613777727,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.193359375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -15.60287399210396,
+  "ci_pct": [
+   -36.917625586877534,
+   9.56967805012885
+  ],
+  "median_ratio_pct": -7.1454089987510905,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.431640625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -26.231133612593073,
+  "ci_pct": [
+   -38.285789643524026,
+   -13.112612632825238
+  ],
+  "median_ratio_pct": -25.718185435875284,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.009765625,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -15.923511456896676,
+  "ci_pct": [
+   -26.288688403179982,
+   -4.403582913384185
+  ],
+  "median_ratio_pct": -16.091293093321834,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.064453125,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -8.323299606904655,
+  "ci_pct": [
+   -19.407055477227765,
+   3.3948124929548795
+  ],
+  "median_ratio_pct": -6.677691302104726,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.322265625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -4.518462076213947,
+  "ci_pct": [
+   -20.354044731635934,
+   13.17762953703765
+  ],
+  "median_ratio_pct": -1.6679177965857273,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.76953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 4.732980277027288,
+  "ci_pct": [
+   -7.8401083155058,
+   22.004958526144925
+  ],
+  "median_ratio_pct": 3.181142674534243,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.845703125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -13.084627222383682,
+  "ci_pct": [
+   -28.92867561930269,
+   4.111206401255529
+  ],
+  "median_ratio_pct": -3.795826629471155,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.375,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -4.663181795892745,
+  "ci_pct": [
+   -14.289252934292918,
+   5.55222653639349
+  ],
+  "median_ratio_pct": -5.579289551168554,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.556640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -17.716754669261814,
+  "ci_pct": [
+   -27.64404977094329,
+   -7.322366873692254
+  ],
+  "median_ratio_pct": -19.42213343420255,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.01953125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 5.629490460979336,
+  "ci_pct": [
+   -11.403614715445688,
+   20.95136418323207
+  ],
+  "median_ratio_pct": 15.93969095922394,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.275390625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 15.86419303334492,
+  "ci_pct": [
+   -0.30866959585904574,
+   35.25749581150641
+  ],
+  "median_ratio_pct": 12.204527466200288,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.130859375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": -1.4200152077150419,
+  "ci_pct": [
+   -7.3409127806708385,
+   5.121529760440802
+  ],
+  "median_ratio_pct": -1.2977832946361456,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.6953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_day_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -6.837801574791125,
+  "ci_pct": [
+   -13.251492615389404,
+   -0.5106774926641355
+  ],
+  "median_ratio_pct": -5.027878730924307,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.064453125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 0.04358085658888733,
+  "ci_pct": [
+   -0.0002645405092538411,
+   0.13117403244216064
+  ],
+  "median_ratio_pct": -0.00014291681204037232,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.275390625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -0.001298547620753876,
+  "ci_pct": [
+   -0.0038941288728167045,
+   0.00017514048640254742
+  ],
+  "median_ratio_pct": -0.00022448834122723582,
+  "wins": 9,
+  "losses": 1,
+  "wil": 0.064453125,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -13.072492228056909,
+  "ci_pct": [
+   -18.966710859354286,
+   -6.299855710279923
+  ],
+  "median_ratio_pct": -13.504309116546064,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.013671875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -10.411919787263802,
+  "ci_pct": [
+   -18.716506809475632,
+   -1.8789450492341486
+  ],
+  "median_ratio_pct": -6.819671290998319,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.10546875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -1.1288451054180526,
+  "ci_pct": [
+   -10.96722091931599,
+   9.666415746188473
+  ],
+  "median_ratio_pct": -4.831466549238161,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.76953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 3.1057736568465,
+  "ci_pct": [
+   -6.617816155483059,
+   14.181691405958862
+  ],
+  "median_ratio_pct": 0.19733770819732044,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.6953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -4.4718299366735215,
+  "ci_pct": [
+   -13.441318736382168,
+   6.360586291011083
+  ],
+  "median_ratio_pct": -9.673906977047187,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.431640625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 3.210683704629691,
+  "ci_pct": [
+   -8.132228078461212,
+   17.056860092997095
+  ],
+  "median_ratio_pct": -1.4697335223321173,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.845703125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -0.3684595637734711,
+  "ci_pct": [
+   -12.308497195202495,
+   14.658240600132189
+  ],
+  "median_ratio_pct": -9.232674632887928,
+  "wins": 6,
+  "losses": 4,
+  "wil": 1.0,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -3.0368302135869385,
+  "ci_pct": [
+   -17.603498092484394,
+   16.360260857648367
+  ],
+  "median_ratio_pct": -12.028807275904708,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.76953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -0.044859853901046964,
+  "ci_pct": [
+   -0.1348531866803393,
+   0.0003556281051197985
+  ],
+  "median_ratio_pct": 1.723493945338106e-05,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.845703125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -13.11035947768353,
+  "ci_pct": [
+   -19.023762272836997,
+   -6.328776149159953
+  ],
+  "median_ratio_pct": -13.504185499485445,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.013671875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -10.450946032050279,
+  "ci_pct": [
+   -18.802140263534906,
+   -1.8829010459096573
+  ],
+  "median_ratio_pct": -6.819461399524318,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.10546875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -1.1719152313106385,
+  "ci_pct": [
+   -11.031905835478328,
+   9.63825901919706
+  ],
+  "median_ratio_pct": -4.831412602284546,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.76953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": 3.060858851751047,
+  "ci_pct": [
+   -6.658594178149812,
+   14.176237973749672
+  ],
+  "median_ratio_pct": 0.19739450576403694,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.6953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -4.513443795794547,
+  "ci_pct": [
+   -13.488271351254221,
+   6.334791921274263
+  ],
+  "median_ratio_pct": -9.673877370090423,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -0.41186092784204487,
+  "ci_pct": [
+   -12.367549586966886,
+   14.635746963970387
+  ],
+  "median_ratio_pct": -9.232470176776042,
+  "wins": 6,
+  "losses": 4,
+  "wil": 1.0,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -3.0790691854498453,
+  "ci_pct": [
+   -17.667056108555524,
+   16.311673273336645
+  ],
+  "median_ratio_pct": -12.028778440833776,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.76953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -3.4678030800047943,
+  "ci_pct": [
+   -16.253616791455794,
+   7.83893046894284
+  ],
+  "median_ratio_pct": 1.09999647083181,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -6.053165906831781,
+  "ci_pct": [
+   -21.247442520584915,
+   12.410998939260388
+  ],
+  "median_ratio_pct": -10.559150927007178,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.556640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 15.088718735808527,
+  "ci_pct": [
+   1.7214900951151302,
+   29.049185877849194
+  ],
+  "median_ratio_pct": 18.396044526142298,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.064453125,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 6.630446635852594,
+  "ci_pct": [
+   -3.3408858204618475,
+   18.384135572435433
+  ],
+  "median_ratio_pct": 1.8812553788428277,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.275390625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 18.611215597423513,
+  "ci_pct": [
+   3.6023326235130826,
+   33.94239356621824
+  ],
+  "median_ratio_pct": 18.14762127449172,
+  "wins": 1,
+  "losses": 9,
+  "wil": 0.02734375,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 9.89406289427679,
+  "ci_pct": [
+   -3.014617006025344,
+   24.34033887841145
+  ],
+  "median_ratio_pct": 6.181699988757838,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.193359375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 15.036889950565268,
+  "ci_pct": [
+   6.722159796383997,
+   23.403321429515668
+  ],
+  "median_ratio_pct": 15.61248320008728,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.013671875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 3.1071125518033815,
+  "ci_pct": [
+   -6.616730669381587,
+   14.183138990050548
+  ],
+  "median_ratio_pct": 0.19762420603608444,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.6953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -4.4705894417856,
+  "ci_pct": [
+   -13.440096372739585,
+   6.362047707587526
+  ],
+  "median_ratio_pct": -9.673733412133723,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.431640625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_none",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 10.361952906906957,
+  "ci_pct": [
+   -4.851426194474051,
+   25.18993930793585
+  ],
+  "median_ratio_pct": 15.431483265753098,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.193359375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 0.0034194706267420827,
+  "ci_pct": [
+   -9.281070877387165e-05,
+   0.01012280579111291
+  ],
+  "median_ratio_pct": 7.966032926631783e-05,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.431640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -12.784628356208183,
+  "ci_pct": [
+   -17.407256464803655,
+   -8.23797200193479
+  ],
+  "median_ratio_pct": -10.957712884856663,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -14.4592097893118,
+  "ci_pct": [
+   -26.925929464582165,
+   2.3079200350329288
+  ],
+  "median_ratio_pct": -18.559134155607527,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.130859375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -24.12635835921182,
+  "ci_pct": [
+   -33.53684304832968,
+   -11.290958717681743
+  ],
+  "median_ratio_pct": -29.482330777746533,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.01953125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -12.059392926013246,
+  "ci_pct": [
+   -23.718416482393778,
+   3.7325206792540033
+  ],
+  "median_ratio_pct": -10.537004040224861,
+  "wins": 9,
+  "losses": 1,
+  "wil": 0.064453125,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -6.620960475761207,
+  "ci_pct": [
+   -18.629966924418174,
+   8.295392152800618
+  ],
+  "median_ratio_pct": -7.910887582107595,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.322265625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -12.29402800087913,
+  "ci_pct": [
+   -24.33273229891958,
+   0.8466007780866258
+  ],
+  "median_ratio_pct": -6.991667784414924,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.275390625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 3.2822032485359864,
+  "ci_pct": [
+   -11.026622655847063,
+   20.95241610085754
+  ],
+  "median_ratio_pct": 2.1091522518513095,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.845703125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -18.415913558435847,
+  "ci_pct": [
+   -30.98346911980041,
+   -3.026274494632719
+  ],
+  "median_ratio_pct": -17.97731964622924,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.064453125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -25.201706795126277,
+  "ci_pct": [
+   -37.34986589645629,
+   -9.766610291437983
+  ],
+  "median_ratio_pct": -25.830347723736846,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.048828125,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -12.78761055824802,
+  "ci_pct": [
+   -17.411333208519697,
+   -8.241945321294185
+  ],
+  "median_ratio_pct": -10.972311822813586,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -14.462134731489396,
+  "ci_pct": [
+   -26.92834746727415,
+   2.301080610240902
+  ],
+  "median_ratio_pct": -18.559305818396776,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.130859375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -24.128952747386823,
+  "ci_pct": [
+   -33.539043872066586,
+   -11.293932334630519
+  ],
+  "median_ratio_pct": -29.4823003190964,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.01953125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -12.062399926417623,
+  "ci_pct": [
+   -23.72098277246044,
+   3.725878878897637
+  ],
+  "median_ratio_pct": -10.55167195554657,
+  "wins": 9,
+  "losses": 1,
+  "wil": 0.064453125,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -6.624153435406955,
+  "ci_pct": [
+   -18.630110127292266,
+   8.29533736798469
+  ],
+  "median_ratio_pct": -7.92667815257575,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.322265625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -12.297026978280389,
+  "ci_pct": [
+   -24.33533823785865,
+   0.8461036521266729
+  ],
+  "median_ratio_pct": -7.007055198626466,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.275390625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -18.418703206916597,
+  "ci_pct": [
+   -30.983520150290566,
+   -3.030428781712391
+  ],
+  "median_ratio_pct": -17.990946431126954,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.064453125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -25.20426441333471,
+  "ci_pct": [
+   -37.35010631491418,
+   -9.772434949789655
+  ],
+  "median_ratio_pct": -25.83060051457089,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.048828125,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -21.00857274970981,
+  "ci_pct": [
+   -34.85380816767803,
+   -4.7218047625888
+  ],
+  "median_ratio_pct": -23.316552086442776,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.048828125,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -27.578720387208655,
+  "ci_pct": [
+   -37.8015533072799,
+   -15.104305602374968
+  ],
+  "median_ratio_pct": -30.255581805576636,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.009765625,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 23.07177763567374,
+  "ci_pct": [
+   9.102304800353567,
+   37.0476387343917
+  ],
+  "median_ratio_pct": 23.239540156613604,
+  "wins": 1,
+  "losses": 9,
+  "wil": 0.01953125,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 15.594783777943588,
+  "ci_pct": [
+   -0.8739813971147092,
+   36.79895095513126
+  ],
+  "median_ratio_pct": 5.197879953277873,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.275390625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 9.163171504781364,
+  "ci_pct": [
+   -1.9225365899521174,
+   21.013556901790366
+  ],
+  "median_ratio_pct": 15.510721868917908,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.16015625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 2.531168794559635,
+  "ci_pct": [
+   -9.391978716028149,
+   16.322131902464232
+  ],
+  "median_ratio_pct": 0.7541135241791119,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.76953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 1.957640827234708,
+  "ci_pct": [
+   -14.364239483247198,
+   19.763030485348885
+  ],
+  "median_ratio_pct": 9.769966214528214,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.76953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 7.067180663542727,
+  "ci_pct": [
+   -8.587342596037784,
+   25.053003790055996
+  ],
+  "median_ratio_pct": 4.415615733070211,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.431640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 0.5625159258998202,
+  "ci_pct": [
+   -13.788236546259014,
+   16.904695375603772
+  ],
+  "median_ratio_pct": 3.715242885287018,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_low",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 15.904028292628581,
+  "ci_pct": [
+   0.5256274590330623,
+   30.972970143313418
+  ],
+  "median_ratio_pct": 21.211558608823665,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.10546875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 0.008929079403818818,
+  "ci_pct": [
+   -0.00023684606154095178,
+   0.027060228593933644
+  ],
+  "median_ratio_pct": -3.551581270189175e-05,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.6953125,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -13.61765738729076,
+  "ci_pct": [
+   -28.105446060275487,
+   3.5286927447701455
+  ],
+  "median_ratio_pct": -9.95508593592116,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.193359375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -4.185700401744286,
+  "ci_pct": [
+   -33.7876281334124,
+   35.567739142614926
+  ],
+  "median_ratio_pct": 1.0218242211170292,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -24.909795840202076,
+  "ci_pct": [
+   -42.12386528139872,
+   -5.548359534125247
+  ],
+  "median_ratio_pct": -9.03846607304839,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.048828125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -16.771649782192497,
+  "ci_pct": [
+   -31.92219536201413,
+   -0.49077277993245794
+  ],
+  "median_ratio_pct": -12.536238480501627,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.083984375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -12.672860219731474,
+  "ci_pct": [
+   -30.11993810114637,
+   6.652555574536301
+  ],
+  "median_ratio_pct": -10.631917344952392,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.322265625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -20.522541901323276,
+  "ci_pct": [
+   -37.79266611852302,
+   -1.0402792795511595
+  ],
+  "median_ratio_pct": -13.753696724213771,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.10546875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -11.89053151726669,
+  "ci_pct": [
+   -28.45521161135092,
+   6.261425876527138
+  ],
+  "median_ratio_pct": -6.984859653323627,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -13.172533558377319,
+  "ci_pct": [
+   -36.98197110438042,
+   13.929640144544543
+  ],
+  "median_ratio_pct": 3.3482713379739515,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.845703125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -22.6466732624921,
+  "ci_pct": [
+   -39.51357969087884,
+   -2.76498626344589
+  ],
+  "median_ratio_pct": -21.18030459908108,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.064453125,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -18.919163914330117,
+  "ci_pct": [
+   -30.794647787752318,
+   -6.0246127565744985
+  ],
+  "median_ratio_pct": -16.405456070640888,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.02734375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -13.62536984660191,
+  "ci_pct": [
+   -28.11211173933481,
+   3.5287131621821732
+  ],
+  "median_ratio_pct": -9.995719656721391,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.193359375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -4.194254972791189,
+  "ci_pct": [
+   -33.787542366771795,
+   35.54338454520438
+  ],
+  "median_ratio_pct": 0.9763275109100134,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -24.91650010552682,
+  "ci_pct": [
+   -42.13392847832389,
+   -5.55680387607993
+  ],
+  "median_ratio_pct": -9.079513428266239,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.048828125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -16.77908064416237,
+  "ci_pct": [
+   -31.928324370874773,
+   -0.49185558049967826
+  ],
+  "median_ratio_pct": -12.575684562813837,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.083984375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -12.680657033199882,
+  "ci_pct": [
+   -30.12247967859272,
+   6.648642252638948
+  ],
+  "median_ratio_pct": -10.672222274482657,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.322265625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -20.529637873060093,
+  "ci_pct": [
+   -37.79829195224968,
+   -1.0581418385781305
+  ],
+  "median_ratio_pct": -13.753693827211155,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.10546875,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -13.180285759600018,
+  "ci_pct": [
+   -36.98469889913321,
+   13.918994545911879
+  ],
+  "median_ratio_pct": 3.3487303242651256,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.845703125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -22.653579585786897,
+  "ci_pct": [
+   -39.51366256786215,
+   -2.784753272207674
+  ],
+  "median_ratio_pct": -21.180276605615745,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.064453125,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -18.926403040178197,
+  "ci_pct": [
+   -30.80073523540613,
+   -6.026277553308179
+  ],
+  "median_ratio_pct": -16.405459279799082,
+  "wins": 8,
+  "losses": 2,
+  "wil": 0.02734375,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -1.4550105263225754,
+  "ci_pct": [
+   -15.619969673815092,
+   13.298195480213826
+  ],
+  "median_ratio_pct": -1.4487224457936265,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -12.20770245292454,
+  "ci_pct": [
+   -21.79479536310088,
+   0.5479790991654632
+  ],
+  "median_ratio_pct": -14.495484706041516,
+  "wins": 9,
+  "losses": 1,
+  "wil": 0.064453125,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 16.29631422286377,
+  "ci_pct": [
+   -0.1137208943206125,
+   35.351139907117826
+  ],
+  "median_ratio_pct": 16.78552448554287,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.10546875,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 5.84264484025423,
+  "ci_pct": [
+   -5.493724285253165,
+   18.48197393058486
+  ],
+  "median_ratio_pct": 5.9290452287358075,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.4921875,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -8.857926064870691,
+  "ci_pct": [
+   -28.268544016411433,
+   15.649304093984707
+  ],
+  "median_ratio_pct": -6.817149112593457,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -17.050525410172078,
+  "ci_pct": [
+   -35.342097878927845,
+   3.848158587156658
+  ],
+  "median_ratio_pct": -7.6090182414558,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": -9.843997216588928,
+  "ci_pct": [
+   -28.824363657088526,
+   11.28014012105667
+  ],
+  "median_ratio_pct": -6.916927129262418,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.322265625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 1.0937387653345176,
+  "ci_pct": [
+   -14.70157537395017,
+   19.081633365903006
+  ],
+  "median_ratio_pct": 2.977766926445824,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.921875,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -7.993398077880586,
+  "ci_pct": [
+   -21.745880125981497,
+   7.350075341891138
+  ],
+  "median_ratio_pct": -3.6453940221835013,
+  "wins": 7,
+  "losses": 3,
+  "wil": 0.375,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 10.837826516879566,
+  "ci_pct": [
+   -4.512177471859891,
+   29.55831890906111
+  ],
+  "median_ratio_pct": 5.254721141120089,
+  "wins": 4,
+  "losses": 6,
+  "wil": 0.375,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -6.137257183228273,
+  "ci_pct": [
+   -18.919516278728167,
+   2.8848391501016923
+  ],
+  "median_ratio_pct": -1.1100268653925105,
+  "wins": 6,
+  "losses": 4,
+  "wil": 0.556640625,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": 0.031864483456600645,
+  "ci_pct": [
+   3.855414290043768e-05,
+   0.09482401567955101
+  ],
+  "median_ratio_pct": 0.00014869381450566266,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.10546875,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -45.74847261263282,
+  "ci_pct": [
+   -53.68346244938365,
+   -35.823744643623876
+  ],
+  "median_ratio_pct": -47.53857824268552,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -53.39679963228863,
+  "ci_pct": [
+   -58.26251429246847,
+   -48.07124604274361
+  ],
+  "median_ratio_pct": -52.31133332540776,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -37.887317722690725,
+  "ci_pct": [
+   -43.93584834095232,
+   -29.866219524549685
+  ],
+  "median_ratio_pct": -39.676854133096484,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -36.45163595558084,
+  "ci_pct": [
+   -42.46407027390574,
+   -29.719116316877027
+  ],
+  "median_ratio_pct": -36.26048505482105,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -31.849268072919035,
+  "ci_pct": [
+   -38.35049742520853,
+   -24.411114783243015
+  ],
+  "median_ratio_pct": -31.15385038117401,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -27.06404919777232,
+  "ci_pct": [
+   -35.87156622175088,
+   -17.5632587124112
+  ],
+  "median_ratio_pct": -26.488235225624045,
+  "wins": 9,
+  "losses": 1,
+  "wil": 0.00390625,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -1.0559662829195848,
+  "ci_pct": [
+   -9.992490438012602,
+   10.070165893711991
+  ],
+  "median_ratio_pct": -0.33661082535670905,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.76953125,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -47.45011902773387,
+  "ci_pct": [
+   -55.064595083152604,
+   -38.64033882039926
+  ],
+  "median_ratio_pct": -47.88505510431283,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -28.265522445021098,
+  "ci_pct": [
+   -38.77152640664478,
+   -15.414128083906043
+  ],
+  "median_ratio_pct": -28.335593062485298,
+  "wins": 9,
+  "losses": 1,
+  "wil": 0.009765625,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "openvins",
+  "n": 10,
+  "gm_ratio_pct": -47.976723123039655,
+  "ci_pct": [
+   -56.08356328476503,
+   -38.524816126331395
+  ],
+  "median_ratio_pct": -47.79257066404994,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -45.76575407495341,
+  "ci_pct": [
+   -53.69833375712799,
+   -35.82641108412221
+  ],
+  "median_ratio_pct": -47.53863299662,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -53.41164477103326,
+  "ci_pct": [
+   -58.29533468944885,
+   -48.077780689791375
+  ],
+  "median_ratio_pct": -52.31216207531217,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -37.90710330348631,
+  "ci_pct": [
+   -43.9839527112315,
+   -29.866505539601352
+  ],
+  "median_ratio_pct": -39.676944363372805,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -36.47187886323076,
+  "ci_pct": [
+   -42.50030089906881,
+   -29.73698613132437
+  ],
+  "median_ratio_pct": -36.260494718683724,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -31.870977034171133,
+  "ci_pct": [
+   -38.3623855004996,
+   -24.41993860495655
+  ],
+  "median_ratio_pct": -31.15388957562173,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -27.087282458591055,
+  "ci_pct": [
+   -35.903862287443154,
+   -17.58559096917893
+  ],
+  "median_ratio_pct": -26.48853596069991,
+  "wins": 9,
+  "losses": 1,
+  "wil": 0.00390625,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -47.46685844193487,
+  "ci_pct": [
+   -55.06916192831367,
+   -38.66146516018387
+  ],
+  "median_ratio_pct": -47.96690565024802,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -28.288372984547884,
+  "ci_pct": [
+   -38.79106390605427,
+   -15.43190374905501
+  ],
+  "median_ratio_pct": -28.335699005965232,
+  "wins": 9,
+  "losses": 1,
+  "wil": 0.009765625,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "savior_none",
+  "n": 10,
+  "gm_ratio_pct": -47.99329479101729,
+  "ci_pct": [
+   -56.10611612034512,
+   -38.52916794396556
+  ],
+  "median_ratio_pct": -47.79255937771878,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -46.889287814435846,
+  "ci_pct": [
+   -55.20978221806647,
+   -37.32476340377679
+  ],
+  "median_ratio_pct": -44.84169059707119,
+  "wins": 10,
+  "losses": 0,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 10,
+  "gm_ratio_pct": -27.49994632309436,
+  "ci_pct": [
+   -39.677426804828066,
+   -14.920484040349024
+  ],
+  "median_ratio_pct": -19.63649085345577,
+  "wins": 9,
+  "losses": 1,
+  "wil": 0.00390625,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 9.721122045275887,
+  "ci_pct": [
+   -0.6775871507173958,
+   21.476453237657434
+  ],
+  "median_ratio_pct": 5.4393788664404585,
+  "wins": 5,
+  "losses": 5,
+  "wil": 0.322265625,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 17.4252151542847,
+  "ci_pct": [
+   -1.385210233956069,
+   38.295057555884156
+  ],
+  "median_ratio_pct": 27.99055016865839,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.16015625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 46.236162729928324,
+  "ci_pct": [
+   25.898978493588707,
+   68.68314558746218
+  ],
+  "median_ratio_pct": 55.42644982286424,
+  "wins": 0,
+  "losses": 10,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 56.504167582363564,
+  "ci_pct": [
+   35.00728049752206,
+   80.58561671889876
+  ],
+  "median_ratio_pct": 62.198126227731976,
+  "wins": 0,
+  "losses": 10,
+  "wil": 0.001953125,
+  "sign": 0.001953125,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 10,
+  "gm_ratio_pct": 16.41159182053704,
+  "ci_pct": [
+   -4.108972859984639,
+   44.325103273010605
+  ],
+  "median_ratio_pct": 6.341750796285384,
+  "wins": 3,
+  "losses": 7,
+  "wil": 0.322265625,
+  "sign": 0.34375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 25.61993221033312,
+  "ci_pct": [
+   2.1114188382387544,
+   55.200863451098044
+  ],
+  "median_ratio_pct": 25.675696912734125,
+  "wins": 2,
+  "losses": 8,
+  "wil": 0.064453125,
+  "sign": 0.109375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": 34.440363828745,
+  "ci_pct": [
+   14.022568419701042,
+   56.21981166806549
+  ],
+  "median_ratio_pct": 40.027196772778396,
+  "wins": 1,
+  "losses": 9,
+  "wil": 0.009765625,
+  "sign": 0.021484375,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 10,
+  "gm_ratio_pct": 2.3114148584022054,
+  "ci_pct": [
+   -5.177990039776004,
+   11.93182094168308
+  ],
+  "median_ratio_pct": -0.0824658713395765,
+  "wins": 5,
+  "losses": 5,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "city_night_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "oracle_dynamic",
+  "n": 10,
+  "gm_ratio_pct": -4.10725857448524,
+  "ci_pct": [
+   -16.299298100536873,
+   7.555644893711566
+  ],
+  "median_ratio_pct": 1.363496678991738,
+  "wins": 4,
+  "losses": 6,
+  "wil": 1.0,
+  "sign": 0.75390625,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": 0.017989407158092163,
+  "ci_pct": [
+   -0.00019673543244502767,
+   0.050722679621229005
+  ],
+  "median_ratio_pct": -6.691272734782316e-05,
+  "wins": 19,
+  "losses": 11,
+  "wil": 0.21335807338945145,
+  "sign": 0.20048842206597334,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": -0.0027299441774819577,
+  "ci_pct": [
+   -0.007761580655951672,
+   2.7037635463855736e-05
+  ],
+  "median_ratio_pct": -8.69033506267769e-05,
+  "wins": 19,
+  "losses": 11,
+  "wil": 0.1588554992851956,
+  "sign": 0.20048842206597334,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": -5.13378564682,
+  "ci_pct": [
+   -11.347244949981006,
+   2.1116745460373565
+  ],
+  "median_ratio_pct": -9.945831609512645,
+  "wins": 22,
+  "losses": 8,
+  "wil": 0.0977721901049929,
+  "sign": 0.016124801710247997,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": -0.5908290135846483,
+  "ci_pct": [
+   -8.31662614793517,
+   8.388298961679762
+  ],
+  "median_ratio_pct": -2.094815691931906,
+  "wins": 16,
+  "losses": 14,
+  "wil": 0.6435165948165775,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": 2.037594200998405,
+  "ci_pct": [
+   -3.752537456861238,
+   8.176571065567174
+  ],
+  "median_ratio_pct": -2.7657007362869246,
+  "wins": 16,
+  "losses": 14,
+  "wil": 0.6732798065233047,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": 1.8099245298369482,
+  "ci_pct": [
+   -5.126662625959655,
+   9.356280735500455
+  ],
+  "median_ratio_pct": -2.5476495138272215,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.7655192919016102,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": 0.5384722672232556,
+  "ci_pct": [
+   -6.728087463128762,
+   9.052370671988562
+  ],
+  "median_ratio_pct": -3.685873231726733,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.6883592982254604,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": 3.3406427065170607,
+  "ci_pct": [
+   -5.945398501088562,
+   13.49864144758226
+  ],
+  "median_ratio_pct": 2.0585402302271794,
+  "wins": 14,
+  "losses": 16,
+  "wil": 0.517047890994101,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": -2.8922861159849655,
+  "ci_pct": [
+   -9.746496201298472,
+   4.862341898604616
+  ],
+  "median_ratio_pct": -4.788904898130086,
+  "wins": 18,
+  "losses": 12,
+  "wil": 0.46528258187908456,
+  "sign": 0.36159460805356514,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": 1.0954517942857844,
+  "ci_pct": [
+   -7.950635121946037,
+   11.305134845586995
+  ],
+  "median_ratio_pct": 1.2566711525912266,
+  "wins": 13,
+  "losses": 17,
+  "wil": 0.7812637101499429,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": -0.020715624717504433,
+  "ci_pct": [
+   -0.054352467260843085,
+   7.864840541049745e-05
+  ],
+  "median_ratio_pct": -3.114348170463188e-05,
+  "wins": 16,
+  "losses": 14,
+  "wil": 0.6883592982254604,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": -5.150848446878897,
+  "ci_pct": [
+   -11.361141180935308,
+   2.0937849185612034
+  ],
+  "median_ratio_pct": -9.945596199518725,
+  "wins": 22,
+  "losses": 8,
+  "wil": 0.0977721901049929,
+  "sign": 0.016124801710247997,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": -0.6087089176171512,
+  "ci_pct": [
+   -8.330533775986881,
+   8.376295492840779
+  ],
+  "median_ratio_pct": -2.0947589013282975,
+  "wins": 16,
+  "losses": 14,
+  "wil": 0.6435165948165775,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": 2.0192415442574108,
+  "ci_pct": [
+   -3.7783568673074086,
+   8.160661733391915
+  ],
+  "median_ratio_pct": -2.7658150596499342,
+  "wins": 16,
+  "losses": 14,
+  "wil": 0.6732798065233047,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": 1.7916128221535654,
+  "ci_pct": [
+   -5.154457252943622,
+   9.33308079662356
+  ],
+  "median_ratio_pct": -2.5474783695473735,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.7655192919016102,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": 0.5203892451250525,
+  "ci_pct": [
+   -6.748728361651923,
+   9.035310707635169
+  ],
+  "median_ratio_pct": -3.6859598005182903,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.6732798065233047,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": -2.9097520759948203,
+  "ci_pct": [
+   -9.75942928317355,
+   4.853196414782346
+  ],
+  "median_ratio_pct": -4.78879719780243,
+  "wins": 18,
+  "losses": 12,
+  "wil": 0.46528258187908456,
+  "sign": 0.36159460805356514,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": 1.0772685928943204,
+  "ci_pct": [
+   -7.963711708312271,
+   11.280650342997012
+  ],
+  "median_ratio_pct": 1.2566640138302443,
+  "wins": 13,
+  "losses": 17,
+  "wil": 0.7812637101499429,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 30,
+  "gm_ratio_pct": -6.0314399632710565,
+  "ci_pct": [
+   -13.885241068963616,
+   2.337586898841293
+  ],
+  "median_ratio_pct": -0.9903553579508784,
+  "wins": 18,
+  "losses": 12,
+  "wil": 0.22102157481330342,
+  "sign": 0.36159460805356514,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 30,
+  "gm_ratio_pct": -2.1726117173545445,
+  "ci_pct": [
+   -10.455020976426743,
+   7.122434658258792
+  ],
+  "median_ratio_pct": -0.7856952253354477,
+  "wins": 15,
+  "losses": 15,
+  "wil": 0.6435165948165775,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 30,
+  "gm_ratio_pct": 2.41502219523555,
+  "ci_pct": [
+   -7.555561690690061,
+   12.346175845130315
+  ],
+  "median_ratio_pct": 7.211453646758792,
+  "wins": 11,
+  "losses": 19,
+  "wil": 0.29894375201959067,
+  "sign": 0.20048842206597334,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 30,
+  "gm_ratio_pct": 1.1360131762513381,
+  "ci_pct": [
+   -4.593883894993445,
+   7.1689532532261735
+  ],
+  "median_ratio_pct": 0.017524270564250877,
+  "wins": 15,
+  "losses": 15,
+  "wil": 0.7812637101499429,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 30,
+  "gm_ratio_pct": 7.319476405800285,
+  "ci_pct": [
+   -1.358289542967206,
+   17.582335098810063
+  ],
+  "median_ratio_pct": 6.406172123778897,
+  "wins": 10,
+  "losses": 20,
+  "wil": 0.1305916349444668,
+  "sign": 0.09873714670538905,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 30,
+  "gm_ratio_pct": 5.979218157610733,
+  "ci_pct": [
+   -0.715455644605667,
+   13.320793374860518
+  ],
+  "median_ratio_pct": 4.99189762879102,
+  "wins": 13,
+  "losses": 17,
+  "wil": 0.0752133122154768,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 30,
+  "gm_ratio_pct": 5.408728215442404,
+  "ci_pct": [
+   -2.070644233384822,
+   12.794496405161237
+  ],
+  "median_ratio_pct": 11.044341652075307,
+  "wins": 8,
+  "losses": 22,
+  "wil": 0.0977721901049929,
+  "sign": 0.016124801710247997,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 30,
+  "gm_ratio_pct": 1.8127039598206274,
+  "ci_pct": [
+   -5.1240376460184756,
+   9.35695025313208
+  ],
+  "median_ratio_pct": -2.547627276423503,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.7655192919016102,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 30,
+  "gm_ratio_pct": 0.5412169863223459,
+  "ci_pct": [
+   -6.724125550291049,
+   9.052320386174229
+  ],
+  "median_ratio_pct": -3.685824858982145,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.6883592982254604,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_none",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 30,
+  "gm_ratio_pct": 2.644044999572759,
+  "ci_pct": [
+   -5.972347939211886,
+   11.615063874350874
+  ],
+  "median_ratio_pct": 3.4739847003700586,
+  "wins": 14,
+  "losses": 16,
+  "wil": 0.4284300285458069,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": 0.00537070232113912,
+  "ci_pct": [
+   0.00010461114539062066,
+   0.014016539011585394
+  ],
+  "median_ratio_pct": 4.711516186084452e-05,
+  "wins": 13,
+  "losses": 17,
+  "wil": 0.12543823902980825,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": -1.7912106760851976,
+  "ci_pct": [
+   -11.524598706158995,
+   8.542161499800581
+  ],
+  "median_ratio_pct": -4.491322330432713,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.7812637101499429,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": -4.1776683782033475,
+  "ci_pct": [
+   -15.871325655188851,
+   9.286164831732236
+  ],
+  "median_ratio_pct": -0.19598802110203373,
+  "wins": 15,
+  "losses": 15,
+  "wil": 0.5577426862039239,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": -8.428631533366215,
+  "ci_pct": [
+   -19.65722788620241,
+   4.659697409983243
+  ],
+  "median_ratio_pct": -15.927553849633435,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.22102157481330342,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": -6.12389136143533,
+  "ci_pct": [
+   -16.283751128271916,
+   5.233402893339978
+  ],
+  "median_ratio_pct": -7.425482862271149,
+  "wins": 20,
+  "losses": 10,
+  "wil": 0.24519030932096386,
+  "sign": 0.09873714670538905,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": -4.252187367928773,
+  "ci_pct": [
+   -13.92558121283468,
+   5.934055242241043
+  ],
+  "median_ratio_pct": -2.4375359528014062,
+  "wins": 16,
+  "losses": 14,
+  "wil": 0.5038329688781412,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 30,
+  "gm_ratio_pct": -6.646861749986488,
+  "ci_pct": [
+   -18.523104281047033,
+   5.377420458164495
+  ],
+  "median_ratio_pct": 3.533223521227691,
+  "wins": 12,
+  "losses": 18,
+  "wil": 0.7655192919016102,
+  "sign": 0.36159460805356514,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 25,
+  "gm_ratio_pct": -4.6117451753673215,
+  "ci_pct": [
+   -17.16666443726669,
+   9.284341055357693
+  ],
+  "median_ratio_pct": 0.9903058187711755,
+  "wins": 11,
+  "losses": 14,
+  "wil": 0.6915188431739807,
+  "sign": 0.6900379657745361,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 29,
+  "gm_ratio_pct": -11.50624119040361,
+  "ci_pct": [
+   -23.415139343590507,
+   4.829408909319999
+  ],
+  "median_ratio_pct": -13.359740242704577,
+  "wins": 19,
+  "losses": 10,
+  "wil": 0.017897082542391966,
+  "sign": 0.13604594767093658,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 29,
+  "gm_ratio_pct": -9.007773669063546,
+  "ci_pct": [
+   -22.479349625598456,
+   9.889442358710587
+  ],
+  "median_ratio_pct": -7.020338000890058,
+  "wins": 18,
+  "losses": 11,
+  "wil": 0.09377774829077586,
+  "sign": 0.26493089646101,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": -1.7964848945504097,
+  "ci_pct": [
+   -11.527795353198622,
+   8.534789086639849
+  ],
+  "median_ratio_pct": -4.491660784288198,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.7812637101499429,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": -4.182814434012583,
+  "ci_pct": [
+   -15.879853653623865,
+   9.282507249935335
+  ],
+  "median_ratio_pct": -0.19583444476214407,
+  "wins": 15,
+  "losses": 15,
+  "wil": 0.5577426862039239,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": -8.43354929485962,
+  "ci_pct": [
+   -19.660640260061314,
+   4.651956787547529
+  ],
+  "median_ratio_pct": -15.932910815523748,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.22102157481330342,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": -6.128932897015105,
+  "ci_pct": [
+   -16.283907475360436,
+   5.219814879310958
+  ],
+  "median_ratio_pct": -7.425340410527692,
+  "wins": 20,
+  "losses": 10,
+  "wil": 0.24519030932096386,
+  "sign": 0.09873714670538905,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": -4.257329421759836,
+  "ci_pct": [
+   -13.931021531506238,
+   5.921895647912567
+  ],
+  "median_ratio_pct": -2.4437410901037793,
+  "wins": 16,
+  "losses": 14,
+  "wil": 0.5038329688781412,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 30,
+  "gm_ratio_pct": -6.651875199891865,
+  "ci_pct": [
+   -18.53346020708939,
+   5.3742537614040575
+  ],
+  "median_ratio_pct": 3.533319115191458,
+  "wins": 12,
+  "losses": 18,
+  "wil": 0.7655192919016102,
+  "sign": 0.36159460805356514,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 29,
+  "gm_ratio_pct": -11.51115409760266,
+  "ci_pct": [
+   -23.42147722304192,
+   4.825220103674055
+  ],
+  "median_ratio_pct": -13.359649088436388,
+  "wins": 19,
+  "losses": 10,
+  "wil": 0.017897082542391966,
+  "sign": 0.13604594767093658,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 29,
+  "gm_ratio_pct": -9.01282528366114,
+  "ci_pct": [
+   -22.48328566903516,
+   9.874311894719789
+  ],
+  "median_ratio_pct": -7.020329235962796,
+  "wins": 18,
+  "losses": 11,
+  "wil": 0.09377774829077586,
+  "sign": 0.26493089646101,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 25,
+  "gm_ratio_pct": -16.048105585061812,
+  "ci_pct": [
+   -25.439037059079304,
+   -5.792327417677468
+  ],
+  "median_ratio_pct": -18.414004087971293,
+  "wins": 18,
+  "losses": 7,
+  "wil": 0.014722049236297607,
+  "sign": 0.043285250663757324,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 25,
+  "gm_ratio_pct": -12.935622669783164,
+  "ci_pct": [
+   -23.401739436689784,
+   -0.6937297173282175
+  ],
+  "median_ratio_pct": -11.84507785025415,
+  "wins": 16,
+  "losses": 9,
+  "wil": 0.055070459842681885,
+  "sign": 0.2295229434967041,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 30,
+  "gm_ratio_pct": 4.560862456652304,
+  "ci_pct": [
+   -7.910025988789138,
+   18.368610129146635
+  ],
+  "median_ratio_pct": 7.462201345391084,
+  "wins": 11,
+  "losses": 19,
+  "wil": 0.38203416302245696,
+  "sign": 0.20048842206597334,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 30,
+  "gm_ratio_pct": 1.9457717114153894,
+  "ci_pct": [
+   -8.24555874657028,
+   13.205105788535644
+  ],
+  "median_ratio_pct": 1.7192433648376193,
+  "wins": 14,
+  "losses": 16,
+  "wil": 0.7655192919016102,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 30,
+  "gm_ratio_pct": -0.07776787358875215,
+  "ci_pct": [
+   -12.177849855051381,
+   14.018256085320658
+  ],
+  "median_ratio_pct": 1.595021801634089,
+  "wins": 15,
+  "losses": 15,
+  "wil": 0.8936443871266052,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 30,
+  "gm_ratio_pct": -2.5768454284006204,
+  "ci_pct": [
+   -9.979767965817544,
+   5.763444335677548
+  ],
+  "median_ratio_pct": -1.6713254102080577,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.4284300285458069,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 30,
+  "gm_ratio_pct": 2.4905026435145583,
+  "ci_pct": [
+   -7.488429859534207,
+   13.315705750714502
+  ],
+  "median_ratio_pct": -0.3458216015903681,
+  "wins": 15,
+  "losses": 15,
+  "wil": 0.5999359281677457,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 30,
+  "gm_ratio_pct": -2.5058619587771447,
+  "ci_pct": [
+   -14.161070724111058,
+   11.12768750336588
+  ],
+  "median_ratio_pct": -1.83156382874603,
+  "wins": 16,
+  "losses": 14,
+  "wil": 0.6143145637885868,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 30,
+  "gm_ratio_pct": -4.944212333059372,
+  "ci_pct": [
+   -13.546411147704374,
+   4.446073919918803
+  ],
+  "median_ratio_pct": -0.01949119860359394,
+  "wins": 15,
+  "losses": 15,
+  "wil": 0.3933343721992797,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_low",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 30,
+  "gm_ratio_pct": 2.5168785948313843,
+  "ci_pct": [
+   -8.654907580862991,
+   15.148524023012854
+  ],
+  "median_ratio_pct": 6.95532206995475,
+  "wins": 12,
+  "losses": 18,
+  "wil": 0.6143145637885868,
+  "sign": 0.36159460805356514,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": 0.0029668022465401123,
+  "ci_pct": [
+   -0.0005608467363082958,
+   0.009642350645910902
+  ],
+  "median_ratio_pct": -8.439262841886119e-05,
+  "wins": 17,
+  "losses": 11,
+  "wil": 0.24550260452144101,
+  "sign": 0.34492845088243484,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -7.4689156855696766,
+  "ci_pct": [
+   -21.503677293829938,
+   7.5108324382270775
+  ],
+  "median_ratio_pct": 2.627698530362399,
+  "wins": 13,
+  "losses": 15,
+  "wil": 0.6488010185768092,
+  "sign": 0.8505540192127228,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -8.331719196924547,
+  "ci_pct": [
+   -23.16564912123763,
+   8.745800747608111
+  ],
+  "median_ratio_pct": -12.242679843870995,
+  "wins": 17,
+  "losses": 11,
+  "wil": 0.4523776866075748,
+  "sign": 0.34492845088243484,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": 8.009706279269713,
+  "ci_pct": [
+   -10.322863046614405,
+   30.27022878281036
+  ],
+  "median_ratio_pct": 3.113072240356951,
+  "wins": 13,
+  "losses": 15,
+  "wil": 0.3623707584699263,
+  "sign": 0.8505540192127228,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": 3.1720802541079784,
+  "ci_pct": [
+   -11.655005969571008,
+   20.888802018792575
+  ],
+  "median_ratio_pct": 0.31897384876038437,
+  "wins": 14,
+  "losses": 14,
+  "wil": 0.8022117949916099,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": 6.8217666771829055,
+  "ci_pct": [
+   -8.524987677921692,
+   24.91140065209352
+  ],
+  "median_ratio_pct": 9.267506646641245,
+  "wins": 12,
+  "losses": 16,
+  "wil": 0.4523776866075748,
+  "sign": 0.5715881884098053,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -7.336033666451325,
+  "ci_pct": [
+   -22.068442470152803,
+   9.339308034439187
+  ],
+  "median_ratio_pct": -3.630097228615836,
+  "wins": 15,
+  "losses": 13,
+  "wil": 0.698671667179475,
+  "sign": 0.8505540192127228,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 27,
+  "gm_ratio_pct": -0.7972754200102461,
+  "ci_pct": [
+   -14.74252183761794,
+   14.959520762925592
+  ],
+  "median_ratio_pct": 3.9463839026409264,
+  "wins": 11,
+  "losses": 16,
+  "wil": 0.7915680312154841,
+  "sign": 0.44206833839416504,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -3.4434501382468508,
+  "ci_pct": [
+   -18.495737382340327,
+   13.831344652344768
+  ],
+  "median_ratio_pct": 1.4455820682897302,
+  "wins": 14,
+  "losses": 14,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": 2.4554125977955144,
+  "ci_pct": [
+   -13.408805402305202,
+   20.356552010901186
+  ],
+  "median_ratio_pct": 13.926959816992944,
+  "wins": 12,
+  "losses": 16,
+  "wil": 0.6163913111006432,
+  "sign": 0.5715881884098053,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -7.716564880421128,
+  "ci_pct": [
+   -20.241958103309067,
+   6.395293773880839
+  ],
+  "median_ratio_pct": -8.881448927473256,
+  "wins": 16,
+  "losses": 12,
+  "wil": 0.3163713020501673,
+  "sign": 0.5715881884098053,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -7.471660818415193,
+  "ci_pct": [
+   -21.503208428933938,
+   7.5113669539219385
+  ],
+  "median_ratio_pct": 2.6278169827740783,
+  "wins": 13,
+  "losses": 15,
+  "wil": 0.6488010185768092,
+  "sign": 0.8505540192127228,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -8.33443873285552,
+  "ci_pct": [
+   -23.168864318861992,
+   8.742399262900946
+  ],
+  "median_ratio_pct": -12.241681814363304,
+  "wins": 17,
+  "losses": 11,
+  "wil": 0.4523776866075748,
+  "sign": 0.34492845088243484,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": 8.006501939943767,
+  "ci_pct": [
+   -10.325640619534248,
+   30.270544138828747
+  ],
+  "median_ratio_pct": 3.1131673210002875,
+  "wins": 13,
+  "losses": 15,
+  "wil": 0.3623707584699263,
+  "sign": 0.8505540192127228,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": 3.169019433321707,
+  "ci_pct": [
+   -11.657565480772602,
+   20.886658575410657
+  ],
+  "median_ratio_pct": 0.31894447482858634,
+  "wins": 14,
+  "losses": 14,
+  "wil": 0.8022117949916099,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": 6.81859758063017,
+  "ci_pct": [
+   -8.525986303382439,
+   24.911357426382242
+  ],
+  "median_ratio_pct": 9.268058483349396,
+  "wins": 12,
+  "losses": 16,
+  "wil": 0.4523776866075748,
+  "sign": 0.5715881884098053,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -7.338782741526617,
+  "ci_pct": [
+   -22.069487865133542,
+   9.336076525213732
+  ],
+  "median_ratio_pct": -3.630088207876858,
+  "wins": 15,
+  "losses": 13,
+  "wil": 0.698671667179475,
+  "sign": 0.8505540192127228,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -3.4463146951515866,
+  "ci_pct": [
+   -18.495687352337175,
+   13.825011905796348
+  ],
+  "median_ratio_pct": 1.4455920462652205,
+  "wins": 14,
+  "losses": 14,
+  "wil": 1.0,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": 2.452373038490596,
+  "ci_pct": [
+   -13.410596887789339,
+   20.35642643683042
+  ],
+  "median_ratio_pct": 13.928285059525303,
+  "wins": 12,
+  "losses": 16,
+  "wil": 0.6163913111006432,
+  "sign": 0.5715881884098053,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -7.719302666222738,
+  "ci_pct": [
+   -20.24420162757785,
+   6.3921703133946295
+  ],
+  "median_ratio_pct": -8.92260233163178,
+  "wins": 16,
+  "losses": 12,
+  "wil": 0.3163713020501673,
+  "sign": 0.5715881884098053,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 28,
+  "gm_ratio_pct": 0.7483877869144395,
+  "ci_pct": [
+   -9.027113847070268,
+   11.750644591868609
+  ],
+  "median_ratio_pct": 0.681261717119952,
+  "wins": 13,
+  "losses": 15,
+  "wil": 0.8913244160746354,
+  "sign": 0.8505540192127228,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 28,
+  "gm_ratio_pct": 1.9827075285626883,
+  "ci_pct": [
+   -8.311973003571339,
+   13.209977023101494
+  ],
+  "median_ratio_pct": 3.0364586768675927,
+  "wins": 13,
+  "losses": 15,
+  "wil": 0.632507939829223,
+  "sign": 0.8505540192127228,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 28,
+  "gm_ratio_pct": -1.0998452296641537,
+  "ci_pct": [
+   -11.217631565991793,
+   9.877420703752682
+  ],
+  "median_ratio_pct": -0.2065767434757837,
+  "wins": 14,
+  "losses": 14,
+  "wil": 0.8913244160746354,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 28,
+  "gm_ratio_pct": -14.20774157652379,
+  "ci_pct": [
+   -25.723780648405647,
+   -1.4473857663603984
+  ],
+  "median_ratio_pct": -14.303546558458436,
+  "wins": 17,
+  "losses": 11,
+  "wil": 0.09197210927724962,
+  "sign": 0.34492845088243484,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 28,
+  "gm_ratio_pct": 16.53078441239737,
+  "ci_pct": [
+   1.0271103368635792,
+   33.37695920209172
+  ],
+  "median_ratio_pct": 15.793692318084362,
+  "wins": 9,
+  "losses": 19,
+  "wil": 0.036173574705865234,
+  "sign": 0.08715855330228806,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 28,
+  "gm_ratio_pct": 1.0861832705384655,
+  "ci_pct": [
+   -10.956345299456505,
+   13.320235150498693
+  ],
+  "median_ratio_pct": 8.900574789785832,
+  "wins": 10,
+  "losses": 18,
+  "wil": 0.3744947549643215,
+  "sign": 0.1849333420395851,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 28,
+  "gm_ratio_pct": 0.9412236204237034,
+  "ci_pct": [
+   -11.246347370740207,
+   14.452810050985466
+  ],
+  "median_ratio_pct": -4.470170276197926,
+  "wins": 16,
+  "losses": 12,
+  "wil": 0.9455354646923675,
+  "sign": 0.5715881884098053,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 28,
+  "gm_ratio_pct": 15.444196367775543,
+  "ci_pct": [
+   1.5713740393051623,
+   32.044237577868714
+  ],
+  "median_ratio_pct": 12.084933112939611,
+  "wins": 10,
+  "losses": 18,
+  "wil": 0.07953343933418376,
+  "sign": 0.1849333420395851,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 28,
+  "gm_ratio_pct": 0.14360797790589075,
+  "ci_pct": [
+   -10.580557307065408,
+   12.572704940103874
+  ],
+  "median_ratio_pct": -2.6939813743171004,
+  "wins": 16,
+  "losses": 12,
+  "wil": 0.8554482269597542,
+  "sign": 0.5715881884098053,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 28,
+  "gm_ratio_pct": -4.478880826370901,
+  "ci_pct": [
+   -14.239055053940463,
+   6.264669176503768
+  ],
+  "median_ratio_pct": -2.777644456492734,
+  "wins": 14,
+  "losses": 14,
+  "wil": 0.4802415427194643,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_mid",
+  "method": "oracle_dynamic_warp",
+  "ref": "oracle_dynamic",
+  "n": 28,
+  "gm_ratio_pct": -0.26763892013835777,
+  "ci_pct": [
+   -8.552256140027048,
+   8.058075221633686
+  ],
+  "median_ratio_pct": 0.3911609300177421,
+  "wins": 13,
+  "losses": 15,
+  "wil": 0.7672083132559107,
+  "sign": 0.8505540192127228,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": 0.011444696023765744,
+  "ci_pct": [
+   -9.175415482953753e-05,
+   0.03411155621113604
+  ],
+  "median_ratio_pct": 0.00014869381450566266,
+  "wins": 10,
+  "losses": 18,
+  "wil": 0.08766292505133104,
+  "sign": 0.1849333420395851,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -29.838700108472505,
+  "ci_pct": [
+   -39.10801896281081,
+   -19.480631415534898
+  ],
+  "median_ratio_pct": -25.80501768219643,
+  "wins": 23,
+  "losses": 5,
+  "wil": 0.00014305384791016862,
+  "sign": 0.0009122341871261597,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -29.228126716395998,
+  "ci_pct": [
+   -39.18326343186354,
+   -17.51814146791212
+  ],
+  "median_ratio_pct": -32.67199519832759,
+  "wins": 21,
+  "losses": 7,
+  "wil": 0.0005376605535566219,
+  "sign": 0.012540951371192932,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -17.75255625217107,
+  "ci_pct": [
+   -26.73674257478974,
+   -7.6048335451600835
+  ],
+  "median_ratio_pct": -21.890992554741263,
+  "wins": 19,
+  "losses": 9,
+  "wil": 0.007715869575744016,
+  "sign": 0.08715855330228806,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -20.038677449360886,
+  "ci_pct": [
+   -29.41236416158526,
+   -8.712502534353227
+  ],
+  "median_ratio_pct": -25.312198887650005,
+  "wins": 21,
+  "losses": 7,
+  "wil": 0.003828335605114569,
+  "sign": 0.012540951371192932,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -19.64777606308079,
+  "ci_pct": [
+   -29.438507647265986,
+   -8.538917236453292
+  ],
+  "median_ratio_pct": -22.620894101973043,
+  "wins": 21,
+  "losses": 7,
+  "wil": 0.005096266424780682,
+  "sign": 0.012540951371192932,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -18.405125939822742,
+  "ci_pct": [
+   -26.946534941690558,
+   -8.39348001784359
+  ],
+  "median_ratio_pct": -22.982686577810817,
+  "wins": 21,
+  "losses": 7,
+  "wil": 0.0030735452532136918,
+  "sign": 0.012540951371192932,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 26,
+  "gm_ratio_pct": -4.1077466835766625,
+  "ci_pct": [
+   -14.871357297310672,
+   6.500264022685198
+  ],
+  "median_ratio_pct": -0.1893197215159237,
+  "wins": 13,
+  "losses": 13,
+  "wil": 0.949372385905016,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -19.936832018750096,
+  "ci_pct": [
+   -34.217270735118376,
+   -2.51264591640471
+  ],
+  "median_ratio_pct": -24.07072582572407,
+  "wins": 17,
+  "losses": 11,
+  "wil": 0.04757850903792886,
+  "sign": 0.34492845088243484,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -17.18717683633959,
+  "ci_pct": [
+   -27.600509190893685,
+   -5.858008825018679
+  ],
+  "median_ratio_pct": -18.126944101821863,
+  "wins": 17,
+  "losses": 11,
+  "wil": 0.013061605886398396,
+  "sign": 0.34492845088243484,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "openvins",
+  "n": 28,
+  "gm_ratio_pct": -32.18659958130991,
+  "ci_pct": [
+   -41.28420107456316,
+   -21.170764996019564
+  ],
+  "median_ratio_pct": -35.28575732767927,
+  "wins": 22,
+  "losses": 6,
+  "wil": 0.0002461822175086417,
+  "sign": 0.0037191659212112427,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -29.84672893709639,
+  "ci_pct": [
+   -39.123973984560166,
+   -19.480908088058534
+  ],
+  "median_ratio_pct": -25.806227235138323,
+  "wins": 23,
+  "losses": 5,
+  "wil": 0.00014305384791016862,
+  "sign": 0.0009122341871261597,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -29.23622541529217,
+  "ci_pct": [
+   -39.20245025284795,
+   -17.527202186660052
+  ],
+  "median_ratio_pct": -32.67262833782294,
+  "wins": 21,
+  "losses": 7,
+  "wil": 0.0005376605535566219,
+  "sign": 0.012540951371192932,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -17.761968144932816,
+  "ci_pct": [
+   -26.749082029211756,
+   -7.60754134142555
+  ],
+  "median_ratio_pct": -21.8911244290826,
+  "wins": 19,
+  "losses": 9,
+  "wil": 0.007715869575744016,
+  "sign": 0.08715855330228806,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -20.047827732441302,
+  "ci_pct": [
+   -29.420389066073394,
+   -8.71871609835253
+  ],
+  "median_ratio_pct": -25.31210237702587,
+  "wins": 21,
+  "losses": 7,
+  "wil": 0.003828335605114569,
+  "sign": 0.012540951371192932,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -19.65697107851715,
+  "ci_pct": [
+   -29.457001899594715,
+   -8.548608368805677
+  ],
+  "median_ratio_pct": -22.62114162980148,
+  "wins": 21,
+  "losses": 7,
+  "wil": 0.005096266424780682,
+  "sign": 0.012540951371192932,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -18.41446315651385,
+  "ci_pct": [
+   -26.961458611902668,
+   -8.399676426711366
+  ],
+  "median_ratio_pct": -22.98335310266012,
+  "wins": 21,
+  "losses": 7,
+  "wil": 0.0030735452532136918,
+  "sign": 0.012540951371192932,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -19.945993956396645,
+  "ci_pct": [
+   -34.227614287952726,
+   -2.5209971964785582
+  ],
+  "median_ratio_pct": -24.07058596227557,
+  "wins": 17,
+  "losses": 11,
+  "wil": 0.04757850903792886,
+  "sign": 0.34492845088243484,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -17.196653427652297,
+  "ci_pct": [
+   -27.61068519580746,
+   -5.859566450638831
+  ],
+  "median_ratio_pct": -18.127932552745506,
+  "wins": 17,
+  "losses": 11,
+  "wil": 0.013061605886398396,
+  "sign": 0.34492845088243484,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "savior_none",
+  "n": 28,
+  "gm_ratio_pct": -32.19435973072571,
+  "ci_pct": [
+   -41.29067423724692,
+   -21.177239100059097
+  ],
+  "median_ratio_pct": -35.28554010302961,
+  "wins": 22,
+  "losses": 6,
+  "wil": 0.0002461822175086417,
+  "sign": 0.0037191659212112427,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 27,
+  "gm_ratio_pct": -18.843380645437126,
+  "ci_pct": [
+   -31.7313787418508,
+   -3.510927772819883
+  ],
+  "median_ratio_pct": -18.98554461953713,
+  "wins": 18,
+  "losses": 9,
+  "wil": 0.03249849345412466,
+  "sign": 0.12207812070846558,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 27,
+  "gm_ratio_pct": -16.590882514090687,
+  "ci_pct": [
+   -25.427671716594347,
+   -7.021338043562652
+  ],
+  "median_ratio_pct": -13.322464176386017,
+  "wins": 21,
+  "losses": 6,
+  "wil": 0.0028909652879307935,
+  "sign": 0.005924612283706665,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 30,
+  "gm_ratio_pct": -4.91580896539584,
+  "ci_pct": [
+   -14.904089436995438,
+   5.567808931515716
+  ],
+  "median_ratio_pct": -0.5248178658735281,
+  "wins": 16,
+  "losses": 14,
+  "wil": 0.5716457836721114,
+  "sign": 0.8555355519056321,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 30,
+  "gm_ratio_pct": -2.8763024143068194,
+  "ci_pct": [
+   -14.319414694935006,
+   9.886231051925453
+  ],
+  "median_ratio_pct": -2.5783573358311607,
+  "wins": 15,
+  "losses": 15,
+  "wil": 0.6288430020541073,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 30,
+  "gm_ratio_pct": 13.931760341393296,
+  "ci_pct": [
+   0.6115156393694754,
+   28.244875511681244
+  ],
+  "median_ratio_pct": 14.691647678576182,
+  "wins": 8,
+  "losses": 22,
+  "wil": 0.03000989131308078,
+  "sign": 0.016124801710247997,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 30,
+  "gm_ratio_pct": 16.375537472639135,
+  "ci_pct": [
+   3.9719164662153084,
+   30.461792300104527
+  ],
+  "median_ratio_pct": 10.926778631136692,
+  "wins": 10,
+  "losses": 20,
+  "wil": 0.019569215233846395,
+  "sign": 0.09873714670538905,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 30,
+  "gm_ratio_pct": 2.616841442588602,
+  "ci_pct": [
+   -8.517596901604485,
+   15.141422795112081
+  ],
+  "median_ratio_pct": 0.1602359767845618,
+  "wins": 15,
+  "losses": 15,
+  "wil": 0.9099307681587345,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 30,
+  "gm_ratio_pct": 11.026376118909376,
+  "ci_pct": [
+   -0.4105624129383756,
+   23.840094476688535
+  ],
+  "median_ratio_pct": 15.93969095922394,
+  "wins": 10,
+  "losses": 20,
+  "wil": 0.05983560139134924,
+  "sign": 0.09873714670538905,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 30,
+  "gm_ratio_pct": 13.407834266413431,
+  "ci_pct": [
+   1.413876252433366,
+   26.29518543375271
+  ],
+  "median_ratio_pct": 11.70330219929947,
+  "wins": 8,
+  "losses": 22,
+  "wil": 0.028485956184747342,
+  "sign": 0.016124801710247997,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 30,
+  "gm_ratio_pct": -6.065522656157318,
+  "ci_pct": [
+   -14.828033910799455,
+   2.897489774923301
+  ],
+  "median_ratio_pct": -1.340885943641723,
+  "wins": 18,
+  "losses": 12,
+  "wil": 0.24519030932096386,
+  "sign": 0.36159460805356514,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "all_high",
+  "method": "oracle_dynamic_warp",
+  "ref": "oracle_dynamic",
+  "n": 30,
+  "gm_ratio_pct": -4.518779685999297,
+  "ci_pct": [
+   -11.422952172445244,
+   2.9422702073203633
+  ],
+  "median_ratio_pct": -3.171256957516766,
+  "wins": 17,
+  "losses": 13,
+  "wil": 0.22102157481330342,
+  "sign": 0.5846647117286922,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 86,
+  "gm_ratio_pct": 0.006565554203263879,
+  "ci_pct": [
+   0.0005679872516761719,
+   0.015728967461869914
+  ],
+  "median_ratio_pct": 3.084561590593893e-05,
+  "wins": 40,
+  "losses": 46,
+  "wil": 0.2304423544878318,
+  "sign": 0.5900356111485566,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.4608847089756636
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 86,
+  "gm_ratio_pct": -13.666789869098073,
+  "ci_pct": [
+   -20.565540588928457,
+   -6.246614734981682
+  ],
+  "median_ratio_pct": -5.863490104268476,
+  "wins": 53,
+  "losses": 33,
+  "wil": 0.004828243731448533,
+  "sign": 0.03985362856053515,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.0434541935830368
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 86,
+  "gm_ratio_pct": -14.424079548586166,
+  "ci_pct": [
+   -22.05537052647618,
+   -6.168720122338323
+  ],
+  "median_ratio_pct": -13.280784878629747,
+  "wins": 53,
+  "losses": 33,
+  "wil": 0.002707545347554888,
+  "sign": 0.03985362856053515,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.02707545347554888
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 86,
+  "gm_ratio_pct": -6.691618200636218,
+  "ci_pct": [
+   -14.43033309984514,
+   1.81282877863147
+  ],
+  "median_ratio_pct": -3.8171406894320636,
+  "wins": 49,
+  "losses": 37,
+  "wil": 0.12266104940341035,
+  "sign": 0.2353798622110552,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.39819614750316024
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 86,
+  "gm_ratio_pct": -8.119931383188629,
+  "ci_pct": [
+   -15.079356791731835,
+   -0.2695996227945918
+  ],
+  "median_ratio_pct": -9.425121821328375,
+  "wins": 55,
+  "losses": 31,
+  "wil": 0.023647934915163125,
+  "sign": 0.012672513952314862,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.14464568679921413
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 86,
+  "gm_ratio_pct": -6.283251523779876,
+  "ci_pct": [
+   -13.416874748252706,
+   1.439497755017305
+  ],
+  "median_ratio_pct": -7.94186731299259,
+  "wins": 49,
+  "losses": 37,
+  "wil": 0.09954903687579006,
+  "sign": 0.2353798622110552,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.39819614750316024
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 86,
+  "gm_ratio_pct": -10.8655205398147,
+  "ci_pct": [
+   -17.856106063287815,
+   -3.439987628987573
+  ],
+  "median_ratio_pct": -6.922331144897131,
+  "wins": 48,
+  "losses": 38,
+  "wil": 0.0181845217031733,
+  "sign": 0.3318343545999156,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.14464568679921413
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 78,
+  "gm_ratio_pct": -3.1382467524532887,
+  "ci_pct": [
+   -10.43350794141552,
+   4.660227941396089
+  ],
+  "median_ratio_pct": 1.6535942096322698,
+  "wins": 35,
+  "losses": 43,
+  "wil": 0.9543232257373628,
+  "sign": 0.4282070357175807,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.9543232257373628
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 85,
+  "gm_ratio_pct": -11.882049591089494,
+  "ci_pct": [
+   -20.358193205255326,
+   -2.4042234356337455
+  ],
+  "median_ratio_pct": -7.477233277214124,
+  "wins": 50,
+  "losses": 35,
+  "wil": 0.018080710849901767,
+  "sign": 0.12839640292640084,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.14464568679921413
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 85,
+  "gm_ratio_pct": -8.27157563108305,
+  "ci_pct": [
+   -16.267147692785077,
+   0.8839312028938284
+  ],
+  "median_ratio_pct": -7.077825711100127,
+  "wins": 47,
+  "losses": 38,
+  "wil": 0.04888395197915389,
+  "sign": 0.3856694201192796,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.24441975989576947
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "oracle_dynamic_warp",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": -20.892139848329805,
+  "ci_pct": [
+   -29.09570836859212,
+   -11.627821364059121
+  ],
+  "median_ratio_pct": -21.170820909778186,
+  "wins": 38,
+  "losses": 18,
+  "wil": 0.0002661295315921684,
+  "sign": 0.01045481832189218,
+  "fail_m": 0,
+  "fail_ref": 0,
+  "holm": 0.002927424847513852
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 86,
+  "gm_ratio_pct": -13.672457750676802,
+  "ci_pct": [
+   -20.57299374792776,
+   -6.25375897183601
+  ],
+  "median_ratio_pct": -5.86334011620151,
+  "wins": 53,
+  "losses": 33,
+  "wil": 0.004828243731448533,
+  "sign": 0.03985362856053515,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 86,
+  "gm_ratio_pct": -14.429697713164714,
+  "ci_pct": [
+   -22.063054423964523,
+   -6.176647585820261
+  ],
+  "median_ratio_pct": -13.279719058451766,
+  "wins": 53,
+  "losses": 33,
+  "wil": 0.002707545347554888,
+  "sign": 0.03985362856053515,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 86,
+  "gm_ratio_pct": -6.697744010826067,
+  "ci_pct": [
+   -14.437610920189902,
+   1.8047713759782535
+  ],
+  "median_ratio_pct": -3.817154063746664,
+  "wins": 49,
+  "losses": 37,
+  "wil": 0.12266104940341035,
+  "sign": 0.2353798622110552,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 86,
+  "gm_ratio_pct": -8.12596342285884,
+  "ci_pct": [
+   -15.089370043074767,
+   -0.2792486486939305
+  ],
+  "median_ratio_pct": -9.423919829546957,
+  "wins": 55,
+  "losses": 31,
+  "wil": 0.023647934915163125,
+  "sign": 0.012672513952314862,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 86,
+  "gm_ratio_pct": -6.289404143745026,
+  "ci_pct": [
+   -13.424825442263987,
+   1.4338665911212578
+  ],
+  "median_ratio_pct": -7.957057610482021,
+  "wins": 49,
+  "losses": 37,
+  "wil": 0.09954903687579006,
+  "sign": 0.2353798622110552,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 86,
+  "gm_ratio_pct": -10.871372328175122,
+  "ci_pct": [
+   -17.864040401521763,
+   -3.4459280539542725
+  ],
+  "median_ratio_pct": -6.974720638083709,
+  "wins": 48,
+  "losses": 38,
+  "wil": 0.017974387516752108,
+  "sign": 0.3318343545999156,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 85,
+  "gm_ratio_pct": -11.887901528863898,
+  "ci_pct": [
+   -20.36486802523012,
+   -2.408789977346315
+  ],
+  "median_ratio_pct": -7.476350741819537,
+  "wins": 50,
+  "losses": 35,
+  "wil": 0.018080710849901767,
+  "sign": 0.12839640292640084,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 85,
+  "gm_ratio_pct": -8.277667341444673,
+  "ci_pct": [
+   -16.269885272915108,
+   0.8817183668735185
+  ],
+  "median_ratio_pct": -7.077540097782031,
+  "wins": 47,
+  "losses": 38,
+  "wil": 0.04838353939418281,
+  "sign": 0.3856694201192796,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "oracle_dynamic_warp",
+  "ref": "savior_none",
+  "n": 56,
+  "gm_ratio_pct": -20.897839680499995,
+  "ci_pct": [
+   -29.100847060465064,
+   -11.63571062998784
+  ],
+  "median_ratio_pct": -21.171108561727358,
+  "wins": 38,
+  "losses": 18,
+  "wil": 0.0002661295315921684,
+  "sign": 0.01045481832189218,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 80,
+  "gm_ratio_pct": -11.531288785754711,
+  "ci_pct": [
+   -18.548827075840368,
+   -4.167294327028193
+  ],
+  "median_ratio_pct": -12.731428407483703,
+  "wins": 49,
+  "losses": 31,
+  "wil": 0.006443967658948161,
+  "sign": 0.056664426345121144,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 80,
+  "gm_ratio_pct": -9.302772996040032,
+  "ci_pct": [
+   -15.249344155444556,
+   -2.9742215845874442
+  ],
+  "median_ratio_pct": -9.743317526961404,
+  "wins": 50,
+  "losses": 30,
+  "wil": 0.009868521610841969,
+  "sign": 0.03299261842647619,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 88,
+  "gm_ratio_pct": -0.5483916306235348,
+  "ci_pct": [
+   -6.863826110211246,
+   6.22549953567455
+  ],
+  "median_ratio_pct": 1.6857539380616071,
+  "wins": 41,
+  "losses": 47,
+  "wil": 0.8743681396590748,
+  "sign": 0.59428829514694,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 88,
+  "gm_ratio_pct": -5.080249887676391,
+  "ci_pct": [
+   -11.729006997115333,
+   2.03817224361027
+  ],
+  "median_ratio_pct": -3.0541450702666118,
+  "wins": 46,
+  "losses": 42,
+  "wil": 0.27748637104640994,
+  "sign": 0.7493290032022805,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 88,
+  "gm_ratio_pct": 9.73262263127932,
+  "ci_pct": [
+   1.679143501913516,
+   18.45383924866688
+  ],
+  "median_ratio_pct": 10.657462940929662,
+  "wins": 32,
+  "losses": 56,
+  "wil": 0.01075362781546193,
+  "sign": 0.013750385738502912,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 88,
+  "gm_ratio_pct": 4.73227421969189,
+  "ci_pct": [
+   -1.724472033957558,
+   11.575938612583725
+  ],
+  "median_ratio_pct": 2.61257845909153,
+  "wins": 37,
+  "losses": 51,
+  "wil": 0.13524171329885817,
+  "sign": 0.16544051293398976,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 88,
+  "gm_ratio_pct": 2.0378325651949414,
+  "ci_pct": [
+   -4.48487359213191,
+   9.19960325383784
+  ],
+  "median_ratio_pct": -1.314719556809496,
+  "wins": 46,
+  "losses": 42,
+  "wil": 0.668237542085965,
+  "sign": 0.7493290032022805,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 88,
+  "gm_ratio_pct": 7.541114773452251,
+  "ci_pct": [
+   0.015162717406091986,
+   15.650462465133398
+  ],
+  "median_ratio_pct": 7.1591529858578085,
+  "wins": 36,
+  "losses": 52,
+  "wil": 0.0994144875745967,
+  "sign": 0.1092954297773143,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 88,
+  "gm_ratio_pct": 2.640630035703051,
+  "ci_pct": [
+   -3.6725859548494055,
+   9.436327559476432
+  ],
+  "median_ratio_pct": 1.8071134891745722,
+  "wins": 39,
+  "losses": 49,
+  "wil": 0.4614438371712163,
+  "sign": 0.3373990368531198,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 88,
+  "gm_ratio_pct": -2.706453072585191,
+  "ci_pct": [
+   -8.558146048504799,
+   3.4747319034339696
+  ],
+  "median_ratio_pct": -0.3087618682143245,
+  "wins": 44,
+  "losses": 44,
+  "wil": 0.5407721427581955,
+  "sign": 1.0,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "dynamic(low+mid+high)",
+  "method": "oracle_dynamic_warp",
+  "ref": "oracle_dynamic",
+  "n": 58,
+  "gm_ratio_pct": -2.4896184031808044,
+  "ci_pct": [
+   -7.889216658955833,
+   2.976898533077521
+  ],
+  "median_ratio_pct": -0.7673530780795024,
+  "wins": 30,
+  "losses": 28,
+  "wil": 0.46438107089086034,
+  "sign": 0.8956832138895906,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "savior_none",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": 0.0072056592982816525,
+  "ci_pct": [
+   -0.00016197807023443644,
+   0.020195081723439756
+  ],
+  "median_ratio_pct": 1.5970641964457855e-05,
+  "wins": 27,
+  "losses": 29,
+  "wil": 0.683380703167618,
+  "sign": 0.8938530948350216,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "oracle_dynamic",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": -19.426423960004346,
+  "ci_pct": [
+   -27.90460274813482,
+   -10.105201280016606
+  ],
+  "median_ratio_pct": -13.420515855389848,
+  "wins": 36,
+  "losses": 20,
+  "wil": 0.0015511026381292634,
+  "sign": 0.044046546102150766,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "oracle_all_vehicles",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": -19.45475834587691,
+  "ci_pct": [
+   -28.58965082641448,
+   -9.241223755257389
+  ],
+  "median_ratio_pct": -15.181593844193198,
+  "wins": 38,
+  "losses": 18,
+  "wil": 0.0019912450552290756,
+  "sign": 0.01045481832189218,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_naive",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": -5.7475610850108545,
+  "ci_pct": [
+   -16.116974151268238,
+   5.893917577644614
+  ],
+  "median_ratio_pct": -2.768301832888409,
+  "wins": 32,
+  "losses": 24,
+  "wil": 0.2964359765648924,
+  "sign": 0.34968195298368476,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_full_p2",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": -9.171722534118521,
+  "ci_pct": [
+   -18.242206949328732,
+   1.1262888465773946
+  ],
+  "median_ratio_pct": -15.740331957502129,
+  "wins": 35,
+  "losses": 21,
+  "wil": 0.04655474923943816,
+  "sign": 0.08142681460950618,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_dyn",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": -7.353540178901962,
+  "ci_pct": [
+   -16.788080277837935,
+   3.1631025138024293
+  ],
+  "median_ratio_pct": -10.829391415055179,
+  "wins": 33,
+  "losses": 23,
+  "wil": 0.14879413199058739,
+  "sign": 0.2288055412343561,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_pot",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": -13.046537372555377,
+  "ci_pct": [
+   -21.649733132672257,
+   -3.7624097345555163
+  ],
+  "median_ratio_pct": -11.922395516731665,
+  "wins": 36,
+  "losses": 20,
+  "wil": 0.013451121088771738,
+  "sign": 0.044046546102150766,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "openvins+fast15",
+  "ref": "openvins",
+  "n": 53,
+  "gm_ratio_pct": -2.4353211425320986,
+  "ci_pct": [
+   -11.488257474545282,
+   7.017414732004568
+  ],
+  "median_ratio_pct": 2.1475881684168696,
+  "wins": 24,
+  "losses": 29,
+  "wil": 0.8559895157548089,
+  "sign": 0.5831321542611763,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": -12.07603699063904,
+  "ci_pct": [
+   -23.043509439252365,
+   -0.20328295089580006
+  ],
+  "median_ratio_pct": -3.5414471540179515,
+  "wins": 31,
+  "losses": 25,
+  "wil": 0.13765263379982765,
+  "sign": 0.5044037600228255,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": -7.887992283193035,
+  "ci_pct": [
+   -17.454930281170956,
+   2.6346267991933514
+  ],
+  "median_ratio_pct": -7.826757443743892,
+  "wins": 29,
+  "losses": 27,
+  "wil": 0.18364852801500864,
+  "sign": 0.8938530948350216,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "oracle_dynamic_warp",
+  "ref": "openvins",
+  "n": 56,
+  "gm_ratio_pct": -20.892139848329805,
+  "ci_pct": [
+   -29.09570836859212,
+   -11.627821364059121
+  ],
+  "median_ratio_pct": -21.170820909778186,
+  "wins": 38,
+  "losses": 18,
+  "wil": 0.0002661295315921684,
+  "sign": 0.01045481832189218,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "oracle_dynamic",
+  "ref": "savior_none",
+  "n": 56,
+  "gm_ratio_pct": -19.432229399058055,
+  "ci_pct": [
+   -27.911633238922494,
+   -10.111762370043053
+  ],
+  "median_ratio_pct": -13.420299313653672,
+  "wins": 36,
+  "losses": 20,
+  "wil": 0.0015511026381292634,
+  "sign": 0.044046546102150766,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "oracle_all_vehicles",
+  "ref": "savior_none",
+  "n": 56,
+  "gm_ratio_pct": -19.46056174339843,
+  "ci_pct": [
+   -28.593266990629186,
+   -9.241259902150967
+  ],
+  "median_ratio_pct": -15.181149936264227,
+  "wins": 38,
+  "losses": 18,
+  "wil": 0.0019912450552290756,
+  "sign": 0.01045481832189218,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_naive",
+  "ref": "savior_none",
+  "n": 56,
+  "gm_ratio_pct": -5.754352105301597,
+  "ci_pct": [
+   -16.122769062543963,
+   5.890933339004967
+  ],
+  "median_ratio_pct": -2.767685223109939,
+  "wins": 32,
+  "losses": 24,
+  "wil": 0.2964359765648924,
+  "sign": 0.34968195298368476,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_full_p2",
+  "ref": "savior_none",
+  "n": 56,
+  "gm_ratio_pct": -9.178266838778903,
+  "ci_pct": [
+   -18.256692145948573,
+   1.1209412202340507
+  ],
+  "median_ratio_pct": -15.778363195359034,
+  "wins": 35,
+  "losses": 21,
+  "wil": 0.04655474923943816,
+  "sign": 0.08142681460950618,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_dyn",
+  "ref": "savior_none",
+  "n": 56,
+  "gm_ratio_pct": -7.360215486148681,
+  "ci_pct": [
+   -16.79940859790081,
+   3.155220245978918
+  ],
+  "median_ratio_pct": -10.868567062972723,
+  "wins": 33,
+  "losses": 23,
+  "wil": 0.14879413199058739,
+  "sign": 0.2288055412343561,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_pot",
+  "ref": "savior_none",
+  "n": 56,
+  "gm_ratio_pct": -13.052802491377246,
+  "ci_pct": [
+   -21.655386126418662,
+   -3.7687970615734145
+  ],
+  "median_ratio_pct": -11.923477192721565,
+  "wins": 36,
+  "losses": 20,
+  "wil": 0.013451121088771738,
+  "sign": 0.044046546102150766,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "savior_none",
+  "n": 56,
+  "gm_ratio_pct": -12.08237203537329,
+  "ci_pct": [
+   -23.04588119140709,
+   -0.2084540510219668
+  ],
+  "median_ratio_pct": -3.5419552813355737,
+  "wins": 31,
+  "losses": 25,
+  "wil": 0.13765263379982765,
+  "sign": 0.5044037600228255,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "savior_none",
+  "n": 56,
+  "gm_ratio_pct": -7.89462908241677,
+  "ci_pct": [
+   -17.46064733854078,
+   2.6254858028313066
+  ],
+  "median_ratio_pct": -7.82663858478867,
+  "wins": 29,
+  "losses": 27,
+  "wil": 0.18097408261285086,
+  "sign": 0.8938530948350216,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "oracle_dynamic_warp",
+  "ref": "savior_none",
+  "n": 56,
+  "gm_ratio_pct": -20.897839680499995,
+  "ci_pct": [
+   -29.100847060465064,
+   -11.63571062998784
+  ],
+  "median_ratio_pct": -21.171108561727358,
+  "wins": 38,
+  "losses": 18,
+  "wil": 0.0002661295315921684,
+  "sign": 0.01045481832189218,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_dyn+fast15",
+  "ref": "openvins+fast15",
+  "n": 55,
+  "gm_ratio_pct": -9.398624413341118,
+  "ci_pct": [
+   -18.299574920156413,
+   0.340876949683544
+  ],
+  "median_ratio_pct": -4.821422863051616,
+  "wins": 31,
+  "losses": 24,
+  "wil": 0.09379508006318721,
+  "sign": 0.4187541882690154,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_pot+fast15",
+  "ref": "openvins+fast15",
+  "n": 55,
+  "gm_ratio_pct": -7.601741326184719,
+  "ci_pct": [
+   -14.774948481929673,
+   0.03142380101883724
+  ],
+  "median_ratio_pct": -7.83783397183665,
+  "wins": 34,
+  "losses": 21,
+  "wil": 0.06288019177830834,
+  "sign": 0.10478948242660333,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_dyn",
+  "ref": "yolo_naive",
+  "n": 58,
+  "gm_ratio_pct": -3.092361272581823,
+  "ci_pct": [
+   -10.290978603979916,
+   4.369502759819088
+  ],
+  "median_ratio_pct": -0.5248178658735281,
+  "wins": 30,
+  "losses": 28,
+  "wil": 0.6012467316122252,
+  "sign": 0.8956832138895906,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_pot",
+  "ref": "yolo_naive",
+  "n": 58,
+  "gm_ratio_pct": -8.52222981978532,
+  "ci_pct": [
+   -16.93473870812029,
+   0.670885992663961
+  ],
+  "median_ratio_pct": -6.879933063637256,
+  "wins": 32,
+  "losses": 26,
+  "wil": 0.13011995350141053,
+  "sign": 0.5118423084381691,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_all_vehicles",
+  "n": 58,
+  "gm_ratio_pct": 15.179143471169553,
+  "ci_pct": [
+   4.7995097272234055,
+   26.095860970648953
+  ],
+  "median_ratio_pct": 14.696103586085396,
+  "wins": 17,
+  "losses": 41,
+  "wil": 0.002767774652282858,
+  "sign": 0.0022325516199429235,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_all_vehicles",
+  "n": 58,
+  "gm_ratio_pct": 8.725497333045308,
+  "ci_pct": [
+   -0.34906571517443474,
+   18.106143834524335
+  ],
+  "median_ratio_pct": 10.273552855878364,
+  "wins": 20,
+  "losses": 38,
+  "wil": 0.02450282133892816,
+  "sign": 0.024746035842440804,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "oracle_dynamic",
+  "ref": "oracle_all_vehicles",
+  "n": 58,
+  "gm_ratio_pct": 1.8044779369457364,
+  "ci_pct": [
+   -6.645558167682763,
+   11.0930859312798
+  ],
+  "median_ratio_pct": -2.3654397793462567,
+  "wins": 31,
+  "losses": 27,
+  "wil": 0.8313935979287638,
+  "sign": 0.6940040940761318,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_dyn",
+  "ref": "oracle_dynamic",
+  "n": 58,
+  "gm_ratio_pct": 13.137600432966835,
+  "ci_pct": [
+   4.091638981516632,
+   23.144038185806437
+  ],
+  "median_ratio_pct": 13.757017471831666,
+  "wins": 20,
+  "losses": 38,
+  "wil": 0.012528172828660093,
+  "sign": 0.024746035842440804,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_p4_pot",
+  "ref": "oracle_dynamic",
+  "n": 58,
+  "gm_ratio_pct": 6.798344764742303,
+  "ci_pct": [
+   -1.4359267444422286,
+   15.79639705314344
+  ],
+  "median_ratio_pct": 4.774818712512796,
+  "wins": 24,
+  "losses": 34,
+  "wil": 0.14023478073000176,
+  "sign": 0.23704711476271959,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "yolo_full_p2",
+  "ref": "yolo_naive",
+  "n": 58,
+  "gm_ratio_pct": -5.302875352881009,
+  "ci_pct": [
+   -11.932301248622645,
+   1.5981997911969081
+  ],
+  "median_ratio_pct": -1.340885943641723,
+  "wins": 32,
+  "losses": 26,
+  "wil": 0.2027994523572637,
+  "sign": 0.5118423084381691,
+  "fail_m": 0,
+  "fail_ref": 0
+ },
+ {
+  "group": "mid+high",
+  "method": "oracle_dynamic_warp",
+  "ref": "oracle_dynamic",
+  "n": 58,
+  "gm_ratio_pct": -2.4896184031808044,
+  "ci_pct": [
+   -7.889216658955833,
+   2.976898533077521
+  ],
+  "median_ratio_pct": -0.7673530780795024,
+  "wins": 30,
+  "losses": 28,
+  "wil": 0.46438107089086034,
+  "sign": 0.8956832138895906,
+  "fail_m": 0,
+  "fail_ref": 0
+ }
+]

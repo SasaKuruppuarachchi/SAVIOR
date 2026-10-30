@@ -1,0 +1,91 @@
+%YAML:1.0
+# DynaVINS stereo-IMU settings for SAVIOR-Warehouse (M3b, evaluation-only baseline).
+# DynaVINS ships no EuRoC config; its only stereo-IMU simulation setting is config/viode/calibration_stereo.yaml
+# (commit 0b4f492), the authors' published stereo setting. Template = that file, every non-calibration parameter at
+# the authors' value (max_cnt 150, min_dist 15, F_threshold 2, max_depth 10, solver 0.3 s / 10 it., lambda 2,
+# momentum 0.2, convergence 0.9, margin 0.1). Changed vs. the template ONLY (from the warehouse kalibr files):
+#   - cam0/cam1 calib files: pinhole fx=fy=470, cx=336, cy=188, no distortion; image 672x376;
+#   - body_T_cam0 / body_T_cam1 = kalibr T_imu_cam (identical to the VINS-Fusion warehouse config);
+#   - IMU noise: the template's values are VIODE-specific, so the same derivation as the VINS-Fusion warehouse config
+#     is used (upstream VINS-Fusion EuRoC values scaled by warehouse/EuRoC kalibr density): acc_n 0.08, gyr_n 0.0144,
+#     acc_w 1.0e-4, gyr_w 1.03e-4;
+#   - g_norm 9.81 (simulator gravity);  td 0 (shared clock, unchanged).
+# output_path is rewritten by the harness at run time. BA only (no loop module), as for VIODE.
+
+#common parameters
+#support: 1 imu 1 cam; 1 imu 2 cam: 2 cam; 
+imu: 1         
+num_of_cam:2
+
+imu_topic: "/imu0"
+image0_topic: "/cam0/image_raw"
+image1_topic: "/cam1/image_raw"
+output_path: "/home/seungwon/.ros/dynaVINS"
+
+cam0_calib: "cam0_pinhole.yaml"
+cam1_calib: "cam1_pinhole.yaml"
+image_width: 672
+image_height: 376
+   
+
+# Extrinsic parameter between IMU and Camera.
+estimate_extrinsic: 0   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
+                        # 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
+
+body_T_cam0: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [0.0, 0.0, 1.0, 0.0,
+          -1.0, 0.0, 0.0, 0.06,
+          0.0, -1.0, 0.0, 0.0,
+          0.0, 0.0, 0.0, 1.0]
+
+body_T_cam1: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [0.0, 0.0, 1.0, 0.0,
+          -1.0, 0.0, 0.0, -0.06,
+          0.0, -1.0, 0.0, 0.0,
+          0.0, 0.0, 0.0, 1.0]
+
+#Multiple thread support
+multiple_thread: 1
+
+#feature traker paprameters
+max_cnt: 150           # max feature number in feature tracking
+min_dist: 15            # min distance between two features
+freq: 10                # frequence (Hz) of publish tracking result. At least 10Hz for good estimation. If set 0, the frequence will be same as raw image 
+F_threshold: 2.0        # ransac threshold (pixel)
+max_depth: 10.0         # max estimated depth (m)
+show_track: 1
+show_image_feat_weight: 1
+# publish tracking image as topic
+flow_back: 1            # perform forward and backward optical flow to improve feature tracking accuracy
+
+#dynaVINS parameters
+dyna_on:   true # do not change it to false
+regularization_lambda:  2.0
+momentum_on:      true
+momentum_lambda:   0.2
+alternating_converge:   0.9
+margin_feature_thresh:  0.1
+
+
+#optimization parameters
+max_solver_time: 0.3  # max solver itration time (ms), to guarantee real time
+max_num_iterations: 10   # max solver itrations, to guarantee real time
+keyframe_parallax: 10.0 # keyframe selection threshold (pixel)
+
+#imu parameters       The more accurate parameters you provide, the better performance
+acc_n: 0.08         # accelerometer measurement noise standard deviation.
+gyr_n: 0.0144       # gyroscope measurement noise standard deviation.
+acc_w: 1.0e-4       # accelerometer bias random work noise standard deviation.
+gyr_w: 1.03e-4      # gyroscope bias random work noise standard deviation.
+g_norm: 9.81        # gravity magnitude
+
+#unsynchronization parameters
+estimate_td: 0                      # online estimate time offset between camera and imu
+td: 0.0                             # initial value of time offset. unit: s. readed image clock + td = real image clock (IMU clock)
+

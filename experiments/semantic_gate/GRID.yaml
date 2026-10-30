@@ -1,0 +1,73 @@
+# ============================================================================================================
+# SAVIOR-SG (semantic chi2 gate) - PRE-DECLARED t1 GRID AND SELECTION RULE. Written BEFORE any SG / NIS run (no SG or NIS
+# trajectory existed when this file was written). md5 in GRID.md5; read-only. scripts/run_sg.sh refuses sg_* / *_nis
+# variants unless this file's md5 matches.
+# ============================================================================================================
+status: PRE-DECLARED (t1 development grid; the held-out decision belongs to the coordinator)
+written_at: '2026-10-27'
+written_by: semantic-gate agent (task from the coordinator, author idea of 2026-10-27)
+data: warehouse t1 ONLY (aisles_t1_L0..L3, hall_t1_L0..L3), 10 start offsets 0.0..1.8 s, rate 0.5, back-end v2
+  (results/backend_v2/backend_config.yaml), deterministic_processing, mask_policy wait (30 s), dynamic_mask_max_pending 0.
+  No t2 / VIODE / OpenLORIS / uHumans2 / Monado / t3 data are opened.
+method:
+  perception: frozen SAVIOR (sens_fix1 pset, results/p7/final_config.yaml) + compose.movable_static_value=64 (kept
+    movable-class instances, i.e. status unpromoted / still, written as 64 into the keep pixels of both masks)
+  fork: savior_semantic_gate=true; savior_sg_mult_static = m_s; savior_sg_mult_band = m_b; savior_sg_keep_band = kb.
+    Labels per observation from the raw dynamic mask (0 background, 1..127 movable-static, >= 128 band); multiplier =
+    up_*_chi2_multipler (1) x tightest label present (background 1.0); MSCKF and SLAM delayed init: labels over the track,
+    SLAM update: label of the current observation. keep_band: front-end rejects only >= 224 (core).
+grid:
+  m_s: [0.25, 0.5]
+  m_b: [0.25, 0.5]
+  keep_band: [false, true]
+  variants: sg_s{025|050}_b{025|050}_kb{0|1}  (8 points, scripts/sg_variants.py)
+  band_inertness_note: >-
+    The frozen SAVIOR pset has extension.enable=false and compose.right_fallback=median, so its masks contain no 128..254
+    pixel (t1 savior_stats ext_px = 0 in every frame, feature_stats n_in_band = 0). m_b can then never act: no feature can
+    carry the band label. keep_band changes only the front-end threshold 128 -> 224, which is equivalent for 0/64/255
+    masks except that relaxation (threshold 128 -> 224) is disabled, which can change the extra top-off detection on a
+    relaxed tracker (re)initialization frame. Hence the run plan below.
+  run_plan:
+    full_t1: the 4 points with m_b = m_s (sg_s025_b025_kb0/1, sg_s050_b050_kb0/1), 80 runs each
+    inertness_check: the 4 points with m_b != m_s run on hall_t1_L3 + aisles_t1_L2 (10 offsets each). If all 20 trajectories
+      are md5-identical to their m_b = m_s twin (same m_s, same kb) AND the [SAVIOR-GATE] counters of the full-t1 twin
+      report 0 band-labelled chi2 tests, the twin's full-t1 result is used for that point. Otherwise the point is run on
+      the full t1 and analysed on its own.
+  tie_break: points with md5-identical t1 trajectories are one result; the representative is the one with m_b = m_s.
+nis_control:
+  formulation: >-
+    NIS-adaptive gate (non-semantic self-tuning): chi2 > up_*_chi2_multipler x lambda x chi2_0.95(dof), lambda = median over
+    the last W chi2 tests of chi2 / chi2_0.5(dof) (scalar innovation-covariance scale of innovation-based adaptive
+    estimation, Mehra 1970 / Mohamed & Schwarz 1999, with a robust median window estimate), collected before gating (no
+    feedback), lambda = 1 until the window is full, clamped to [0.05, 20], refreshed once per update call; separate
+    estimators for the MSCKF and the SLAM updater (SLAM delayed init uses the SLAM lambda).
+  settings: savior_nis_gate=true, savior_nis_window=200 (default), clamp [0.05, 20] (defaults). NOT tuned.
+  variants:
+    sf1_nis: SAVIOR (sens_fix1) + NIS gate (the non-semantic counterpart of SAVIOR-SG)
+    ov_nis: OpenVINS-v2 + NIS gate (the self-tuning counterpart of the t1-tuned ovchi_best)
+selection_rule: >-
+  Among the SG grid points, select the lowest pooled paired geometric-mean ATE change vs OpenVINS-v2 on t1 group "all"
+  (8 sequences x 10 offsets, bv2analyze.py statistics), subject to (i) 0 failures (ATE > 2 m) over the 80 t1 runs and
+  (ii) no worse than SAVIOR (sens_fix1) at L0: the 95 % bootstrap CI of the paired gm ATE change vs sens_fix1 at L0 must
+  not lie entirely above 0. If no point satisfies (i) and (ii), no SG configuration is selected (reported as such). The NIS
+  control is reported, not selected (its settings are fixed above).
+comparators_t1:
+  openvins: results/backend_v2/runs (OpenVINS-v2)
+  sens_fix1: results/backend_v2/runs (SAVIOR)
+  yolo_naive: results/backend_v2/runs (Y-Cls)
+  ovchi_best: results/review_runs/runs/t1/*/ovchi_025 (= ovchi_best settings, x0.25 both gates, frozen install)
+  sf1_chibest: run here (scripts/sg_variants.py sf1_chibest, frozen install; the review-runs definition, never run on t1)
+statistics: as results/backend_v2/scripts/bv2analyze.py - ATE RMSE (posyaw, full sequence; savior-eval multi), paired
+  per-offset log ratios, failures capped at 10 m, geometric-mean ratio - 1, 95 % bootstrap CI (20000, seed 0), Wilcoxon
+  signed-rank, Holm within each (family, group); failure = ATE > 2 m; groups L0, L1, L2, L3, L0+L1, L2+L3, hall_L3, all.
+  Families: every SG point / NIS / sf1_chibest / ovchi_best vs openvins; each vs sens_fix1; descriptive: vs ovchi_best.
+identity_proofs: >-
+  Flags off, SG build: ctl_openvins, ctl_savior_none, ctl_sens_fix1 and ctl_sf1_ms64 (perception 64 level on, fork SG off)
+  on all 8 t1 sequences x offsets 0.0 / 0.8 / 1.6 (run indices 1, 5, 9); every trajectory must be md5-identical to
+  results/backend_v2/runs/<seq>/<base>/run_XX (ctl_sf1_ms64 to sens_fix1). A failure stops the study until fixed.
+validity: every run - clean exit, non-empty trajectory, FINAL [SAVIOR-MASK] fallback_latest = fallback_empty = late_masks = 0
+  (mask methods), feature_stats n_in_core = 0, poses >= same-offset OpenVINS-v2 poses - 1; invalid runs are re-run.
+code_changes_policy: a bug fix to the SG / NIS code after this declaration invalidates and re-runs every affected run;
+  the grid, the NIS settings and the selection rule do not change.
+freeze: after the t1 runs - results/semantic_gate/FREEZE.yaml + FREEZE.md5 (selected SG point and the NIS control, exact
+  settings, config / code md5s, image), read-only. No held-out run.
