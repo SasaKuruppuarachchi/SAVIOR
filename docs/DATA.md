@@ -33,7 +33,7 @@ holds the archives and the manifest of the same record.
 The COCO-pretrained `yolo26*-seg.pt` used for the COCO-based methods are not redistributed; they come from Ultralytics
 (`yolo export model=yolo26s-seg.pt ...`, see the README, section "Segmenter weights").
 
-### Record B (`<DOI-B>`): "SAVIOR-Warehouse confirmatory split, part 1"
+### Record B ([10.5281/zenodo.23819448](https://doi.org/10.5281/zenodo.23819448)): "SAVIOR-Warehouse confirmatory split, part 1"
 
 | archive | content | extracts to |
 |---|---|---|
@@ -41,12 +41,11 @@ The COCO-pretrained `yolo26*-seg.pt` used for the COCO-based methods are not red
 | `warehouse_t3_gt_meta.tar.gz` | ground truth and metadata for all 96 confirmatory sequences | `data/warehouse/raw/<seq>/` (non-image files only) and `data/warehouse/logs/` |
 | `MANIFEST.md5` | | |
 
-### Record C (`<DOI-C>`): "part 2"
+### Record C ([10.5281/zenodo.23819583](https://doi.org/10.5281/zenodo.23819583)): "SAVIOR-Warehouse confirmatory split, part 2"
 
 `warehouse_t3_bags_ms.tar` and `warehouse_t3_bags_wx.tar` (environments `ms` and `wx`, extract as in record B), the same
 `warehouse_t3_gt_meta.tar.gz`, and `MANIFEST.md5`.
 
-(`<DOI-B>` and `<DOI-C>` are assigned when records B and C are published.)
 
 ### Where the code looks for the files
 

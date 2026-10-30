@@ -127,7 +127,7 @@ Evaluation against ground truth (TUM files), single run or Monte-Carlo over `run
 
 - **SAVIOR-Warehouse** (the synthetic stereo-inertial dataset generated for this work): ROS 2 bags, ground truth and
   metadata on Zenodo, DOI [10.5281/zenodo.23803392](https://doi.org/10.5281/zenodo.23803392); the confirmatory split is in
-  two further records. Extraction layout and validation: [`docs/DATA.md`](docs/DATA.md). The generator is in
+  two further records, [10.5281/zenodo.23819448](https://doi.org/10.5281/zenodo.23819448) (environments fw, sw) and [10.5281/zenodo.23819583](https://doi.org/10.5281/zenodo.23819583) (ms, wx). Extraction layout and validation: [`docs/DATA.md`](docs/DATA.md). The generator is in
   [`savior_datasets/warehouse/`](savior_datasets/warehouse/README.md).
 - **Third-party datasets** (VIODE, OpenLORIS-Scene, uHumans2, Monado SLAM dataset) are not re-hosted. Download them from
   their authors and convert them with `savior_bringup/tools/prepare_datasets.sh` (uHumans2, OpenLORIS) and the
