@@ -10,6 +10,7 @@ libraries, no tracking. The paper is under review; every number on the page is q
 - `media/fig/`: figures copied unchanged from `paper/figures/*.png`
 - `media/promo/`: crops of `fig_promotion.png` (panels 1-7 and the legend) for the association-tree animation
 - `media/env/`, `media/people/`: stills from the SAVIOR-Warehouse raw cam0 images, small author portraits
+- `media/hero-bg.jpg`: blurred crop of one frame of the teaser clip, used as the decorative hero background
 
 ## How the media were made
 Scripts are outside this branch, in `/home/sasa/workspace/SAVIOR_site_tools/` (not part of the site). Everything ran in

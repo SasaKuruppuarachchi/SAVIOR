@@ -24,3 +24,12 @@
   steps.forEach(function(s){var im=new Image();im.src=s.src;});
   show(0); if(!reduce) go();
 })();
+// theme toggle (default: dark, or the OS light preference; choice kept in localStorage if available)
+(function(){
+  var b=document.getElementById('theme-toggle'),l=document.getElementById('theme-label');if(!b)return;
+  var root=document.documentElement;
+  function isLight(){var t=root.getAttribute('data-theme');return t?t==='light':(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches);}
+  function sync(){var x=isLight();b.setAttribute('aria-checked',x?'true':'false');l.textContent=x?'Light mode':'Light mode';}
+  b.onclick=function(){var t=isLight()?'dark':'light';root.setAttribute('data-theme',t);try{localStorage.setItem('savior-theme',t);}catch(e){}sync();};
+  sync();
+})();
