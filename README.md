@@ -9,11 +9,12 @@ libraries, no tracking. The paper is under review; every number on the page is q
 - `media/*.mp4` + `*-poster.jpg`: videos (H.264, yuv420p, faststart); `media/teaser.gif`: small GIF for the README of the code repo
 - `media/fig/`: figures copied unchanged from `paper/figures/*.png`
 - `media/promo/`: crops of `fig_promotion.png` (panels 1-7 and the legend) for the association-tree animation
-- `media/env/`, `media/people/`: stills from the SAVIOR-Warehouse raw cam0 images, small author portraits
+- `media/env/`: stills from the SAVIOR-Warehouse raw cam0 images
+- `media/logos/zenodo.svg`: Zenodo wordmark (from about.zenodo.org) for the dataset link; the GitHub mark is inline SVG
 - `media/hero-bg.jpg`: blurred crop of one frame of the teaser clip, used as the decorative hero background
 
 ## How the media were made
-Scripts are outside this branch, in `/home/sasa/workspace/SAVIOR_site_tools/` (not part of the site). Everything ran in
+Scripts are outside this branch, in `/home/sasa/workspace/publish/SAVIOR_site_tools/` (not part of the site). Everything ran in
 Docker (`savior:humble-cuda12.8` for Python/OpenCV/matplotlib, `linuxserver/ffmpeg:version-6.1.1-cli` for H.264/GIF).
 Sources were mounted read-only.
 - `teaser.mp4`/`teaser.gif`: sw03_t3_L3, frames 1805-2044, Y-Cls (`yolo_naive`) | SAVIOR (`sens_fix1`) masks of `off_0.0`, overlaid on cam0 (red = 255).

@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SAVIOR: Semantic-Aware Visual-Inertial Odometry for Dynamic Environments</title>
-<meta name="description" content="SAVIOR decides conservatively per instance which objects are dynamic outliers and acts on an unmodified VIO estimator only through masks. Project page: method, SAVIOR-Warehouse dataset, results, real-time node. Paper under review.">
-<meta property="og:title" content="SAVIOR: Semantic-Aware VIO for Dynamic Environments">
-<meta property="og:description" content="Selective, per-instance masking for stereo-inertial odometry in warehouses. Paper under review.">
+<meta name="description" content="When does semantic masking help visual-inertial odometry? A controlled study in simulated warehouse scenes, with the SAVIOR front end, the SAVIOR-Warehouse dataset and a real-time node. Paper under review.">
+<meta property="og:title" content="SAVIOR: When Does Semantic Masking Help VIO?">
+<meta property="og:description" content="A controlled study of semantic masking for stereo-inertial odometry in warehouses. Paper under review.">
 <meta property="og:image" content="https://sasakuruppuarachchi.github.io/SAVIOR/media/teaser-poster.jpg">
 <meta name="color-scheme" content="light dark">
 <script>try{var t=localStorage.getItem("savior-theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
@@ -20,180 +20,155 @@
  <div class="layout hero-in">
   <h1 id="top">SAVIOR</h1>
   <p class="sub"><span class="ac">S</span>emantic-<span class="ac">A</span>ware <span class="ac">V</span>isual-<span class="ac">I</span>nertial <span class="ac">O</span>dometry for Dynamic Environments</p>
-  <div class="authors">
-   <div class="author"><img src="media/people/sasa.jpg" width="48" height="48" alt="Portrait of Sasanka Kuruppu Arachchige"><span>Sasanka Kuruppu Arachchige<small>Tampere University, Finland</small></span></div>
-   <div class="author"><img src="media/people/kyuman.jpg" width="48" height="48" alt="Portrait of Kyuman Lee"><span>Kyuman Lee<small>School of Space Engineering Sciences, Kyungpook National University, Daegu, Korea (corresponding author)</small></span></div>
-  </div>
-  <p class="review">Paper: under review</p>
+  <p class="authors"><span>Sasanka Kuruppu Arachchige<sup>1</sup></span> <span>Kyuman Lee<sup>2,*</sup></span></p>
+  <p class="affil"><sup>1</sup>Tampere University, Finland &nbsp; <sup>2</sup>Kyungpook National University, Daegu, Korea &nbsp; <sup>*</sup>Corresponding author</p>
+  <p class="review">Paper under review: <i>When Does Semantic Masking Help Visual-Inertial Odometry? A Controlled Study in Simulated Warehouse Scenes</i></p>
   <div class="links">
-   <span class="tl off" aria-disabled="true" title="The paper is under review">Paper (under review)</span>
-   <a class="tl" href="https://github.com/SasaKuruppuarachchi/SAVIOR">Code<svg viewBox="0 0 16 16" height="1em" width="1em" aria-hidden="true"><path fill="currentColor" d="M6.2 3.2a.75.75 0 0 0 0 1.06L9.94 8 6.2 11.74a.75.75 0 1 0 1.06 1.06l4.27-4.27a.75.75 0 0 0 0-1.06L7.26 3.2a.75.75 0 0 0-1.06 0z"/></svg></a>
-   <a class="tl" href="https://doi.org/10.5281/zenodo.23803392">Dataset &amp; artefact (Zenodo A)<svg viewBox="0 0 16 16" height="1em" width="1em" aria-hidden="true"><path fill="currentColor" d="M6.2 3.2a.75.75 0 0 0 0 1.06L9.94 8 6.2 11.74a.75.75 0 1 0 1.06 1.06l4.27-4.27a.75.75 0 0 0 0-1.06L7.26 3.2a.75.75 0 0 0-1.06 0z"/></svg></a>
-   <a class="tl" href="https://doi.org/10.5281/zenodo.23819448">Confirmatory split B<svg viewBox="0 0 16 16" height="1em" width="1em" aria-hidden="true"><path fill="currentColor" d="M6.2 3.2a.75.75 0 0 0 0 1.06L9.94 8 6.2 11.74a.75.75 0 1 0 1.06 1.06l4.27-4.27a.75.75 0 0 0 0-1.06L7.26 3.2a.75.75 0 0 0-1.06 0z"/></svg></a>
-   <a class="tl" href="https://doi.org/10.5281/zenodo.23819583">Confirmatory split C<svg viewBox="0 0 16 16" height="1em" width="1em" aria-hidden="true"><path fill="currentColor" d="M6.2 3.2a.75.75 0 0 0 0 1.06L9.94 8 6.2 11.74a.75.75 0 1 0 1.06 1.06l4.27-4.27a.75.75 0 0 0 0-1.06L7.26 3.2a.75.75 0 0 0-1.06 0z"/></svg></a>
+   <a class="lk" href="https://github.com/SasaKuruppuarachchi/SAVIOR"><svg viewBox="0 0 16 16" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>Code</span></a>
+   <a class="lk" href="https://doi.org/10.5281/zenodo.23803392"><img src="media/logos/zenodo.svg" width="83" height="30" alt="Zenodo"><span>Dataset &amp; artefact</span></a>
+   <span class="lk off" aria-disabled="true" title="The paper is under review"><svg viewBox="0 0 16 16" width="30" height="30" aria-hidden="true"><path fill="currentColor" d="M3.5 0A1.5 1.5 0 0 0 2 1.5v13A1.5 1.5 0 0 0 3.5 16h9a1.5 1.5 0 0 0 1.5-1.5V4.6L9.4 0H3.5zM9 1.2 12.8 5H9.5a.5.5 0 0 1-.5-.5V1.2zM4.5 8h7v1h-7V8zm0 2.5h7v1h-7v-1zm0 2.5h5v1h-5v-1z"/></svg><span>Paper (under review)</span></span>
   </div>
+  <p class="lk-more">Test split on Zenodo: <a href="https://doi.org/10.5281/zenodo.23819448">record B</a> &middot; <a href="https://doi.org/10.5281/zenodo.23819583">record C</a></p>
  </div>
 </section>
 <nav aria-label="Sections"><div class="layout">
-<a href="#tldr">TL;DR</a><a href="#method">Method</a><a href="#dataset">Dataset</a><a href="#masks">Masks in action</a><a href="#results">Results</a><a href="#jetson">Real time</a><a href="#repro">Reproducibility</a><a href="#bibtex">BibTeX</a>
+<a href="#tldr">In one minute</a><a href="#method">Method</a><a href="#dataset">Dataset</a><a href="#results">Results</a><a href="#limits">Limitations</a><a href="#repro">Code &amp; data</a><a href="#bibtex">Cite</a>
 </div></nav>
 <section class="bg0" id="teaser-sec"><div class="layout" style="padding:0"><figure>
  <video id="teaser" autoplay muted loop playsinline controls preload="metadata" poster="media/teaser-poster.jpg" aria-describedby="teaser-cap">
   <source src="media/teaser.mp4" type="video/mp4">
  </video>
- <figcaption id="teaser-cap"><b>Class-level masking versus SAVIOR.</b> Sequence sw03_t3_L3 of SAVIOR-Warehouse (heavy traffic, camera cam0, frames 1805 to 2044 at 20 Hz, real time). Both panels show the real segmenter masks (YOLO26-seg) exported by the offline replay at start offset 0.0, overlaid in red (core, value 255). <b>Left, Y-Cls:</b> every box, pallet and trolley is masked, including static ones on racks. <b>Right, SAVIOR:</b> only the dynamic outliers are masked; static pallets and boxes are kept. The segmenter is not perfect, and the masks are shown as exported, without cleaning.</figcaption>
+ <figcaption id="teaser-cap"><b>Left: mask every movable object. Right: SAVIOR, mask only what moves.</b> Heavy traffic in SAVIOR-Warehouse, real segmenter output in red. Masking every box, pallet and trolley also removes the parked ones on the racks, which are some of the best landmarks the estimator has.</figcaption>
 </figure></div></section>
 
 <main>
 
 <section id="tldr" class="bg1"><div class="layout">
-<h2>TL;DR</h2>
+<h2>The study in one minute</h2>
 <ul class="tldr">
- <li><b>Mask only what moves.</b> Masking every movable object throws away static structure such as pallets, often without testing whether help was needed. SAVIOR decides conservatively per instance which objects are dynamic outliers and acts only through masks: a class prior sets the default, and stereo depth, an association tree and IMU-compensated motion evidence target hard cases.</li>
- <li><b>Controlled evaluation.</b> SAVIOR-Warehouse is our simulated stereo-inertial dataset with controllable traffic and a confirmatory split frozen before rendering. On that split, selective masking beats class-level masking at low- and high-dynamic levels and avoids most of its static cost. SAVIOR makes a lightweight filter more accurate at the high-dynamic levels on every trajectory, also when failed runs are excluded, while a small static cost remains possible. A class-prior-only variant performs on par, so on this data the gain comes from the conservative prior. In a pre-specified stress test, SAVIOR beat class-level masking around dominant loads, moving or parked, but did not significantly beat the class prior.</li>
- <li><b>Real data and real time.</b> On real sequences, where only persons are masked, SAVIOR prevents most filter failures. A C++ node runs at camera rate on an embedded GPU. Optimization-based back-ends gain little or are harmed on the warehouse.</li>
+ <li><b>The question.</b> Dynamic-scene visual-inertial odometry often masks every object of a movable class. We asked <i>when</i> that helps, with controls: each simulated warehouse trajectory is rendered at four traffic levels, from static to heavy, and the test split was frozen before it was rendered.</li>
+ <li><b>Masking helps when moving objects carry a large share of the measurements.</b> In medium and heavy traffic, SAVIOR cut the error of OpenVINS by 48&nbsp;% and was better on all 24 test trajectories. The gain comes from heavy traffic, where a forklift drives ahead of the camera; with few movers, no gain was detected.</li>
+ <li><b>Masking every movable class has a cost.</b> It raised the error in static scenes by 42&nbsp;%, because parked boxes and pallets are good landmarks. SAVIOR keeps them by default and beat all-class masking by 27 to 34&nbsp;%.</li>
+ <li><b>A simple class prior does most of the work.</b> Masking only people and forklifts did not differ detectably from SAVIOR's per-instance reasoning. A stress test with large moving loads was inconclusive.</li>
+ <li><b>A tuned filter is a strong rival in simulation, but not on real data.</b> A tighter outlier gate in the filter beat the masks in simulation. On real walking-person sequences, tuned gates failed in 14 to 19 of 30 runs, against 1 of 30 with masks.</li>
+ <li><b>Practical.</b> One mask image per frame is the only interface, so the same front end serves three unmodified estimators. The C++ node runs at the 20&nbsp;Hz camera rate on a Jetson Orin NX.</li>
 </ul>
-<p class="note">The three points paraphrase the paper's abstract. The paper is under review and the numbers below are quoted from the manuscript, with its caveats.</p>
+<p class="note"><b>Latest (November 2026).</b> The paper is now framed as a controlled study of when masking helps. New since the first version: a class-prior baseline, a pre-specified stress test with dominant loads, a comparison with tuned and real-data-calibrated filter gates, and a check of how much the results depend on the environment.</p>
 </div></section>
 
 <section id="method" class="bg0"><div class="layout">
 <h2>Method</h2>
-<p class="lead">SAVIOR removes the features of dynamic outliers in the VIO front-end, so that only the remaining measurements reach the estimator, whose code is not modified. A stereo pair and the IMU are the only inputs. The decision is conservative and made per object instance.</p>
+<p class="lead">SAVIOR removes the features of moving objects in the VIO front end. The estimator itself is not modified: it only sees fewer features. Stereo images and the IMU are the only inputs.</p>
 <figure>
  <img class="fig" src="media/fig/fig_system.png" width="1110" height="805" loading="lazy" alt="System diagram of SAVIOR: stereo images and IMU enter the perception modules (detection, classification of dynamic outliers, post-processing), whose masks enter the VIO front-end between feature extraction and tracking, followed by an unmodified estimator.">
- <figcaption><b>System overview (Fig. 1 of the paper).</b> Blue: proposed modules. Black: the VIO front-end, patched only to read the masks, and the estimator, whose code is unmodified (OpenVINS, VINS-Fusion or DynaVINS). The dynamic-outlier masks enter the front-end between feature extraction and feature tracking.</figcaption>
+ <figcaption><b>System overview.</b> Blue: SAVIOR modules. Black: the VIO front end, patched only to read the masks, and an unmodified estimator (OpenVINS, VINS-Fusion or DynaVINS).</figcaption>
 </figure>
-
-<h3>The components</h3>
 <div class="comp">
- <div><h4>Class prior</h4>Every instance is <i>static</i> (rack, guard rail, window), <i>potentially dynamic</i> (forklift, box, pallet, trolley) or <i>always dynamic</i> (person). People are always masked; boxes, pallets and trolleys are kept unless something links them to a mover. The prior is the default, not the decision.</div>
- <div><h4>Stereo depth</h4>Depth separates objects that touch in the image but not in space. It is measured only inside the boxes of candidate instances, by semi-global matching of rectified crops. Two touching instances are linked only if their median depths differ by less than a gate (1 m in the main variant).</div>
- <div><h4>Association tree</h4>Interaction propagates along a tree rooted at the dynamic outliers (box &larr; forklift &larr; person), by breadth-first search with a hop limit of 3. Links start only from active parents, so promotion cannot spread through stacks of touching static boxes.</div>
- <div><h4>IMU-compensated motion evidence</h4>A potentially dynamic object stays masked until motion evidence has confirmed it static over a sustained run, and no static decision counts before the estimator has converged. It handles cases such as a forklift that is parked in one frame and moving in the next.</div>
- <div><h4>Post-processing</h4>Masks have a core and an optional extension band, and a lightweight tracker carries the mask of a lost always-dynamic track for up to 5 frames. The final SAVIOR does not use the band; only the oracle references do.</div>
- <div><h4>Front-end integration</h4>One 8-bit mask per camera and frame, at raw image size with the left-image timestamp. A feature is rejected when its pixel is at least 128 in the mask. Only the feature trackers are patched; the MSCKF and the optimizers are used as released.</div>
+ <div><h4>Class prior</h4>People are always masked. Forklifts, boxes, pallets and trolleys are only masked when there is evidence they move. Racks and walls are never masked.</div>
+ <div><h4>Depth and association</h4>Stereo depth links objects that touch in space, not just in the image. A link spreads from a mover to what it carries: person, then forklift, then load.</div>
+ <div><h4>Motion evidence</h4>IMU-compensated image motion confirms which objects move. An object stays masked until it has been confirmed static.</div>
+ <div><h4>Mask interface</h4>One 8-bit mask per camera and frame. An empty mask leaves OpenVINS bit-identical, which gives an exact control.</div>
 </div>
-
-<h3>The mask contract: masks are the only interface</h3>
-<div class="contract" role="list">
- <div role="listitem"><i style="background:#555">0</i><p><b>keep.</b> The front-end tracks features here as usual.</p></div>
- <div role="listitem"><i style="background:var(--org);color:#111">192</i><p><b>band.</b> Optional extension margin. Rejects features, but the front-end ignores band pixels if a camera keeps fewer than 30 features. Used by the oracles only.</p></div>
- <div role="listitem"><i style="background:var(--red);color:#111">255</i><p><b>dynamic core.</b> Always rejects features.</p></div>
-</div>
-<p>An <b>empty mask</b> (all zero) leaves the front-end bit-identical to OpenVINS without masks on the warehouse. This is why the empty-mask control is an exact reference: on the confirmatory split it reproduced OpenVINS bit for bit in all 480 runs. Because the interface is just an image, the same masks also drive VINS-Fusion and DynaVINS.</p>
-
-<h3>The association tree, step by step</h3>
-<p>The animation steps through the paper's Fig. 3: one SAVIOR-Warehouse frame (aisles scene, medium traffic, tuning split) with a driven forklift carrying a pallet with four boxes, and a person walking in front. The stages run SAVIOR's code on <i>ground-truth</i> instance masks, so the figure shows the classification logic and not segmentation errors. The panels are crops of the paper figure.</p>
+<h3>One frame, step by step</h3>
+<p>A driven forklift carries a pallet with four boxes, and a person walks in front. The steps run SAVIOR's code on ground-truth instance masks, so they show the decision logic, not segmentation errors.</p>
 <div class="stepper" id="stepper" data-steps='[
-{"src":"media/promo/p1.png","alt":"Detections coloured by class prior: a person marked always-dynamic, forklift, boxes and pallet marked potentially dynamic.","t":"Detection.","d":"Every instance gets a class prior: the person is always dynamic; the forklift, its pallet and boxes, and the racks of boxes are potentially dynamic."},
-{"src":"media/promo/p2.png","alt":"Instances touching the always-dynamic person are highlighted in yellow.","t":"Overlap.","d":"Potentially dynamic objects whose masks touch an always-dynamic outlier are candidates (masks dilated by 4 px overlap by at least 5 px)."},
-{"src":"media/promo/p3.png","alt":"ROI stereo depth with link accepted for the forklift and load at 3.5 to 3.8 metres and refused for objects at 8.8 metres.","t":"Depth gate.","d":"ROI stereo depth: the forklift and its load lie at the driver&#39;s depth (3.5 to 3.8 m) and are linked; objects several metres behind are refused. This panel shows the noise-adaptive gate of the supplement; the main variant uses the fixed 1 m gate."},
-{"src":"media/promo/p4.png","alt":"Association tree: arrows from the person root to the forklift and from the forklift to its load, all in orange as promoted.","t":"Association tree.","d":"Person, forklift, load: the driver promotes the forklift (one hop), and the forklift its pallet and boxes (two and three hops)."},
-{"src":"media/promo/p5.png","alt":"Motion evidence over the preceding two seconds: moving instances in red, undecided instances in grey.","t":"Motion evidence.","d":"IMU-compensated motion over the preceding 2 s confirms moving objects; undecided ones fall back to the class prior."},
-{"src":"media/promo/p6.png","alt":"Mask layers: core in red and an extension band in yellow around it.","t":"Mask extension.","d":"The core (255) and the optional band (192). The band is used by the oracles only; the final SAVIOR does not use it."},
-{"src":"media/promo/p7.png","alt":"Final mask with features: inlier features in green are kept, features on the forklift, load and person are removed as red crosses.","t":"Dynamic-outlier mask.","d":"The final mask gates the front-end: features on dynamic outliers are removed (red crosses), the others are kept (green dots)."}
+{"src":"media/promo/p1.png","alt":"Detections coloured by class prior: a person marked always-dynamic, forklift, boxes and pallet marked potentially dynamic.","t":"Detection.","d":"Each instance gets a class prior: the person is always dynamic; the forklift, its load and the boxes on the racks are potentially dynamic."},
+{"src":"media/promo/p2.png","alt":"Instances touching the always-dynamic person are highlighted in yellow.","t":"Contact.","d":"Potentially dynamic objects that touch a mover in the image become candidates."},
+{"src":"media/promo/p3.png","alt":"ROI stereo depth with link accepted for the forklift and load at 3.5 to 3.8 metres and refused for objects at 8.8 metres.","t":"Depth check.","d":"The forklift and its load are at the driver&#39;s depth (3.5 to 3.8 m) and are linked; objects several metres behind are not."},
+{"src":"media/promo/p4.png","alt":"Association tree: arrows from the person root to the forklift and from the forklift to its load, all in orange as promoted.","t":"Association.","d":"The driver marks the forklift as moving, and the forklift marks its pallet and boxes."},
+{"src":"media/promo/p5.png","alt":"Motion evidence over the preceding two seconds: moving instances in red, undecided instances in grey.","t":"Motion evidence.","d":"Image motion over the last 2 s, corrected for the camera's own motion, confirms moving objects; undecided ones fall back to the class prior."},
+{"src":"media/promo/p6.png","alt":"Mask layers: core in red and an extension band in yellow around it.","t":"Mask.","d":"The mask core (red). The yellow band is used only by the ground-truth references, not by SAVIOR."},
+{"src":"media/promo/p7.png","alt":"Final mask with features: inlier features in green are kept, features on the forklift, load and person are removed as red crosses.","t":"Result.","d":"Features on moving objects are removed (red crosses); all others are kept (green dots), including the parked boxes on the racks."}
 ]'>
  <img src="media/promo/p1.png" width="535" height="345" alt="">
  <div class="cap" aria-live="polite"></div>
  <div class="ctl"><button class="play" aria-pressed="false">Play</button><span class="dots" style="display:flex;gap:6px"></span><a href="media/fig/fig_promotion.png" style="margin-left:auto;font-size:14px">Full static figure</a></div>
 </div>
-<noscript><figure><img class="fig" src="media/fig/fig_promotion.png" alt="Seven panels showing detection, overlap, depth gate, association tree, motion evidence, mask extension and the final dynamic-outlier mask on one warehouse frame."><figcaption>Fig. 3 of the paper (static version).</figcaption></figure></noscript>
-<figure><img class="fig" src="media/promo/legend.png" width="535" height="305" loading="lazy" alt="Colour legend of the promotion figure: red always-dynamic or dynamic outlier, orange promoted, blue potentially dynamic, green classified static and kept, yellow extension band, green dot kept feature, red cross removed feature." style="max-width:420px;margin:auto"><figcaption>Colour legend of the panels above.</figcaption></figure>
+<noscript><figure><img class="fig" src="media/fig/fig_promotion.png" alt="Seven panels showing detection, overlap, depth gate, association tree, motion evidence, mask extension and the final dynamic-outlier mask on one warehouse frame."><figcaption>The seven steps (static figure).</figcaption></figure></noscript>
+<figure>
+ <video data-lazy muted loop playsinline controls preload="none" poster="media/masks-poster.jpg" aria-describedby="masks-cap"><source src="media/masks.mp4" type="video/mp4"></video>
+ <figcaption id="masks-cap"><b>Masks on a real run.</b> Top left: camera. Top right: all-class masking. Bottom left: SAVIOR. Bottom right: ground-truth moving objects. All-class masking and SAVIOR use the same segmenter, and SAVIOR's output is shown as is, mistakes included.</figcaption>
+</figure>
 </div></section>
 
 <section id="dataset" class="bg1"><div class="layout">
 <h2>SAVIOR-Warehouse dataset</h2>
-<p class="lead">No public stereo-inertial dataset offers controllable dynamic content with interacting people, forklifts and loads. SAVIOR-Warehouse is rendered with NVIDIA Isaac Sim: a ZED 2i-like global-shutter stereo pair (672&times;376, 20 Hz, 0.12 m baseline) with a 200 Hz IMU is carried by a quadrotor on a smooth trajectory. Ground truth includes poses, depth and stereo instance segmentation.</p>
-<p>Every trajectory is rendered at four nested levels with the same scene, camera path and IMU noise, so that differences come from moving objects only: <b>L0 static</b> (parked forklifts, pallets and boxes), <b>L1 low</b> (walking people), <b>L2 medium</b> (people plus driven forklifts carrying boxes) and <b>L3 heavy</b> traffic (including a forklift that co-moves ahead of the camera).</p>
+<p class="lead">No public stereo-inertial dataset lets you change the traffic while keeping everything else fixed. SAVIOR-Warehouse, rendered in NVIDIA Isaac Sim, renders every trajectory four times, from a static scene to heavy traffic with people, forklifts and carried loads. Camera path, scene and IMU noise are identical, so any difference comes from the moving objects.</p>
 <figure>
  <video data-lazy muted loop playsinline controls preload="none" poster="media/levels-poster.jpg" aria-describedby="levels-cap"><source src="media/levels.mp4" type="video/mp4"></video>
- <figcaption id="levels-cap"><b>Same trajectory, four traffic levels.</b> Sequences sw03_t3_L0 to sw03_t3_L3 (confirmatory split, small warehouse shell), camera cam0 only, frames 1050 to 1349 at 20 Hz, played in sync. The poses are identical at every level; only the moving content differs. Raw renders, no masks.</figcaption>
+ <figcaption id="levels-cap"><b>One trajectory, four traffic levels:</b> static, light (people), medium (people and driven forklifts) and heavy (including a forklift ahead of the camera).</figcaption>
 </figure>
-<h3>Four confirmatory environments</h3>
-<p>The confirmatory split has 24 new, independent trajectories in four Isaac Sim environments, six each: the south hall with new seeded layouts (fw), a small warehouse shell (sw), a warehouse with three rack rows (ms), and an environment from a different asset family (wx). Rendering all four levels gives 96 sequences.</p>
+<p>The test split, 24 new trajectories in four environments (one from a different asset family), was frozen before rendering, together with the methods, five hypotheses and the analysis. The sensor is a ZED&nbsp;2i-like stereo pair (672&times;376, 20&nbsp;Hz) with a 200&nbsp;Hz IMU, with ground-truth poses, depth and instance masks.</p>
 <figure>
  <video data-lazy muted loop playsinline controls preload="none" poster="media/envs-poster.jpg" aria-describedby="envs-cap"><source src="media/envs.mp4" type="video/mp4"></video>
- <figcaption id="envs-cap"><b>The four environments.</b> Sequences fw01_t3_L2, sw01_t3_L2, ms01_t3_L2 and wx01_t3_L2 (medium traffic), camera cam0, frames 600 to 799 at 20 Hz. Raw renders, no masks.</figcaption>
-</figure>
-<div class="grid2 stills">
- <figure><img src="media/env/still_fw.jpg" width="560" height="314" loading="lazy" alt="Still frame of the south hall environment with racks, a forklift and a person."><figcaption>fw01_t3_L2, frame 700: south hall.</figcaption></figure>
- <figure><img src="media/env/still_sw.jpg" width="560" height="314" loading="lazy" alt="Still frame of the small warehouse shell with pallet stacks."><figcaption>sw01_t3_L2, frame 700: small shell.</figcaption></figure>
- <figure><img src="media/env/still_ms.jpg" width="560" height="314" loading="lazy" alt="Still frame of the three-rack-row warehouse."><figcaption>ms01_t3_L2, frame 700: three rack rows.</figcaption></figure>
- <figure><img src="media/env/still_wx.jpg" width="560" height="314" loading="lazy" alt="Still frame of the environment from a different asset family with blue racks and people."><figcaption>wx01_t3_L2, frame 700: different asset family.</figcaption></figure>
-</div>
-<figure>
- <img class="fig" src="media/fig/fig_dataset.png" width="1774" height="699" loading="lazy" alt="Dataset figure: for an aisles and a hall scene at level L3, the camera image, the ground-truth classes and the instances moving in this frame.">
- <figcaption><b>Ground truth (supplement figure).</b> SAVIOR-Warehouse at level L3 (top: aisles, bottom: hall; tuning split). Left: cam0 image; middle: ground-truth classes; right: instances moving in this frame, the ground-truth dynamic outliers. Parked forklifts, pallet stacks and standing people are present but static.</figcaption>
-</figure>
-<p>On the confirmatory split, moving objects cover 0.7&nbsp;% of the pixels at the low level, 2.4&nbsp;% at medium and 19.8&nbsp;% at heavy traffic. The design, the methods, the five primary hypotheses and the analysis were frozen before any sequence was rendered.</p>
-</div></section>
-
-<section id="masks" class="bg0"><div class="layout">
-<h2>Masks in action</h2>
-<p class="lead">What do the masks look like when the estimator sees them? Y-Cls masks every box, pallet and trolley; SAVIOR keeps the static ones; the oracle shows the ground-truth dynamic outliers.</p>
-<figure>
- <video data-lazy muted loop playsinline controls preload="none" poster="media/masks-poster.jpg" aria-describedby="masks-cap"><source src="media/masks.mp4" type="video/mp4"></video>
- <figcaption id="masks-cap"><b>Four views of one sequence.</b> Sequence sw03_t3_L2 (medium traffic), frames 1795 to 2094 at 20 Hz, offline replay at start offset 0.0. Top left: camera cam0. Top right: <b>Y-Cls</b> masks (YOLO26-seg, class-level). Bottom left: <b>SAVIOR</b> masks (frozen main variant). Bottom right: the <b>dynamic-outlier oracle</b> from ground truth, with its extension band. Red is the core (255), orange the band (192). Y-Cls and SAVIOR share the same segmenter; SAVIOR is a real, imperfect output and may mask some static objects or miss a moving one, as the paper discusses.</figcaption>
+ <figcaption id="envs-cap"><b>The four test environments</b> at medium traffic.</figcaption>
 </figure>
 </div></section>
 
-<section id="results" class="bg1"><div class="layout">
+<section id="results" class="bg0"><div class="layout">
 <h2>Results</h2>
 <div class="tiles">
- <div class="tile"><b>&minus;48&nbsp;%</b><span>ATE of SAVIOR vs OpenVINS at the high-dynamic levels (medium and heavy traffic) on the confirmatory split; better on all 24 of 24 trajectories (P4).</span></div>
- <div class="tile"><b>&minus;34&nbsp;%</b><span>SAVIOR vs class-level masking (Y-Cls) at the high-dynamic levels; better on 22 of 24 trajectories (P2). &minus;27&nbsp;% at the low-dynamic levels, 21 of 24 (P3).</span></div>
- <div class="tile"><b>+42&nbsp;%</b><span>Static cost of class-level masking on static scenes, worse on 22 of 24 trajectories.</span></div>
- <div class="tile warn"><b>+2.4&nbsp;%</b><span>SAVIOR on static scenes (P5): a small estimate, but <i>not confirmed</i>. The 90&nbsp;% interval (&minus;5.1 to +10.4&nbsp;%) extends marginally beyond the +10&nbsp;% margin, so a small cost cannot be excluded.</span></div>
- <div class="tile"><b>10 &rarr; 1 of 30</b><span>Failed OpenVINS runs on three real person sequences with SAVIOR (persons masked only). Mostly failure avoidance; SAVIOR is 27&nbsp;% worse on the third sequence.</span></div>
- <div class="tile"><b>20&nbsp;Hz</b><span>The C++ node meets the real-time criterion on a Jetson Orin NX 8&nbsp;GB: 24.5&nbsp;ms median and 49.1&nbsp;ms p99 per frame.</span></div>
+ <div class="tile"><b>&minus;48&nbsp;%</b><span>Error of OpenVINS with SAVIOR in medium and heavy traffic; better on all 24 test trajectories.</span></div>
+ <div class="tile"><b>+42&nbsp;%</b><span>Error added by masking every movable class in static scenes. SAVIOR's static cost was not detectable, though a small one is not ruled out.</span></div>
+ <div class="tile"><b>&minus;27 to &minus;34&nbsp;%</b><span>SAVIOR against all-class masking, in static and light traffic and in medium and heavy traffic.</span></div>
+ <div class="tile warn"><b>&asymp; class prior</b><span>Masking only people and forklifts did as well as SAVIOR (heavy traffic: SAVIOR between 26&nbsp;% better and 11&nbsp;% worse).</span></div>
+ <div class="tile warn"><b>Tuned gate</b><span>In simulation, a tighter outlier gate beat SAVIOR by 20&nbsp;%. On real data, gates failed in 14 to 19 of 30 runs, against 1 of 30 with masks.</span></div>
+ <div class="tile"><b>10 &rarr; 1 of 30</b><span>Failed runs on three real walking-person sequences with masking; on the third sequence masking was 27&nbsp;% worse.</span></div>
 </div>
-<p>ATE changes are paired geometric-mean changes at the trajectory level (negative is better for the first method). Inference covers new trajectories in these four Isaac Sim environments, one of them from a different asset family. Y-Cls is the most conservative class-level policy, so gains over it largely quantify the static class prior.</p>
+<p class="note">Error is the absolute trajectory error, compared in pairs per trajectory; negative is better.</p>
 
-<h3>Confirmatory hypotheses P1 to P5</h3>
+<h3>The pre-registered test</h3>
 <figure>
  <img class="fig" style="max-width:760px;margin:auto" src="media/fig/fig_t3_forest.png" width="1031" height="846" loading="lazy" alt="Forest plot of five confirmatory hypotheses and two secondary comparisons: ATE change with 95 percent interval, with individual trajectories as ticks.">
- <figcaption><b>Confirmatory split (24 trajectories, OpenVINS back-end).</b> ATE change of the first method relative to the second, with the 95&nbsp;% interval of the trajectory-level mixed model, and the individual trajectories (ticks). P1: oracle dynamic-outlier vs oracle class-level masks, high-dynamic: &minus;45&nbsp;% (22 of 24). P2: SAVIOR vs Y-Cls, high-dynamic: &minus;34&nbsp;%. P3: SAVIOR vs Y-Cls, low-dynamic: &minus;27&nbsp;%. P4: SAVIOR vs OpenVINS, high-dynamic: &minus;48&nbsp;%. P5: SAVIOR costs nothing on the static level, <i>not confirmed</i> (dark bar: 90&nbsp;% interval, dotted lines: &plusmn;10&nbsp;% margin). The first four of the frozen chain were confirmed and the chain stopped at the last one. With failed runs excluded, P4 is &minus;38&nbsp;% and P2 &minus;29&nbsp;%. Several single-environment intervals include zero, so the benefit depends on scene composition.</figcaption>
+ <figcaption><b>Five hypotheses, tested in a fixed order</b> (24 trajectories, OpenVINS). The first four held:
+ <ul>
+  <li>perfect masks of moving objects beat perfect masks of all movable classes (&minus;45&nbsp;%);</li>
+  <li>SAVIOR beat all-class masking (Y-Cls) in medium and heavy traffic (&minus;34&nbsp;%) and in static and light traffic (&minus;27&nbsp;%);</li>
+  <li>SAVIOR beat the unmasked filter in medium and heavy traffic (&minus;48&nbsp;%).</li>
+ </ul>
+ The fifth, that SAVIOR costs nothing in static scenes, was not confirmed. When environment is added to the model, the first result is no longer significant (&minus;5&nbsp;% in the environment from a different asset family). The SAVIOR results still hold.</figcaption>
 </figure>
 
-<h3>Where SAVIOR's path stays closer to the truth</h3>
-<figure>
- <video data-lazy muted loop playsinline controls preload="none" poster="media/trajectory-poster.jpg" aria-describedby="traj-cap"><source src="media/trajectory.mp4" type="video/mp4"></video>
- <figcaption id="traj-cap"><b>Estimated trajectories drawn over time.</b> Sequence sw03_t3_L3 (heavy traffic), OpenVINS (blue) and OpenVINS with SAVIOR (red) against ground truth (black), run 01 at start offset 0.0, replayed at 4&times; speed. Both estimates are aligned to the ground truth the way the evaluation does (position and yaw, least squares over all matched poses); our re-computation of the ATE from the run files, 0.336&nbsp;m for OpenVINS and 0.084&nbsp;m for SAVIOR, equals the evaluation's. <b>Why this sequence:</b> over the five offsets its geometric-mean ATE ratio SAVIOR/OpenVINS is 0.28, and the median of this ratio over the 24 heavy-traffic (L3) trajectories is 0.26; it had no failed runs. It was picked for being typical, not for being the best case: some trajectories show no gain (e.g. fw01_t3_L3, ratio 0.98). Note that the paper's P4 pools medium and heavy traffic (&minus;48&nbsp;%), so the L3-only median is larger. The plots follow the paper's figure style. Single run, illustrative only.</figcaption>
-</figure>
-
-<h3>When does masking matter, and does selective masking pay off?</h3>
 <div class="grid2">
- <figure><img class="fig" src="media/fig/fig_share_gain.png" width="1004" height="564" loading="lazy" alt="Scatter plots of ATE reduction by oracle masks against the share of measurements or pixels on moving objects; gain grows with the share."><figcaption><b>When masking matters.</b> ATE reduction by oracle dynamic-outlier masks, per sequence, against the share of used measurements (a) or moving pixels (b) on moving objects. The gain grows with the dynamic share. Unlike elsewhere, positive is better here.</figcaption></figure>
- <figure><img class="fig" src="media/fig/fig_forest.png" width="1222" height="681" loading="lazy" alt="Forest plot of paired ATE change, dynamic-outlier versus class-level masking, on tuning, held-out and VIODE sequences."><figcaption><b>Dynamic-outlier vs class-level masking</b> with OpenVINS: paired geometric-mean ATE change with 95&nbsp;% run-level bootstrap interval (negative: first method better). On the warehouse, SAVIOR beats Y-Cls and O-Dyn+B beats O-Cls+B in both groups; on VIODE both pairs show no detectable difference. Run-level intervals are descriptive.</figcaption></figure>
+ <figure><img class="fig" src="media/fig/fig_share_gain.png" width="1004" height="564" loading="lazy" alt="Scatter plots of ATE reduction by perfect masks against the share of measurements or pixels on moving objects; gain grows with the share."><figcaption><b>When masking matters.</b> Error reduction from perfect masks grows with the share of measurements (a) or pixels (b) on moving objects. Here positive is better.</figcaption></figure>
+ <figure>
+  <video data-lazy muted loop playsinline controls preload="none" poster="media/trajectory-poster.jpg" aria-describedby="traj-cap"><source src="media/trajectory.mp4" type="video/mp4"></video>
+  <figcaption id="traj-cap"><b>A typical heavy-traffic run.</b> OpenVINS (blue) and OpenVINS with SAVIOR (red) against ground truth (black). Error is 0.336&nbsp;m versus 0.084&nbsp;m, close to the median ratio over the 24 heavy-traffic trajectories. Some trajectories show no gain.</figcaption>
+ </figure>
 </div>
-<p class="note">Held-out and VIODE results use third-party or earlier splits and are shown only as the paper's figures. On the warehouse, optimization-based back-ends (VINS-Fusion, DynaVINS) gain little or are harmed; on VIODE, masks mainly remove their initialization failures. Single-component ablations show no held-out benefit from the association tree or motion evidence; the advantage over class-level masking comes mainly from keeping static boxes, pallets and trolleys by default. In a post-hoc check, a class-prior-only variant with SAVIOR's tracker matches SAVIOR's accuracy, while adding the tracker to class-level masking does not help. A pre-specified stress test with loads covering more than half of the image confirmed that SAVIOR keeps parked loads (27 % lower error than class-level masking); with moving loads its lead over the class prior (7 %) was not significant, and no method failed, as the filter already tolerated these loads.</p>
 
 <h3>Real sequences</h3>
 <figure>
  <img class="fig" src="media/fig/fig_rw_ate.png" width="1847" height="750" loading="lazy" alt="Real-world ATE per start offset for several methods on three sequences with a moving person and one static control.">
- <figcaption><b>Real-world validation on the Monado sequences</b> (the paper's figure; we do not redistribute the third-party frames). ATE for ten start offsets per method (circles; bars: geometric mean); runs above the dotted 1&nbsp;m line are failures. (a) to (c): sequences with a moving person; (d): static control. Only persons are masked. Over the three person sequences, SAVIOR lowers the OpenVINS ATE by 68&nbsp;% (95&nbsp;% CI &minus;82 to &minus;44&nbsp;%) and failed runs from 10 to 1 of 30. The gain is mostly failure avoidance (&minus;6&nbsp;% with failed pairs excluded) and may concern start-up, since the offsets lie in the first two seconds after rest. On sequence (c), where the person holds only 2.5&nbsp;% of the used measurements, SAVIOR is 27&nbsp;% worse. The static control shows no detectable difference.</figcaption>
+ <figcaption><b>Three real sequences with a walking person (a to c) and a static control (d).</b> Ten runs per method; runs above the dotted line are failures. Only persons are masked here. Masking removed the failures on one sequence and reduced them on another. On the third, where the person holds only 2.5&nbsp;% of the measurements, it was 27&nbsp;% worse.</figcaption>
 </figure>
+
+<h3>Real time on a Jetson Orin NX</h3>
+<div class="grid2">
+ <p>The C++ node runs at the 20&nbsp;Hz camera rate on a Jetson Orin NX 8&nbsp;GB: 24.5&nbsp;ms median and 49.1&nbsp;ms p99 per frame, 110&nbsp;ms end-to-end p99 latency from image to pose, at 10.9&nbsp;W. It reproduces the Python reference bit for bit. In closed loop on the device, accuracy was 0.92 to 1.32 times the desktop value, with no failures.</p>
+ <figure><img class="fig" src="media/fig/fig_runtime.png" width="995" height="625" loading="lazy" alt="Bar charts: mean time per frame by stage for the Python and C++ nodes with p99 marks against the 50 ms frame period, and end-to-end latency for OpenVINS alone and SAVIOR."><figcaption>Time per frame by stage (a) and end-to-end latency (b).</figcaption></figure>
+</div>
 </div></section>
 
-<section id="jetson" class="bg0"><div class="layout">
-<h2>Real time on a Jetson Orin NX</h2>
-<p>The C++ SAVIOR node runs at 20&nbsp;Hz on 672&times;376 stereo images on a Jetson Orin NX 8&nbsp;GB. The criterion was fixed before any device timing run: a mask for every frame, no frame lost by the filter, a mean node time below the 50&nbsp;ms frame period, an end-to-end p99 below 250&nbsp;ms and a peak RAM below 7&nbsp;GB. The C++ node meets it in all 12 runs, at 24.5&nbsp;ms median and 49.1&nbsp;ms p99 per frame, with an end-to-end p99 latency from image to pose of 110&nbsp;ms (78&nbsp;ms for OpenVINS alone), at 10.9&nbsp;W. It reproduces the Python reference bit for bit; the Python node is not real time on the device (109&nbsp;ms).</p>
-<figure>
- <img class="fig" src="media/fig/fig_runtime.png" width="995" height="625" loading="lazy" style="max-width:640px;margin:auto" alt="Bar charts: mean time per frame by stage for the Python and C++ nodes with p99 marks against the 50 ms frame period, and end-to-end latency for OpenVINS alone and SAVIOR.">
- <figcaption><b>Real time on a Jetson Orin NX 8&nbsp;GB</b> (supplement figure; maximum-performance mode, 20&nbsp;Hz stereo, tuning split, 4 runs per bar). (a) Mean time per frame of the perception node by stage for the Python and C++ implementations, with the p99 (black bar): only the C++ node stays below the 50&nbsp;ms frame period. (b) End-to-end latency from image to pose for OpenVINS alone and for SAVIOR (C++), with the offline wait policy and with a 100&nbsp;ms deployment timeout. With a deployment timeout, 0.4 to 7&nbsp;% of the frames fall back to no mask.</figcaption>
-</figure>
+<section id="limits" class="bg1"><div class="layout">
+<h2>Limitations</h2>
+<ul class="tldr">
+ <li>The main evidence is simulated, and the segmenter was trained in the same simulator. The real sequences contain only walking people (three sequences), no forklifts or loads.</li>
+ <li>SAVIOR's per-instance reasoning was not shown to improve on the class prior.</li>
+ <li>All gains are relative to the filter's default outlier gate. In simulation, a tuned gate beat the masks.</li>
+ <li>On the warehouse, unmasked DynaVINS is the most accurate system tested. Masks matter most for the filter that would otherwise fail.</li>
+ <li>The effect on accuracy of the deployment timeout, which drops 0.4 to 7&nbsp;% of the masks, was not evaluated.</li>
+</ul>
 </div></section>
 
-<section id="repro" class="bg1"><div class="layout">
-<h2>Reproducibility</h2>
-<p>Code, frozen configurations and the evaluation artefact are in the <a href="https://github.com/SasaKuruppuarachchi/SAVIOR">repository</a>. Start with the <a href="https://github.com/SasaKuruppuarachchi/SAVIOR/blob/master/README.md">README</a>, the data guide <a href="https://github.com/SasaKuruppuarachchi/SAVIOR/blob/master/docs/DATA.md">docs/DATA.md</a> and the experiment index <a href="https://github.com/SasaKuruppuarachchi/SAVIOR/blob/master/experiments/README.md">experiments/README.md</a>. Data and raw outputs are on Zenodo: <a href="https://doi.org/10.5281/zenodo.23803392">record A</a> (dataset, artefact), and <a href="https://doi.org/10.5281/zenodo.23819448">record B</a> and <a href="https://doi.org/10.5281/zenodo.23819583">record C</a> (the confirmatory split).</p>
-<p><b>The frozen protocol.</b> The confirmatory split, its methods, the five hypotheses and the analysis were frozen before any sequence was rendered, and the hypotheses form a fixed chain at the 5&nbsp;% level in which the first failure ends the confirmatory family. The unit of inference is the trajectory, with five start offsets per sequence; offline replays run with a wait policy, so that runs are deterministic, and start-offset perturbations expose the filter's sensitivity. An empty-mask control checks that the pipeline itself does not change the estimator. The freezes are internal checksums, not registered with a third party.</p>
-<p class="note"><b>Limitations stated in the paper.</b> The segmenter was trained in the same simulator as the dataset, so simulated results are not evidence of segmenter generalization, and P4 could be optimistic if the confirmatory layouts overlapped its training data. Y-Cls masks every box, pallet and trolley, so gains over it largely quantify the static class prior; the instance-level evidence was not shown to improve on a class prior on this data, nor in a targeted stress test. Representative commercial warehouses were not accessible for real-world recording. In simulation a tuned &chi;&sup2; gate can beat SAVIOR; the real sensor results rest on three person sequences.</p>
+<section id="repro" class="bg0"><div class="layout">
+<h2>Code and data</h2>
+<p>Code, frozen configurations and the evaluation artefact are in the <a href="https://github.com/SasaKuruppuarachchi/SAVIOR">repository</a>; start with the <a href="https://github.com/SasaKuruppuarachchi/SAVIOR/blob/master/README.md">README</a>, <a href="https://github.com/SasaKuruppuarachchi/SAVIOR/blob/master/docs/DATA.md">docs/DATA.md</a> and <a href="https://github.com/SasaKuruppuarachchi/SAVIOR/blob/master/experiments/README.md">experiments/README.md</a>. The dataset and raw outputs are on Zenodo: <a href="https://doi.org/10.5281/zenodo.23803392">record A</a> (dataset and artefact), and records <a href="https://doi.org/10.5281/zenodo.23819448">B</a> and <a href="https://doi.org/10.5281/zenodo.23819583">C</a> (test split). Runs are deterministic offline replays with five start offsets per sequence, and an empty-mask control reproduced OpenVINS bit for bit in all 480 test runs. The freezes are internal checksums, not registered with a third party.</p>
 </div></section>
 
-<section id="bibtex" class="bg0"><div class="layout">
-<h2>BibTeX</h2>
-<p>The paper is under review; please cite the software and artefact for now (from <code>CITATION.cff</code>).</p>
+<section id="bibtex" class="bg1"><div class="layout">
+<h2>Cite</h2>
+<p>The paper is under review; please cite the software and artefact for now.</p>
 <pre id="bib">@software{savior_code,
   title        = {{SAVIOR}: code, frozen configurations and evaluation artefact},
   author       = {Kuruppu Arachchige, Sasanka and Lee, Kyuman},
@@ -209,9 +184,8 @@
 </main>
 
 <footer><div class="layout">
-<p><b>Licence.</b> The code is released under GPL-3.0-or-later (GPL-3.0; the segmenter weights fine-tuned from Ultralytics YOLO fall under AGPL-3.0 and are distributed separately; see the <a href="https://github.com/SasaKuruppuarachchi/SAVIOR/blob/master/README.md#licence">repository README</a>). Videos and figures on this page come from SAVIOR-Warehouse, our own dataset, and from the paper's own figures. Third-party datasets (VIODE, OpenLORIS, uHumans2, Monado) keep their own licences, and no third-party frames are redistributed here. No tracking, no analytics, no cookies.</p>
+<p><b>Licence.</b> Code under GPL-3.0-or-later; the segmenter weights, fine-tuned from Ultralytics YOLO, fall under AGPL-3.0 and are distributed separately (see the <a href="https://github.com/SasaKuruppuarachchi/SAVIOR/blob/master/README.md#licence">README</a>). Videos come from SAVIOR-Warehouse, our own dataset; figures are the paper's. No third-party frames are redistributed. No tracking, no analytics, no cookies.</p>
 <p><b>Acknowledgement.</b> This research was supported by the Regional Innovation System &amp; Education (RISE) Glocal 30 program through the Daegu RISE Center, funded by the Ministry of Education (MOE) and Daegu, Republic of Korea (2025-RISE-03-001).</p>
-<p>Project page layout: plain HTML and CSS, no external libraries.</p>
 </div></footer>
 <script src="assets/site.js"></script>
 </body>
